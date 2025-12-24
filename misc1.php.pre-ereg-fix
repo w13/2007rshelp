@@ -99,7 +99,7 @@ if(mysql_num_rows($query) != 0) {
    $alt = '';
    $n++;
    if($n % 2 == 0) $alt = ' class="alt"';
-   $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+   $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
    $img = '<img src="/img/f2p.gif" alt="F2P" /> ';
    if($info['type'] == 1) $img = '<img src="/img/member.gif" alt="P2P" /> ';
 echo '<li' . $alt . ' id="g'.$info['id'].'" style="cursor: pointer;" onmouseover="chBg(\'g'.$info['id'].'\');" onmouseout="chBg(\'g'.$info['id'].'\');" onclick="window.location=\''.$_SERVER['SCRIPT_NAME'].'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm\'">'.NL

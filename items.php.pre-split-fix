@@ -1,4 +1,5 @@
 <?php
+ 
 $cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
 					array('order', $_GET['order'], 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
 					array('page', $_GET['page'], 'int', 's' => '1,400', 'd' => 1),
@@ -9,7 +10,11 @@ $cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
 
 /*** ITEM DATABASE ***/
 require(dirname(__FILE__) . '/' . 'backend.php');
-start_page('Runescape Item Database');
+start_page('OSRS RuneScape Item Database');
+
+// error_reporting(0);
+
+
 if($disp->errlevel > 0) {
 	unset($id);
 	unset($search_area);
@@ -18,8 +23,8 @@ if($disp->errlevel > 0) {
  echo '<script type="text/javascript" src="/graphs/popup.js"></script>';
   $graphjs = 'onclick="return popup(this,620,300,\'2px solid #fff\')"';
 ?>
-<div class="boxtop">Runescape Item Database</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
-<?
+<div class="boxtop">OSRS RuneScape Item Database</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
+<?php
  if(!isset($id))
   {
 
@@ -39,20 +44,21 @@ if($disp->errlevel > 0) {
 //-->
 </script>
 
-<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?=$_SERVER['SCRIPT_NAME']?>">Runescape Item Database</a></div>
+<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>">OSRS RuneScape Item Database</a></div>
 <hr class="main" noshade="noshade" />
+<!-- (commented out on dec 3, 2013)
 <img src="img/news/idb.gif" style="float:left;padding:20px 5px;" alt="" />
 <p>This massive database contains tons of information and tips on Runescape's items. This interactive guide will help you research any aspect of any item in Runescape.</p>
-<p><b>&raquo;</b>&nbsp;<a href="/items.php?search_area=type&amp;search_term=1">Armour and weapons</a>, <a href="/items.php?search_area=type&amp;search_term=2">Quest</a> and <a href="/items.php?search_area=type&amp;search_term=3">General</a> categories<br /><b>&raquo;</b> <a href="javascript:addEngine('items','gif','Items','0')" title="Click Here to Install FireFox Item DB Search Addon">FireFox Search Engine</a> Addon<br /><b>&raquo;</b> Tips on what you should do with your quest items<br /><b>&raquo;</b> Market Prices, Low and High Alchemy prices<br /><b>&raquo;</b> Extensive notes on each item<br /><b>&raquo;</b> A javascript tool to calculate amounts of items you're trading<br /><b>&raquo;</b> ... and loads more!</p>
+<p><b>&raquo;</b>&nbsp;<a href="/items.php?search_area=type&amp;search_term=1">Armour and weapons</a>, <a href="/items.php?search_area=type&amp;search_term=2">Quest</a> and <a href="/items.php?search_area=type&amp;search_term=3">General</a> categories<br /><b>&raquo;</b> Tips on what you should do with your quest items<br /><b>&raquo;</b> Market Prices, Low and High Alchemy prices<br /><b>&raquo;</b> Extensive notes on each item<br /><b>&raquo;</b> A javascript tool to calculate amounts of items you're trading<br /><b>&raquo;</b> ... and loads more!</p>
 <br />
 <div style="clear:both;"></div>
-
-<br /><?
+-->
+<br /><?php
   include('search.inc.php');
   echo '
   <table width="96%" style="margin:0 2%;" cellspacing="0" cellpadding="5">
 <tr style="height:23px;font-size:13px;font-weight:bold;">
-<td style="vertical-align:middle;text-align:right;"><a href="javascript:addEngine(\'items\',\'gif\',\'Items\',\'0\')" title="Click Here to Install FireFox Item DB Search Addon">FF Search Addon</a> &nbsp; <a href="/correction.php?area=items&amp;id=4296">Submit Missing Item</a></td></tr></table><br />
+<td style="vertical-align:middle;text-align:right;"><a href="/correction.php?area=items&amp;id=4296">Submit Missing Item</a></td></tr></table><br />
   ';
   echo '<table style="margin:0 12%;border-left: 1px solid #000;" width="76%" cellpadding="1" cellspacing="0">';
 
@@ -71,18 +77,18 @@ if($disp->errlevel > 0) {
 if(!isset($id)) {
 
 while($info = $db->fetch_array($query))   {
-	$seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+	
   if($row_count == 1)
   {
-  header('Location: '.$_SERVER['SCRIPT_NAME'] .'?id='.$info['id'].'&runescape_' . $seotitle . '.htm');
+  header('Location: '.$_SERVER['SCRIPT_NAME'] .'?id='.$info['id']);
   }
 else {
 $info['member'] = $info['member'] == 1 ? 'Yes' : 'No';
 $info['equip'] = $info['equip'] == 1 ? 'Yes' : 'No';
 $info['trade'] = $info['trade'] == 1 ? 'Yes' : 'No';
     echo '<tr>';
-    echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm"><img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . $info['name'] .' image" width="50" height="50" /></a></td>';
-    echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['name'] . '</a></td>' . NL;
+    echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '"><img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . $info['name'] .' image" width="50" height="50" /></a></td>';
+    echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '">' . $info['name'] . '</a></td>' . NL;
     echo '<td class="tablebottom">' . $info['member'] . '</td>';
     echo '<td class="tablebottom">' . $info['trade'] . '</td>';
 
@@ -101,7 +107,7 @@ $info['trade'] = $info['trade'] == 1 ? 'Yes' : 'No';
    $result = $db->query("SELECT name, id FROM `items` WHERE soundex(name) = soundex('".addslashes($search_term)."') LIMIT 0,1");
     echo '<tr>';
     echo '<td class="tablebottom" colspan="5">Sorry, no items match your search criteria.';
-    if (mysql_num_rows($result) > 0) {
+    if ($db->num_rows("SELECT name, id FROM `items` WHERE soundex(name) = soundex('".addslashes($search_term)."') LIMIT 0,1") > 0) {
    while($info = $db->fetch_array($result))   {
    if($info['id'] != 950) echo ' Perhaps you meant <a href="'.$_SERVER['SCRIPT_NAME'].'?search_area=name&amp;search_term='.$info['name'].'">'.$info['name'].'</a>?'; }
     }
@@ -150,7 +156,7 @@ $info['trade'] = $info['trade'] == 1 ? 'Yes' : 'No';
 		$price = $db->fetch_row("SELECT price_high, price_low, id FROM price_items WHERE phold_id = 0 AND name='".addslashes($info['name'])."' LIMIT 1");
 		
 		if(!isset($price['id'])) {
-		$pricelist = '<a href="/priceguide.php?search_terms=' . $info['name'] . '&amp;search_area=1&amp;price_low=&amp;price_high=&amp;member=1" title="Click here to view ' . $info['name'] . '\'s Price">Click here</a>';
+		// $pricelist = '<a href="/priceguide.php?search_terms=' . $info['name'] . '&amp;search_area=1&amp;price_low=&amp;price_high=&amp;member=1" title="Click here to view ' . $info['name'] . '\'s Price">Click here</a>';
 		}
 		else {
 		echo '
@@ -206,10 +212,10 @@ function addCommas(nStr,rangerover,myval)
 ?>
 
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?=$_SERVER['SCRIPT_NAME']?>">Item Database</a> &raquo; <u><?=$info['name']?></u></div>
+&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS Item Database</a> &raquo; <u><?php echo $info['name']; ?></u></div>
 <hr class="main" noshade="noshade" />
 
-<?
+<?php
 echo '<center><a href="/correction.php?area=items&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" vspace="5" alt="Submit Correction" border="0" /></a></center>';
 $info['weight'] = $info['weight'] == -21.0 ? '0' : $info['weight'];
 $info['member'] = $info['member'] == 1 ? 'Yes' : 'No';
@@ -218,11 +224,13 @@ $info['trade'] = $info['trade'] == 1 ? 'Yes' : 'No';
 $info['stack'] = $info['stack'] == 1 ? 'Yes' : 'No';
 
 $quests = explode(';',$info['quest']);
-$qid[0] = $db->fetch_row("SELECT `id` FROM `quests` WHERE `name` = '".addslashes($quests[0])."'");
+$qid[0] = $db->fetch_row("SELECT `id`,`name` FROM `quests` WHERE `name` = '".addslashes($quests[0])."'");
 for($num = 1; array_key_exists($num, $quests); $num++) { $qid[$num] = $db->fetch_row("SELECT `id` FROM `quests` WHERE `name` = '".addslashes(trim($quests[$num]))."'"); }
 foreach($quests as $key => $var) {
-	if($qid[$key]['id'] == '') $questlist .= trim($var).', ';
-	else $questlist .= '<a href="/quests.php?id='.$qid[$key]['id'].'">' . trim($var) . '</a>, ';
+	if($qid[$key]['id'] == ''){ $questlist .= trim($var).', ';
+	}else{
+		$questlist .= '<a href="/quests.php?id='.$qid[$key]['id'].'">' . trim($var) . '</a>, ';
+	}
 }
 $questlist = substr($questlist, 0, -2);
 
@@ -253,18 +261,26 @@ $questlist = substr($questlist, 0, -2);
   }
   else {
     $search = addslashes($info['name']);
-    $mquery = $db->query("SELECT name, id FROM monsters WHERE id NOT IN (3488) AND (drops LIKE '%" . $search . "%' OR i_drops LIKE '%" . $search . "%') GROUP BY name ORDER BY combat ASC");
-  }
+	if ($search==""){
+ $mquery = $db->query("SELECT name, id FROM monsters WHERE id NOT IN (3488) GROUP BY name ORDER BY combat ASC LIMIT 18");
+}
+else{
+    $mquery = $db->query("SELECT name, id FROM monsters WHERE id NOT IN (3488) AND (drops LIKE '%" . $search . "%' OR i_drops LIKE '%" . $search . "%') GROUP BY name ORDER BY combat ASC LIMIT 18");
+}  
+}
   
   $s=0;
   while($minfo = $db->fetch_array($mquery)) {
         $s++;
-        if($s<16) $droplist .= '<a href="/monsters.php?id='.$minfo['id'].'" title="Runescape Monster: '.$minfo['name'].'">'.$minfo['name'].'</a>, ';
+        if($s<16){ // If more than 16 monsters that drop this, then instead show a "... more". If this is changed, make sure the LIMIT in the query above is also changed accordingly and kept higher than than this number
+			
+			$droplist .= '<a href="/monsters.php?id='.$minfo['id'].'" title="Runescape Monster: '.$minfo['name'].'">'.$minfo['name'].'</a>, ';
+		}
   }
   
   /*Display Monsters that drop this item */
   $more = '';
-  if(@mysql_num_rows($mquery) > 15 && !empty($droplist)) {
+  if(@mysqli_num_rows($mquery) > 15 && !empty($droplist)) {
   if(stripos($info['keyword'],'half of a key')>0)  {
       $more = ' <a href="/monsters.php?search_area=drops&amp;search_term=half of a key">... more &raquo;</a>';
   }
@@ -288,7 +304,7 @@ $questlist = substr($questlist, 0, -2);
 	$other[$num] = $other[$num] >= 0 ? '+' . $other[$num] : $other[$num];
 }
 
-$picture = @mysql_result($db->query("SELECT p.jagex_pid FROM price_items p JOIN items i ON p.id=i.pid WHERE i.id = " . $id),0);
+$picture = $db->fetch_row("SELECT p.jagex_pid FROM price_items p JOIN items i ON p.id=i.pid WHERE i.id = " . $id);
 if(!empty($picture)) $big_pic = '<img src="/img/idbimgb/' . $picture . '.gif" alt="Picture of ' . $info['name'] . '" />';
 else $big_pic = '&nbsp;';
 
@@ -306,16 +322,20 @@ else $big_pic = '&nbsp;';
     echo '<tr><td style="vertical-align:top;">Quest:</td><td colspan="2">' . $questlist . '</td></tr>';
     echo '<tr><td style="vertical-align:top;">Examine:</td><td colspan="2">' . $info['examine'] . '</td></tr></table>';
     echo '<br /><table cellspacing="0" cellpadding="4" style="width:100%;border:1px solid #000">';
-if($info['trade'] == "Yes") {
-    echo '<tr><td width="35%">Market Price:</td><td width="70%">'.$pricelist.'</td></tr>';
-    echo '<tr><td>High Alchemy:</td><td>' . number_format($info['highalch']) . 'gp</td></tr>';
+
+if($info['trade']=="Yes") {
+	$j36 = strtolower(str_replace(" ","-",$info['name']));
+	if($info['pricelink']=='' || $info['pricelink']=='0'){ $info['pricelink'] = $info['id']; }
+    /* echo '<tr><td width="35%">Market Price:</td><td width="70%"><a href="http://forums.zybez.net/runescape-2007-prices/'.$info['pricelink'].'-'.$j36.'">View latest buy/sell offers.</a></td></tr>';  */  
+    echo '<tr><td width="35%">High Alchemy:</td><td width="70%">' . number_format($info['highalch']) . 'gp</td></tr>';
     echo '<tr><td>Low Alchemy:</td><td>' . number_format($info['lowalch']) . 'gp</td></tr>';
-    //echo '<tr><td>Sell to General Store:</td><td>' . number_format($info['sellgen']) . 'gp</td></tr>';
-    //echo '<tr><td>Buy from General Store:</td><td>' . number_format($info['buygen']) . 'gp</td></tr>';
+    echo '<tr><td>Sell to General Store:</td><td>' . number_format($info['sellgen']) . 'gp</td></tr>';
+    echo '<tr><td>Buy from General Store:</td><td>' . number_format($info['buygen']) . 'gp</td></tr>';
+	
 }
 else {
-    echo '<tr><td width="35%">Market Price:</td><td>Not Applicable</td></tr>';
-    echo '<tr><td>High Alchemy:</td><td>' . $info['highalch'] . 'gp</td></tr>';
+    //echo '<tr><td width="35%">Market Price:</td><td>Not Applicable</td></tr>';
+    echo '<tr><td width="35%">High Alchemy:</td><td>' . $info['highalch'] . 'gp</td></tr>';
     echo '<tr><td>Low Alchemy:</td><td>' . $info['lowalch'] . 'gp</td></tr>';
 }
     echo '</table></td><td style="vertical-align:top;">';
@@ -323,7 +343,7 @@ else {
     echo '<tr><td class="boxtop"><b>Attack Bonuses</b></td></tr>';
     echo '<tr><td class="boxbottom">Stab: '.$att[0].'<br />Slash: '.$att[1].'<br />Crush: '.$att[2].'<br />Magic: '.$att[3].'<br />Range: '.$att[4].'</td></tr><tr><td style="height:4px"></td></tr>';
     echo '<tr><td class="boxtop"><b>Defence Bonuses</b></td></tr>';
-    echo '<tr><td class="boxbottom">Stab: '.$def[0].'<br />Slash: '.$def[1].'<br />Crush: '.$def[2].'<br />Magic: '.$def[3].'<br />Range: '.$def[4].'<br />Summoning: '.$def[5].'</td></tr><tr><td style="height:4px"></td></tr>';
+    echo '<tr><td class="boxbottom">Stab: '.$def[0].'<br />Slash: '.$def[1].'<br />Crush: '.$def[2].'<br />Magic: '.$def[3].'<br />Range: '.$def[4].'</td></tr><tr><td style="height:4px"></td></tr>';
     echo '<tr><td class="boxtop"><b>Other Bonuses</b></td></tr>';
     echo '<tr><td class="boxbottom">Strength: '.$other[0].'<br />Ranged Strength: '.$other[2].'<br />Prayer: '.$other[1].'</td></tr>';
     echo '</table></td></tr><tr><td colspan="2">';
@@ -351,6 +371,21 @@ if(!empty($droplist)) {
     echo '<tr><td style="vertical-align:top;">Examine:</td><td>' . $info['examine'] . '</td></tr>';
     echo '</table><br />';
     echo '<table cellspacing="0" cellpadding="4" style="width:76%;margin:0 12%;border: 1px solid #000">';
+if($info['trade']=="Yes") {
+	$j36 = strtolower(str_replace(" ","-",$info['name']));
+	if($info['pricelink']=='' || $info['pricelink']=='0'){ $info['pricelink'] = $info['id']; }
+   /* echo '<tr><td width="35%">Market Price:</td><td width="70%"><a href="http://forums.zybez.net/runescape-2007-prices/'.$info['pricelink'].'-'.$j36.'">View latest buy/sell offers.</a></td></tr>';    */
+    echo  '<tr><td width="35%">High Alchemy:</td><td width="70%">' . number_format($info['highalch']) . 'gp</td></tr>';
+    echo '<tr><td>Low Alchemy:</td><td>' . number_format($info['lowalch']) . 'gp</td></tr>';
+    echo '<tr><td>Sell to General Store:</td><td>' . number_format($info['sellgen']) . 'gp</td></tr>';
+    echo '<tr><td>Buy from General Store:</td><td>' . number_format($info['buygen']) . 'gp</td></tr>';
+	
+}
+else {
+    //echo '<tr><td width="35%">Market Price:</td><td>Not Applicable</td></tr>';
+    echo '<tr><td width="35%">High Alchemy:</td><td>' . $info['highalch'] . 'gp</td></tr>';
+    echo '<tr><td>Low Alchemy:</td><td>' . $info['lowalch'] . 'gp</td></tr>';
+}	
     echo '<tr><td width="20%">Obtained From: </td><td>' . $info['obtain'] . '</td></tr>';
     echo '<tr><td style="vertical-align:top;">Keep/Drop:</td><td>' . $info['keepdrop'] . '</td></tr>';
     echo '<tr><td style="vertical-align:top;">Retrieval:</td><td>' . $info['retrieve'] . '</td></tr>';
@@ -374,12 +409,17 @@ if(!empty($droplist)) {
     echo '<tr><td style="vertical-align:top;">Examine:</td><td colspan="2">' . $info['examine'] . '</td></tr></table>';
     echo '<br />';
     echo '<table cellspacing="0" cellpadding="4" style="width:76%;margin:0 12%;border: 1px solid #000">';
-if($info['trade'] == "Yes") {
-    echo '<tr><td width="25%">Market Price:</td><td>'.$pricelist.'</td></tr>';
-}
-else {
-    echo '<tr><td width="25%">Market Price:</td><td>Not Applicable</td></tr>';
-}    echo '<tr><td>High Alchemy:</td><td>' . number_format($info['highalch']) . 'gp</td></tr>';
+if($info['trade']=="Yes") {
+	$j36 = strtolower(str_replace(" ","-",$info['name']));
+	if($info['pricelink']=='' || $info['pricelink']=='0'){ $info['pricelink'] = $info['id']; }
+  /*  echo '<tr><td width="35%">Market Price:</td><td width="70%"><a href="http://forums.zybez.net/runescape-2007-prices/'.$info['pricelink'].'-'.$j36.'">View latest buy/sell offers.</a></td></tr>';
+*/	
+    echo '<tr><td>Sell to General Store:</td><td>' . number_format($info['sellgen']) . 'gp</td></tr>';
+    echo '<tr><td>Buy from General Store:</td><td>' . number_format($info['buygen']) . 'gp</td></tr>';
+	
+}else {
+    echo '<tr><td width="25%"></td></tr>';
+}   echo '<tr><td width="25%">High Alchemy:</td><td>' . number_format($info['highalch']) . 'gp</td></tr>';
     echo '<tr><td>Low Alchemy:</td><td>' . number_format($info['lowalch']) . 'gp</td></tr>';
     echo '</table><br />';
     echo '<table cellspacing="0" cellpadding="4" style="width:76%;margin:0 12%;border: 1px solid #000">';
@@ -402,6 +442,6 @@ if(!empty($droplist)) {
 [#COPYRIGHT#]
 </div>
 
-<?
+<?php
 end_page( $info['name'] );
 ?>

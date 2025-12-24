@@ -215,7 +215,7 @@ else {
 	while($info = $db->fetch_array( $query ) ) {
     echo '<tr align="center">' . NL;
 		echo '<td class="tablebottom"><a href="/blog.php?type=' . $category . '&amp;id=' . $info['id'] . '" target="_new">' . $info['name'] . '</a></td>' . NL;
-		$seotitle = strtolower(preg_replace("/[^A-Za-z0-9_&.]/", "", 'runescape_'.$info['name'].'.htm'));
+		$seotitle = strtolower(ereg_replace("[^A-Za-z0-9_&.]", "", 'runescape_'.$info['name'].'.htm'));
 		$url = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D' . $category . '%26id%3D' . $info['id'];
 		$url2 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D' . $category . '%26id%3D' . $info['id'] . '%26' . $seotitle;
 		echo '<td class="tablebottom"><a href="' . $_SERVER['PHP_SELF'] . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit '.$info['name'].'">Edit</a> / <a onclick="window.open(\''.$url.'\'); window.open(\''.$url2.'\')">Re-cache</a>';

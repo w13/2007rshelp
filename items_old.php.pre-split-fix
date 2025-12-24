@@ -217,7 +217,7 @@ $info['equip'] = $info['equip'] == 1 ? 'Yes' : 'No';
 $info['trade'] = $info['trade'] == 1 ? 'Yes' : 'No';
 $info['stack'] = $info['stack'] == 1 ? 'Yes' : 'No';
 
-$quests = explode(';',$info['quest']);
+$quests = split(';',$info['quest']);
 $qid[0] = $db->fetch_row("SELECT `id` FROM `quests` WHERE `name` = '".addslashes($quests[0])."'");
 for($num = 1; array_key_exists($num, $quests); $num++) { $qid[$num] = $db->fetch_row("SELECT `id` FROM `quests` WHERE `name` = '".addslashes(trim($quests[$num]))."'"); }
 foreach($quests as $key => $var) {

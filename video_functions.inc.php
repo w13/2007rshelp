@@ -8,7 +8,8 @@ function sanitize($var) {
 function breaklongwords($string,$limit=12,$chop=5){  // for example, this would return: $output = text("Well this text doesn't get cut up, yet thisssssssssssssssssssssssss one does.", 10, 5); echo($output); // "Well this text doesn't get cup up, yet thiss sssss sssss sssss sssss sss one does."
 
 $text = explode(" ",$string);
-while(list($key, $value) = each($text)){
+// Replaced each() with foreach() for PHP 8 compatibility
+foreach($text as $key => $value){
     $length = strlen($value);
     if($length >=20){
         for($i=0;$i<=$length;$i+=10){

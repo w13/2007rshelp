@@ -47,7 +47,7 @@ if($disp->errlevel > 0) {
 if(!isset($id)) {
 
 while($info = $db->fetch_array($query))   {
-	$seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+	$seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
 
 $info['member'] = $info['member'] == 1 ? 'Yes' : 'No';
 $info['equip'] = $info['equip'] == 1 ? 'Yes' : 'No';

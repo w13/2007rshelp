@@ -111,7 +111,7 @@ if(isset($_GET['submit'])) {
 if(!isset($id)) {
 
   while($info = $db->fetch_array($query)) {
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo NL.'<tr>'
      .NL.'<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">'
         .'<img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . $info['name'] .' image" width="50" height="50" />'

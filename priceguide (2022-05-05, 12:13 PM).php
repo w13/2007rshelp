@@ -229,7 +229,7 @@ function addCommas(nStr,rangerover,myval)
 	if(nStr == myval){ return rangerover; }
 	nStr = Math.ceil(nStr);
 	nStr += '';
-	x = nStr.split('.');
+	x = nStr.explode('.');
 	x1 = x[0];
 	x2 = x.length > 1 ? '.' + x[1] : '';
 	var rgx = /(\d+)(\d{3})/;

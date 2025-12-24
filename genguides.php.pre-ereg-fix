@@ -28,7 +28,7 @@ if(!isset($id))
   while($info = $db->fetch_array($query))
    {
     echo '<tr align="center">';
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['title']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['title']));
     echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['tid'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['title'] . '</a></td>' . NL;
     echo '<td class="tablebottom">' . $info['starter_name'] . '</td>';
     echo '</tr>';

@@ -49,7 +49,7 @@ start_page();
   $query = $db->query('SELECT * FROM `skills` ORDER BY `name`');
   while($info = $db->fetch_array($query))
    {
-   $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+   $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo '
 	<guide><url>'. SITE_URL . 'skills.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm</url><name>' . $info['name'] . '</name></guide>';
    } 
@@ -62,7 +62,7 @@ start_page();
   $query = $db->query('SELECT * FROM `quests` ORDER BY `name`');
   while($info = $db->fetch_array($query))
    {
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo '
 	<guide><url>'. SITE_URL . 'quests.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm</url><name>' . $info['name'] . '</name></guide>';
    } 
@@ -75,7 +75,7 @@ start_page();
   $query = $db->query('SELECT * FROM `cities` ORDER BY `name`');
   while($info = $db->fetch_array($query))
    {
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo '
 	<guide><url>'. SITE_URL . 'cities.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm</url><name>'.$info['name'].'</name></guide>';
    } 
@@ -88,7 +88,7 @@ start_page();
   $query = $db->query('SELECT * FROM `guilds` ORDER BY `name`');
   while($info = $db->fetch_array($query))
    {
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo '
 	<guide><url>'. SITE_URL . 'guilds.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm</url><name>' . $info['name'] . '</name></guide>';
    } 
@@ -101,7 +101,7 @@ start_page();
   $query = $db->query('SELECT * FROM `misc` ORDER BY `name`');
   while($info = $db->fetch_array($query))
    {
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo '
 	<guide><url>'. SITE_URL . 'misc.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm</url><name>' . $info['name'] . '</name></guide>';
    } 
@@ -114,7 +114,7 @@ start_page();
   $query = $db->query('SELECT * FROM `dungeonmaps` ORDER BY `name`');
   while($info = $db->fetch_array($query))
    {
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo '
 	<guide><url>'. SITE_URL . 'dungeonmaps.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm</url><name>' . $info['name'] . '</name></guide>';
    } 
@@ -127,7 +127,7 @@ start_page();
   $query = $db->query('SELECT * FROM `miningmaps` ORDER BY `name`');
   while($info = $db->fetch_array($query))
    {
-    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
+    $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
     echo '
 	<guide><url>'. SITE_URL . 'miningmaps.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm</url><name>' . $info['name'] . '</name></guide>';
    } 

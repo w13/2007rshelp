@@ -75,7 +75,7 @@ echo '<br /><table width="96%" style="margin:0 2%;" cellspacing="0" cellpadding=
 if(!isset($id)) {
 
 while($info = $db->fetch_array($query)) {
-  $seotitle = strtolower(ereg_replace("[^A-Za-z0-9]", "", $info['name']));
+  $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
   
   if($row_count == 1)
   {
@@ -185,7 +185,7 @@ echo '<center><a href="/correction.php?area=monsters&amp;id=' . $id . '" title="
    $ftime = $info['time'];
 	 $date = date( 'l F jS, Y', $ftime );
 
-	$quests = split(';',$info['quest']);
+	$quests = explode(';',$info['quest']);
 	$qid[0] = $db->fetch_row("SELECT `id` FROM `quests` WHERE `name` = '".addslashes($quests[0])."'");
 	for($num = 1; array_key_exists($num, $quests); $num++) { $qid[$num] = $db->fetch_row("SELECT `id` FROM `quests` WHERE `name` = '".addslashes(trim($quests[$num]))."'"); }
 	foreach($quests as $key => $var) {
@@ -202,7 +202,7 @@ $info['i_drops'] = substr($info['i_drops'],-1) == '.' ? substr($info['i_drops'],
  if($info['drops'] == 'None.' || $info['drops'] == 'None') $droplist = $info['drops'];
   else
     {
-$drops = split('[,]',$info['drops']);
+$drops = explode('[,]',$info['drops']);
     
     foreach($drops as $key => $var) {
         $droplist .= '<a href="/inter.php?item=' . trim($var) . '">' . trim($var) . '</a>, ';
@@ -213,7 +213,7 @@ $drops = split('[,]',$info['drops']);
 if($info['i_drops'] == 'None.') $idroplist = $info['i_drops'];
   else
     {
-$idrops = split('[,]',$info['i_drops']);
+$idrops = explode('[,]',$info['i_drops']);
     
     foreach($idrops as $key => $vars) {
         $idroplist .= '<a href="/inter.php?item=' . trim($vars) . '">' . trim($vars) . '</a>, ';
