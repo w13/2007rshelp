@@ -281,7 +281,7 @@ echo '</select> for'.NL
 
 /*
 $total = $db->query("SELECT * FROM ".$ptable);
-$num_total = mysql_num_rows( $total );
+$num_total = mysqli_num_rows($total );
 $num_complete = 0;
 
   while( $info = $db->fetch_array( $total ) ) {

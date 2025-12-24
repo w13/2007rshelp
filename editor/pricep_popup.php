@@ -32,7 +32,7 @@ if(isset($_POST['act']) AND $_POST['act'] == 'edit')  {
 	}
 	else {
 		$query = $db->query("SELECT * FROM price_items WHERE id = ".intval($_POST['phold_id']));
-		if(mysql_num_rows($query) == 0) {
+		if(mysqli_num_rows($query) == 0) {
 			$edit->do_error('That item ID does not exist.');
 		}
 		else {
@@ -85,7 +85,7 @@ elseif(isset($_POST['act']) AND $_POST['act'] == 'new')  {
 	}
 	else {
 		$query = $db->query("SELECT * FROM price_items WHERE id = ".intval($_POST['phold_id']));
-		if(mysql_num_rows($query) == 0) {
+		if(mysqli_num_rows($query) == 0) {
 			$edit->do_error('That item ID does not exist.');
 		}
 		else {
@@ -155,7 +155,7 @@ elseif(isset($_GET['act']) AND (($_GET['act'] =='new' AND isset($_GET['category'
 
 			echo '<tr><td>Placement:</td><td><select name="iorder">';
 			$query = $db->query("SELECT * FROM price_items WHERE category = ".$category." ORDER BY price_items.iorder ASC");
-			$num = mysql_num_rows($query);
+			$num = mysqli_num_rows($query);
 			echo '<option value="1">Beginning of List</option>'.NL;
 			while($info = $db->fetch_array($query)) {
 				$option = $info['iorder'] + 1;

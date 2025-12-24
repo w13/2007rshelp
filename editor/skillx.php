@@ -34,7 +34,7 @@ $status = $info['rscname'];
 
 if ($_GET['act'] == 'add') {
 	$query = $db->query("SELECT * FROM `skillx` WHERE `team`>0");
-	/*if (mysql_num_rows($query) == 0) {*/
+	/*if (mysqli_num_rows($query) == 0) {*/
 		$names = explode(NL,addslashes($_POST['names']));	
 		foreach ($names as $name) {
 			$name = explode(',',$name);
@@ -119,7 +119,7 @@ echo '<div align="left" style="margin:1">
 echo '<table style="border-left: 1px solid #000;margin:0 12.5%" width="75%" cellpadding="1" cellspacing="0"><tr><th class="tabletop">RS Name</th><th class="tabletop">RSC Name</th><th class="tabletop">Team</th><th class="tabletop">Delete?</th></tr>';
 
 $query = $db->query("SELECT * FROM `skillx` WHERE `team`>-1 ORDER BY `team` ASC");
-if (mysql_num_rows($query) == 0) {
+if (mysqli_num_rows($query) == 0) {
 	echo '<tr><td class="tablebottom" colspan="4">There are no contestants currently.</td></tr></table>';
 } else {
 	while ($info = $db->fetch_array($query)) {

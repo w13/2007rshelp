@@ -141,7 +141,7 @@ echo '</td><td>Hours/Week:</td><td>'.$info['hours'].'</td></tr>'
     .'<td style="vertical-align:top;">Warn Log Contents (earliest to latest)</td><td><ol>'
 	.'<a href="http://www.zybez.net/community/index.php?act=Search&CODE=getalluser&mid='.$info['rscid'].'" target="_blank"><img src="'.$av.'" class="fright" title="View Member\'s Posts" style="width:'.$av_array[0].'px;height:'.$av_array[1].'px;" /></a>';
     $query1 = $db->query("SELECT ibfwarn_logs.* FROM helpdb.applicationsr, community.ibfwarn_logs WHERE rscid=wlog_mid AND id=".$id);
-    while($infos = mysql_fetch_array($query1))  {
+    while($infos = mysqli_fetch_array($query1))  {
     $infos['wlog_notes'] = str_replace(",d","",$infos['wlog_notes']);
     $infos['wlog_notes'] = str_replace("<mod>,</mod>","",$infos['wlog_notes']);
     $infos['wlog_notes'] = str_replace("<mod>0,</mod>","",$infos['wlog_notes']);
@@ -218,7 +218,7 @@ echo '</td><td>Dependability:</td><td>'.$info['dep'].'/10</td></tr>'
     .'<td style="vertical-align:top;">Warn Log Contents (earliest to latest)</td><td><ol>'
 	.'<a href="http://www.zybez.net/community/index.php?act=Search&CODE=getalluser&mid='.$info['rscid'].'" target="_blank"><img src="'.$av.'" class="fright" title="View Member\'s Posts" style="width:'.$av_array[0].'px;height:'.$av_array[1].'px;" /></a>';
     $query1 = $db->query("SELECT ibfwarn_logs.* FROM helpdb.applications, community.ibfwarn_logs WHERE rscid=wlog_mid AND id=".$id);
-    while($infos = mysql_fetch_array($query1))  {
+    while($infos = mysqli_fetch_array($query1))  {
     $infos['wlog_notes'] = str_replace(",d","",$infos['wlog_notes']);
     $infos['wlog_notes'] = str_replace("<mod>,</mod>","",$infos['wlog_notes']);
     $infos['wlog_notes'] = str_replace("<mod>0,</mod>","",$infos['wlog_notes']);
@@ -324,7 +324,7 @@ else
 $rows_per_page     = 50;
 if(isset($_GET['radio'])) $row_count = $db->query("SELECT * FROM applicationsr " . $search);
 else $row_count = $db->query("SELECT * FROM applications " . $search);
-$row_count         = mysql_num_rows($row_count);
+$row_count         = mysqli_num_rows($row_count);
 $page_count        = ceil($row_count / $rows_per_page) > 1 ? ceil($row_count / $rows_per_page) : 1;
 $page_links        = ($page > 1 AND $page < $page_count) ? '|' : '';
 $start_from        = $page - 1;

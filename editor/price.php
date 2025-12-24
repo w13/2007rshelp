@@ -55,7 +55,7 @@ while($info = $db->fetch_array($query)) {
         $align = 'right';
     }    
 }
-echo '<div style="float: '.$align.'; width: 49%; margin-top: 5px;"><input type="submit" value="Search For" style="width: 40%;" / >&nbsp;<input type="text" name="search_terms" value="'.mysql_real_escape_string($_GET['search_terms']).'" style="width: 55%;" /></div>'.NL;
+echo '<div style="float: '.$align.'; width: 49%; margin-top: 5px;"><input type="submit" value="Search For" style="width: 40%;" / >&nbsp;<input type="text" name="search_terms" value="'.mysqli_real_escape_string($db->connect, $_GET['search_terms']).'" style="width: 55%;" /></div>'.NL;
 
 echo '</form>'.NL.NL;
 
@@ -351,7 +351,7 @@ elseif(isset($_GET['area']) OR isset($_GET['category'])) {
             echo '<div style="font-size: 12px; margin-bottom: 10px; margin-top: 8px;"><b>Viewing '.$cinfo['title'].'</b></div>'.NL.NL;
             
             $query = $db->query("SELECT * FROM price_items WHERE category = ".$category." ORDER BY price_items.iorder ASC");
-            $total = mysql_num_rows($query);
+            $total = mysqli_num_rows($query);
             $ids = array();
             
             echo '<form action="'.$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'" method="post">'.NL;
@@ -439,7 +439,7 @@ elseif(isset($_GET['search_terms'])) {
     echo '<td class="tabletop">Sel:</td>'.NL;
     echo '</tr>'.NL.NL;
     
-    $search = str_replace(',', '', mysql_real_escape_string($_GET['search_terms']));
+    $search = str_replace(',', '', mysqli_real_escape_string($db->connect, $_GET['search_terms']));
     $search = trim($search);
     $search = explode(' ', $search);
 
@@ -480,7 +480,7 @@ elseif(isset($_GET['search_terms'])) {
         echo '<td class="tablebottom"><input type="checkbox" name="sel'.$i.'" value="'.$info['id'].'" /></td>'.NL;
         echo '</tr>'.NL;
     }
-    if(mysql_num_rows($query) == 0) {
+    if(mysqli_num_rows($query) == 0) {
         echo '<tr>'.NL;
         echo '<td class="tablebottom" colspan="4">Your search did not return any results.</td>'.NL;
         echo '</tr>'.NL;
@@ -529,7 +529,7 @@ else {
   //$query = $db->query("SELECT * FROM price_items WHERE  ORDER BY name ASC LIMIT 50");
 	$info = $db->fetch_row("SELECT COUNT(*) as total FROM `price_items` WHERE reports >= 2");
     echo '<form action="'.$_SERVER['PHP_SELF'].'" method="post">'.NL;
-    echo '<div style="font-size: 14px;"><b>Viewing Most Reported Items ( '.mysql_num_rows($query).' / '.$info['total'].' )</b></div><br />'.NL.NL;
+    echo '<div style="font-size: 14px;"><b>Viewing Most Reported Items ( '.mysqli_num_rows($query).' / '.$info['total'].' )</b></div><br />'.NL.NL;
     echo '<b>Instructions:</b> <a href="#" onclick=hide(\'tohide\')>Show/Hide</a><br />' . NL;
     echo '<div id="tohide" style="display:none">' . NL;
     echo '1) BE CAREFUL - ALWAYS check the price guide last updated section to make sure you didn\'t make a mistake.<br />' . NL;

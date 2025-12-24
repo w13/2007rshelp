@@ -102,7 +102,7 @@ $table = $db->query("SHOW TABLE STATUS LIKE 'price_items'");
 $rows = mysql_fetch_assoc($table);
 $next_id = $rows['Auto_increment'];
 	$db->query("INSERT INTO `price_history` (`bin`, `pid`, `avgprice`, `time`) VALUES (1, ".$next_id.", '".$avgprice."', UNIX_TIMESTAMP())");
-	mysql_query("INSERT INTO `price_history` (`bin`, `pid`, `avgprice`, `time`) VALUES (0, ".$next_id.", '".$avgprice."', UNIX_TIMESTAMP())");
+	mysqli_query($db->connect, "INSERT INTO `price_history` (`bin`, `pid`, `avgprice`, `time`) VALUES (0, ".$next_id.", '".$avgprice."', UNIX_TIMESTAMP())");
   
 	if(!$execution) {
 		echo '<p  style="text-align:center;">' . $edit->error_mess . '<br />' . NL
@@ -193,7 +193,7 @@ elseif(isset($_GET['act']) AND (($_GET['act'] =='new' AND isset($_GET['category'
 
 			echo '<tr><td>Placement:</td><td><select name="iorder">';
 			$query = $db->query("SELECT * FROM price_items WHERE category = " . $category . " ORDER BY price_items.iorder ASC");
-			$num = mysql_num_rows($query);
+			$num = mysqli_num_rows($query);
 			echo '<option value="1">Beginning of List</option>' . NL;
 			while($info = $db->fetch_array($query)) {
 				$option = $info['iorder'] + 1;

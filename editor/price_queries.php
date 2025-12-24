@@ -37,7 +37,7 @@ You'll need to change the price, hit submit, and then hit F5 when you get the MY
   $query = $db->query("SELECT * FROM price_items WHERE id NOT IN ( SELECT pid FROM price_history) AND phold_id=0");
   while($info = $db->fetch_array($query))
    {
-    echo '<li><a href="javascript: void(0)" onclick="javascript:window.open( \'/editor/price.php?search_terms='.mysql_real_escape_string($info['name']).'\', \'market\', \'width=600,height=600,scrollbars=yes,location=yes\' )">' . $info['name'] . '</a></li>';
+    echo '<li><a href="javascript: void(0)" onclick="javascript:window.open( \'/editor/price.php?search_terms='.mysqli_real_escape_string($db->connect, $info['name']).'\', \'market\', \'width=600,height=600,scrollbars=yes,location=yes\' )">' . $info['name'] . '</a></li>';
    }
   echo '</ol><br /></div>';
 		?>
@@ -51,7 +51,7 @@ If the price is the same, just up it 1gp, submit, go back and put it back to wha
   $query = $db->query("SELECT pid, name FROM price_history h JOIN price_items i ON i.id=h.pid GROUP BY pid HAVING count( * ) = 1 ORDER BY pid DESC ");
   while($info = $db->fetch_array($query))
    {
-    echo '<li><a href="javascript: void(0)" onclick="javascript:window.open( \'/editor/price.php?search_terms='.mysql_real_escape_string($info['name']).'\', \'market\', \'width=600,height=600,scrollbars=yes,location=yes\' )">' . $info['name'] . '</a></li>';
+    echo '<li><a href="javascript: void(0)" onclick="javascript:window.open( \'/editor/price.php?search_terms='.mysqli_real_escape_string($db->connect, $info['name']).'\', \'market\', \'width=600,height=600,scrollbars=yes,location=yes\' )">' . $info['name'] . '</a></li>';
    }
   echo '</ol><br /></div>';
 

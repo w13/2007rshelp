@@ -249,7 +249,7 @@ elseif ($_GET['area'] == 'vidreports') { ## VIDEO REPORTS!
 		}
 		echo '</td></tr>';
 	}
-	if (mysql_num_rows($rquery) < 1) {
+	if (mysqli_num_rows($rquery) < 1) {
 		echo '<tr><td colspan="4" class="tablebottom">There are no video reports to display.</td></tr>';
 	}
 	echo '</table>';
@@ -270,7 +270,7 @@ elseif ($_GET['area'] == 'commentreports') { ## COMMENT REPORTS!
 		echo '<tr><td class="tablebottom"><a href="/runescapevideos.php?id=' . $info['vid'] . '" title="View Video" target="_blank">Link</a></td>'
 			.'<td class="tablebottom">'.$info['comment'].'</td></tr>';
 	}
-	if (mysql_num_rows($query) < 1) {
+	if (mysqli_num_rows($query) < 1) {
 		echo '<tr><td colspan="4" class="tablebottom">There are no comment reports to display.</td></tr>';
 	}
 	echo '</table>';
@@ -297,7 +297,7 @@ if(isset($_GET['search_area']) AND $search_areas == TRUE) {
 
 $rows_per_page     = 10;
 $row_count         = $db->query("SELECT * FROM ".$ptable."" . $search);
-$row_count         = mysql_num_rows($row_count);
+$row_count         = mysqli_num_rows($row_count);
 $page_count        = ceil($row_count / $rows_per_page) > 1 ? ceil($row_count / $rows_per_page) : 1;
 $page_links        = ($page > 1 AND $page < $page_count) ? '|' : '';
 $start_from        = $page - 1;
@@ -365,7 +365,7 @@ echo '</select> for'.NL
 		echo '<td class="tablebottom">' . format_time( $info['date'] ) . '</td>' . NL;
 		echo '</tr>' . NL;
 	}
-	if( mysql_num_rows( $query ) == 0 ) {
+	if( mysqli_num_rows($query ) == 0 ) {
 		echo '<tr>' . NL;
 		echo '<td class="tablebottom" colspan="5">Sorry, no entries match your search criteria.</td>' . NL;
 		echo '</tr>' . NL; 

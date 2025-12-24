@@ -108,9 +108,11 @@ class edit {
     if(!in_array($url, $ignore) && !isset($_POST['item_id'])) { ## Ignore SEO title
       //$shops = "SELECT shop_name FROM ".$this->table." WHERE id = ".$id;
       $normal = "SELECT name FROM ".$this->table." WHERE id = ".$id;
-      //$seoname = $url == '/editor/shop.php' ? mysql_result($db->query($shops),0) : mysql_result($db->query($normal),0);
-      $seoname = mysql_result($db->query($normal),0);
-      $seotitle = strtolower(ereg_replace("[^A-Za-z0-9_&.]", "", '&runescape_'.$seoname.'.htm'));
+      // Get first result from query (mysql_result replaced with mysqli equivalent)
+      $result = $db->query($normal);
+      $row = mysqli_fetch_row($result);
+      $seoname = $row[0];
+      $seotitle = strtolower(preg_replace("/[^A-Za-z0-9_&.]/", "", '&runescape_'.$seoname.'.htm'));
     }
     if($url == "/editor/scam.php") {
     $id = "?scam=" . $id;

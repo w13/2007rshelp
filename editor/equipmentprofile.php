@@ -460,7 +460,7 @@ if(isset($_GET['search_area']) AND $search_areas == TRUE) {
 
 $rows_per_page     = 10;
 $row_count         = $db->query("SELECT * FROM ".$ptable." " . $search);
-$row_count         = mysql_num_rows($row_count);
+$row_count         = mysqli_num_rows($row_count);
 $page_count        = ceil($row_count / $rows_per_page) > 1 ? ceil($row_count / $rows_per_page) : 1;
 $page_links        = ($page > 1 AND $page < $page_count) ? '|' : '';
 $start_from        = $page - 1;
@@ -525,7 +525,7 @@ echo '</select> for'.NL
 		echo '<td class="tablebottom">' . format_time( $info['time'] ) . '</td>' . NL;
 		echo '</tr>' . NL;
 	}
-	if( mysql_num_rows( $query ) == 0 ) {
+	if( mysqli_num_rows($query ) == 0 ) {
 		echo '<tr>' . NL;
 		echo '<td class="tablebottom" colspan="4">Sorry, no entries match your search criteria.</td>' . NL;
 		echo '</tr>' . NL; 

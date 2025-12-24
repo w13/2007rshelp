@@ -5,10 +5,10 @@ start_page(1,'Skills Competition');
 if ($_POST['act'] == 'updatetext') {
 	echo 'POSTING...';
 	$textstuff = $_POST['textstuff'];
-	$db->query("UPDATE `admin_pads` SET `text`='" . addslashes($textstuff) . "' WHERE `file`='skilltext'") or die(mysql_error());
+	$db->query("UPDATE `admin_pads` SET `text`='" . addslashes($textstuff) . "' WHERE `file`='skilltext'") or die(mysqli_error($db->connect));
 } else {	
 	$query = $db->query("SELECT `text` FROM `admin_pads` WHERE `file`='skilltext'");
-	$info = mysql_fetch_array($query);
+	$info = mysqli_fetch_array($query);
 	$textstuff = $info['text'];
 }
 
@@ -70,7 +70,7 @@ if ($skill == '') {
 		echo '<table style="border-left: 1px solid #000;margin:0 25%" width="50%" cellpadding="1" cellspacing="0">'
 			.'<tr><th class="tabletop">RS Name</th><th class="tabletop">RSC Name</th></tr>';
 		$query = $db->query("SELECT `name`,`rscname`,`rscid` FROM `comp_names` WHERE `skill`='" . $skill . "'");
-		if (mysql_num_rows($query) == 0) {
+		if (mysqli_num_rows($query) == 0) {
 			echo '<tr><td class="tablebottom" colspan="2">No Names To Display</td></tr>';
 		} else {
 			while ($info = $db->fetch_array($query)) {

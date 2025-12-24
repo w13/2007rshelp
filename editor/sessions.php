@@ -144,7 +144,7 @@ else {
         echo '<td class="tablebottom">' . $info['endtime'] . '</td>' . NL;
         echo '</tr>' . NL;
     }
-    if(mysql_num_rows($query) == 0) {
+    if(mysqli_num_rows($query) == 0) {
         echo '<tr>' . NL;
         echo '<td class="tablebottom" colspan="3">Sorry, no entries match your search criteria.</td>' . NL;
         echo '</tr>' . NL;
