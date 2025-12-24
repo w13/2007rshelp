@@ -4,10 +4,15 @@
 /* DB Class */
 class db
 {
- var $queries = 0;
- var $host = '';
- var $username = '';
- var $password = '';
+	public $queries = 0;
+	private $host = '';
+	private $username = '';
+	private $password = '';
+	public $cache = '';
+	public $connect;
+	public $result;
+	public $row;
+	public $num_rows;
 
  function set_mysql_host($host = '')
   {
@@ -24,69 +29,9 @@ class db
    $this->password = $pass;
   }
 
-/* Gotta switch to mySQLi for PHP 7
+	// MySQLi implementation (converted for PHP 7/8 compatibility)
 
-  function sql_err()
-  {
-   die('<textarea rows="5" cols="100">MySQL Error: '.mysql_error().'</textarea>');
-  }
-
-  
- function connect()
-  {
-   $this->connect = @mysql_connect($this->host , $this->username , $this->password) or $this->sql_err();
-   return $this->connect;
-  }
-
- function disconnect()
-  {
-   $this->disconnect = @mysql_close($this->connect);
-   return $this->disconnect;
-  }
-
- function select_db($database = '')
-  {
-   $this->select_db = @mysql_select_db($database , $this->connect) or $this->sql_err();
-   return $this->select_db;
-  }
-
- function query($query = '')
-  {
-   $this->result = @mysql_query($query , $this->connect) or $this->sql_err();
-   $this->queries++;
-   return $this->result;
-  }
-  
- function fetch_row($query = '')
-  {
-   $this->result = @mysql_query($query , $this->connect) or $this->sql_err();
-   $this->row = @mysql_fetch_assoc($this->result);
-   $this->queries++;
-   return $this->row;
-  }
-
- function fetch_array($query = '')
-  {
-   $this->row = @mysql_fetch_assoc($query);
-   return $this->row;
-  }
-  
- function fetch_object($query = '')
-  {
-   $this->row = @mysql_fetch_object($query);
-   return $this->row;
-  }
-
- function num_rows($query = '')
-  {
-   $this->result = @mysql_query($query , $this->connect) or $this->sql_err();
-   $this->num_rows = @mysql_num_rows($this->result);
-   $this->queries++;
-   return $this->num_rows;
-  }
-*/
-
-function sql_err() {
+	function sql_err() {
 		global $DEBUG;
 		try {
 			throw new Exception;
@@ -172,21 +117,21 @@ function sql_err() {
 /* Display Class */
 class display
 {
+	public $default = 'darkblue.css';
+	public $path = '';
+	public $ROOT = '';
 
- var $default = 'darkblue.css';
- var $path = '';
- var $ROOT = '';
+	// Pull files for use
+	function get_file( $location )
+	{
+		ob_start();
+		// Include template file - error suppression removed for PHP 8
+		require( $this->ROOT . $location );
+		$contents = ob_get_contents();
+		ob_end_clean();
 
- // Pull files for use
- function get_file( $location )
-  {
-   ob_start();
-   @require( $this->ROOT . $location );
-   $contents = ob_get_contents();
-   ob_end_clean();
-   
-   return $contents;
-  }
+		return $contents;
+	}
 
  // Construction Function
   function __construct( $DIR = '' , $root = '' )
@@ -234,17 +179,12 @@ class display
    return $attn;
   }
 
- function check_status() //ben added apr 19.
- {
-//$automate = time()-180;
-//$sql = @mysql_query("SELECT * FROM `items` WHERE `time` BETWEEN ( unix_timestamp( )-17820 ) AND unix_timestamp( )-18000");
-//$results = @mysql_num_rows($sql);
-//echo "The result is: ".$results['ROWS']." ...";
-  if ( ( OFFLINE == 1 ) OR ( $results >= 1) )
-  {
-   die( require( $this->ROOT . '/editor/content/offline.inc' ) );
-  }
- }
+	function check_status() {
+		// Check if site is in offline mode
+		if (defined('OFFLINE') && OFFLINE == 1) {
+			die( require( $this->ROOT . '/editor/content/offline.inc' ) );
+		}
+	}
 }
 
 /* Timer Class */
@@ -280,14 +220,14 @@ class timer
 /* Login Session Class */
 class ses {
 
-    var $user = '';                    // Holder for username.
-    var $userid = 0;                // Holder for the users' identification number.
-    var $perm = 1;                    // Holder for user permissions.
-    var $logged_in = false;            // TRUE if user is logged in.
-    
-    var $db;                        // So we can use the DB class.
-    var $expire_time = 10800;        // Maximum amount of allowed inactivity - seconds.
-    var $login_error = '';            // Holder for login errors
+	public $user = '';                    // Holder for username.
+	public $userid = 0;                   // Holder for the users' identification number.
+	public $perm = 1;                     // Holder for user permissions.
+	public $logged_in = false;            // TRUE if user is logged in.
+
+	private $db;                          // So we can use the DB class.
+	public $expire_time = 10800;          // Maximum amount of allowed inactivity - seconds.
+	public $login_error = '';             // Holder for login errors
 
     // Construction Function
     function __construct($db) {
