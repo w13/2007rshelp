@@ -1,0 +1,11 @@
+Dear [#NAME#],
+
+You have received this message as you submitted the following correction to Zybez RuneScape Help on [#TIME#]:
+
+"[#CORRECTION#]"
+
+A member of the development team has reviewed your submission, and has since updated the content. We would like to thank you for taking the time to submit this correction, to help RuneScape Help in reaching its full potential.
+
+Regards,
+Zybez RuneScape Help Staff
+http://2007rshelp.com

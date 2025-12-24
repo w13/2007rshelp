@@ -1,0 +1,73 @@
+Cooking;idbimg/Pizza.png;Plain pizza;35;130;0;General
+Cooking;idbimg/Meat_pizza.png;Meat pizza;45;1690;General
+Cooking;idbimg/Anchovy%20Pizza.png;Anchovy pizza;45;1820;General
+Cooking;idbimg/Pineapple%20Pizza.png;Pineapple pizza;65;195;1;General
+Cooking;idbimg/Cake.png;Cake;40;180;0;General
+Cooking;idbimg/Chocolate%20Cake.png;Chocolate cake;50;210;0;General
+Cooking;idbimg/Stew.png;Stew;25;117;0;General
+Cooking;idbimg/curry.png;Curry;60;280;1;General
+Cooking;idbimg/Thin%20snail.png;Thin snail;12;70;1;General
+Cooking;idbimg/Cooked%20Lean%20snail.png;Lean snail;17;80;1;General
+Cooking;idbimg/Cooked%20fat%20snail.png;Fat snail;22;95;1;General
+Cooking;idbimg/Kebab.png;Ugthanki kebab;58;80;1;General
+Cooking;idbimg/Bread.png;Bread;1;40;0;General
+Cooking;idbimg/Nettle_tea.png;Nettle tea;20;52;1;General
+Cooking;idbimg/Pot%20of%20cream.png;Pot of cream;21;18;1;General
+Cooking;idbimg/Wine%20of%20Zamorak.png;Wine;35;110;0;General
+Cooking;idbimg/pat_of_butter.png;Pat of Butter;38;40;1;General
+Cooking;idbimg/Cheese.png;Cheese;48;64;1;General
+Cooking;idbimg/potato_baked.png;Baked potato;7;15;0;General
+Cooking;idbimg/sweetcorn.png;Sweetcorn;21;104;1;General
+Cooking;idbimg/potato_butter.png;Potato with butter;39;55;1;General
+Cooking;idbimg/potato_cheese.png;Potato with cheese;47;95;1;General
+Cooking;idbimg/apple_cider.png;Cider;14;182;1;Ale
+Cooking;idbimg/Dwarven%20Stout.png;Dwarven stout;19;215;1;Ale
+Cooking;idbimg/Asgarnian%20Ale.png;Asgarnian ale;24;248;1;Ale
+Cooking;idbimg/greenmans_ale.png;Greenman's ale;29;281;1;Ale
+Cooking;idbimg/wizard_mind_bomb.png;Wizard's mind bomb;34;313;1;Ale
+Cooking;idbimg/dragonbitter.png;Dragon bitter;39;347;1;Ale
+Cooking;idbimg/moonlight_mead.png;Moonlight mead;44;380;1;Ale
+Cooking;idbimg/axeman%27s%20folly.png;Axeman's folly;49;413;1;Ale
+Cooking;idbimg/chef%27sdelight.png;Chef's delight;54;446;1;Ale
+Cooking;idbimg/slayer%27s%20respite.png;Slayer's respite;59;479;1;Ale
+Cooking;idbimg/Cooked%20Shrimp.png;Shrimp;1;40;0;Fish
+Cooking;idbimg/Cooked_Anchovy.png;Anchovies;1;30;0;Fish
+Cooking;idbimg/Cooked%20Sardine.png;Sardine;1;40;0;Fish
+Cooking;idbimg/cooked_karambwanji.png;Karambwanji;1;30;1;Fish
+Cooking;idbimg/Cooked%20Karambwan.png;Karambwan;1;80;1;Fish
+Cooking;idbimg/Cooked%20Herring.png;Herring;5;50;0;Fish
+Cooking;idbimg/Cooked%20Mackerel.png;Mackerel;10;60;1;Fish
+Cooking;idbimg/Cooked%20Trout.png;Trout;15;70;0;Fish
+Cooking;idbimg/Cooked%20Cod.png;Cod;18;75;1;Fish
+Cooking;idbimg/cooked_pike.png;Pike;20;80;0;Fish
+Cooking;idbimg/Cooked%20Salmon.png;Salmon;25;90;0;Fish
+Cooking;idbimg/Cooked%20Slimy%20Eel.png;Slimy eel;28;95;1;Fish
+Cooking;idbimg/Cooked%20Tuna.png;Tuna;30;100;0;Fish
+Cooking;idbimg/cooked_caveeel.png;Cave eel;38;115;1;Fish
+Cooking;idbimg/Cooked_Lobster.png;Lobster;40;120;0;Fish
+Cooking;idbimg/Cooked%20Bass.png;Bass;43;130;1;Fish
+Cooking;idbimg/Cooked%20Swordfish.png;Swordfish;45;140;0;Fish
+Cooking;idbimg/cooked_lavaeel.png;Lava eel;53;140;1;Fish
+Cooking;idbimg/Cooked%20Shark.png;Shark;80;210;1;Fish
+Cooking;idbimg/Cooked_Seaturtle.png;Sea turtle;82;212;1;Fish
+Cooking;idbimg/Cooked_%20Manta%20Ray.png;Manta ray;91;216;1;Fish
+Cooking;idbimg/Choc%20Bomb.png;Chocolate bomb;0;30;1;Gnome
+Cooking;idbimg/Toad%20legs%20bowl.png;Tangled toad legs;0;30;1;Gnome
+Cooking;idbimg/Vegie%20bowl.png;Veggie bowl;0;30;1;Gnome
+Cooking;idbimg/Wormhole.png;Wormhole;0;30;1;Gnome
+Cooking;idbimg/Worm%20crunchies.png;Worm crunchies;0;30;1;Gnome
+Cooking;idbimg/Chocolate%20Crunchies.png;Chocolate crisp crunchies;0;30;1;Gnome
+Cooking;idbimg/Toad%20Leg%20Crunchies.png;Toad crunchies;0;30;1;Gnome
+Cooking;idbimg/Spicy%20Crunchies.png;Spice crunchies;0;30;1;Gnome
+Cooking;idbimg/Fruit%20Batta.png;Fruit batta;0;30;1;Gnome
+Cooking;idbimg/Veg%20batta.png;Vegetable batta;0;30;1;Gnome
+Cooking;idbimg/Worm%20batta.png;Worm batta;0;30;1;Gnome
+Cooking;idbimg/Toad%20batta.png;Toad legs batta;0;30;1;Gnome
+Cooking;idbimg/Cheese%20&%20Tomato%20Batta.png;Cheese and tomato batta;0;30;1;Gnome
+Cooking;idbimg/Fruit%20Blast.png;Fruit blast;0;60;1;Gnome
+Cooking;idbimg/Drunk%20dragon.png;Drunk dragon;0;60;1;Gnome
+Cooking;idbimg/Blurberry%20special.png;Blurberry special;0;60;1;Gnome
+Cooking;idbimg/Chocolate%20Saturday.png;Chocolate saturday;0;60;1;Gnome
+Cooking;idbimg/Pineapple%20Punch.png;Pineapple punch;0;60;1;Gnome
+Cooking;idbimg/SGG.png;Short green guy (SGG);0;60;1;Gnome
+Cooking;idbimg/wizard_blizzard.png;Wizard blizzard;0;60;1;Gnome

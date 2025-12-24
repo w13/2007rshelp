@@ -1,0 +1,9 @@
+Examine: Key (Silverlight) - A key I found in a Drain
+Examine: Key (Silverlight) - A key given to me by Captain Rovin
+Examine: Key (Silverlight) - A key given to me by Wizard Traiborn
+Only called Key
+
+Weaponsmaster - lvl 23 - 20Hp
+
+
+BUG IN SHIELD OF ARRAV QUEST - Upon starting it, it does not go to yellow

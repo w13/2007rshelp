@@ -1,0 +1,219 @@
+/* Guild Wars Help Hi-Fi Stylesheet */
+
+/* Tags */
+body {
+	background: #000 url('img/bg.gif') repeat;
+	color: #FFF;
+	height: 100%;
+	font: 75% 'Tahoma',Sans-Serif;
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	color: #FFF;
+	font: 100% 'Tahoma',Sans-Serif;
+	text-decoration: none;
+}
+
+
+/* IDs */
+#top {
+	background: #000 url('img/top_image.png') no-repeat;
+	width: 100%;
+	height: 150px;
+	color: #FFF;
+	text-indent: -9999px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#wrapper {
+	width: 95%;
+	padding: 0px;
+	margin: 0 auto;
+}
+
+/* LEFT MENU */
+#left_menu {
+	background: #000 url('img/bg.gif') repeat;
+	width: 175px;
+	float: left;
+	color: #FFF;
+	font: 100% 'Tahoma',Sans-Serif;
+	margin-top: 20px;
+}
+#menu_top {
+	background: transparent url('img/menu_top.gif') top no-repeat;
+	width: 175px;
+	height: 27px;
+}
+#menu_bottom {
+	background: transparent url('img/menu_bottom.gif') bottom no-repeat;
+	width: 175px;
+	height: 27px;
+}
+#left_menu ul {
+	background: #000  url('img/menu_left.png') repeat-y;
+	margin: 0px;
+	padding: 0px 0px 10px 0px;
+	list-style-type: none;
+}
+#left_menu a:hover, #right_menu a:hover {
+	color: #CCC;
+}
+
+/* CONTENT */
+#content {
+	float: right;
+	width: 75%;
+	margin-top: 20px;
+}
+#content a {
+	color: #000;
+}
+#content a:hover {
+	color: #444;
+}
+.content-top {
+	background: #000 url('img/ct_tile.gif') repeat-x;
+	color: #FFF;
+	height: 29px;
+}
+.content-top h2 {
+	padding-top: 6px;
+	font: 13px Verdana, Arial, sans, sans-serif;
+	text-align: center;
+	padding-top: 6px;
+	margin: 0;
+}
+.content-area {
+	background:#464646 url(img/content.png) repeat;
+	text-align:left;
+	margin-top: 15px;
+	float:left;
+}
+.content-area p {
+width: 89%;
+margin: 0 auto;
+}
+.ca-top {
+	background-color: #fff;
+}
+.ca-right {
+	background-color: #333;
+	float:right;
+	height: 100%;
+}
+.ca-left {
+	background-color: #333;
+	float:left;
+	height: 100%;
+}
+.ca-bottom {
+	background-color: #ccc;
+}
+#copyright {
+	color: #FFF;
+	height: 30px;
+	clear: both;
+	font: 85% 'Tahoma',Sans-Serif;
+	text-align: center;
+	padding-top: 50px;
+}
+.footer {
+	text-align: center;
+	font-size: 8pt;
+	width: 100%;
+}
+
+/* Classes */
+.nav_head, li.nav_head {
+	font: 100% 'Tahoma';
+	font-weight: bold;
+	margin: 0px;
+	padding: 15px 0 0 20px;
+	text-indent: 0px;
+}
+.nav_bottom, li.nav_bottom {
+	font: 100% 'Tahoma';
+	margin: 0px;
+	padding: 2px 0 0 25px;
+	text-indent: 0px;
+}
+.header_1 {
+	font: bold 150% 'Tahoma',Sans-Serif;
+	color: #000;
+	margin: 0px;
+	padding: 15px 0px;
+}
+.header_2 {
+	font: bold 125% 'Tahoma',Sans-Serif;
+	color: #000;
+	margin: 0px;
+	padding: 10px 0px;
+}
+.width_100 {
+	width: 100%;
+}
+.width_90 {
+	width: 90%;
+}
+.width_50 {
+	width: 50%;
+}
+.width_10 {
+	width: 10%;
+}
+.table_guide {
+	font: bold 100% 'Tahoma',Sans-Serif;
+	width: 75%;
+	color: #000;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+.table_author {
+	font: bold 100% 'Tahoma',Sans-Serif;
+	width: 25%;
+	color: #000;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+.table_quest {
+	font: bold 100% 'Tahoma',Sans-Serif;
+	width: 50%;
+	color: #000;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+.quest_table {
+	width: 100%;
+	border-width: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+.no_border {
+	border-width: 0px;
+}
+.bgone {
+	background: #D8C67C url('img/tr_bg.png') repeat;
+	color: #000;
+	text-align: center;
+}
+.bgtwo {
+	color: #000;
+	text-align: center;
+}
+.subcontain {
+	border-width: 0px;
+	margin: 0px 0px 10px 0px;
+}
+.invisible {
+	display: none;
+}
+ul, li {
+	padding: 0px;
+	margin: 0px;
+}

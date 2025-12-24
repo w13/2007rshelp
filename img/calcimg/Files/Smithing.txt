@@ -1,0 +1,146 @@
+Smithing;0;Bronze bar;idbimg/Bar_Bronze.png;1;6.5
+Smithing;0;Bronze dagger;idbimg/bronze dagger.png;1;12.5
+Smithing;0;Bronze axe;idbimg/Axe_Bronze.png;1;12.5
+Smithing;0;Bronze mace;idbimg/Bronze Mace.png;2;12.5
+Smithing;0;Bronze medium helm;idbimg/Bronze Medium.png;3;12.5
+Smithing;0;1 bronze dart tips;idbimg/Darttip_Bronze.png;4;1.25
+Smithing;0;Bronze sword;idbimg/Bronze sword.png;4;12.5
+Smithing;0;1 bronze nail;idbimg/nails_bronze.png;4;1.25
+Smithing;0;1 bronze arrow head;idbimg/ArrowHead_Bronze.png;5;12.5
+Smithing;0;Bronze scimitar;idbimg/Bronze scimitar.png;5;25
+Smithing;0;Bronze long sword;idbimg/Bronze Longsword.png;6;25
+Smithing;0;1 bronze throwing knife;idbimg/Knife_Bronze.png;7;2.5
+Smithing;0;Bronze full helm;idbimg/Bronze Large.png;7;25
+Smithing;0;Bronze square shield;idbimg/Bronze square shield.png;8;25
+Smithing;0;Bronze warhammer;idbimg/Bronze warhammer.png;9;37.5
+Smithing;0;Bronze battleaxe;idbimg/Bronze battleaxe.png;10;37.5
+Smithing;0;Bronze chain body;idbimg/Bronze chain.png;11;37.5
+Smithing;0;Bronze kite shield;idbimg/Bronze Kite.png;12;37.5
+Smithing;0;Bronze claws;idbimg/Bronze claws.png;13;25
+Smithing;0;Two-handed sword;idbimg/bronze 2h.png;14;37.5
+Smithing;0;Bronze plate leg;idbimg/Bronze legs.png;16;37.5
+Smithing;0;Bronze plate skirt;idbimg/Bronze Skirt.png;16;37.5
+Smithing;0;Bronze plate body;idbimg/Bronze platebody.png;18;62.5
+Smithing;0;Iron bar;idbimg/Bar_Iron.png;15;12.5
+Smithing;0;Iron dagger;idbimg/Iron Dagger.png;15;25
+Smithing;0;Iron axe;idbimg/Axe_Iron.png;16;25
+Smithing;0;Iron mace;idbimg/Iron mace.png;17;25
+Smithing;0;Iron medium helm;idbimg/Iron medium.png;18;25
+Smithing;0;1 iron dart tips;idbimg/Darttip_Iron.png;19;2.5
+Smithing;0;Iron sword;idbimg/Iron sword.png;19;12.5
+Smithing;0;1 iron nail;idbimg/nails_iron.png;19;1.67
+Smithing;0;1 iron arrow head;idbimg/ArrowHead_Iron.png;19;1.67
+Smithing;0;Iron scimitar;idbimg/Iron scimitar.png;20;50
+Smithing;0;Iron long sword;idbimg/Iron longsword.png;21;50
+Smithing;0;1 iron throwing knife;idbimg/Knife_Iron.png;22;5
+Smithing;0;Iron full helm;idbimg/Iron large.png;22;50
+Smithing;0;Iron square shield;idbimg/Iron square.png;23;50
+Smithing;0;Iron warhammer;idbimg/Iron warhammer.png;24;75
+Smithing;0;Iron battleaxe;idbimg/Iron battleaxe.png;25;75
+Smithing;0;Iron chain body;idbimg/Iron chain.png;26;75
+Smithing;0;Iron kite shield;idbimg/Iron kite.png;27;75
+Smithing;0;Iron claws;idbimg/Iron claws.png;28;50
+Smithing;0;Iron two-handed sword;idbimg/iron 2h.png;29;75
+Smithing;0;Iron plate leg;idbimg/Iron legs.png;31;75
+Smithing;0;Iron plate skirt;idbimg/iron Skirt.png;31;75
+Smithing;0;Iron plate body;idbimg/iron_platebody.png;33;125
+Smithing;0;Bronze dagger;idbimg/Bar_Silver.png;30;13.5
+Smithing;0;Steel bar;idbimg/Bar_Steel.png;30;17.5
+Smithing;0;Steel dagger;idbimg/Steel dagger.png;30;37.5
+Smithing;0;Steel axe;idbimg/Axe_Steel.png;31;37.5
+Smithing;0;Steel mace;idbimg/Steel mace.png;32;37.5
+Smithing;0;Steel medium helm;idbimg/Steel medium.png;33;37.5
+Smithing;0;1 steel dart tips;idbimg/Darttip_Steel.png;34;3.75
+Smithing;0;Steel sword;idbimg/Steel sword.png;34;37.5
+Smithing;0;1 steel nail;idbimg/nails_steel.png;34;2.5
+Smithing;0;1 steel arrow head;idbimg/ArrowHead_Steel.png;35;2.5
+Smithing;0;Steel scimitar;idbimg/Steel Scimitar.png;35;75
+Smithing;0;Steel long sword;idbimg/Steel longsword.png;36;75
+Smithing;0;1 steel throwing knife;idbimg/Knife_Steel.png;37;7.5
+Smithing;0;Steel full helm;idbimg/Steel large.png;37;75
+Smithing;0;Steel square shield;idbimg/Steel Square.png;38;75
+Smithing;0;Steel warhammer;idbimg/Steel warhammer.png;39;112.5
+Smithing;0;Steel battleaxe;idbimg/Steel battleaxe.png;40;112.5
+Smithing;0;Steel chain body;idbimg/Steel chain.png;41;112.5
+Smithing;0;Steel kite shield;idbimg/Steel kite.png;42;112.5
+Smithing;0;Steel claws;idbimg/Steel Claws.png;43;75
+Smithing;0;Steel two-handed sword;idbimg/steel 2h.png;44;112.5
+Smithing;0;Steel plate leg;idbimg/steel legs.png;46;112.5
+Smithing;0;Steel plate skirt;idbimg/Steel Skirt.png;46;112.5
+Smithing;0;Steel plate body;idbimg/Steel platebody.png;48;62.5
+Smithing;0;Gold bar;idbimg/Bar_Gold.png;40;22.5
+Smithing;0;Gold bar with goldsmiting gauntlets;idbimg/Bar_Gold.png;40;56.5
+Smithing;0;Mithril bar;idbimg/Bar_Mithril.png;50;30
+Smithing;0;Mithril dagger;idbimg/Mith dagger.png;50;50
+Smithing;0;Mithril axe;idbimg/Axe_Mith.png;51;50
+Smithing;0;Mithril mace;idbimg/Mith mace.png;52;50
+Smithing;0;Mithril medium helm;idbimg/Mith medium.png;53;50
+Smithing;0;1 mithril dart tips;idbimg/Darttip_Mith.png;54;5
+Smithing;0;Mithril sword;idbimg/Mith sword.png;54;50
+Smithing;0;1 mithril nail;idbimg/nails_mith.png;54;3.3
+Smithing;0;1 mithril arrow head;idbimg/ArrowHead_Bronze.png;55;3.3
+Smithing;0;Mithril scimitar;idbimg/Mith Scimitar.png;55;100
+Smithing;0;Mithril long sword;idbimg/Mith longsword.png;56;100
+Smithing;0;1 mithril throwing knife;idbimg/Knife_Mith.png;57;10
+Smithing;0;Mithril full helm;idbimg/Mith large.png;57;100
+Smithing;0;Mithril square shield;idbimg/Mith square shield.png;58;100
+Smithing;0;Mithril warhammer;idbimg/Mith warhammer.png;59;150
+Smithing;0;Mithril battleaxe;idbimg/Mith battleaxe.png;60;150
+Smithing;0;Mithril chain body;idbimg/Mith chain.png;61;150
+Smithing;0;Mithril kite shield;idbimg/Mith kite.png;62;150
+Smithing;0;Mithril claws;idbimg/Mith claws.png;63;150
+Smithing;0;Mithril two-handed sword;idbimg/Mith_2h.png;64;150
+Smithing;0;Mithril plate leg;idbimg/Mith legs.png;66;150
+Smithing;0;Mithril plate skirt;idbimg/Mith Skirt.png;66;100
+Smithing;0;Mithril plate body;idbimg/Mith platebody.png;68;250
+Smithing;0;Adamant bar;idbimg/Bar_Adamant.png;70;37.5
+Smithing;0;Adamant dagger;idbimg/AdamantDagger.png;70;62.5
+Smithing;0;Adamant axe;idbimg/Axe_Adamant.png;71;62.5
+Smithing;0;Adamant mace;idbimg/AdamantMace.png;72;62.5
+Smithing;0;Adamant medium helm;idbimg/Adamantmedium.png;73;62.5
+Smithing;0;1 adamant bronze dart tips;idbimg/Darttip_Adamant.png;74;6.25
+Smithing;0;Adamant sword;idbimg/Adamant Sword.png;74;62.5
+Smithing;0;1 adamant bronze nail;idbimg/nails_adamant.png;74;4.17
+Smithing;0;1 adamant bronze arrow head;idbimg/ArrowHead_Adamant.png;75;4.17
+Smithing;0;Adamant scimitar;idbimg/Adamant Scimitar.png;75;125
+Smithing;0;Adamant long sword;idbimg/AdamantLongsword.png;76;125
+Smithing;0;1 adamant throwing knife;idbimg/Knife_Adamant.png;77;12.5
+Smithing;0;Adamant full helm;idbimg/Adamantfullhelm.png;77;125
+Smithing;0;Adamant square shield;idbimg/Adamant Square shield.png;78;125
+Smithing;0;Adamant warhammer;idbimg/Adamant Warhammer.png;79;187.5
+Smithing;0;Adamant battleaxe;idbimg/Adamant_Battleaxe.png;80;187.5
+Smithing;0;Adamant chain body;idbimg/AdamantChain.png;81;187.5
+Smithing;0;Adamant kite shield;idbimg/AdamantKiteshield.png;82;187.5
+Smithing;0;Adamant claws;idbimg/AdamantClaws.png;83;125
+Smithing;0;Adamant two-handed sword;idbimg/Adamant_2h.png;84;187.5
+Smithing;0;Adamant plate leg;idbimg/Adamantplatelegs.png;86;187.5
+Smithing;0;Adamant plate skirt;idbimg/Adamant Skirt.png;86;187.5
+Smithing;0;Adamant plate body;idbimg/Adamant Platebody.png;88;312.5
+Smithing;0;Runite Bar;idbimg/Bar_Rune.png;85;50
+Smithing;0;Runite dagger;idbimg/Rune dagger.png;85;75
+Smithing;0;Runite axe;idbimg/Axe_Rune.png;86;75
+Smithing;0;Runite mace;idbimg/Rune mace.png;87;75
+Smithing;0;Runite medium helm;idbimg/Rune medium.png;88;75
+Smithing;0;1 runite bronze dart tips;idbimg/Darttip_Rune.png;89;7.5
+Smithing;0;Runite sword;idbimg/Rune sword.png;89;75
+Smithing;0;1 runite bronze nail;idbimg/nails_rune.png;89;5
+Smithing;0;1 ruinte bronze arrow head;idbimg/ArrowHead_Rune.png;90;5
+Smithing;0;Runite scimitar;idbimg/Rune scimitar.png;90;150
+Smithing;0;Runite long sword;idbimg/Rune longsword.png;91;150
+Smithing;0;1 runite throwing knife;idbimg/Knife_Rune.png;92;15
+Smithing;0;Runite full helm;idbimg/Rune Large.png;92;150
+Smithing;0;Runite square shield;idbimg/Rune square shield.png;93;150
+Smithing;0;Runite warhammer;idbimg/Rune warhammer.png;94;225
+Smithing;0;Runite battleaxe;idbimg/Rune battleaxe.png;95;225
+Smithing;0;Runite chain body;idbimg/Rune chain.png;96;225
+Smithing;0;Runite kite shield;idbimg/Rune kite.png;97;225
+Smithing;0;Runite claws;idbimg/Rune Claws.png;98;150
+Smithing;0;Runite two-handed sword;idbimg/rune 2h.png;99;225
+Smithing;0;Runite plate leg;idbimg/Rune legs.png;99;225
+Smithing;0;Runite plate skirt;idbimg/Rune skirt.png;99;225
+Smithing;0;Runite plate body;idbimg/Rune platebody.png;99;375
+Smithing;0;Bronze wire;idbimg/bronze_wire.png;4;12.5
+Smithing;0;1 cannon ball;idbimg/Cannonball.png;35;25.6
+Smithing;0;Oil lantern frame;idbimg/oil_lamp.png;26;25
+Smithing;0;Studs;idbimg/Studs.png;36;37.5
+Smithing;0;Bullseye latern frame;idbimg/bullseye_lantern.png;49;37.5

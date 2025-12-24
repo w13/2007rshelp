@@ -1,0 +1,64 @@
+.top {
+padding:1em;
+margin: 1pt;
+vertical-align:top;
+}
+.part {
+float:left;
+margin:0;
+text-align:right;
+font-size:18px;
+width:25%;
+padding:10px;
+padding-left:0;
+border-bottom: 3px solid #0974CC;
+}
+.step {
+border-bottom: 1px dashed gray;
+margin-bottom:10px;
+padding-bottom:5px;
+clear:both;
+}
+.step-content {
+margin-left:17%;
+padding-left:10px;
+margin-bottom:0;
+padding-bottom:10px;
+display:block;
+}
+.step-title {
+float:left;
+margin:0;
+text-align:right;
+font-size:18px;
+width:15%;
+padding-bottom:10px;
+padding-left:0;
+height:100% !important;
+clear:left;
+display:block;
+}
+.step-title span {
+font-size:9px;
+font-weight:normal;
+line-height: 10pt;
+}
+.step-list {
+margin:0;
+padding:0;
+margin-left:20%;
+padding-left:10px;
+}
+#quote {
+border: dashed 1px #069;
+font-style:oblique;
+text-align: justify;
+margin: 5px;
+width: 80%;
+padding:1em;
+margin-right:auto;
+margin-left:auto;
+}
+.quest-list td, .quest-list th { border-bottom:1px dashed #808080; }
+.bar { padding:2px 0; width:130px; height:20px; }
+.related {border:2px black dashed;width:80%;margin:0 auto;display:block;padding:5px;}

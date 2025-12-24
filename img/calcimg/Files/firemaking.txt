@@ -1,0 +1,16 @@
+Firemaking;0;Log;idbimg/Logs.png;1;40
+Firemaking;0;Oak log;idbimg/Log_Oak.png;14;60
+Firemaking;0;Willow log;idbimg/Log_Willow.png;30;90
+Firemaking;1;Teak log;idbimg/log_teak.png;35;105
+Firemaking;0;Maple log;idbimg/Log_Maple.png;45;135
+Firemaking;1;Mahogany log;idbimg/log_mahogany.png;50;157.5
+Firemaking;0;Yew log;idbimg/Log_Yew.png;60;202.5
+Firemaking;1;Magic log;idbimg/Log_Magic.png;75;303.75
+Firemaking;1;Pyre log;idbimg/pyre_regular.png;5;60
+Firemaking;1;Oak pyre log;idbimg/pyre_oak.png;5;70
+Firemaking;1;Willow pyre log;idbimg/pyre_willow.png;40;100
+Firemaking;1;Teak pyre log;idbimg/pyre_teak.png;35;0
+Firemaking;1;Maple pyre log;idbimg/pyre_maple.png;50;175
+Firemaking;1;Mahogany pyre log;idbimg/pyre_mahogany.png;55;0
+Firemaking;1;Yew pyre log;idbimg/pyre_yew.png;65;255
+Firemaking;1;Magic pyre log;idbimg/pyre_magic.png;80;404.5

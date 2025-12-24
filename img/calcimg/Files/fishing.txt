@@ -1,0 +1,22 @@
+Fishing;0;Shrimp;idbimg/raw_shrimp.png;1;10
+Fishing;1;Karambwanji;idbimg/Raw%20Karambwanji.png;5;10
+Fishing;0;Sardine;idbimg/Raw_Sardine.png;5;20
+Fishing;0;Herring;idbimg/Raw_Herring.png;10;30
+Fishing;0;Anchovy;idbimg/raw_anchovy.png;15;40
+Fishing;1;Mackerel;idbimg/Raw_Mackerel.png;16;20
+Fishing;0;Trout;idbimg/Raw_Trout.png;20;50
+Fishing;1;Cod;idbimg/Raw_Cod.png;23;45
+Fishing;0;Pike;idbimg/Raw_Pike.png;25;60
+Fishing;1;Slimey Eel;idbimg/raw_slimyeel.png;28;65
+Fishing;0;Salmon;idbimg/Raw_salmon.png;30;70
+Fishing;1;Giant frogspawn;idbimg/giant_frogspawn.png;33;75
+Fishing;0;Tuna;idbimg/Raw_Tuna.png;35;80
+Fishing;1;Cave eel;idbimg/raw_caveeel.png;38;80
+Fishing;0;Lobster;idbimg/Raw_Lobster.png;40;90
+Fishing;1;Bass;idbimg/Raw_Bass.png;46;100
+Fishing;0;Swordfish;idbimg/Raw_swordfish.png;50;100
+Fishing;1;Lava eel;idbimg/Raw_Lava%20eel.png;53;60
+Fishing;1;Karambwan;idbimg/Raw_Karambwan.png;65;105
+Fishing;1;Shark;idbimg/Raw_Shark.png;79;110
+Fishing;1;Sea turtle;idbimg/Raw_Seaturtle.png;79;230
+Fishing;1;Manta ray;idbimg/Raw_Manta%20Ray.png;81;250

@@ -1,0 +1,8 @@
+body {background-color:transparent;margin-top:8px;}
+.hidden {display: none;}
+.zticker {white-space: nowrap; overflow: hidden; width: 1000px; font:10px Verdana, Arial, Helvetica, sans-serif;}
+.ticktitle {float: left; margin: 0px 3px 0px 0px; font-weight:bold;color:#FFF}
+.tickContent {float: left; margin: 0px 2px 0px 4px; position: relative;}
+a:link, a:visited {color:#FFF; text-decoration:none;}
+a:hover {color:#c22; text-decoration:underline;}
+.tickdir {float: left; cursor: pointer; margin: 1px; position: relative; height:11px; width:10px;}

@@ -1,0 +1,254 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #fff;
+	font: 12px/1.5 Arial, Helvetica, sans-serif;
+	height: 550px;
+	color: #5C5C5C;
+}
+
+
+body#body-prefs, body#body-setprefs, body#body-resetprefs {
+	margin-bottom: 1px;
+}
+
+#header {
+	background: url(../images/bg.gif) repeat-x;
+	height: 40px;
+}
+
+h1 {
+	margin-left: 25px;
+	text-indent: -4200px;
+	float: left;
+	background: url(../images/logo-admincp.gif) no-repeat;
+	height: 40px;
+	width: 129px;
+}
+
+h2, h3 {
+	font-size: 16px;
+	color: #5C5C5C;
+	font-weight: 100;
+	color: #424242;
+	margin-bottom: 10px;
+}
+
+h3 {
+	font-size: 14px;
+	padding-top: 5px;
+	border-top: 1px solid #DBDBDB;
+	margin-top: 10px;
+	clear: both;
+}
+
+h3.first {
+	border-top: none;
+}
+
+#content a {
+	color: #DB536F;
+	text-decoration: none;
+	border-bottom: 1px dotted #CCC;
+}
+
+#content a:hover {
+	border-bottom-style: solid;
+	color: #86041E;
+}
+
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+#navigation {
+	float: right;
+	height: 40px;
+	width: 400px;
+}
+
+#navigation ul {
+	list-style: none;
+}
+
+#navigation li {
+	width: 100px;
+	float: left;
+}
+
+#navigation a {
+	text-indent: -4200px;
+	display: block;
+	height: 40px;
+	background: url(../images/nav.gif) no-repeat;
+}
+
+#n-home a { background-position: 0 0; }
+#n-home a:hover { background-position: 0 -40px; }
+
+#n-prefs a { background-position: -100px 0; }
+#n-prefs a:hover { background-position: -100px -40px; }
+
+#n-bans a { background-position: -200px 0; }
+#n-bans a:hover { background-position: -200px -40px; }
+
+#n-logout a { background-position: -300px 0; }
+#n-logout a:hover { background-position: -300px -40px; }
+
+#content {
+	clear: both;
+	margin: 0 auto;
+	padding: 25px;
+	padding-top: 10px;
+	max-width: 650px;
+}
+
+#content p {
+	margin-top: 10px;
+	clear: both;
+}
+
+.notice p {
+	margin-top: 0 !important;
+}
+
+
+fieldset {
+	border: 1px solid #D1D1D1;
+	padding: 5px 10px 0 10px;
+	width: 285px;
+}
+
+#prefs-form {
+	padding-top: 10px;
+}
+
+#prefs-form fieldset {
+	padding-top: 10px;
+	float: left;
+	clear: left;
+	margin-bottom: 20px;
+}
+
+#prefs-form fieldset.odd {
+	clear: right;
+	float: right;
+}
+
+legend {
+	background: #fff;
+	padding: 0px 5px;
+	margin-left: 10px;
+	font-weight: bold;
+	color: #5C5C5C;
+}
+
+fieldset ol {
+	list-style: none;
+}
+
+fieldset li {
+	padding-bottom: 10px;
+}
+
+label {
+	display: block;
+	float: left;
+	width: 150px;
+	color: #5C5C5c;
+}
+
+input, select {
+	width: 130px;
+}
+
+* html input, * html select {
+	width: 120px;
+}
+
+fieldset:after, #index:after {
+	content: ""; 
+	display: block; 
+	clear: both; 
+	height: 0; 
+	visibility: hidden;
+}
+
+* html fieldset, #index { height: 1%; }
+
+.notice {
+	color: #000;
+	border: 1px solid #D00028;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+}
+
+#index {
+	list-style-type: none;
+	margin: 15px 0;
+	border: 1px solid #DBDBDB;
+	padding: 10px;
+}
+
+#index li {
+	width: 33.3%;
+	text-align: center;
+	float: left;
+}
+
+#index li a {
+	display: block;
+	height: 30px;
+	border-bottom: none !important;
+}
+
+th {
+	text-align: left;
+	border-bottom: 1px solid #F5F5F5;
+}
+
+tr {
+	background: #FAFAFA;
+}
+
+tr.odd, tr.title {
+	background: #FFF;
+}
+
+td {
+	padding: 2px 0;
+}
+
+.ban-ip {
+	width: 150px;
+}
+
+.ban-reason {
+	width: 250px;
+}
+
+.ban-date {
+	width: 150px;
+}
+
+.ban-actions {
+	width: 100px;
+}
+
+#ban-form {
+	margin-top: 15px;
+}
+
+.list {
+	padding-top: 10px;
+	list-style: none;
+}
+
+.list li {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #FAFAFA;
+}

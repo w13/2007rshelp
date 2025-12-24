@@ -1,0 +1,111 @@
+Slayer;Crawling Hand;8;7
+Slayer;Crawling Hand;12;19
+Slayer;Cave Bug;6;5
+Slayer;Cave Crawle;23;22
+Slayer;Banshee;23;22
+Slayer;Cave Slime;23;25
+Slayer;Rock Slug;29;27
+Slayer;Desert Lizard;42;40
+Slayer;Desert Lizard;14;?
+Slayer;Desert Lizard;24;?
+Slayer;Cockatrice;37;37
+Slayer;Pyrefiend;43;45
+Slayer;Mogres;60;48
+Slayer;Wall Beast;49;105
+Slayer;Basilisk;61;75
+Slayer;Fever Spider;49;40
+Slayer;Infernal Mage;68;60
+Slayer;Bloodveld;76;120
+Slayer;Jelly;78;75
+Slayer;Turoth;85,89;81
+Slayer;Aberrant Specter;96;96
+Slayer;Dust Devil;93;105
+Slayer;Kurask;106;97
+Slayer;Skeletal Wyvern;142;204
+Slayer;Gargoyle;111;105
+Slayer;Nechryael;115;105
+Slayer;Abyssal Demon;124;150
+Slayer;Dark Beast;182;220
+Slayer;Bear;19;28
+Slayer;Bird;11;10
+Slayer;Cow;2;8
+Slayer;Guard Dog;44;49
+Slayer;Dwarf;10;16
+Slayer;Ghost;29;31
+Slayer;Ghost;19;25
+Slayer;Goblin;13;16
+Slayer;Goblin;5;12
+Slayer;Goblin;2;5
+Slayer;Kalphite queen;333;267
+Slayer;Kalphite guardian;141;171
+Slayer;Kalphite soldier;85;90
+Slayer;Kalphite worker;28;40
+Slayer;Monkey;3;6
+Slayer;Monkey guard;167;120
+Slayer;Zombie monkey;98;60
+Slayer;Archer monkey;86;50
+Slayer;Dungeon rat;12;12
+Slayer;Rat;1;2
+Slayer;Giant rat;6;10
+Slayer;Scorpion;14;17
+Slayer;King scorpion;32;31
+Slayer;Skeleton;142;112
+Slayer;Giant skeleton;80;71
+Slayer;Skeleton (barrows);77;50
+Slayer;Skeleton(45);45;59
+Slayer;Skeleton(25);25;17
+Slayer;Skeleton(22);22;29
+Slayer;Skeleton(21);21'24
+Slayer;Ice spider;61;65
+Slayer;Giant spider;
+Slayer;Jungle spider;44;50
+Slayer;Giant crypt spider;79;80
+Slayer;Crypt spider;56;60
+Slayer;Deadly red spider;34;35
+Slayer;Giant spider;27;33
+Slayer;Giant spider;2;5
+Slayer;Spider;1;2
+Slayer;Werewolf;88;100
+Slayer;Big wolf;73;74
+Slayer;Wolf;64;70
+Slayer;White wolf;38;35
+Slayer;White wolf;25;34
+Slayer;Bat;6;8
+Slayer;Giant bat;27;33
+Slayer;Dagannoth;74;71
+Slayer;Dagannoth;92;123
+Slayer;Earth Warrior;51;54
+Slayer;Elf warrior;108;110
+Slayer;Elf warrior (archer);90;110
+Slayer;Ghoul;42;50
+Slayer;Hellhound;122;116
+Slayer;Ice Giant;53;71
+Slayer;Lesser Demon;82;79
+Slayer;Moss Giant;42;60
+Slayer;Ogre guard;83;80
+Slayer;Ogre chieftain;81;60
+Slayer;Ogre trader;70;60
+Slayer;Ogre;63;60
+Slayer;Ogre;53;60
+Slayer;Other Worldly Being;64;66
+Slayer;Shadow Warrior;48;67
+Slayer;Troll general;113;140
+Slayer;Mountain troll;71;92
+Slayer;Vampire;72;56
+Slayer;Vampire;61;45
+Slayer;Blue Dragon;111;109
+Slayer;Bronze Dragon;131;125
+Slayer;Iron Dragon;189;173
+Slayer;Black Dragon;227;199
+Slayer;Steel Dragon;246;220
+Slayer;Green Dragon;79;85
+Slayer;Hill Giant;28;35
+Slayer;Greater Demon;92;87
+Slayer;Black Demon;172;157
+Slayer;Ice Warrior;57;59
+Slayer;Fiyr shade;120;110
+Slayer;Asyn shade;100;92
+Slayer;Riyl shade;80;74
+Slayer;Phrin shade;60;56
+Slayer;Loar shade;40;39
+Slayer;Crocodile;63;63

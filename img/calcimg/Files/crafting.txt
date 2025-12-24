@@ -1,0 +1,87 @@
+Crafting;0;Pot;idbimg/Pot.png;1;12.6
+Crafting;0;Pie dish;idbimg/Pie%20dish.png;4;25
+Crafting;0;Bowl;idbimg/Bowl.png;18;33
+Crafting;1;Plant pot;idbimg/plantpot.png;20;35
+Crafting;1;Pot lid;idbimg/pot_lid.png;20;40
+Crafting;0;Spinning wool;idbimg/Wool.png;1;2.75
+Crafting;1;Flax;idbimg/flax.png;10;15
+Crafting;1;Magic tree roots;idbimg/roots_magic.png;19;00
+Crafting;0;Gloves;idbimg/leather_glove.png;1;13.8
+Crafting;0;Boots;idbimg/Boots.png;7;16.3
+Crafting;0;Cowl;idbimg/Leather%20Cowls.png;9;18.5
+Crafting;0;Vambraces;idbimg/Leather%20Vambrace.png;11;22
+Crafting;0;Leather body;idbimg/Leather%20body.png;14;25
+Crafting;0;Chaps;idbimg/Leather%20Chaps.png;18;27
+Crafting;0;Hard leather body;idbimg/Hardleather%20body.png;28;35
+Crafting;1;Coif;idbimg/Leather_Coif.png;38;37
+Crafting;1;Studded leather body;idbimg/Studded%20leather%20body.png;41;65
+Crafting;1;Studded leather chaps;idbimg/Studded%20leather%20chaps.png;44;69
+Crafting;1;Green dragon vambraces;idbimg/Green%20dragonhide%20vambrace.png;57;62
+Crafting;1;Snakeskin boots;idbimg/snakeskin_boots.png;45;30
+Crafting;1;Snakeskin vambraces;idbimg/snakeskin_vambraces.png;47;35
+Crafting;1;Snakeskin bandana;idbimg/snakeskin_bandana.png;48;45
+Crafting;1;Snakeskin chaps;idbimg/snakeskin_chaps.png;51;50
+Crafting;1;Snakeskin body;idbimg/snakeskin_body.png;53;55
+Crafting;1;Green dragonhide chaps;idbimg/Green%20dragonhide%20chaps.png;60;124
+Crafting;1;Green dragonhide body;idbimg/Green%20dragonhide%20body.png;63;186
+Crafting;1;Blue dragonhide vambraces;idbimg/Blue%20dragonhide%20vambraces.png;66;70
+Crafting;1;Blue dragonhide chaps;idbimg/Blue%20dragonhide%20chaps.png;68;140
+Crafting;1;Blue dragonhide body;idbimg/Blue%20Dragonhide%20body.png;71;210
+Crafting;1;Red dragonhide vambraces;idbimg/Red%20dragonhide%20vambraces.png;73;78
+Crafting;1;Red dragonhide chaps;idbimg/Red%20dragonhide%20chaps.png;75;156
+Crafting;1;Red dragonhide body;idbimg/Red%20dragonhide%20body.png;77;234
+Crafting;1;Black dragonhide vambraces;idbimg/Black%20dragonhide%20vambrace.png;79;86
+Crafting;1;Black dragonhide chaps;idbimg/Black%20dragonhide%20chaps.png;82;172
+Crafting;1;Black dragonhide body;idbimg/Black%20dragonhide%20body.png;84;258
+Crafting;0;Holy symbol;idbimg/Holy%20Symbol.png;16;50
+Crafting;1;Unholy symbol;idbimg/Unholy%20Symbol.png;16;50
+Crafting;1;Silver sickle;idbimg/Silver%20sickle.png;18;50
+Crafting;0;Tiara;idbimg/tiara.png;23;52.5
+Crafting;1;Opal;idbimg/Uncut%20opal.png;1;15
+Crafting;1;Jade;idbimg/Uncut%20jade.png;13;20
+Crafting;1;Red topaz;idbimg/Uncut%20red%20topaz.png;16;25
+Crafting;0;Sapphire;idbimg/Uncut%20Sapphire.png;20;50
+Crafting;0;Emerald;idbimg/Uncut%20Emerald.png;27;67
+Crafting;0;Ruby;idbimg/Uncut%20ruby.png;34;85
+Crafting;0;Diamond;idbimg/Uncut%20Diamond.png;43;107.5
+Crafting;1;Dragonstone;idbimg/Uncut%20dragonstone.png;55;137.5
+Crafting;1;Onyx;idbimg/nopic.gif;67;00
+Crafting;0;Gold ring;idbimg/Gold%20Ring.png;5;15
+Crafting;0;Gold necklace;idbimg/Necklace_Gold.png;6;20
+Crafting;0;Gold amulet;idbimg/Amulet%20Gold.png;8;30
+Crafting;0;Sapphire ring;idbimg/Ring%20of%20recoil.png;20;40
+Crafting;0;Sapphire necklace;idbimg/Necklace_Sapphire.png;22;55
+Crafting;0;Sapphire amulet;idbimg/Amulet%20of%20magic.png;24;65
+Crafting;0;Emerald ring;idbimg/Ring%20of%20dueling.png;27;55
+Crafting;0;Emerald necklace;idbimg/Necklace_Emerald.png;29;60
+Crafting;0;Emerald amulet;idbimg/Amulet%20of%20defense.png;30;70
+Crafting;1;Amulet of nature;idbimg/amulet_of_nature.png;00;00
+Crafting;0;Ruby ring;idbimg/Ring%20of%20forging.png;34;70
+Crafting;0;Ruby necklace;idbimg/necklace_ruby.png;40;75
+Crafting;0;Ruby amulet;idbimg/Amulet%20of%20Stength.png;50;85
+Crafting;0;Diamond ring;idbimg/Ring%20of%20life.png;43;85
+Crafting;0;Diamond necklace;idbimg/Necklace_Diamond.png;56;90
+Crafting;0;Diamond amulet;idbimg/Amulet%20of%20Power.png;70;100
+Crafting;1;Dragonstone ring;idbimg/Ring%20of%20wealth.png;55;100
+Crafting;1;Dragonstone necklace;idbimg/necklace_dragon.png;72;105
+Crafting;1;Dragonstone amulet;idbimg/Amulet%20of%20glory.png;80;150
+Crafting;1;Onyx Ring;idbimg/ring%20of%20stone.png;67;00
+Crafting;1;Onyx necklace;idbimg/onyx%20necklace.png;82;00
+Crafting;1;Onyx amulet;idbimg/amulet%20of%20fury.png;90;00
+Crafting;1;Molten glass;idbimg/Molten%20Glass.png;3;20
+Crafting;1;Beer glass;idbimg/Beer%20glass.png;3;17.5
+Crafting;1;Candle lantern;idbimg/lantern.png;4;19.5
+Crafting;1;Oil lamp;idbimg/oil_lamp.png;12;25
+Crafting;1;Vial;idbimg/Vial.png;33;35
+Crafting;1;Fish bowl;idbimg/fish_bowl.png;42;00
+Crafting;1;Unpowered orb;idbimg/Unpowered%20Orb.png;46;52.5
+Crafting;1;Lantern lens;idbimg/lens.png;49;55
+Crafting;1;Water battlestaff;idbimg/Staff%20of%20water.png;54;100
+Crafting;1;Earth battlestaff;idbimg/Staff%20ofearth.png;58;112.5
+Crafting;1;Fire battlestaff;idbimg/Fire%20battlestaff.png;63;125
+Crafting;1;Air battlestaff;idbimg/Air%20battlestaff.png;66;137.5
+Crafting;1;Vegetable sack;idbimg/empty_sack.png;21;38
+Crafting;1;Fruit basket;idbimg/basket.png;36;56
+Crafting;1;Snelm helmets;idbimg/Snelm6.png;15;32.5
+Crafting;1;Limestone bricks;idbimg/limestonebrick.png;20;6
+Crafting;1;Broodoo shield;idbimg/tribal_shieldtan.png;35;100

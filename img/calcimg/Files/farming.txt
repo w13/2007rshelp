@@ -1,0 +1,57 @@
+Farming;1;Potato;idbimg/seed_potato.png;1;17
+Farming;1;Onion;idbimg/seed_onion.png;5;20.5
+Farming;1;Cabbage;idbimg/seed_cabbage.png;7;21.5
+Farming;1;Tomato;idbimg/seed_tomato.png;12;26.5
+Farming;1;Sweetcorn;idbimg/seed_sweetcorn.png;20;36
+Farming;1;Strawberry;idbimg/seed_strawberry.png;31;55
+Farming;1;Watermelon;idbimg/seed_watermelon.png;47;103.5
+Farming;1;Marigold;idbimg/seed_marigold.png;2;56.5
+Farming;1;Rosemary;idbimg/seed_rosemary.png;11;79
+Farming;1;Nasturtium;idbimg/seed_nasturtium.png;24;130.5
+Farming;1;Woad;idbimg/seed_woad.png;25;136
+Farming;1;Limpwurm plant;idbimg/seed_limpwurm.png;26;141
+Farming;1;Redberry bush;idbimg/seed_redberry.png;10;77
+Farming;1;Cadavaberry bush;idbimg/seed_cadavaberry.png;22;127.5
+Farming;1;Dwellberry bush;idbimg/seed_dwellberry.png;36;221
+Farming;1;Jangerberry bush;idbimg/seed_jangerberry.png;48;224.5
+Farming;1;Whiteberry bush;idbimg/seed_poisonivy.png;59;545
+Farming;1;Poison ivy bush;idbimg/seed_poisonivy.png;70;839
+Farming;1;Oak(acorn) tree;idbimg/seed_acorn.png;15;485.5
+Farming;1;Willow tree;idbimg/seed_willow.png;30;1481
+Farming;1;Maple tree;idbimg/seed_maple.png;45;3448.5
+Farming;1;Yew tree;idbimg/seed_yew.png;60;7150.5
+Farming;1;Magic tree;idbimg/seed_magic.png;75;13913
+Farming;1;Apple tree;idbimg/seed_appletree.png;27;1229.5
+Farming;1;Banana tree;idbimg/seed_bananatree.png;33;1789.5
+Farming;1;Orange tree;idbimg/seed_orangetree.png;39;2519
+Farming;1;Curry tree;idbimg/seed_curry.png;42;2962
+Farming;1;Pineapple tree;idbimg/seed_pineapply.png;51;4742
+Farming;1;Papaya tree;idbimg/seed_papaya.png;57;6453
+Farming;1;Palm tree;idbimg/seed_palmtree.png;68;10253
+Farming;1;Barley;idbimg/seed_barley.png;3;21
+Farming;1;Hammerstone hops;idbimg/seed_hammerstone.png;4;19
+Farming;1;Asgarnian hops;idbimg/seed_asgarnian.png;8;23
+Farming;1;Jute plant;idbimg/seed_jute.png;13;27.5
+Farming;1;Yanillian hops;idbimg/seed_yanillian.png;16;30.5
+Farming;1;Krandorian hops;idbimg/seed_krandorian.png;21;36.5
+Farming;1;Wildblood hops;idbimg/seed_wildblood.png;28;4
+Farming;1;Guam;idbimg/seed_herb.png;9;24
+Farming;1;Marrentil;idbimg/seed_herb.png;14;28
+Farming;1;Tarromin;idbimg/seed_herb.png;19;34
+Farming;1;Harralander;idbimg/seed_herb.png;26;46
+Farming;1;Goutweed;idbimg/gout_tuber.png;29;105
+Farming;1;Ranarr weed;idbimg/seed_herb.png;32;57
+Farming;1;Toadflax;idbimg/seed_herb.png;38;72.5
+Farming;1;Irit leaf;idbimg/seed_herb.png;44;95
+Farming;1;Avantoe;idbimg/seed_herb.png;50;116
+Farming;1;Kwuarm;idbimg/seed_herb.png;56;151
+Farming;1;Snapdragon;idbimg/seed_herb.png;62;186
+Farming;1;Cadantine;idbimg/seed_herb.png;67;227
+Farming;1;Lantadyme;idbimg/seed_herb.png;73;286.5
+Farming;1;Dwarf weed;idbimg/seed_herb.png;79;362
+Farming;1;Torstol;idbimg/seed_herb.png;85;423.5
+Farming;1;Bittercap mushroom;idbimg/seed_mushroomspore.png;53;98.5
+Farming;1;Cactus plant;idbimg/seed_cactus.png;55;82
+Farming;1;Belladonna(nightshade);idbimg/seed_belladonna.png;63;603
+Farming;1;Calquat tree;idbimg/seed_calquattree.png;72;178
+Farming;1;Spirit tree;idbimg/seed_spirit.png;83;00

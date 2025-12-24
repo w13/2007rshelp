@@ -1,0 +1,982 @@
+ID	Name	Level	Examine
+0	A'abla	0	Trained to deal with all sorts of injuries.
+1	Abbot Langley	0	A holy man.
+2	Aberab	0	A huge brutish gorilla. He looks like a jail guard.
+8	Achey Tree	0	An interesting tree with long straight branches.
+9	Achietties	0	Distinctly heroic.
+10	Advisor Ghrim	0	He probably hasn't smiled since the Third Age.
+11	Aemad	0	He runs the adventurers' shop.
+12	Afflicted(Razmire)	0	A local villager of Mort'ton.
+13	Afflicted(Ulsquire)	0	A local villager of Mort'ton.
+18	Afrah	0	A citizen of Al-Kharid.
+19	Aga	0	A beautiful troll.
+20	Aggie	0	A witch.
+21	Agility Boss	0	He's in charge of the Agility Course.
+22	Agility Trainer	0	A werewolf agility trainer.
+23	Agility Trainer	0	Have you brought him the stick yet?
+24	Agmundi	0	"She seems to be doing rather well for herself, selling clothes in a palace shop."
+25	Agnar	0	One of Rellekka's many citizens.
+28	Ak-Haranu	0	A trader from across the eastern sea.
+29	Al Shabim	0	He's the leader of the Bedabin tribe.
+30	Albatross	0	A sea bird.
+31	Alfonse the waiter	0	"Smartly dressed, and ready to deliver food."
+32	Ali Morrisane	0	A bazaar merchant.
+33	Ali The barman	0	A hassled looking barman.
+34	Ali the Camel Man	0	Ali the discount animal seller.
+35	Ali the Camel	0	A foul tempered ugly lumpy yellow horse prone to spitting.
+36	Ali the Hag	0	An old Hag named Alice.
+37	Ali the Kebab seller	0	A kebab seller.
+38	Ali the Mayor	0	Mayor of Pollnivneach.
+39	Ali the Operator	0	Smooth operator.
+40	Ali the Snake Charmer	0	A snake charmer.
+41	Alice	0	She sells farming equipment.
+43	Almera	0	Nice hair.
+45	Alrena	0	She looks concerned.
+47	Aluft Gianne	0	It's a tree gnome chef.
+48	Ana	0	She looks like a tourist.
+49	Ana	0	Stuffed.
+51	Anita	0	Glough's girlfriend.
+52	Anna	0	She's dressed in a red top and green trousers.
+55	Apothecary	0	A dealer in potions.
+56	Archaeological expert	0	An expert on archaeology.
+57	Archaeologist	0	Hardened by the cutthroat world of archaeology.
+58	Archer	0	She looks quite experienced.
+61	Arhein	0	He looks fairly well-to-do.
+62	Arianwyn	0	An odd looking person.
+63	Armour salesman	0	Supplier of Rangers armour.
+66	Arzinian Avatar of Magic	0	"It is the avatar of the Arzinian Being of Bordanzan, representing magic."
+69	Arzinian Avatar of Ranging	0	"It is the avatar of the Arzinian Being of Bordanzan, representing ranging."
+72	Arzinian Avatar of Strength	0	"It is the avatar of the Arzinian Being of Bordanzan, representing strength."
+76	Ash	0	Human is his speciality.
+78	Askeladden	0	Looks like a wanna be Fremennik.
+79	Assistant	0	"Library assistant, to be exact."
+82	Aubury	0	Runes are his passion.
+83	Audmann	0	He seems to be very well off.
+84	Awowogei	0	A rather dapper little monkey.
+85	Azzanadra	0	A Mahjarrat warrior.
+89	Bailey	0	He smells of fish...
+90	Baker	0	So where are the butcher and the candlestick maker?
+91	Bald Headed Eagle	0	A big birdy.
+93	Bandit Leader	0	Leads the Bandits.
+94	Bandit shopkeeper	0	I guess he sells what he steals...?
+95	Bandit	0	A tough-looking criminal.
+101	Banker	0	A financial expert.
+102	Banker	0	A rather personable banker lady.
+103	Banker	0	A rather serious old fella.
+104	Banker	0	Good with money.
+105	Banker	0	He can look after my money.
+106	Banker	0	He seems happy to see you.
+107	Banker	0	Looks after your money.
+108	Banker	0	Manages money momentarily.
+110	Baraek	0	Animal skins are a speciality.
+111	Barbarian guard	0	Not very civilised looking.
+116	Barker	0	Has a distinguished air about him.
+117	Barmaid	0	These Dwarf ladies are so attractive!
+118	Barman	0	Doesn't water down the beer too much.
+119	Barman	0	He serves cocktails.
+120	Barman	0	Makes a living off his tips I'm sure.
+121	Barricade	0	A spiky barricade.
+122	Bartender	0	I could get a beer from him.
+123	Bartender	0	Looks like a rough and ready type.
+133	Bed	0	"It's a fairly ordinary bed, but..."
+135	Bedabin Nomad Guard	0	A bedabin nomad guard - it looks like he's protecting an area.
+136	Bedabin Nomad	0	"A bedabin nomad, they live in the harshest extremes in the desert."
+137	Beggar	0	He looks very hungry...
+138	Bentamir	0	This dwarf doesn't seem to be very well off.
+140	Betty	0	She seems like a nice sort of person.
+141	Big Dave	0	I can see how he got his name.
+142	Big fish	0	A big fish with a bigger mouth.
+145	Billy Rehnison	0	The Rehnisons' eldest son.
+146	Billy	0	Billy is a baahd goat.
+150	Bjorn	0	Looks like he's having fun!
+153	Black Guard Berserker	0	A dwarven enforcer.
+158	Black Knight	0	One of the Black Knights.
+162	Blasidar the sculptor	0	Makes sculptures.
+165	Bloated Toad	0	A green skinned croaker.
+170	Blue Opal Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+171	Blue Opal Secretary	0	The head secretary of the Blue Opal mining company.
+172	Blurberry	0	He seems to run the cocktail bar.
+173	Bob	0	An expert on axes.
+174	Bob	0	He's dressed all in red.
+175	Bob	0	The Jagex cat.
+176	Bolkoy	0	It's a tree gnome.
+177	Bonzara	0	A small monkey dressed in purple clothes. He looks like a priest.
+178	Bonzo	0	The Fishing Contest judge.
+179	Boot	0	A short angry guy.
+180	Border Guard	0	Guards the border.
+182	Boulder	0	I wonder what this is doing here.
+183	Boulder	0	Precariously balanced....
+185	Bow and Arrow salesman	0	Supplier of Archery equipment.
+186	Boy	0	A sad looking child...
+187	Bravek	0	The city warder of West Ardougne.
+189	Brian O'Richard	0	Head of the maze.
+190	Brian	0	An expert on axes.
+191	Brian	0	He sells ranging equipment.
+192	Brimstail	0	Small but powerful.
+194	Broken clay golem	0	An animated clay statue with a lot of clay missing.
+196	Bronze pickaxe	0	Useful for hitting rocks.
+197	Brother Brace	0	A holy man.
+198	Brother Cedric	0	An old drunk monk.
+199	Brother Jered	0	A holy man.
+200	Brother Kojo	0	A peaceful monk.
+201	Brother Omad	0	An old monk.
+202	Brown Engine Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+203	Brown Engine Secretary	0	The head secretary of the Brown Engine mining company.
+205	Brundt the Chieftain	0	The Fremennik tribe's chieftain.
+206	Bugs	0	This must be Rantz's son.
+207	Bunkdo	0	A seasoned looking Gnome foot soldier.
+208	Bunkwicket	0	This Gnome is busy applying some kind of pasty material to the cave walls.
+210	Burntmeat	0	Human is his speciality.
+211	Butler Jones	0	The Carnillean family butler.
+212	Butterfly	0	Flutter by oh butterfly.
+213	Butterfly	0	I love butterflies.
+214	Butterfly	0	It's a Blue Morpho Butterfly.
+215	Butterfly	0	It's a Tiger Swallowtail Butterfly.
+216	Butterfly	0	It's a Viceroy Butterfly.
+217	Butterfly	0	These look much better in the wild.
+218	Cabin Boy Jenkins	0	His job is to keep the ship in tip-top condition!
+219	Caleb	0	A well dressed nobleman.
+220	Camel	0	"Oh, it's a camel."
+223	Candle maker	0	Has an odd smell about him.
+224	Candle seller	0	Has an odd smell about him.
+225	Cap'n Izzy No-Beard	0	Entrance clerk for the Brimhaven Agility Arena.
+226	Capt' Arnav	0	Distinctly piratey.
+227	Captain Barnaby	0	An old sailor.
+228	Captain Rovin	0	The head of the palace guard.
+229	Captain Shanks	0	He's the Captain of the 'Lady of the Waves'.
+230	Captain Siad	0	He's in control of the whole mining camp.
+231	Captain Tobias	0	An old sea dog.
+232	Carado	0	A seasoned looking Gnome foot soldier.
+233	Carla	0	She looks upset.
+234	Carol	0	She's wearing a blue top and red trousers.
+235	Caroline	0	She looks very worried about something.
+236	Carpenter	0	A block of a man.
+237	Cart conductor	0	He makes sure the carts don't run anyone over.
+238	Cart conductor	0	Keeps the line clear of traffic.
+239	Cart conductor	0	Remember: don't drink and ride in mine carts.
+240	Cassie	0	Nice eyes.
+241	Cat	0	A fully grown feline.
+242	Cave bug larva	0	A little slimy beetle-thing.
+250	Cave monk	0	Unsurprisingly monk like.
+253	Ceril Carnillean	0	Head of the Carnillean household.
+254	Chadwell	0	Shop keeper.
+255	Chaeldar	0	She looks dangerous!
+256	Chamber guardian	0	He hasn't seen much sun lately.
+257	Chancy	0	He's ready for a bet.
+261	Charlie the cook	0	Distinctly cook-like.
+262	Charlie	0	"Poor guy, he looks frightened."
+263	Cheerleader	0	Cheerleading is a real sport!
+264	Chemist	0	Smells very chemically...
+265	Chicken	0	A strange chicken.
+268	Child	0	One of RuneScape's many citizens.
+269	Chompy bird	0	"A once boisterous bird, closer to being an ogre delicacy."
+274	Civilian	0	A citizen of Ardougne.
+275	Claus the chef	0	The Carnillean family chef.
+276	Clay golem	0	An animated clay statue.
+277	Clerk	0	A bureaucratic administrator.
+282	Commander Montai	0	It's a tree gnome.
+283	Commander Veldaban	0	"Veldaban, Commander of the Black Guard in Keldagrim."
+284	Competition Judge	0	Overseer of the Archery competition.
+285	Cook	0	Human is his speciality.
+286	Cook	0	The head cook of Lumbridge castle.
+287	Cormorant	0	A sea bird.
+288	Corpse	0	Well at least he doesn't have to worry about getting black lung.
+289	Council workman	0	Supposedly fixes things around RuneScape.
+290	Councillor Halgrive	0	An official of Ardougne.
+299	Crate	0	Can I hear kittens?
+309	Crone	0	A crone.
+310	Crow	0	Farmers' enemy...
+313	Curator	0	He runs the museum.
+314	Curpile Fyod	0	"A typical, if overly heavy handed, jobs worth guard."
+315	Customer	0	A customer looking for books.
+316	Customer	0	Looks like a human traveler visiting the library.
+317	Customs officer	0	Inspects peoples' packages.
+319	Cyreg Paddlehorn	0	A tall and imposing man who's more than familiar with boating.
+320	Da Vinci	0	He has a colourful personality.
+322	Daero	0	Daero gives off an easy sense of authority.
+323	Daga	0	A shrewd-looking monkey swordsmith.
+328	Dalal	0	A citizen of Al-Kharid.
+329	Damaged clay golem	0	An animated clay statue with some clay missing.
+332	Dark mage	0	A dark magic user.
+333	Dark mage	0	An initiate of Zamorak.
+337	Darren	0	A very brave merchant.
+338	David	0	He's dressed all in green.
+339	Davon	0	An amulet trader.
+340	Dead tree	0	It's only useful for firewood now.
+341	Dead tree	0	This tree has long been dead.
+347	Denadu	0	"A small, well dressed monkey clasping a mace. He looks like a priest."
+348	Denulth	0	Commander of the Imperial Guard.
+349	Derni	0	He seems deeply engaged in conversation with his fellow boatmen.
+350	Dernu	0	He seems deeply engaged in conversation with his fellow boatmen.
+351	Derrik	0	Smithy for Sogthorpe.
+352	Desert Phoenix	0	Definitely not a chicken.
+357	Diango	0	He smells funny.
+358	Digsite workman	0	This person is working on the site.
+359	Dimintheis	0	A well dressed nobleman.
+361	Doctor Orbon	0	A serious-looking doctor.
+362	Dog	0	Bow wow.
+363	Dommik	0	"If crafting's your thing, he's your man!"
+364	Dondakan the Dwarf	0	"A short, old and gold loving guy."
+365	Donie	0	A local farmer. She may be able to provide some useful information.
+367	Donovan the Family Handyman	0	He looks very tired...
+369	Door man	0	What a boring job he has.
+370	Doric	0	A dwarf smith. Quite handy with a hammer.
+371	Dr Fenkenstrain	0	Dr Fenkenstrain I presume.
+372	Dr Harlow	0	A retired vampire hunter.
+373	Dramen tree	0	An ancient magical tree.
+374	Drezel	0	A holy man.
+375	Drogo dwarf	0	He runs a mining store.
+376	Dromund	0	What an eccentric little fellow!
+377	Dromund's cat	0	Very protective of his master... and his property.
+379	Drunken Ali	0	Drunk man.
+380	Drunken Dwarf	0	He's had a fair bit to drink...
+385	Dugopul	0	A large hairy monkey with a spade.
+386	Duke Horacio	0	Duke Horacio of Lumbridge.
+388	Dung	0	Human is his speciality.
+391	Dunstan	0	Smithy for Burthorpe.
+392	Duradel	0	He looks dangerous!
+394	Dwarf Commander	0	He guards the mines.
+398	Dwarf youngster	0	A young Dwarf lad.
+399	Dwarf	0	A dwarf who looks after the mining guild.
+400	Dwarf	0	I wonder if he wants to buy my junk?
+404	Dwarven Boatman	0	He seems to be in charge of the ship on the river.
+405	Dwarven Boatman	0	His ship miraculously survived the crash into the statue earlier.
+406	Dwarven Boatman	0	"You cannot see his ship, but presumably he has one."
+407	Dwarven Engineer	0	A short angry guy.
+408	Dwarven Ferryman	0	It's probably you who will be paying the ferryman.
+409	Dwarven Miner	0	He carries a heavy load.
+410	Dwarven Miner	0	He's delivered his ores.
+412	Eadgar	0	A rather mad looking hermit.
+415	Easter Bunny	0	Cute and friendly.
+416	Eblis	0	A very distinguished looking man.
+418	Edmond	0	A local civilian.
+419	Edmond	0	A very brave merchant.
+420	Edward	0	A very brave merchant.
+422	Elder Guard	0	"A huge brutish gorilla stands here, blocking the way."
+423	Eldgrim	0	He's only as think as you drunk he is!
+424	Elf Tracker	0	An elf tracker.
+425	Elf warrior	0	He looks pretty handy with that bow.
+428	Elissa	0	An old archaeologist.
+429	Elizabeth	0	She's wearing a green top and blue trousers.
+430	Elkoy	0	It's a tree gnome.
+431	Eluned	0	Wow - the prettiest elf I have ever seen.
+433	Elven city guard	0	An elven city guard.
+434	Embalmer	0	A strange-smelling merchant.
+435	Emerald Benedict	0	A rich banker man... Some say too rich.
+436	Emily	0	Works in the Rising Sun.
+439	Eohric	0	Head servant for Prince Anlaf.
+440	Ernest	0	A former chicken.
+441	Escaping slave	0	He's making a break for it!
+442	Essyllt	0	An elven war band leader.
+443	Evergreen	0	A hardy evergreen tree.
+444	Evergreen	0	This would make good firewood.
+445	Examiner	0	Upon examining the examiner you examine it is indeed an examiner!
+448	Factory Manager	0	Looks after the factory.
+449	Factory Worker	0	Works hard at whatever it is he does.
+450	Fadli	0	Looks kinda bored.
+451	Fairy Queen	0	Looks otherworldy...
+452	Fairy shop assistant	0	Sells stuff.
+453	Fairy shop keeper	0	Sells stuff.
+454	Fairy	0	A delicate creature from this strange realm.
+455	Fairy	0	Looks strange and mysterious.
+456	Fancy dress shop owner	0	For the interesting clothing items you just can't find elsewhere.
+458	Farmer Brumty	0	A farmer who's seen happier times.
+459	Farmer	0	Farming the wheat.
+460	Farmer	0	Farming.
+461	Farmer	0	He's cutting the wheat.
+463	Fat Tony	0	An expert on Pizzas. Both making and eating.
+464	Father Aereck	0	Looks a bit holy.
+465	Father Lawrence	0	A religious man... And occasional drunk.
+466	Father Urhney	0	Looks very holy.
+467	Female slave	0	She looks like she's been down here a long time.
+468	Femi	0	A gnome trader.
+469	Fenkenstrain's Monster	0	A hideous mix of human flesh.
+470	Fernahei	0	This is Fernahei - he owns the local fishing tackle shop.
+471	Fidelio	0	A lycanthrope shopkeeper.
+472	Fightslave	0	A fightslave. He looks mistreated and weak.
+473	Filliman Tarlock	0	The animated spirit of a soul not at rest.
+474	Financial Advisor	0	An official representative from the First National Bank of RuneScape.
+475	Fionella	0	She sells general items at the Legends Guild.
+479	Fish monger	0	Fish-tastic!
+480	Fisherman Frodi	0	There's something fishy about him.
+481	Fisherman	0	He smells of salty fish.
+482	Fisherman	0	It's a fisherman.
+483	Fisherman	0	Something fishy about him...
+484	Fisherman	0	There's something fishy about this guy.
+485	Fishing spot	0	I can fish here.
+486	Fishing spot	0	I can see eels swimming in the lava.
+487	Fishing spot	0	I can see fish swimming in the water.
+488	Fishing spot	0	I can see 'things' swimming in the water.
+489	Fishing spot	0	Something dark green is lurking in these waters.
+490	Fishing spot	0	There are brightly coloured fish swimming in the water.
+491	Fishmonger	0	"Hmm, he smells."
+494	Flower Girl	0	No-one would mistake her for a duchess.
+495	Fly trap	0	No flies on me.
+496	Flynn	0	The mace salesman.
+497	Foreman	0	The boss!
+499	Forester	0	He likes to cut down trees.
+502	Fossegrimen	0	A powerful spirit that lives in this lake.
+503	Fox	0	Foxy.
+504	Frank	0	He's dressed all in blue.
+505	Fred the Farmer	0	A well fed looking farmer.
+507	Frenita	0	A recipe for success...in cooking.
+509	Fridgeir	0	A music lover?
+510	Frincos	0	Kind of funny looking.
+511	Frog	0	It eats flies.
+512	Fur trader	0	I wonder what he does with all that fur?
+513	Fur trader	0	Knows how to keep warm in the winter.
+514	Fycie	0	This must be Rantz's daughter.
+515	G.L.O. Caranock	0	An official looking Gnome with small beady eyes.
+516	Gaius	0	"Ironically, makes a living from swords."
+517	Galahad	0	A former Knight of the Round Table.
+518	Gardener Ghost	0	He must find gardening difficult since the accident.
+519	Gardener Gunnhild	0	She's looking a bit weedy.
+521	Gargh	0	An ogre hunting chompies.
+523	Garkor	0	A large and weathered looking Gnome veteran.
+524	Garv	0	A diligent guard.
+525	Gauss	0	"A beer drinking dwarf that is, for once, not totally drunk."
+526	Gee	0	A local farmer. He may be able to provide some useful information.
+527	Gem merchant	0	Seems very well off.
+528	Gem trader	0	Makes his money selling rocks.
+529	General Bentnoze	0	An ugly green creature.
+530	General Hining	0	Leader of King Tyras's men.
+532	General Wartface	0	An ugly green creature.
+533	Genie	0	Maybe he'll grant me a wish...
+534	Gerald	0	Looks suspiciously like a fisherman.
+535	Gerrant	0	An expert on fishing.
+536	Gertrude	0	A busy housewife.
+537	Gertrude's cat	0	A friendly feline?
+538	Ghast	0	Arrghhh... A Ghast.
+541	Ghost Banker	0	A ghost banker.
+542	Ghost Captain	0	A Ghostship Captain.
+543	Ghost Disciple	0	A ghost disciple.
+544	Ghost Farmer	0	A spooky ghost farmer.
+545	Ghost Guard	0	This ghost guards the gates of Port Phasmatys.
+546	Ghost Innkeeper	0	Doesn't look like the bar's open anymore.
+547	Ghost Sailor	0	A ghost sailor.
+548	Ghost Shopkeeper	0	Beware the ghostly shopkeeper's wares!
+549	Ghost Villager	0	A spooky ghost villager.
+555	Giant bat	0	Annoying flappy thing.
+566	Glough	0	A rough looking gnome.
+567	Gnome ball referee	0	Keeps the game fair.
+568	Gnome baller	0	A professional gnome baller.
+569	Gnome banker	0	Banks gnomish things.
+571	Gnome emissary	0	Apparantly negotiating some business with the Red Axe.
+573	Gnome pilot	0	He can fly the glider.
+574	Gnome shop keeper	0	Sells gnomish things.
+575	Gnome trainer	0	He can advise on training.
+576	Gnome traveller	0	"A gnome traveller, visiting Keldagrim."
+579	Gnome Waiter	0	He can serve you gnome food.
+580	Gnome winger	0	A professional gnome baller.
+586	Gnormadium Avlafrim	0	Enthusiastic gnome construction engineer.
+591	Godric	0	Dunstan's son.
+592	Golden sheep	0	Freshly shorn.
+593	Golden sheep	0	Lovely thick wool.
+595	Golrie	0	It's a tree gnome
+596	Golrie	0	No longer locked in his own cage.
+599	Gossip	0	One of those people who love to gossip!
+600	Grail Maiden	0	She looks serene.
+601	Grandpa Jack	0	He looks elderly.
+603	Gravingas	0	This ghost looks quite rebellious.
+606	Green Gemstone Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+607	Green Gemstone Secretary	0	The head secretary of the Green Gemstone mining company.
+608	Greengrocer	0	At least he eats his greens.
+609	Greldo	0	An ugly green creature.
+610	Grew	0	Very probably an ogre.
+612	Grish	0	An ogre shaman
+616	Grubor	0	A rough looking thief.
+617	Grug	0	They're done for!
+618	Gruh	0	An ogre hunting chompies.
+619	Grum	0	Loves his gold!
+622	Guard	0	An officer of the Law.
+623	Guard	0	He seems to be guarding a pile of rocks. Interesting job.
+624	Guard	0	He seems to be guarding a single rock. Interesting job.
+625	Guard	0	He tries to keep order around here.
+626	Guard	0	He's guarding the goutweed.
+627	Guard	0	He's guarding the storeroom.
+628	Guard	0	He's guarding the throne room.
+629	Guard	0	On special duty to protect the Carnilleans.
+630	Guard	0	Stands around and looks at stuff all day.
+631	Guard	0	Stands around and looks tough all day.
+640	Guidor	0	He's not that ill.
+641	Guidor's wife	0	She looks rather concerned.
+642	Guild master	0	Master of the guild.
+643	Gujuo	0	"A dark, charismatic jungle native."
+644	Gull	0	A sea bird.
+645	Gulldamar	0	He has lots of silver on display. And only silver.
+646	Gulluck	0	He sells weapons.
+647	Gundai	0	He must get lonely out here.
+648	Gunnjorn	0	He maintains this agility course
+649	Gunslik	0	Proprietor of Gunslik's Assorted Items.
+652	Gypsy	0	An old gypsy lady.
+653	H.A.M. Deacon	0	A deacon in the Humans Against Monsters group. A rather enthusiastic chap.
+657	H.A.M. Member	0	A member of the 'Humans Against Monsters' group.
+658	Hadley	0	Could do with losing a bit of weight.
+659	Haera	0	A bickering old dwarf.
+660	Hafuba	0	"A huge gorilla, head priest of this temple."
+661	Hairdresser	0	Anyone fancy a trim?
+662	Hajedy	0	"A cart driver, it looks like he's quite experienced."
+665	Hamab	0	A female monkey skilled in crafting.
+666	Hamal the Chieftain	0	The chieftain of the mountain camp.
+667	Hamid	0	A holy man.
+669	Hammerspike Stoutbeard	0	He looks quite independent in an aggressive and business like way.
+670	Hans	0	Servant of the Duke of Lumbridge.
+671	Harold Evans	0	Hot headed big built youth who trained in the militia.
+672	Harold	0	An off-duty Burthorpe Castle guard.
+673	Harry	0	Something fishy about him.
+674	Hassan	0	The chancellor to the Emir.
+675	Haze	0	A strange disturbance in the air.
+678	Hazelmere	0	An ancient looking gnome.
+679	Head chef	0	"Despite his name, rarely actually cooks heads."
+680	Head mourner	0	In charge of people with silly outfits.
+682	Heckel Funch	0	It's another jolly tree gnome.
+683	Hegir	0	A bickering old dwarf.
+684	Helemos	0	A retired hero.
+687	Hengrad	0	He looks mistreated and weak.
+688	Henryeta Carnillean	0	Ceril Carnilleans' wife.
+690	Herquin	0	Seems very well-off.
+691	Hervi	0	"A gem stall owner, with goods from the deepest of mines."
+693	Hetty	0	An old motherly witch with a curious smile and a hooked nose.
+694	Hickton	0	A master fletcher.
+695	High Priest	0	A very priestly man.
+696	High Priest	0	High Priest of Entrana.
+698	Hild	0	Pretty young woman with an air of mystery around her.
+700	Hobbes	0	He looks kind of stuck up...
+703	Hole in the wall	0	What could be hiding in that crack in the wall?
+704	Holgart	0	A very good sailor.
+705	Hollow tree	0	It's hollow...
+707	Hops	0	He's drunk.
+708	Horacio	0	Could do with losing a few pounds.
+709	Horvik	0	The man with the armour.
+710	Hudo	0	It's another jolly tree gnome.
+711	Hudon	0	Looks young.
+713	Ian	0	A very brave merchant.
+715	Ice block	0	A troll frozen in a block of ice.
+719	Ice troll	0	An ice troll.
+729	Icthlarin	0	A jackal headed demi-god.
+730	Idris	0	An elven hunting party leader.
+731	Ifaba	0	A general store type of monkey.
+732	Ilfeen	0	A female elf.
+733	Ima	0	A citizen of Al-Kharid.
+739	Inn Keeper	0	A keeper of the Inn.
+740	Inn Keeper	0	"A rich landlord, fat and jolly."
+741	Innocent looking key	0	A shiny key sitting quietly on a crate.
+743	Irena	0	A resident of Al-Kharid.
+744	Irksol	0	Is he invisible or just a set of floating clothing?
+747	Irwin Feaselbaum	0	A young assistant necromancer.
+748	Islwyn	0	An elven bowyer.
+749	Ivan Strom	0	A member of the Myreque and an aspiring young priest.
+751	Jadid	0	A citizen of Al-Kharid.
+754	Jaraah	0	Has the messy job of putting players back together again.
+755	Jatix	0	He runs the Herblore Shop.
+756	Jeed	0	A citizen of Al-Kharid.
+764	Jeremy Servil	0	A young squire. He looks worse for wear.
+765	Jerico	0	He looks friendly enough.
+766	Jethick	0	A cynical old man.
+767	Jiminua	0	Goods for sale and trade!
+768	Jimmy the Chisel	0	A young man with a dark and mysterious past.
+769	Joe	0	A fightslave. He looks mistreated and weak.
+770	Joe	0	Lady Keli's head guard.
+772	Johanhus Ulsbrecht	0	The leader of the 'Humans Against Monsters' group.
+773	Johnathon	0	A well dressed nobleman.
+774	Jokul	0	He seems to be minding the goats.
+776	Joshua	0	He loves to fish!
+777	Jossik	0	Apparently he keeps a lighthouse.
+778	Jossik	0	Looks like he's in trouble...
+779	Jukat	0	A being from a mysterious other realm.
+780	Juliet	0	"A tearful damsel, maybe I can help her?"
+781	Juna	0	An ancient giant serpent.
+783	Jungle Forester	0	He deals in exotic types of wood.
+784	Jungle Forester	0	She deals in exotic types of wood.
+789	Jungle Tree	0	This is a fairly tall tree with sparse foliage.
+791	Justin Servil	0	Jeremy's father Sir Servil.
+792	Kaleb Paramaya	0	This is Kaleb Paramaya - a warm and friendly inn owner.
+794	Kalphite Larva	0	I don't think insect repellent will work...
+799	Kalron	0	He looks lost.
+800	Kamen	0	This dwarf looks intoxicated.
+802	Kanel	0	One of Gertrude's sons.
+803	Kangai Mau	0	A happening kind of guy!
+804	Kaqemeex	0	A wise druid.
+805	Karam	0	All you see is a glimmer of light and the suggestion of shadow.
+806	Kardia	0	A dark and evil crone.
+808	Karim	0	Kebabs are full of meaty goodness!
+809	Karl	0	"A short, merry guy."
+810	Katrine	0	An empowered woman.
+811	Kazgar	0	He's standing guard.
+812	Kelvin	0	A fightslave. He looks mistreated and weak.
+813	Kennith	0	He looks very scared.
+814	Kent	0	He looks very tired and hungry.
+815	Kharid Scorpion	0	Looks vicious!
+816	Khazard barman	0	A tough looking barman.
+824	"Khorvak, a dwarven engineer"	0	The little guy is having trouble standing up right.
+825	Kilron	0	He looks shifty.
+826	King Arthur	0	Legendary King of the Britons.
+828	King Bolren	0	It's a gnome.  He looks important.
+829	King Lathas	0	King Lathas of East Ardougne.
+830	King Narnode Shareen	0	An important looking gnome.
+831	King Percival	0	A former Knight of the Round Table.
+832	King Roald	0	Varrock's resident monarch.
+835	King Vargas	0	He's in no state to rule a kingdom.
+836	Kings messenger	0	One of King Lathas' messengers.
+837	Kitten	0	A friendly little pet.
+838	Kitten	0	It looks lost.
+839	Kjut	0	His kebabs certainly smell delicious.
+840	Klank	0	A dwarven maker of gauntlets.
+841	Klarense	0	A young sailor.
+842	Klenter	0	A rather transparent character.
+845	Knight	0	You'd need a tin opener to get him out.
+846	Koftik	0	The cave guide.
+847	Kolodion	0	He runs the mage arena.
+848	Kolodion	0	He's a shape shifter.
+850	Kortan	0	He helps to run the adventurers' shop.
+851	Koschei the deathless	0	Your challenge awaits!
+856	Lady Keli	0	An infamous bandit.
+857	Lady Servil	0	She looks wealthy.
+858	Lady Table	0	An observer for the Temple Knights.
+859	Lalli	0	Distinctly troll shaped.
+860	Lanthus	0	He must run this place.
+863	Larrissa	0	A fremennik girl.
+864	Larry	0	A very brave merchant.
+865	Leatherworker	0	An expert leatherworker.
+867	Leela	0	She comes from Al-Kharid.
+868	Legends Guard	0	"A Legends Guild Guard, he protects the entrance to the Legends Guild."
+872	Librarian	0	He takes care of the library and its many books.
+873	Light creature	0	A shimmering creature of blue light.
+874	Light creature	0	That one is carrying someone!
+875	Linen Worker	0	A dedicated follower of fashion.
+877	Loading crane	0	Those are some of the biggest teeth I've ever seen.
+880	Local Gnome	0	It's a young tree gnome.
+881	Local	0	A scruffy looking chap.
+883	Lofu	0	"A small, well dressed monkey clasping a mace. He looks like a priest."
+884	Longhall Bouncer	0	"He's fat, he's round, he bounces on the ground. That's how he got the job."
+885	Lord Daquarius	0	Wears a stylish suit of armour.
+886	Lord Iban	0	The great and dreadful Lord Iban
+887	Lord Iorwerth	0	An elf lord.
+888	Lord Rologarth	0	It looks like he has got his castle back at last.
+889	Louie Legs	0	For the finest in armoured legware.
+890	Louisa	0	She looks like she enjoys her job.
+891	Lowe	0	Sells arrows.
+892	Lubufu	0	A crotchety old fisherman who doesn't like young whippersnappers.
+893	Lucien	0	He walks with a slight limp.
+895	Lucy	0	Pretty barmaid.
+896	Lumberjack Leif	0	"He's a lumberjack, and he's okay."
+897	Lumbridge Guide	0	He provides new players with useful information.
+898	Lumdo	0	A seasoned looking Gnome foot soldier.
+899	Lumo	0	A seasoned looking Gnome foot soldier.
+900	Lundail	0	He sells rune stones.
+901	Lunderwin	0	Smells strangely of cabbage.
+902	Luthas	0	The owner of the banana plantation.
+903	Mad skavid	0	Looks mad.
+904	Mage of Zamorak	0	A disciple of Zamorak.
+906	Magic Instructor	0	A Master of Magics.
+907	Magic Store owner	0	A Supplier of Magical items.
+908	Magic tree	0	The tree shimmers with a magical force.
+909	Make-over mage	0	Master of the mystical make-over.
+910	Malak	0	One of Morytania's vampiric nobility.
+911	Male slave	0	It looks like he's been here a long time.
+913	Man	0	A well dressed nobleman.
+914	Man	0	One of RuneScape's many citizens.
+919	Manni the Reveller	0	Every innkeeper's best friend!
+920	Maple tree	0	I bet this makes good syrup!
+923	Market seller	0	A market stall keeper.
+924	Martha Rehnison	0	A fairly poor looking woman.
+925	Martin Thwait	0	A loveable rogue.
+926	Mary	0	She looks very nervous...
+927	Master Chef	0	An expert on all things culinary.
+928	Master Crafter	0	He's in charge of the Crafting Guild.
+929	Master Farmer	0	A master at farming.
+930	Master fisher	0	The man in charge of the fishing guild.
+932	Mazchna	0	He looks dangerous!
+934	Megan	0	Pretty barmaid.
+936	Menaphite Leader	0	Leader of the Menaphites.
+940	Merlin	0	A powerful Wizard of the Knights of the Round Table.
+941	Milli Rehnison	0	She doesn't seem very happy.
+942	Mime	0	A mute performer.
+943	Mine cart driver	0	He looks busy attending to his cart.
+944	Mine cart	0	"Big, metal, and wheeled."
+945	Miner Magnus	0	He's just mining his own business.
+946	Mining Instructor	0	An expert on mining related skills.
+947	Miodvetnir	0	He seems deeply engaged in conversation with his fellow boatmen.
+948	Mischievous Ghost	0	That ghost looks like he's up to something.
+949	Miss Cheevers	0	An observer for the Temple Knights.
+950	Mist	0	A billowing cloud of fine mist...it looks creepy.
+952	Mistag	0	He looks like he's in charge of the miners.
+954	Monk of Entrana	0	Holy looking.
+959	Monk	0	He looks holy.
+964	Monkey Child	0	An adorable little monkey child.
+967	Monkey Minder	0	He looks like the type of guy who would mind monkeys.
+971	Monkey	0	Perhaps our oldest relatives?
+978	Morgan Le Faye	0	An evil and powerful sorceress.
+979	Morgan	0	He looks scared.
+980	Morris	0	He checks the entrants to the Fishing Contest.
+981	Mort'ton local	0	A local villager of Mort'ton.
+982	Morvran	0	An elven warrior.
+983	Mosol Rei	0	A warrior from Shilo Village.
+986	Mountain Dwarf	0	He looks short and grumpy.
+987	Mountain Goat	0	Looks a little underfed.
+988	Mountain Goat	0	This beast doesn't need climbing boots.
+989	Mountain Goat	0	This goat belongs to the mountain camp people.
+994	Mourner	0	"A mourner, or plague healer."
+1000	Mouse	0	Deceptively mouse shaped.
+1001	Ms. Hynn Terprett	0	An observer for the Temple Knights.
+1002	Mubariz	0	Tough looking combat type.
+1004	Mummy	0	Highly flammable!
+1011	Murphy	0	Salty old sea dog.
+1012	Muruwoi	0	A smartly clothed large monkey.
+1013	Mushroom	0	He's fast asleep.
+1014	Myndill	0	"A dwarf, wandering the streets of Keldagrim."
+1017	Mysterious Old Man	0	A very strange old man...
+1018	Nature Spirit	0	A spirit of Nature.
+1024	Necrovarus	0	An evil priest.
+1025	Ned	0	An old sailor.
+1026	Neil	0	A very brave merchant.
+1027	Neite	0	A graceful feline.
+1029	Niloof	0	A strong and hardy dwarf.
+1030	Nolar	0	A crafty dwarf.
+1031	Nora T. Hagg	0	Distinctly witchey.
+1032	Noterazzo	0	The lawless shop keeper.
+1033	Nulodion	0	The Dwarven armoury engineer.
+1034	Nurmof	0	He runs a pickaxe store.
+1035	Nurse Sarah	0	She's quite a looker!
+1036	Oak	0	A beautiful old oak.
+1037	Obli	0	An intelligent-looking shop owner.
+1038	Observatory assistant	0	He helps the professor.
+1039	Observatory professor	0	A learned man in the ways of the stars.
+1043	Odmar	0	"A dwarf, wandering around Keldagrim."
+1044	Og	0	A senior member of the ogre community.
+1046	Ogre guard	0	An ogre that guards.
+1056	Olaf the Bard	0	A Fremennik bard.
+1057	Old crone	0	An old cranky lady.
+1058	Old man	0	A creaky old man.
+1059	Olivia	0	She's a seed merchant.
+1060	Omart	0	A nervous looking fellow.
+1062	Oracle	0	A mystical fount of knowledge.
+1064	Osman	0	He looks a little shifty.
+1065	Ospak	0	Looks like he's had a few drinks already.
+1069	Overgrown cat	0	A friendly not-so little pet.
+1070	Oziach	0	A strange little man.
+1074	Panning guide	0	A specialist in panning for gold.
+1075	Parrots	0	What a colourful bunch of parrots!
+1076	Parroty Pete	0	He seems strangely familiar...
+1077	Party Pete	0	He likes to paaaarty!
+1078	Peasant	0	He looks happy...
+1079	Peasant	0	He looks unhappy...
+1081	Peer the Seer	0	A Fremennik riddler.
+1082	Peksa	0	Always up to date with the latest fashions in helmets.
+1086	Phantuwti Fanstuwi Farsight	0	A slightly more eccentric seer.
+1087	Philipe Carnillean	0	The newest member of the Carnillean family.
+1088	Philop	0	One of Gertrude's sons.
+1091	Pierre	0	His job doesn't look very fun...
+1092	Pig	0	Porker.
+1093	Pig	0	Swine.
+1094	Piglet	0	Hog.
+1095	Piglet	0	"I shall call him ""mini-pig""."
+1096	Piglet	0	Porcine.
+1097	Pilg	0	They're done for!
+1099	Pirate Jackie the Fruit	0	Ticket trader for the Brimhaven Agility Arena.
+1106	Plagued Cow	0	I don't fancy eating any part of this.
+1107	Plagued Cow	0	I might give the burgers a miss in this town.
+1108	Plagued Cow	0	It's a sick-looking cow.
+1109	Poison Salesman	0	He sure likes to sell stuff!
+1113	Polmafi Ferdygris	0	A member of the Myreque and intellectual assistant to Veliaf.
+1117	Priest	0	A holy man.
+1118	Priest	0	Preach my brother!
+1119	Priest	0	Priestly.
+1120	Prince Ali	0	A young prince.
+1121	Prince Ali	0	Now that's an effective disguise!
+1122	Prince Brand	0	The Prince of Miscellania.
+1123	Princess Astrid	0	The Princess of Miscellania.
+1124	Professor Oddenstein	0	A mad scientist if ever I saw one!
+1125	Purple Pewter Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+1126	Purple Pewter Secretary	0	The head secretary of the Purple Pewter mining company.
+1128	Quartermaster	0	Responsible for the food and equipment of the troops.
+1129	Queen Sigrid	0	The Queen of Etceteria.
+1130	Quest Guide	0	Your introduction to the world of RuneScape.
+1134	Rachael	0	Pretty barmaid.
+1135	Radigad Ponfit	0	"A quick and agile fighter, a mercenary from Asgarnia."
+1136	Radimus Erkle	0	Radimus is the Grand Vizier of the Legends Guild.
+1137	Ragnar	0	He looks a little lost himself.
+1140	Ranael	0	She's an expert on armoured skirts!
+1142	Randivor	0	He's selling his bread on the market here.
+1143	Ranging Guild Doorman	0	The keeper of the gates to the ranging guild.
+1145	Rantz	0	A large dim looking humanoid.
+1146	Rashiliyia	0	The animated spirit of Rashiliyia the Zombie Queen.
+1147	Rasolo	0	A travelling merchant.
+1149	Razmire Keelgan	0	A local villager of Mort'ton.
+1150	Recruiter	0	A member of the Ardougne Royal Army.
+1151	Red Axe Cat	0	The cat belongs to the director of the Red Axe.
+1152	Red Axe Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+1153	Red Axe Secretary	0	The head secretary of the Red Axe mining company.
+1155	Redbeard Frank	0	A pirate.
+1156	Reinald	0	"He's a bit short, but then again, he's a dwarf."
+1157	Remsai	0	It's a tree gnome.
+1159	Restless ghost	0	Eek! A ghost!
+1160	Richard	0	A very brave merchant.
+1161	Richard	0	He sells farming equipment.
+1162	Riki the sculptor's model	0	Models for sculptures.
+1163	Rind the gardener	0	He tends to the plants in the palace garden.
+1172	Roachey	0	He runs the fishing guild shop.
+1173	Roavar	0	Seems a jolly chap.
+1174	Robe Store owner	0	A Supplier of Magical robes.
+1175	Robin	0	A master bowman.
+1183	Rock pile	0	A pile of boulders.
+1185	Rocks	0	A rocky outcrop.
+1187	Rogue Guard	0	Roguelike and guardish.
+1189	Rolad	0	He looks a little absent-minded.
+1190	Romeo	0	Rather dense and soppy looking.
+1191	Rometti	0	It's a well dressed tree gnome.
+1192	Rommik	0	"If crafting's your thing, he's your man!"
+1195	Rowdy dwarf	0	"A loud, drunk and generally obnoxious dwarf."
+1198	RPDT employee	0	Inefficient looking.
+1199	Ruantun	0	"Luckily, I can't see much of his face."
+1200	Rufus	0	There's something strange about him...
+1201	Rug Merchant	0	A carpet merchant.
+1202	Rug Merchant	0	A man who deals in rugs.
+1203	Rug Station Attendant	0	A man who deals in rugs.
+1204	RuneScape Guide	0	Your introduction to the world of RuneScape.
+1205	Runvastr	0	A sad old dwarf living in a sad old home.
+1206	Saba	0	A dishevelled and irritable hermit.
+1207	Sabeil	0	A citizen of Al-Kharid.
+1208	Sabreen	0	Wow! She's made a statement with that hair!
+1209	Sailor	0	"He's strong to the finish, because he eats cabbage."
+1211	Salenab	0	It's Salenab the monkey.
+1212	Sam	0	A very brave merchant.
+1213	Sam	0	Pretty barmaid.
+1215	Sanfew	0	An old druid.
+1216	Sani Piliu	0	A pretty young rogue.
+1217	Saniboch	0	Looks like he wants money.
+1218	Santa	0	He knows if you've been naughty or nice.
+1219	Santiri	0	Proprietor of the Quality Weapons Shop.
+1221	Sarah	0	She sells farming equipment.
+1222	Saro	0	Proprietor of the Quality Armour Shop.
+1224	Sbott	0	Has a faint smell of chemicals about him.
+1228	Scared skavid	0	Frightened looking.
+1229	Scarg	0	An ogre hunting chompies.
+1230	Scavvo	0	He's got the best armour around!
+1233	Sea slug	0	A rather nasty looking crustacean.
+1234	Seaman Lorris	0	A young sailor.
+1235	Seaman Thresnor	0	A young sailor.
+1236	Secretary	0	Task master.
+1237	Sedridor	0	Chief of research at Wizards' Tower.
+1238	Seer	0	Could do with a shave...
+1239	Seravel	0	This is Seravel - he sells tickets for the 'Lady of the Waves'.
+1240	Sergeant	0	Sergeant of the Imperial Guard.
+1242	Seth Groats	0	"A large, well built farmer."
+1243	Seth	0	Slightly fishy smelling.
+1244	Shade Spirit	0	A spirit rising towards eternal peace.
+1254	Shamus	0	A funny little man who lives in a tree.
+1256	Shantay	0	He's in control of the Shantay pass.
+1257	Shark	0	Let's not go skinny dipping eh?
+1259	Sheep	0	Freshly sheared.
+1260	Sheep	0	White and fluffy.
+1262	Shilop	0	One of Gertrude's sons.
+1263	Shipyard worker	0	Builds ships for a living.
+1265	Shop assistant	0	Helps sell stuff.
+1266	Shop assistant	0	Helps the shop keeper sell swords.
+1267	Shop assistant	0	Likes helping sell stuff.
+1268	Shop assistant	0	Likes you more the more you spend.
+1269	Shop assistant	0	Needs a haircut.
+1270	Shop assistant	0	She's here on work experience.
+1271	Shop assistant	0	Works on commission.
+1272	Shop keeper	0	A product of consumerist society.
+1273	Shop keeper	0	An interesting assortment of items for sale.
+1274	Shop keeper	0	Clearly takes pride in his appearance.
+1275	Shop keeper	0	Could stand to lose a few pounds.
+1276	Shop keeper	0	Has a fine moustache!
+1277	Shop keeper	0	"If he doesn't have it, he can't sell it!"
+1278	Shop keeper	0	"Ironically, makes a living from swords."
+1279	Shop keeper	0	Likes people spending money.
+1280	Shop keeper	0	Sells stuff.
+1281	Siamun	0	I wonder if they dislike me examining them?
+1282	Siegfried Erkle	0	An eccentric shop keeper - related to the Grand Vizier of the Legends Guild.
+1283	Sigbert the Adventurer	0	A bold knight famed for his travels.
+1284	Sigli the Huntsman	0	A Fremennik hunter.
+1285	Sigmund The Merchant	0	A Fremennik merchant.
+1286	Sigmund	0	Advisor to the Duke of Lumbridge.
+1287	Sigmund	0	Former adviser to the Duke of Lumbridge.
+1288	Sigmund	0	Former advisor to the Duke of Lumbridge.
+1289	Silk merchant	0	Seems very well off.
+1290	Silk trader	0	Very snappily dressed!
+1291	Silver Cog Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+1292	Silver Cog Secretary	0	The head secretary of the Silver Cog mining company.
+1293	Silver merchant	0	Looks fairly well fed.
+1294	Simon	0	A very brave merchant.
+1296	Sinister Stranger	0	He looks a LOT like a vampire...
+1297	Sir Amik Varze	0	Leader of the White Knights.
+1298	Sir Bedivere	0	One of the Knights of the Round Table.
+1300	Sir Gawain	0	One of the Knights of the Round Table.
+1303	Sir Kay	0	One of the Knights of the Round Table.
+1304	Sir Kuam Ferentse	0	An observer for the Temple Knights.
+1305	Sir Lancelot	0	One of the Knights of the Round Table.
+1307	Sir Lucan	0	One of the Knights of the Round Table.
+1309	Sir Palomedes	0	One of the Knights of the Round Table.
+1310	Sir Pelleas	0	One of the Knights of the Round Table.
+1311	Sir Percival	0	One of the Knights of the Round Table.
+1312	Sir Prysin	0	One of the king's knights.
+1313	Sir Ren Itchood	0	An observer for the Temple Knights.
+1314	Sir Spishyus	0	An observer for the Temple Knights.
+1315	Sir Tiffy Cashien	0	Head of recruitment for the Temple Knights.
+1316	Sir Tinley	0	An observer for the Temple Knights.
+1317	Sir Tristram	0	One of the Knights of the Round Table.
+1318	Sir Vyvin	0	An elderly White Knight.
+1321	Skavid	0	A skavid.
+1339	Skulgrimen	0	Sells and makes weapons and armour.
+1340	Skullball Boss	0	He's in charge of the Skullball Course.
+1341	Skullball Trainer	0	A skullball guide.
+1342	Skullball	0	A human skull used as a ball.
+1343	Slagilith	0	This monster totally rocks!
+1346	Slave	0	A malnourished worker.
+1347	Slave	0	A wretched slave of Iban.
+1348	Sleeping Monkey	0	"A rather sleepy looking guard, wielding some kind of bat."
+1352	Snake	0	A toothless old Snake.
+1355	Soldier	0	A soldier of the Imperial Guard.
+1358	Solihib	0	The food merchant of Ape Atoll.
+1361	Sphinx	0	"An awe inspiring combination of a lady, a lion and an eagle."
+1362	Spice seller	0	Has a very exotic aroma about him.
+1363	Spider	0	Nasty little creature.
+1367	Spin Blades	0	I don't think I want to get too close to that!
+1368	Spirit of Scorpius	0	The essence of evil.
+1369	Spirit of Zadimus	0	An unquiet soul.
+1370	Squire	0	Indentured servant of a Knight.
+1371	Stanford	0	He looks like he spends a lot of time outdoors.
+1372	Stankers	0	He's in control of the coal trucks.
+1375	Strange Old Man	0	Wonder how long he's been here...
+1376	Strange plant	0	A very strange plant.
+1377	Strange watcher	0	A member of the audience.
+1378	Stranger	0	A typical villager of Canifis.
+1381	Street urchin	0	A mischievous looking child.
+1382	Student	0	A student busily digging.
+1383	Styrmir	0	Doesn't look like the musical type.
+1386	Sune	0	He seems to always be busy.
+1387	Supreme Commander	0	He is the Supreme Commander of all regiments of the Black Guard.
+1388	Survival Expert	0	Very much an outdoors type.
+1389	Svidi	0	Is he walking around in circles?
+1390	Swamp toad	0	"A green skinned croaker, loves the swamp."
+1391	Swarm	0	A swarm of vicious insects!
+1392	Swensen the Navigator	0	A Fremennik navigator.
+1393	Tafani	0	Looks after injured fighters.
+1394	Tamayu	0	A hunter who long ago succumbed to blood lust.
+1395	Tanner	0	Manufacturer of fine leathers.
+1396	Tassie Slipcast	0	A hard-working potter.
+1397	Tati	0	"An old mining dwarf, now he sells pickaxes and generally acts grumpy."
+1398	Tea seller	0	He seems to sell tea.
+1399	Ted Rehnison	0	The head of the Rehnison family.
+1400	Tegid	0	He's washing his clothes in the lake.
+1402	Tenzing	0	An experienced Sherpa.
+1405	The Fisher King	0	He doesn't look very well...
+1407	The Lady of the Lake	0	A powerful sorceress who guards Excalibur.
+1408	The Monkey's Aunt	0	She looks like the Monkey's Aunt.
+1409	The Monkey's Uncle	0	He looks like the Monkey's Uncle.
+1411	Thessalia	0	Interesting assortment of clothes on offer...
+1414	Thing under the bed	0	It's just like that dream I use to have when I was little.
+1415	Thistle	0	It's a Troll Thistle.
+1416	Thora the Barkeep	0	The Longhall barkeep
+1419	Thormac	0	Nice hat.
+1420	Thorvald the Warrior	0	A Fremennik hero.
+1425	Thurgo	0	Dwarvish.
+1426	Tiadeche	0	A rather depressed looking fisherman.
+1427	Ticket Merchant	0	Sells equipment in exchange for archery tickets.
+1428	Timfraku	0	The imposing Chief of Tai Bwo Wannai.
+1429	Tindel Marchant	0	He seems quietly enthusiastic about his profession.
+1430	Tinsay	0	A more than slightly eccentric looking priest.
+1431	Toban	0	Ogre-ish.
+1432	Tombar	0	He seems very tall. For a dwarf.
+1434	Torbrund	0	Waiting for the show.
+1436	Tostig	0	Barman of the Toad and Chicken.
+1438	Tower Advisor	0	Tower keeper and competition judge.
+1444	Town Guard	0	What a rubbish job he has.
+1445	Town Guard	0	Who's going to steal a whole town anyway?
+1446	Tracker gnome 1	0	It's a gnome who specialises in covert operations.
+1447	Tracker gnome 2	0	It's a gnome who specialises in covert operations.
+1448	Tracker gnome 3	0	It's a gnome who specialises in covert operations.
+1449	Trade Referee	0	He is regulating the flow of goods on the trade floor and maintaining order.
+1450	Trader	0	A trader for the Blue Opal mining company.
+1451	Trader	0	A trader for the Brown Engine mining company.
+1452	Trader	0	A trader for the Green Gemstone mining company.
+1453	Trader	0	A trader for the Purple Pewter mining company.
+1454	Trader	0	A trader for the Red Axe mining company.
+1455	Trader	0	A trader for the Silver Cog mining company.
+1456	Trader	0	A trader for the White Chisel mining company.
+1457	Trader	0	A trader for the Yellow Fortune mining company.
+1458	Traiborn	0	An old wizard.
+1459	Tramp	0	Looks down on his luck.
+1468	Tree	0	A commonly found tree.
+1469	Tree	0	A tree.
+1470	Tree	0	Its bark is worse than its swipe.
+1471	Tree	0	It's thick with snow.
+1472	Tree	0	One of the most common trees in RuneScape.
+1473	Trefaji	0	A huge brutish gorilla. He looks like a jail guard.
+1475	Tribal Weapon Salesman	0	Supplier of authentic throwing weapons.
+1477	Trobert	0	A well dressed thief.
+1478	Troll child	0	A little ice troll.
+1479	Troll father	0	An ice troll.
+1481	Troll mother	0	An ice troll.
+1484	Trufitus	0	A wise old witch doctor.
+1485	Turael	0	He looks dangerous!
+1492	Tutab	0	A magical trinket dealer.
+1493	Twig	0	Reminds me of playing pooh sticks.
+1495	Tyras guard	0	One of King Tyras's men.
+1497	Ug	0	A frail little troll.
+1499	Uglug Nar	0	An ogre shaman
+1501	Ulifed	0	A dwarf minding his own business.
+1502	Ulizius	0	A slightly nervous guard.
+1503	Ulsquire Shauncy	0	A local villager of Mort'ton.
+1516	Ur-tag	0	The ruler of the Dorgeshuun
+1517	Uwogo	0	A smartly clothed large monkey.
+1519	Valaine	0	A champion of a sales woman!
+1525	Vanessa	0	She sells farming equipment.
+1526	Vannaka	0	He looks dangerous!
+1527	Vanstrom Klause	0	A curious fellow.
+1528	Vanstrom Klause	0	An evil vampire.
+1529	Veliaf Hurtz	0	Looks like the leader of the Myreque.
+1530	Velorina	0	A ghost lady.
+1531	Velrak the explorer	0	He looks cold and hungry.
+1533	Vermundi	0	"A rather poor looking little dwarf, selling her clothes on the market."
+1534	Veronica	0	She doesn't look too happy.
+1535	Vigr	0	Proprietor of Vigr's Warhammers.
+1536	Vigroy	0	"A cart driver, it looks like he's quite experienced."
+1543	Wanderer	0	A red haired woman.
+1545	Warrior	0	He looks big and dumb.
+1554	Watchtower wizard	0	The hat is a dead give away.
+1556	Waydar	0	Waydar is some kind of flight officer.
+1557	Waymottin	0	This Gnome is busy applying some kind of pasty material to the cave walls.
+1558	Wayne	0	An armourer.
+1560	Weapon poison salesman	0	Supplier of deadly liquids.
+1562	Weird Old Man	0	What's he mumbling about?
+1564	Wemund	0	Looks like some kind of engineer or mechanic.
+1565	Werewolf	0	Looks like he's guarding a trapdoor...
+1566	White Chisel Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+1567	White Chisel Secretary	0	The head secretary of the White Chisel mining company.
+1574	Will o' the wisp	0	Mysterious swamp lights...
+1575	William	0	A very brave merchant.
+1576	Willow	0	A droopy tree.
+1577	Willow	0	These trees are found near water.
+1578	Wilough	0	One of Gertrude's sons.
+1579	Winelda	0	A witch.
+1580	Wise Old Man	0	A venerable and rich sage.
+1581	Wistan	0	Shopkeeper for Burthorpe.
+1582	Witch	0	The Black Knights' resident witch.
+1588	Witch's cat	0	Curiosity is yet to kill this one...
+1589	Wizard Cromperty	0	The hat is a dead give away.
+1590	Wizard Distentor	0	Head of the Magic Guild.
+1591	Wizard Frumscone	0	A Wizard of the Magic Guild.
+1593	Wizard Mizgog	0	An old wizard.
+1594	Wizard	0	He looks kind of puny...
+1595	Wizard	0	Slightly more magical.
+1609	Wydin	0	Likes his food to be kept fresh.
+1610	Wyson the gardener	0	The head gardener.
+1611	Yanni Salika	0	Yanni Salika - He buys and sells antiques.
+1612	Yellow Fortune Director	0	"One of the leaders of the business Consortium, a ruler of Keldagrim."
+1613	Yellow Fortune Secretary	0	The head secretary of the Yellow Fortune mining company.
+1615	Yew	0	A splendid tree.
+1616	Yohnus	0	This is Yohnus - he runs the local smithery.
+1617	Yrsa	0	Pretty shabbily dressed for a clothes shop owner.
+1619	Zaff	0	Sells superior staffs.
+1620	Zahwa	0	'Battle scarred'.
+1621	Zambo	0	Appears slightly drunk.
+1623	Zavistic Rarve	0	The Grand Secretary of the Wizards' Guild in Yanille.
+1624	Zealot	0	His robes prominently display the star of Saradomin.
+1625	Zeke	0	Sells superior scimitars.
+1626	Zenesha	0	Sells top quality plate mail armour.
+1639	Zoo keeper	0	Enjoys locking up animals in small pens.
+1640	Zooknock	0	A wizened little Gnome dressed in brightly coloured clothes.

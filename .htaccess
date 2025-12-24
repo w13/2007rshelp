@@ -1,0 +1,49 @@
+# Security: Protect configuration and sensitive files
+<FilesMatch "^(config\.inc\.php|classes\.inc\.php|functions\.inc\.php|\.env)$">
+    Require all denied
+</FilesMatch>
+
+# Prevent access to backup files
+<FilesMatch "\.(bak|old|backup|inc|sql|conf|log)$">
+    Require all denied
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes
+
+# Prevent access to hidden files (except .well-known for Let's Encrypt)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Enable XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Remove server signature
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# Hide PHP version
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag expose_php Off
+</IfModule>
+
+# Enable HTTPS redirect (uncomment when SSL is configured)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>

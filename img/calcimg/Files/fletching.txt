@@ -1,0 +1,51 @@
+Fletching;1;Arrow shafts(15);Ammo;/idbimg/ArrowShaft.png;1;5
+Fletching;1;Headless arrow;Ammo;/idbimg/Headless%20Arrows.png;1;1
+Fletching;1;Bronze arrow;Ammo;/idbimg/Arrow_Bronze5.png;1;2.63
+Fletching;1;Bronze dart;Thrown;/idbimg/Dart_Bronze.png;1;18
+Fletching;1;Shortbow;Bows;/idbimg/Shortbow.png;5;10
+Fletching;1;Ogre arrow;Ammo;/idbimg/Arrow_Ogre5.png;5;00;
+Fletching;1;Bronze brutal arrow;Ammo;/idbimg/brutal_bronze5.png;7;1.5
+Fletching;1;Longbow;Bows;/idbimg/Longbow.png;10;20
+Fletching;1;Iron arrow;Ammo;/idbimg/Arrow_Iron5.png;15;3.83
+Fletching;1;Iron brutal arrow;Ammo;/idbimg/brutal_iron5.png;18;2.6
+Fletching;1;Opal tipped bolts(2);Ammo;/idbimg/Opal%20Bolt.png;17;6
+Fletching;1;Oak shortbow;Bows;/idbimg/Shortbow_Oak.png;20;33
+Fletching;1;Iron dart;Thrown;/idbimg/Dart_Iron.png;22;32
+Fletching;1;Oak longbow;Bows;/idbimg/Longbow_Oak.png;25;50
+Fletching;1;Steel arrows;Ammo;/idbimg/Arrow_Steel5.png;30;6.33
+Fletching;1;Composite ogre bow;Bows;/idbimg/comp%20orge_bow.png;30;00
+Fletching;1;Steel brutal arrows;Ammo;/idbimg/brutal_steel5.png;33;5.2
+Fletching;1;Pearl tipped bolts;Ammo;/idbimg/Pearl%20Bolttps.png;33;12.5
+Fletching;1;Willow shortbow;Bows;/idbimg/Shortbow_Willow.png;35;66.5
+Fletching;1;Steel dart;Thrown;/idbimg/Dart_Steel.png;37;75
+Fletching;1;Black brutal arrow;Ammo;/idbimg/brutal_black5.png;38;6.3
+Fletching;1;Willow longbow;Bows;/idbimg/Longbow_Willow.png;40;83
+Fletching;1;Mithril arrows;Ammo;/idbimg/Arrow_Mith5.png;45;8.83
+Fletching;1;Mithril brutal arrow;Ammo;/idbimg/brutal_mith5.png;49;7.5
+Fletching;1;Maple shortbow;Bows;/idbimg/Shortbow_Maple.png;50;100
+Fletching;1;Barbed tipped bolts(30);Ammo;/idbimg/Barbed%20Bolt.png;51;95
+Fletching;1;Mithril dart;Thrown;/idbimg/Dart_Mith.png;52;112
+Fletching;1;Maple longbow;Bows;/idbimg/Longbow_Maple.png;55;116.5
+Fletching;1;Adamant arrow;Ammo;/idbimg/Arrow_Adamant5.png;60;11.5
+Fletching;1;Adamant brutal arrow;Ammo;/idbimg/brutal_adamant5.png;62;10.2
+Fletching;1;Yew shortbow;Bows;/idbimg/Shortbow_Yew.png;65;133
+Fletching;1;Adamant dart;Thrown;/idbimg/Dart_Adamant.png;67;150
+Fletching;1;Yew longbow;Bows;/idbimg/Longbow_Yew.png;70;150
+Fletching;1;Runite arrow;Ammo;/idbimg/Arrow_Rune5.png;75;15
+Fletching;1;Runite brutal arrow;Ammo;/idbimg/brutal_rune5.png;77;00
+Fletching;1;Magic shortbow;Bows;/idbimg/Shortbow_Magic.png;80;166.5
+Fletching;1;Runite dart;Thrown;/idbimg/Dart_Rune.png;81;188
+Fletching;1;Magic longbow;Bows;/idbimg/Longbow_Magic.png;85;183
+Fletching;1;Shortbow;Bowu;/idbimg/Shortbow.png;5;5.00
+Fletching;1;Longbow;Bowu;/idbimg/Longbow.png;10;10.00
+Fletching;1;Oak shortbow;Bowu;/idbimg/Shortbow_Oak.png;20;16.50
+Fletching;1;Oak longbow;Bowu;/idbimg/Longbow_Oak.png;25;25.00
+Fletching;1;Composite ogre bow;Bowu;/idbimg/comp%20orge_bow.png;30;1.00
+Fletching;1;Willow shortbow;Bowu;/idbimg/Shortbow_Willow.png;35;33.25
+Fletching;1;Willow longbow;Bowu;/idbimg/Longbow_Willow.png;40;41.50
+Fletching;1;Maple shortbow;Bowu;/idbimg/Shortbow_Maple.png;50;50.00
+Fletching;1;Maple longbow;Bowu;/idbimg/Longbow_Maple.png;55;58.25
+Fletching;1;Yew shortbow;Bowu;/idbimg/Shortbow_Yew.png;65;66.50
+Fletching;1;Yew longbow;Bowu;/idbimg/Longbow_Yew.png;70;75.00
+Fletching;1;Magic shortbow;Bowu;/idbimg/Shortbow_Magic.png;80;83.25
+Fletching;1;Magic longbow;Bowu;/idbimg/Longbow_Magic.png;85;91.50

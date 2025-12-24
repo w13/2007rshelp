@@ -1,0 +1,19 @@
+body { color:#FFF;background:#262626 url('/images/bg2_bk.png') repeat-x fixed top;}
+.navigation a:link, .navigation a:visited {color:#ccc;}
+.navigation a:active, .navigation a:hover {background:#393939;}
+.boxtop, .boxed, .tabletop, .navigation h3 {background-color:#363636;color:#fff;}
+.tablebottom, .header, .content, .quote, .boxbottom, .navigation ul {background-color:#464646;}
+span.postmeta {color:#ccc;}
+.title1, .title2 {border-top:3px #2a2a2a solid;background-color:#393939;}
+.title2 {border-top-width:2px;}
+a:link, a:active, a:visited {color:#E4E3A7;}
+a:hover, .boxbottom a:hover, .navigation a:active, .navigation a:hover {color:#fff;}
+.step-title, .part {color:#ccc;}
+.vip {color:#749FEF;}
+table.misc_list_table {background-color:#2a2a2a;}
+ul.guides {border-left:1px #666666 solid;border-top:1px #2a2a2a solid;}
+ul.guides li {background-color:#2f2f2f;border-bottom:1px #2a2a2a solid;}
+ul.guides li.alt {background-color:#393939;}
+.toc {background-color:#393939;border:1px solid #2a2a2a;}
+.faq {border-left:5px #E9E9E9 solid;background-color:#2a2a2a;}
+.info a, .notice a {color:#000 !important;}

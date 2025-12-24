@@ -1,0 +1,19 @@
+Zombie;Magicdef;44;0;13
+Zombie;Magicdef;48;0;18
+Zombie;Magicdef;60;0;25
+Zombie;Magicdef;62;0;24
+Greater demon;Magicdef;174;0;92
+Skeleton;Magicdef;48;0;21
+Skeleton;Magicdef;58;0;22
+Skeleton;Magicdef;56;0;25
+Skeleton;Magicdef;118;0;45
+Giant skeleton;Magicdef;142;1;80
+Undead one;Magicdef;118;1;73
+Bronze dragon;Magicdef;250;1;131
+Iron dragon;Magicdef;346;1;189
+Steel dragon;Magicdef;440;1;246
+Black demon;Magicdef;314;1;174
+Gnome troop;Magicdef;4;1;1
+Goblin;Magicdef;10;0;2
+Chicken;Magicdef;6;0;1
+Cow;Magicdef;16;0;2

@@ -1,0 +1,20 @@
+<div style="padding:5px 0 0 15px;">
+<table border="0" width="100%" style="color:#fff;font-weight:bold;font-size:11px;">
+<tr>
+<td style="padding:0 10px 0 10px;width:30px;">WIZARDS</td>
+<td>
+<a href="guidewizard.php" title="General Guide Wizard">General</a> &middot;
+<a href="guidewizard.php?quest" title="Quest Guide Wizard">Quest</a> &middot;
+<a href="mapwiz.php" title="Map Wizard">Map</a> &middot;
+<a href="keymaker.php" title="City Key Generator">City Keys</a> &middot;
+<a href="interwiz.php" title="Interconnection Wizard">Interconnection</a> &middot;
+<a href="bbcode.php" title="BB-Code > xHTML">BB-Code > xHTML</a>
+</td>
+<td style="text-align:right;padding-right:10px;">
+<a href="inactive.php" title="Register Inactivity">Going to be inactive?</a> &middot; 
+<a href="password.php" title="Change Password">Change Password</a> &middot; 
+<a href="logout.php" title="Logout of the Editor">Logout ([#USER#])</a>
+</td>
+</tr>
+</table>
+</div>

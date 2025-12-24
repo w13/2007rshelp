@@ -1,0 +1,58 @@
+Magic;0;Wind strike(2);Regular;skillimg/magic/wind_strike.jpg;1;5.5
+Magic;0;Confuse;Regular;skillimg/magic/confuse.jpg;3;13
+Magic;0;Water strike(4);Regular;skillimg/magic/water_stike.jpg;5;7.5
+Magic;0;Enchant level 1 jewelery;Regular;skillimg/magic/enchant_1.jpg;7;17.5
+Magic;0;Earth strike(6);Regular;skillimg/magic/earth_strike.jpg;9;9.5
+Magic;0;Weaken;Regular;skillimg/magic/weaken.jpg;11;20.5
+Magic;0;Fire strike(8);Regular;skillimg/magic/fire_strike.jpg;13;11.5
+Magic;0;Bones to bananas;Regular;skillimg/magic/bonestobanana.jpg;15;25
+Magic;0;Wing bolt(9);Regular;skillimg/magic/wind_bolt.jpg;17;13.5
+Magic;0;Curse;Regular;skillimg/magic/curse.jpg;19;29
+Magic;0;Bind;Regular;skillimg/magic/bind.jpg;20;30
+Magic;0;Low alchemy;Regular;skillimg/magic/lowalchemy.jpg;21;31
+Magic;0;Water bolt(10);Regular;skillimg/magic/water_bolt.jpg;23;16.5
+Magic;0;Varrock teleport;Regular;skillimg/magic/varrock_teleport.jpg;25;35
+Magic;0;Enchant level 2 jewelery;Regular;skillimg/magic/enchant_2.jpg;27;37
+Magic;0;Earth bolt(11);Regular;skillimg/magic/earth_bolt.jpg;29;19.5
+Magic;0;Lumbridge teleport;Regular;skillimg/magic/lumbridge_teleport.jpg;31;41
+Magic;0;Telekinetic grab;Regular;skillimg/magic/telekinetic_grab.jpg;33;43
+Magic;0;Fire bolt(12);Regular;skillimg/magic/fire_bolt.jpg;35;22.5
+Magic;0;Falador teleport;Regular;skillimg/magic/falador_teleport.jpg;37;47
+Magic;0;Crumble undead(15);Regular;skillimg/magic/crumble_undead.jpg;39;24.5
+Magic;0;Wind blast(13);Regular;skillimg/magic/wind_blast.jpg;41;25.5
+Magic;0;Superheat item;Regular;skillimg/magic/superheat_item.jpg;43;53
+Magic;1;Camelot teleport;Regular;skillimg/magic/camalot_teleport.jpg;45;55.5
+Magic;0;Water blast(14);Regular;skillimg/magic/water_blast.jpg;47;28.5
+Magic;0;Enchant level 3 jewelery;Regular;skillimg/magic/enchant_3.jpg;49;59
+Magic;1;Iban blast(25);Regular;skillimg/magic/iban_blast.jpg;50;42.5
+Magic;1;Snare;Regular;skillimg/magic/snare.jpg;50;60.5
+Magic;1;Magic dart(18);Regular;skillimg/magic/magicdart.png;50;30
+Magic;1;Ardougne teleport;Regular;skillimg/magic/ardougne_teleport.jpg;51;61
+Magic;;Earth blast(15);Regular;skillimg/magic/earth_blast.jpg;53;31.5
+Magic;0;High level alchemy;Regular;skillimg/magic/high_alchemy.jpg;55;65
+Magic;1;Charge water orb;Regular;skillimg/magic/charge_water.jpg;56;66
+Magic;0;Enchant level 4 jewelery;Regular;skillimg/magic/enchant_4.jpg;57;67
+Magic;1;Watchtower teleport;Regular;skillimg/magic/watchtower_teleport.jpg;58;68
+Magic;0;Fire blast(16);Regular;skillimg/magic/fire_blast.PNG;59;34.5
+Magic;1;Saradomin strike(30);Regular;skillimg/magic/saradomin.jpg;60;35
+Magic;1;Claws of guthix(30);Regular;skillimg/magic/guthix.jpg;60;35
+Magic;1;Flames of zamorak(30);Regular;skillimg/magic/zamorak.jpg;60;35
+Magic;1;Charge earth orb;Regular;skillimg/magic/charge_earth.jpg;60;70
+Magic;1;Trollheim teleport;Regular;skillimg/magic/trollheim_teleport.jpg;61;68
+Magic;1;Wind wave(17);Regular;skillimg/magic/wind_wave.jpg;62;36
+Magic;1;Charge fire orb;Regular;skillimg/magic/charge_fire.jpg;63;73
+Magic;1;Water wave(18);Regular;skillimg/magic/water_wave.jpg;65;37.5
+Magic;1;Charge air orb;Regular;skillimg/magic/charge_air.jpg;66;76
+Magic;1;Vulnerability;Regular;skillimg/magic/Vulnerability.jpg;66;76
+Magic;1;Enchant level 5 jewelery;Regular;skillimg/magic/charge_5.jpg;68;78
+Magic;1;Earth wave(19);Regular;skillimg/magic/earth_wave.jpg;70;40
+Magic;1;Enfeeble;Regular;skillimg/magic/enfeeble.jpg;73;83
+Magic;1;Teleother lumbridge;Regular;skillimg/magic/teleotherlumb.png;74;84
+Magic;1;Fire wave(20);Regular;skillimg/magic/fire_wave.jpg;75;42.5
+Magic;1;Entangle;Regular;skillimg/magic/entangle.jpg;79;91
+Magic;1;Stun;Regular;skillimg/magic/stun.jpg;80;90
+Magic;1;Charge;Regular;skillimg/magic/charge.jpg;80;185
+Magic;1;Teleother falador;Regular;skillimg/magic/teleotherfalador.png;82;92
+Magic;1;Tele block;Regular;skillimg/magic/teleblock.png;85;95
+Magic;1;Enchant level 6 jewelery;Regular;skillimg/magic/enchant_6.png;87;00
+Magic;1;Teleother camelot;Regular;skillimg/magic/teleothercam.png;90;100

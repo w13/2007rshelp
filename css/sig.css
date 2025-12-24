@@ -1,0 +1,39 @@
+.skill, .total, .pname {
+font:bold 10px Lucida Sans Unicode, Verdana, Sans-Serif;
+}
+.skill a, .pname a {
+text-decoration:none !important;
+}
+.skill {
+color:#fff;
+padding-right:5px;
+width:35px;
+height:26px;
+vertical-align:middle;
+text-align:right;
+}
+.total {
+margin: 5px 0 0 8px;
+float:left;
+text-align:left;
+}
+.total span {
+font-weight:normal;
+}
+.pname {
+font-variant:small-caps;
+float:right;
+margin:5px 8px 0 0;
+font-size:11px;
+text-align:rightl
+}
+.closer {
+position:absolute;
+top:0;
+left:0;
+padding:0;
+margin:0;
+font-size:7px;
+cursor:pointer;
+color:#fff;
+}

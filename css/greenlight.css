@@ -1,0 +1,18 @@
+body {color:#000;background:#262626 url('/images/bg2_gr.png') repeat-x fixed top;}
+.navigation a:link, .navigation a:visited {color:#000;}
+.navigation a:active, .navigation a:hover {background:#A0A5A7;}
+.boxtop, .boxed, .tabletop, .navigation h3 {background-color:#252;color:#FFF;}
+.tablebottom, .header, .content, .quote, .boxbottom, .navigation ul {background-color:#B2B2B4;}
+span.postmeta {color:#111;}
+.title1, .title2 {border-top:3px #007900 solid;background-color:#a8afb2;}
+.title2 {border-top-width:2px;}
+a:link, a:active, a:visited {color:#004F00;}
+a:hover, .boxbottom a:hover, .navigation a:active, .navigation a:hover {color:#FFF;}
+.step-title, .part {color:#424242;}
+.vip {color:#004FC6;}
+table.misc_list_table {background-color:#666;}
+ul.guides {border-left:1px #666 solid;border-top:1px #666 solid;}
+ul.guides li {background-color:#878d8f;border-bottom:1px #666 solid;}
+ul.guides li.alt {background-color:#a8afb2;}
+.toc {background-color:#A9B4A7;border:1px solid #666;}
+.faq {border-left:5px #004F00 solid;background-color:#A9B4A7;}

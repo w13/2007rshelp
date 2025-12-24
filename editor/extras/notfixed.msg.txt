@@ -1,0 +1,19 @@
+Dear [#NAME#],
+
+You have received this message as you submitted the following correction to Zybez RuneScape Help on [#TIME#]:
+
+"[#CORRECTION#]"
+
+A member of the development team has reviewed your submission, and felt that no change to the content was required. We would like to thank you for taking the time to submit this content, and apologize for not being able to use it.
+
+If you feel there was nothing wrong with your submission, here are a few things to check over:
+
+- Perhaps you were mistaken. Check to see if what you suggested is already there.
+- Clarity: Did you provide clear and definitive information?
+- Spelling & Grammar: Perhaps a staff member wasn't able to understand the submission.
+- Content: Did you provide the exact information required to make the correction?
+- If it is in reference to an out-dated image, we may have already updated it (our server takes a while to synchronise new images).
+
+Regards,
+Zybez RuneScape Help Staff
+http://2007rshelp.com

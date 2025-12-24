@@ -1,0 +1,6 @@
+Runecrafting;1;Mist rune;idbimg/rune_mist.png;6;8
+Runecrafting;1;Dust rune;idbimg/rune_dust.png;10;8.3
+Runecrafting;1;Mud rune;idbimg/rune_mud.png;13;9.3
+Runecrafting;1;Smoke rune;idbimg/rune_smoke.png;15;9.5
+Runecrafting;1;Steam rune;idbimg/rune_steam.png;19;10
+Runecrafting;1;Lava rune;idbimg/rune_lava.png;23;10.5

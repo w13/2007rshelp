@@ -1,0 +1,108 @@
+<?
+echo '<div class="navigation">'.NL;
+
+
+if($ses->permit(2) || $ses->permit(24) || $ses->permit(3)) {
+	echo '<h3>Guides</h3>'.NL;
+	echo '<ul>'.NL;
+	if($ses->permit(2)) {
+		echo '<li><a href="guide.php" title="Guide Manager"><img src="/images/banner/chart_bar.png" alt="" />Skills &amp; Guilds</a></li>'.NL;
+		echo '<li><a href="quests.php" title="Quest Guide Manager"><img src="/images/banner/quest.png" alt="" />Quests</a></li>'.NL;
+		echo '<li><a href="misc.php" title="Misc Guide Manager"><img src="/images/banner/book_open.png" alt="" />Miscellaneous</a></li>'.NL;
+		echo '<li><a href="minigames.php" title="Mini Game Guide Manager"><img src="/images/banner/minigame.png" alt="" />Mini Games</a></li>'.NL;
+		echo '<li><a href="cities.php" title="City Guide Manager"><img src="/images/banner/building.png" alt="" />Cities</a></li>'.NL;
+	}
+	if($ses->permit(24)) echo '<li><a href="atlas.php" title="Atlas Manager"><img src="/images/banner/map_go.png" alt="" />Zybez Atlas</a></li>'.NL;   
+	if($ses->permit(3)) echo '<li><a href="map.php" title="Map Manager"><img src="/images/banner/map.png" alt="" />Maps</a></li>'.NL;
+	echo '</ul>'.NL;
+}
+
+
+if($ses->permit(4) || $ses->permit(6) || $ses->permit(16) || $ses->permit(5) || $ses->permit(7) || $ses->permit(10) || $ses->permit(22) || $ses->permit(23)) {
+	echo '<h3>Databases &amp; Tools</h3>'.NL;
+	echo '<ul>'.NL;
+	if($ses->permit(4)) echo '<li><a href="calc.php" title="Calculator Manager"><img src="/images/banner/calculator.png" alt="" />Calculators</a></li>'.NL;
+	if($ses->permit(6)) echo '<li><a href="items.php" title="Item Database"><img src="/images/banner/wand.png" alt="" />Item Database</a> (<a href="items_disc.php">Notepad</a>)</li>'.NL;
+	if($ses->permit(16)) echo '<li><a href="monsters.php" title="Monster Database"><img src="/images/banner/bug.png" alt="" />Monster Database</a> (<a href="monsters_disc.php">Notepad</a>)</li>'.NL;
+	if($ses->permit(5)) echo '<li><a href="shop.php" title="Shop Database"><img src="/images/banner/basket.png" alt="" />Shop Database</a></li>'.NL;
+	if($ses->permit(7)) echo '<li><a href="tomes.php" title="Tome Archive"><img src="/images/banner/book.png" alt="" />Tome Archive</a></li>'.NL;
+	if($ses->permit(10)) {
+		echo '<li><a href="javascript: void(0)" onclick="javascript:window.open( \'/editor/price.php\', \'market\', \'width=600,height=600,scrollbars=yes,location=yes\' )"><img alt="" src="/images/banner/coins.png" />Market Price Guide</a> (<a href="scam.php" title="Scam Manager">Scams</a>)</li>'.NL;
+	}
+	if($ses->permit(22)) echo '<li><img src="/images/banner/film.png" alt="" /><a href="videos.php" title="Runescape Videos">Runescape Videos</a></li>'.NL;
+	if($ses->permit(23)) echo '<li><a href="equipmentprofile.php" title="Equipment Profiles"><img alt="" src="/images/banner/user_gray.png" />Equipment Profiles</a></li>'.NL;
+	echo '</ul>'.NL;
+}
+if($ses->permit(8) OR $ses->permit(9) OR $ses->permit(12) OR $ses->permit(13) OR $ses->permit(17) OR $ses->permit(20) OR $ses->permit(25)) {
+    echo '<h3>Interactive &amp; Features</h3>'.NL;
+    echo '<ul>'.NL;
+    if($ses->permit(9)) echo '<li><a href="concepts.php" title="Concepts Manager"><img alt="" src="/images/banner/palette.png" />Concepts</a></li>'.NL;
+    if($ses->permit(8)) echo '<li><a href="screenshots.php" title="Screenshots Manager"><img alt="" src="/images/banner/picture.png" />Screenshots</a></li>'.NL;
+    if($ses->permit(17)) echo '<li><a href="blog.php" title="Zybez Blogs"><img alt="" src="/images/banner/page_white_edit.png" />Zybez Blogs</a></li>'.NL;
+    if($ses->permit(12)) echo '<li><a href="news.php" title="Zybez News Manager"><img alt="" src="/images/banner/newspaper.png" />News Manager</a></li>'.NL;
+    if($ses->permit(13)) echo '<li><a href="fact.php" title="Facts Manager"><img alt="" src="/images/banner/information.png" />Facts Manager</a></li>'.NL;
+    if($ses->permit(20)) {
+		echo '<li><a href="ticker.php" title="Ticker Manager"><img alt="" src="/images/banner/hourglass.png" />Ticker Manager</a></li>'.NL;
+		echo '<li><a href="adverts.php" title="Adverts Manager"><img alt="" src="/images/banner/money.png" />Adverts Manager</a></li>'.NL;
+	}
+	if($ses->permit(25)) echo '<li><a href="skillscomp.php" title="Skills Competition"><img src="/images/banner/chart_bar.png" alt="" />Skills Competition</a></li>'.NL;
+    echo '</ul>';
+}
+
+if($ses->permit(1)) {
+	echo '<h3>Developer Tools</h3>'.NL;
+	echo '<ul>'.NL;
+	echo '<li><a href="testing_area.php" title="Test Area"><img src="/images/banner/folder_database.png" alt="" />Test Area</a></li>'.NL;
+	echo '<li><a href="irc.php" title="IRC"><img src="/images/banner/script.png" alt="" />IRC Chat</a></li>'.NL;
+	echo '<li><a href="logs.php" title="Editor Logbook"><img src="/images/banner/table.png" alt="" />Editor Logbook</a> (<a href="actions.php">User Stats</a>)</li>'.NL;
+    if($ses->permit(14)) echo '<li><a href="correction.php" title="Correction Listing [#CORRECTION#] Pending"><img src="/images/banner/tick.png" alt="" />Correction Listing</a> ([#CORRECTION#])</li>'.NL;
+    echo '</ul>'.NL;
+    echo '<h3>Developer Guides</h3>'.NL;
+    echo '<ul>'.NL;
+    echo '<li><a href="image_guide.php" title="Image Guide" target="_blank"><img src="/images/banner/picture.png" alt="" />Image Guide</a></li>'.NL;
+    echo '<li><a href="html_guide.php" title="HTML Guide" target="_blank"><img src="/images/banner/html.png" alt="" />HTML Guide</a></li>'.NL;
+    echo '<li><a href="database_management.php" title="Database Management" target="_blank"><img src="/images/banner/drive.png" alt="" />Database Management</a></li>'.NL;
+	echo '<li><a href="guide_guide.php" title="Guide Creation" target="_blank"><img src="/images/banner/layout.png" alt="" />Guide Creation</a></li>'.NL;
+    echo '</ul>'.NL;
+}
+
+if($ses->permit(19)){
+	echo '<h3>Upload Images</h3>'.NL;
+	echo '<ul>'.NL;
+	echo '<li><a href="upload.php" title="Upload Images"><img src="/images/banner/arrow_up.png" alt="" />Main</a></li>'.NL;
+	echo '<li><a href="upload.php?folder=monsters" title="Upload Images"><img src="/images/banner/bug.png" alt="" />Monsters</a></li>'.NL;
+	echo '<li><a href="upload.php?folder=skills" title="Upload Images"><img src="/images/banner/chart_bar.png" alt="" />Skills</a></li>'.NL;
+	echo '<li><a href="upload.php?folder=quests" title="Upload Images"><img src="/images/banner/quest.png" alt="" />Quests</a></li>'.NL;
+	echo '<li><a href="upload.php?folder=misc" title="Upload Images"><img src="/images/banner/book_open.png" alt="" />Misc Guides</a></li>'.NL;
+	echo '<li><a href="upload.php?folder=guilds" title="Upload Images"><img src="/images/banner/shield.png" alt="" />Guilds</a></li>'.NL;
+	echo '</ul>';
+}
+    
+if($ses->permit(11) OR $ses->permit(18) OR $ses->permit(21)) {
+	echo '<h3>User Management</h3>'.NL;
+	echo '<ul>'.NL;
+	if($ses->permit(11)) {
+		echo '<li><a href="accounts.php" title="Manage Accounts"><img src="/images/banner/user_edit.png" alt="" />Manage Accounts</a></li>'.NL; }
+	if($ses->permit(21)) {
+		echo '<li><a href="applications.php" title="Application Review"><img src="/images/banner/vcard_edit.png" alt="" />View Applications</a> (<a href="applications.php?radio">Radio</a>)</li>'.NL;}
+	if($ses->permit(18)) {
+		echo '<li><a href="activitym.php" title="Monitor Activity"><img src="/images/banner/magnifier.png" alt="" />Monitor Activity</a></li>'.NL;
+		echo '<li><a href="vip.php" title="VIP Message Board"><img src="/images/banner/lock.png" alt="" />VIP Message Board</a></li>'.NL;
+    }
+	echo '</ul>'.NL;
+}
+/*if($ses->permit(11) OR $ses->permit(18) OR $ses->permit(21) OR $ses->permit(1)) {
+	echo '</div>'.NL;
+}*/
+echo '<h3>Currently Active (15min)</h3>';
+echo '<ul><li><img src="/images/banner/group.png" alt="" />[#LASTACTIVE#]</li></ul></div>';
+
+//REMOVE AFTER HD UPDATE
+echo '<div style="margin-bottom:10px;padding:10px;border:2px #FB9E8E solid;color:#C04C32;background-color:#f6d2d2;width:95%;">
+
+<ul style="list-style-type:disc;padding-left:5px;">
+<li>Check <a href="/community/index.php?showtopic=1171046" style="color:black;font-weight:bold;">this topic</a> for new image submissions regularly.</li>
+<li>Make sure you check images before you upload them for the quality standards listed on the topic.</li>
+<li>When you upload images, please quote and reply in the topic so that no one does them twice.</li>
+<li>Do <strong>NOT</strong> check the HD boxes in guides/monsters after you\'ve uploaded images.  The manager will do that when they move the images.  However, if they forget and the images have been moved and all the imagea in the guide are HD, you may check the box.</li></ul></div>';
+?>

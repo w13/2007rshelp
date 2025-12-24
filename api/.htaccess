@@ -1,0 +1,10 @@
+#	Disables browsing through directory structure
+Options -indexes
+
+#	This routes clean urls along the lines of
+#		"http://2007rshelp.com/api/monsters/black+dragon"
+#	to
+#		"api.php?api_action=monsters&api_query=black+dragon"
+
+RewriteEngine On
+RewriteRule ^([^\/]+)\/?(.*)$ api.php?api_action=$1&api_query=$2 [L,QSA]

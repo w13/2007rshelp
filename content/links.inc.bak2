@@ -1,0 +1,47 @@
+<div class="navigation">
+<h3>Runescape Help</h3>
+<ul>
+<li><a href="/" title="Home Zybez Runescape Help"><img alt="" src="/images/banner/house.png" />Zybez Runescape Help</a></li>
+<li><a href="/mechscape/" title="Home Zybez Mechscape Help"><img alt="" src="/images/banner/house.png" />Zybez Mechscape Help</a></li>
+<li><a href="/community/" title="Runescape Community discussion forums"><img alt="" src="/images/banner/user_comment.png" />Runescape Community Forums</a></li>
+<li><a href="/tiko.php" title="Tiko Online Runescape Toolkit"><img alt="" src="/images/banner/tiko.png" />Tiko Online Runescape Toolkit</a></li>
+<li><a href="/swiftkit.php" title="SwiftKit Downloadable Runescape Toolkit"><img alt="" src="/images/banner/wrench.png" />SwiftKit Runescape Toolkit</a></li>
+</ul>
+<h3>Guides</h3>
+<ul>
+<li><a href="/skills.php" title="Runescape Skill Guides for skills such as Farming, Crafting, Summoning and more"><img alt="" src="/images/banner/chart_bar.png" />Runescape Skill Guides</a></li>
+<li><a href="/quests.php" title="Runescape Quest Guides and detailed tips on how to complete them"><img alt="" src="/images/banner/quest.png" />Runescape Quest Guides</a></li>
+<li><a href="/cities.php" title="Runescape City Guides for major towns and areas"><img alt="" src="/images/banner/building.png" />Runescape City Guides</a></li>
+<li><a href="/guilds.php" title="Runescape Guild Guides for guilds such as Cooking Guild, Heros Guild and Champions Guild"><img alt="" src="/images/banner/shield.png" />Runescape Guild Guides</a></li>
+<li><a href="/minigames.php" title="Runescape Mini Game Guides and Tips"><img alt="" src="/images/banner/minigame.png" />Runescape Mini Game Guides</a></li>
+<li><a href="/misc.php?id=57&amp;runescape_treasuretrailhelp.htm" title="Runescape Treasure Trail Help"><img alt="" src="/images/banner/treasure.png" />Runescape Treasure Trail Help</a></li>
+<li><a href="/misc.php" title="Lots of interesting Runescape guides and tips"><img alt="" src="/images/banner/book_open.png" />Runescape Miscellaneous Guides</a></li>
+<li><a href="/genguides.php" title="Runescape Player Guides and Tips"><img alt="" src="/images/banner/thumb_up.png" />Runescape Player Guides &amp; Tips</a></li>
+<li><a href="/dungeonmaps.php" title="Runescape Dungeon Maps"><img alt="" src="/images/banner/map2.png" />Runescape Dungeon Maps</a></li>
+<li><a href="/miningmaps.php" title="Runescape Mining Maps"><img alt="" src="/images/banner/hammer.png" />Runescape Mining Maps</a></li>
+</ul>
+<h3>Databases</h3>
+<ul>
+<li><a href="/priceguide.php" title="Runescape Market Prices of items Database"><img alt="" src="/images/banner/coins.png" />Runescape Market Price Guide</a></li>
+<li><a href="/items.php" title="Runescape Item Database"><img alt="" src="/images/banner/wand.png" />Runescape Item Database</a></li>
+<li><a href="/monsters.php" title="Runescape Monster Database"><img alt="" src="/images/banner/bug.png" />Runescape Monster Database</a></li>
+<li><a href="/shops.php" title="Runescape Shop Database"><img alt="" src="/images/banner/basket.png" />Runescape Shop Database</a></li>
+<li><a href="/tomes.php" title="Runescape Tome Database"><img alt="" src="/images/banner/book.png" />Runescape Tome Database</a></li>
+</ul>
+<h3>Tools</h3>
+<ul>
+<li><a href="/calcs.php" title="Runescape Skill Calculators"><img alt="" src="/images/banner/calculator.png" />Runescape Skill Calculators <b>*NEW*</b></a></li>
+<li><a href="/locator.php" title="Runescape Co-ordinate Locator"><img alt="" src="/images/banner/map.png" />Runescape Coordinate Locator</a></li>
+<li><a href="/statsgrabber.php" title="Runescape Hiscore Histories"><img alt="" src="/images/banner/chart_curve.png" />Runescape Hiscore History</a></li>
+<li><a href="http://runescapetop.com/upload/" title="Zybez Uploader"><img alt="" src="/images/banner/bullet_go.png" />Image Uploader</a></li>
+</ul>
+<h3>Community</h3>
+<ul>
+<li><a href="/runescapevideos.php" title="Runescape Videos &amp; Movies"><img alt="" src="/images/banner/film.png" />Runescape Videos</a></li>
+<li><a href="/screenshots.php" title="Screenshots"><img alt="" src="/images/banner/picture.png" />Runescape Screenshots</a></li>
+<li><a href="/concepts.php" title="Runescape Suggestions, Graphics, and Stories"><img alt="" src="/images/banner/palette.png" />Fan Creations</a></li>
+<li><a href="/blog.php" title="Zybez Blogs"><img alt="" src="/images/banner/page_white_edit.png" />Zybez Runescape Blogs</a></li>
+<li><a href="/irc.php" title="Zybez Runescape IRC"><img alt="" src="/images/banner/mirc.gif" />Zybez IRC Chat</a></li>
+<li><a href="/runescapeventrilo.php" title="Zybez Runescape Ventrilo Voice Chat"><img alt="" src="/images/banner/ventrilo.gif" />Zybez Runescape Ventrilo</a></li>
+</ul>
+</div>

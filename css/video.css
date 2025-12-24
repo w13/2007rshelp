@@ -1,0 +1,135 @@
+table.video {
+width:220px;
+height:300px;
+padding:0;
+margin:0 auto;
+}
+th {
+text-align:center;
+}
+td.videoheader {
+width:220px;
+height:36px;
+vertical-align:top;
+}
+div.videoheader {
+width:150px;
+height:10px;
+text-align:right;
+margin:14px 14px 12px auto;
+font:bold 9px arial, sans-serif;
+color:#e7ebe7;
+}
+td.videomiddle {
+width:220px;
+height:136px;
+background:url(/img/videos/video_preview_area.gif) no-repeat;
+}
+div.videomiddle {
+width:208px;
+margin:0 auto;
+}
+td.videomaintext {
+width:220px;
+height:107px;
+background:url(/img/videos/comment-section.gif) no-repeat;
+vertical-align:top;
+}
+div.videomaintext1 {
+width:200px;
+height:32px;
+text-align:left;
+vertical-align:top;
+margin:10px 10px auto 10px;
+overflow:hidden;
+font:bold 13px arial, sans-serif;
+color:#fff;
+}
+div.videomaintext2 {
+width:200px;
+height:50px;
+text-align:left;
+vertical-align:top;
+margin:3px 10px auto 10px;
+overflow:hidden;
+font:normal 10px arial, sans-serif;
+color:#bebebc;
+}
+td.videolowleft {
+width:158px;
+height:21px;
+background:url(/img/videos/video_bottom-left.gif) no-repeat;
+vertical-align:top;
+}
+div.videolowleft {
+width:148px;
+height:12px;
+text-align:left;
+vertical-align:top;
+margin:0 0 0 10px;
+overflow:hidden;
+font:bold 10px arial, sans-serif;
+color:#e4e2e2;
+}
+td.videostars {
+width:62px;
+height:21px;
+padding-top:1px;
+padding-left:5px;
+}
+.videolink a {
+text-decoration:none; display:block;
+}
+table.vtitle {
+background:#000 url(/img/videos/vidbg_tile.gif);
+border:1px solid #000;
+border-bottom:0;
+height:180px;
+font-family:'Lucida Sans Unicode', sans-serif;
+padding-left:5px;
+width:100%;
+}
+td.vtitle h1 {
+font:italic 48px Georgia, "Times New Roman", Times, serif;
+color:#fff;
+margin-top:2px;
+margin-bottom:0;
+}
+.vtitle a {
+color:#ff9d5b;
+}
+td.caticon {
+width:80%;
+margin:0 auto;
+}
+.category {
+font-size:10pt;
+font-weight:bold;
+text-align:center;
+padding:7px 3px;
+display:inline-block;
+background:url(/img/videos/caticon.gif) no-repeat;
+width:106px;
+height:32px;
+}
+html > body .category {
+display:table-cell !important;
+}
+.vidplay th {
+text-align:right;
+width:110px;
+font-weight:bold;
+}
+.vidplay td, .vidplay th {
+vertical-align:top;
+font-family:11px 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+.submitc {
+padding:1px 4px 5px 3px;
+color:#fff;
+margin:0 auto;
+background:transparent url(/img/videos/submitc.gif) no-repeat;
+border:0;
+width:70px;
+height:20px;
+}

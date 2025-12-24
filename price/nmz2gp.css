@@ -1,0 +1,9 @@
+#nmz2gpContent {
+	width: 300px;
+	height: 400px;
+	background-color: pink;
+	margin: auto;
+}
+#nmz2gpContent tr td:nth-child(2){
+	text-align: center;
+}

@@ -1,0 +1,58 @@
+.boxbottom {padding: 2px 5px;margin-bottom:10px;}
+.vote img {vertical-align:middle;}
+.vote,
+.vote:link,
+.vote:visited {
+	float: right;
+	display: block;
+	margin: 5px 0 3px;
+	background-color: #555;
+	border: 1px solid #222;
+	color: #eee;
+	padding: 3px;
+	background-image: url('/img/gradient_bg.png');
+	background-position: left;
+}
+.boxbottom .vote:active,
+.boxbottom .vote:hover {
+	background-color: #778;
+	border: 1px solid #444;
+	color: #fff;
+	text-decoration: none;
+}
+.null,
+.boxbottom .null:active,
+.boxbottom .null:hover {
+	background-color: #666;
+	border: 1px solid #333;
+	color: #eee;
+}
+.news {
+	margin: 0 0 20px;
+	padding: 0 8px;
+	border-bottom: 1px solid #000;
+}
+.news h3 {
+	font-size: 18px;
+	padding: 9px 0;
+	margin: 0;
+}
+.news .postmeta {
+	font-size: 10px;
+	font-style: italic;
+}
+.news img.avatar {
+	float: left;
+	padding: 5px 10px 0 0;
+	border: 0;
+	height: 50px;
+}
+.news p {
+	padding: 0 10px;
+}
+.tick {
+display:inline !important;
+display:none;
+}
+address{display:inline}
+.hide{display:none}

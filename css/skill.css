@@ -1,0 +1,20 @@
+.xp-table {
+border-collapse: collapse;
+margin: 0 20%;
+width:60%;
+}
+.xp-table thead, .xp-table tfoot {
+font-size:12px;
+}
+.xp-table td {
+border-bottom:2px solid #333;
+text-align:center;
+padding:5px;
+margin-right: 5px;
+}
+/*.xp-table td:after {
+content: '  »';
+}
+.xp-table td:before {
+content: '«  ';
+}*/

@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>RuneScape 3 Combat Calculator</title>
+
+<style>
+hr.style-two {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.skillinputbox{
+	text-align:center;
+}
+</style>
+
+</head>
+<body>
+<h1>W13's RuneScape 3 Combat Calculator</h1>
+<hr class="style-two" />
+<br />
+<table style="margin-left:35px;">
+	<tr><td>Attack:</td><td><input type="text" class="skillinputbox" id="attack" value="0" size="2" /></td></tr>
+	<tr><td>Strength:</td><td><input type="text" class="skillinputbox" id="strength" value="0" size="2" /></td></tr>
+	<tr><td>Defence:</td><td><input type="text" class="skillinputbox" id="defence" value="0" size="2" /></td></tr>
+	<tr><td>Ranged:</td><td><input type="text" class="skillinputbox" id="ranged" value="0" size="2" /></td></tr>
+	<tr><td>Magic:</td><td><input type="text" class="skillinputbox" id="magic" value="0" size="2" /></td></tr>
+	<tr><td>Summoning:</td><td><input type="text" class="skillinputbox" id="summoning" value="0" size="2" /></td></tr>
+</table> 
+
+<h2>Your combat level is <span id="combatlevel" style="font-weight:bold;">0</span></h2>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+		/* 
+			RuneScape 3 Combat Calculator 
+			by W13 from Zybez (11 August 2013)
+		*/
+		$(document).ready(function() {
+			$(".skillinputbox").keyup(function(){ processcombat(); }); /* for fast response */
+			$(".skillinputbox").change(function(){ processcombat(); }); /* for mobile */
+			function processcombat(){
+				var arrcomb = [parseInt($("#attack").val()), parseInt($("#strength").val()), parseInt($("#ranged").val()), parseInt($("#magic").val()), parseInt($("#summoning").val())];
+				arrcomb.sort().reverse();
+				$("#combatlevel").text(arrcomb[0] + parseInt($("#defence").val()) + 2);
+			}
+		});
+</script>
+
+<hr class="style-two" />
+<div style="font-size:small;"><a href="http://www.zybez.net" />Zybez</a></div>
+
+</body></html>

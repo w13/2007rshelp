@@ -1,0 +1,11 @@
+table.misc_list_table {margin-bottom:15px; border-spacing:0; border-collapse:collapse;}
+
+ul.guides {width: 100%; list-style: none;}
+ul.guides li {float:left;width:100%;}
+ul.guides .guide_title {float:left; width:28%; padding: 5px 5px;}
+ul.guides .guide_title span {font-weight:bold; letter-spacing: 1px;}
+ul.guides .guide_desc {float:right; width:70%; font-size:8px !important;}
+ul.guides p {margin-left: 35%;}
+
+#content h2 {font: bold 2.4em Georgia, Trebuchet MS, Verdana, Sans-Serif;}
+td hr {margin:20px 0;display:block;}

@@ -1,0 +1,660 @@
+Alrik	1	A subject of Miscellania.
+Ancient monkey	1	It's a monkey.
+Ape	1	It's an ape.
+Arnor	1	A subject of Etceteria.
+Ashild	1	A subject of Etceteria.
+Bearded gorilla	1	It's a gorilla.
+Bird	1	A tropical bird.
+Chicken	1	"Yep, definitely a chicken."
+Chuck	1	"He's a lumberjack, and he's ok."
+Demon	1	Demonic.
+Dryad	1	A wood nymph.
+Duck	1	Quackers.
+Duck	1	She quackers.
+Duckling	1	Mini quackers.
+Einar	1	A subject of Miscellania.
+Ghost (?)	1	That ghost looks suspiciously like a cheap Halloween costume...
+Gnome child	1	"Small, even by gnome standards."
+Gnome troop	1	It's a tree gnome trooper.
+Gnome woman	1	A female gnome.
+Gnome	1	It's a gnome.
+Gnome	1	Like a mini man!
+Gorilla	1	It's a gorilla.
+Half-Souless	1	A creature empty of emotion.
+Halla	1	A subject of Miscellania.
+Haming	1	A subject of Etceteria.
+Helga	1	A subject of Etceteria.
+Imp	1	A cheeky little imp.
+Jungle spider	1	Arachnoid.
+King Scorpion	1	That's poisonous.
+Large zombie monkey	1	It's a monkey.
+Matilda	1	A subject of Etceteria.
+Medium ninja monkey	1	It's a monkey.
+Mist	1	Is it a low cloud?
+Moldof	1	A subject of Etceteria.
+Monkey	1	It's a monkey.
+Petra Fiyed	1	An energetic female adventuress.
+Rabbit	1	Bright eyes.
+Ragnar	1	A subject of Miscellania.
+Rat	1	A popular dwarven delicacy.
+Shark	1	Let's not go skinny dipping eh?
+Sheep	1	White and fluffy.
+Sinclair Guard dog	1	"Big, noisy, and scary looking!"
+Sithik Ints	1	"A sick, frail old man."
+Sithik Ints	1	Is it a man or is it a monster?
+Small ninja monkey	1	It's a monkey.
+Small zombie monkey	1	It's a monkey.
+Spider	1	Incey wincey.
+Spider	1	It's an extremely small and probably poisonous brown spider.
+Spider	1	It's an extremely small brown spider. Probably very poisonous.
+Thorhild	1	A subject of Miscellania.
+Ug	1	A frail little troll.
+Undead Chicken	1	"Yep, definitely a chicken...an undead chicken"
+Vampyric hound	1	And I shall call him Fang.
+Weakened Delrith	1	The demon doesn't look so strong now.
+Weird snake.	1	Slightly more spherical than most snakes.
+Yrsa	1	A subject of Miscellania.
+Broddi	2	A subject of Miscellania.
+Bunny	2	"Hoppity, hoppity."
+Cow calf	2	Prelude to a steak!
+Cow calf	2	"Young and tender, nearly ready for the slaughter."
+Cow	2	A cow by any other name would smell as sweet.
+Cow	2	Beefy!
+Cow	2	Converts grass to beef.
+Cow	2	Where beef comes from.
+Entrana Fire Bird	2	Probably not a chicken.
+Giant spider	2	I think this spider has been genetically modified.
+Goblin	2	An ugly green creature.
+Imp	2	A cheeky little imp.
+Jonny the beard	2	Looks kind of shifty...
+Man	2	One of RuneScape's many citizens.
+Man	2	One of the citizens of Al-Kharid.
+Penguin	2	An inhabitant of icy regions.
+Rabbit	2	A cute bunny rabbit.
+Rabbit	2	"Aww, how cute."
+Ragnvald	2	A subject of Miscellania.
+Rannveig	2	A subject of Miscellania.
+Rooster	2	He rules the...er...roost.
+Skavid	2	Servant race to the ogres.
+Skraeling	2	A warrior of Etceteria.
+Skraeling	2	A warrior of Miscellania.
+Thora	2	A subject of Miscellania.
+Tramp	2	A man down on his luck.
+Undead Cow	2	It's an undead cow.
+Valgerd	2	A subject of Miscellania.
+Woman	2	One of RuneScape's many citizens.
+Wormbrain	2	A badly behaved goblin.
+Cave goblin	3	A goblin with big bulging eyes.
+Chicken	3	Yep definitely a chicken.
+Giant rat	3	Overgrown vermin.
+Gnome troop	3	It's a tree gnome trooper.
+Gnome	3	Like a mini man!
+Imp	3	A vicious little imp.
+Monk	3	An Ardougne Monk.
+Monkey	3	Perhaps our oldest relatives?
+Monkey	3	This monkey seems like it might want to talk!
+Monkey	3	This poor pet monkey looks very lost.
+Rooster	3	He rules the...er...roost.
+Villager	3	An old male villager.
+Villager	3	Female desert villager.
+Villager	3	Male desert villager.
+Woman	3	One of RuneScape's many citizens.
+Ceolburg	4	A citizen of Burthorpe.
+Eadburg	4	The Burthorpe Castle cook.
+Gardener	4	An old gardener.
+Hygd	4	A citizen of Burthorpe.
+Man	4	One of RuneScape's many citizens.
+Woman	4	One of RuneScape's many citizens.
+Bird	5	It's a brightly coloured bird of the jungle. It flies very quickly.
+Breoca	5	A citizen of Burthorpe.
+Desert snake	5	A slithering serpent.
+Goblin	5	An ugly green creature.
+Highwayman	5	He holds up passers by.
+Monk	5	A holy man.
+Ocga	5	A citizen of Burthorpe.
+Penda	5	A citizen of Burthorpe.
+Servant	5	A servant for Prince Anlaf.
+Snake	5	A slithering serpent.
+Bat	6	Annoying flappy thing.
+Cave Bug	6	A nasty crawling critter.
+Chompy bird	6	"A large boisterous bird, a delicacy for ogres."
+Giant rat	6	Overgrown vermin.
+Mugger	6	He jumps out and attacks people.
+Barbarian	7	Not very civilised looking.
+Crawling Hand	7	"Gimmie five.  Actually, don't."
+Dark wizard	7	He works evil magic.
+Farmer	7	He grows the crops in this area.
+Barbarian guard	8	Not very civilised looking.
+Barbarian woman	8	Scary in an argument!
+Crawling Hand	8	"Gimmie five.  Actually, don't."
+Dark warrior	8	A warrior touched by chaos.
+Al-Kharid warrior	9	Part of Al-Kharid's elite fighting force.
+Blessed Giant rat	9	It's one of Iban's pet vermin.
+Dwarf	9	A short angry guy.
+Gnome	9	It's a gnome.
+Myre Blamish Snail	9	"A marsh coloured blamish snail, these types are said to spit acid."
+Wizard	9	Slightly magical.
+Dwarf	10	A short angry guy.
+Guard	10	A dwarven guard.
+Myre Blamish Snail	10	"A marsh coloured blamish snail, these types are said to spit acid."
+Ochre Blamish Snail	10	"A muddy coloured blamish snail, these types are said to spit acid."
+Rowdy slave	10	He looks a bit aggressive.
+Thug	10	"Low on brains, high on aggression."
+Bird	11	It's a brightly coloured bird of the jungle.
+Cave goblin miner	11	He's working away.
+Cave goblin miner	11	This one is slacking off.
+Crawling Hand	11	A big severed hand.
+Mourner	11	"A mourner, or plague healer."
+Plague Frog	11	A very smelly frog.
+Shipyard worker	11	Builds ships for a living.
+Crawling Hand	12	A big severed hand.
+Crawling Hand	12	Give the guy a big hand.....
+Crawling Hand	12	I'm glad its just the hand I can see...
+Crawling Hand	12	Now THAT's handy.
+Dungeon rat	12	A dirty rat.
+Dungeon rat	12	Overgrown vermin.
+Grave Scorpion	12	A vicious little stinging thing.
+H.A.M. Guard	12	A guard for the humans against monster group.
+Leprechaun	12	A funny little man normally associated with rainbows.
+Mourner	12	"A mourner, or plague healer."
+Unicorn Foal	12	Horned Horsey.
+Woman	12	One of RuneScape's many citizens.
+Alomone	13	Leader of the Hazeel cult.
+Chaos druid	13	"A crazy, evil druid."
+Clivet	13	A member of the Hazeel cult.
+Goblin	13	These goblins have grown strong.
+Hazeel Cultist	13	A member of the Hazeel cult.
+Iban disciple	13	A dark magic user.
+Mourner	13	"A mourner, or plague healer."
+Rock Crab	13	No one likes crabs...
+Skeleton	13	It rattles when it walks.
+Summoned Zombie	13	The living dead.
+Zombie	13	Dead man walking.
+Lucien	14	He walks with a slight limp.
+River troll	14	Likes fish... hates people.
+Rock Golem	14	Rock with attitude.
+Scorpion	14	An extremely vicious scorpion.
+Shade	14	The angry dead!
+Thief	14	A dastardly blanket thief.
+Tree spirit	14	A very angry nymph.
+Watchman	14	The strong arm of the law.
+Woman	14	One of RuneScape's many citizens.
+Zombie	14	The walking dead!
+Bark Blamish Snail	15	"A branch bark coloured blamish snail, these types are said to spit acid."
+Bear Cub	15	Cute.  But deadly.
+Forester	15	They love the forests.
+Ochre Blamish Snail	15	"A muddy coloured blamish snail, these types are said to spit acid."
+Rogue	15	Rogueish.
+Unicorn	15	Horse with a horn.
+Unicorn	15	The animal is caged here.
+Skeleton Mage	16	An undead worker of dark magic.
+Thief	16	Known for his light-fingered qualities.
+Monk of Zamorak	17	An evil human cleric.
+H.A.M. Guard	18	A guard for the humans against monster group.
+Locust	18	Obnoxious overgrown insect.
+Mourner	18	"A mourner, or plague healer."
+Skeleton	18	Could do with gaining a few pounds.
+Souless	18	A servant to Iban.
+Zombie	18	Dead man walking.
+Bear	19	Eek! A bear!
+Ghost	19	Eeek! A ghost!
+Khazard trooper	19	It's one of General Khazard's warriors.
+Pirate Guard	19	A morally ambiguous guard.
+Suit of armour	19	A dusty old suit of armour.
+Tower Archer	19	Defender of the north tower.
+Witches experiment	19	Looks unnatural.
+Blood Blamish Snail	20	"A blood coloured blamish snail, these types are said to spit acid."
+Bruise Blamish Snail	20	"A bruise blue coloured blamish snail, these types are said to spit acid."
+Dark wizard	20	A practicer of dark arts.
+Dwarf	20	A mountain dwelling short angry guy.
+Fortress Guard	20	A generic evil henchman.
+Guard	20	Keeps the peace... kind of.
+Invrigar the Necromancer	20	An evil user of Magic powers
+Market Guard	20	He guards the Draynor Market stalls from thieves.
+Orc	20	A hideous malformed elf.
+Poison Scorpion	20	It has a very vicious looking tail.
+Sir Leye	20	A warrior blessed by Saradomin.
+Bear	21	Eek! A bear!
+Guard	21	He tries to keep order around here.
+Jackal	21	He has had his day...
+Skeleton	21	Could do with gaining a few pounds.
+Bandit	22	A wilderness outlaw.
+Black unicorn Foal	22	Cute but evil.
+Grip	22	Looks like he's been in the wars...
+Guard Bandit	22	Bandit Camp guard.
+Guard	22	He tries to keep order around here.
+H.A.M. Guard	22	A guard for the humans against monster group.
+Lizard man	22	A scaly reptilian creature.
+Monk of Zamorak	22	An evil human cleric.
+Shantay Guard	22	He patrols the Shantay Pass.
+Skeleton	22	Could do with gaining a few pounds.
+Banshee	23	A tortured screaming soul.
+Cave crawler	23	A spiky crawling critter.
+Cave Slime	23	A foul-smelling blob of protoplasm.
+Foreman	23	The boss!
+Gnome guard	23	A tree gnome guard.
+Khazard Guard	23	It's one of General Khazard's guards.
+Pirate	23	A fine example of piracy's equal opportunities program.
+Pirate	23	Avast ye scurvy land lubbers!
+Pirate	23	Yar! Shiver me timbers!
+Straven	23	Kind of funny looking.
+Weaponsmaster	23	Looks kind of obsessive...
+Big frog	24	It didn't get that big eating flies.
+Cave goblin guard	24	He protects the miners.
+Ghost	24	Spooky!
+Man	24	One of RuneScape's many citizens.
+Mourner	24	"A mourner, or plague healer."
+Snake	24	It's a camouflaged jungle snake.
+Warrior woman	24	Not very fashion conscious.
+Woman	24	One of RuneScape's many citizens.
+Zombie	24	The walking dead.
+Camp dweller	25	One of the inhabitants of the camp.
+Experiment	25	One of Fenkenstrain's failed experiments.
+Khazard Guard	25	It's one of General Khazard's guards.
+Skeleton	25	Could do with gaining a few pounds.
+Vampire	25	A royal pain in the neck.
+White wolf	25	A vicious mountain wolf.
+Witch	25	The hat's a dead give away.
+Wolf	25	A social killer.
+Zombie	25	The walking dead.
+Cave goblin guard	26	He protects the miners.
+Head Thief	26	The head of the treacherous blanket stealing gang.
+Jail guard	26	I wonder who he's guarding?
+Necromancer	26	A crazy evil necromancer.
+Pirate	26	This one's had too much to drink!
+Black unicorn	27	A unicorn with a blackened heart.
+Delrith	27	A freshly summoned demon.
+Desert Wolf	27	A vicious desert wolf.
+Giant bat	27	Annoying flappy thing.
+Giant spider	27	I think this spider has been genetically modified.
+Hill giant	28	A very large foe.
+Hobgoblin	28	"An ugly, smelly creature."
+Kalphite Worker	28	I don't think insect repellent will work...
+Pit Scorpion	28	"Tiny, annoying, stinging thing."
+Soldier	28	A soldier of the town of Yanille.
+Terrorbird	28	A giant raptor.
+Tower guard	28	Tries to keep the peace.
+Ghost	29	Eeek! A ghost!
+Gunthor the brave	29	A mighty warrior!
+River troll	29	Likes fish... hates people.
+Rock Golem	29	Rock with attitude.
+Rockslug	29	The slime of evil.
+Shade	29	The angry dead!
+Tree spirit	29	A very angry nymph.
+Watchman	29	The strong arm of the law.
+Zombie	29	The walking dead!
+Afflicted	30	A local villager of Mort'ton.
+Ghast	30	Arrghhh... A Ghast.
+Monk of Zamorak	30	An evil human cleric.
+Temple guardian	30	Looks like a big ugly dog.
+Witches experiment second form	30	Looks unnatural.
+Camp dweller	31	One of the inhabitants of the camp.
+Mounted terrorbird gnome	31	These gnomes know how to get around!
+Poison spider	31	A nasty poisonous arachnid.
+Vulture	31	If you see them circling... run.
+Afflicted	32	A local villager of Mort'ton.
+Giant Lobster	32	An extremely vicious lobster.
+King Scorpion	32	Wow! Scorpions shouldn't grow that big.
+Tribesman	32	A primitive warrior.
+Black Knight	33	A dark-hearted knight.
+Druid	33	Loves nature.
+Grizzly bear cub	33	Eek! A bear cub!
+Watchman	33	Watches stuff. But who watches him?
+Afflicted	34	A local villager of Mort'ton.
+Air elemental	34	An air elemental.
+Black Heather	34	Has a fearsome scowl.
+Count Draynor	34	Stop looking and run!
+Deadly red spider	34	I think this spider has been genetically modified.
+Donny the lad	34	Has a fearsome posture.
+Speedy Keith	34	Nice hair.
+Tower Archer	34	Defender of the east tower.
+Water elemental	34	A water elemental.
+Earth elemental	35	An earth elemental.
+Fire elemental	35	A fire elemental.
+Monkey	35	It's a monkey.
+Grizzly bear cub	36	Eek! A bear cub!
+White Knight	36	Shiny armour!
+White Knight	36	The Knight seems to be watching something.
+Afflicted	37	A local villager of Mort'ton.
+Archer	37	Good with arrows.
+Chaos druid warrior	37	A crazy evil druid.
+Cockatrice	37	The winged reptile.
+Guard	37	A Burthorpe Castle guard.
+Guard	37	Keeps order in the ranging guild.
+Jungle spider	37	"A very dangerous looking spider, with its fangs unsheathed."
+Renegade Knight	37	He isn't very friendly.
+Colonel Radick	38	A military man.
+Scorpion	38	It's an extremely dangerous looking scorpion.
+White wolf	38	A vicious mountain wolf.
+Blessed spider	39	It's one of Iban's pets.
+Sir Mordred	39	Leader of the Renegade Knights.
+Zombie	39	A human zombie.
+Loar Shade	40	The shadowy remains of a long departed soul.
+Loar Shadow	40	"A shadowy sort of entity, kind of creepy looking."
+Abyssal leech	41	A blood-drinking denizen of the abyss.
+Bandit	41	Tough-looking.
+Mammoth	41	A woolly elephantine monster.
+Wizard Grayzag	41	Master of imps.
+Archer	42	A Burthorpe Castle archer.
+Ghoul	42	It's totally savage.
+Goblin guard	42	I will have to kill him to get past him.
+Grizzly bear	42	Eek! A big bear!
+Hobgoblin	42	"An ugly, smelly creature, with a spear."
+Magic axe	42	A magic axe with a mind of its own.
+Moss giant	42	His beard seems to have a life of its own.
+Skeletal miner	42	I don't think the pickaxe is for hitting rocks.
+Ugthanki	42	A vicious attacking camel.
+Witches experiment third form	42	Looks unnatural.
+Crypt rat	43	A nasty little rodent.
+Guardian of Armadyl	43	A guard who has devoted their life to Armadyl.
+Melzar the mad	43	He looks totally insane!
+Pyrefiend	43	A small fire demon.
+Rowdy Guard	43	He looks a bit aggressive and rowdy.
+Dwarf gang member	44	A short stout menacing fellow.
+Guard dog	44	He doesn't seem pleased to see me.
+Jungle spider	44	A barely visible deadly jungle spider.
+Khazard Scorpion	44	A large angry scorpion.
+Skogre	44	A partially decomposing zombie ogre.
+Skogre	44	A skeletal ogre.
+Skogre	44	It's falling apart!
+Zogre	44	A partially decomposing zombie ogre.
+Guardian of Armadyl	45	A guard who has devoted their life to Armadyl.
+Mercenary	45	He looks a bit aggressive.
+Monk of Zamorak	45	An evil human cleric.
+Skeleton	45	Could do with gaining a few pounds.
+Death spawn	46	An evil death spawn.
+Knight of Ardougne	46	A member of Ardougne's militia.
+Knight of Ardougne	46	To protect and serve the populace of Ardougne.
+Oomlie Bird	46	"A jungle version of the chicken, but more vicious."
+Jailer	47	Guards prisoners for the black knights.
+Mercenary Captain	47	He looks a bit aggressive.
+Baby blue dragon	48	Young but still dangerous.
+Baby dragon	48	Young but still dangerous.
+Black Guard	48	"A member of the Black Guard, a special division of the dwarven army."
+Borrokar	48	One of Rellekka's many citizens.
+Chaos dwarf	48	A dwarf gone bad.
+Dwarf gang member	48	A short stout menacing fellow.
+Freidir	48	One of Rellekka's many citizens.
+Freygerd	48	One of Rellekka's many citizens.
+Inga	48	One of Rellekka's many citizens.
+Jennella	48	One of Rellekka's many citizens.
+Khazard commander	48	It's one of General Khazard's commanders.
+Lanzig	48	One of Rellekka's many citizens.
+Lensa	48	One of Rellekka's many citizens.
+Market Guard	48	Keeps the stalls secure.
+Pontak	48	One of Rellekka's many citizens.
+Sassilik	48	One of Rellekka's many citizens.
+Shadow warrior	48	"A fighter from the supernatural world, he's a shadow of his former self."
+Soldier	48	A soldier of the Imperial Guard.
+Warrior	48	A hardened Fremennik warrior.
+Dwarf gang member	49	A short stout menacing fellow.
+Mounted terrorbird gnome	49	These gnomes know how to get around!
+River troll	49	Likes fish... hates people.
+Rock Golem	49	Rock with attitude.
+Shade	49	The angry dead!
+Tower Archer	49	Defender of the south tower.
+Tree spirit	49	A very angry nymph.
+Wall Beast	49	A big scary hand!
+Watchman	49	The strong arm of the law.
+Zombie	49	The walking dead!
+Possessed Pickaxe	50	How does it move of its own accord?
+Earth warrior	51	A strange inhuman elemental warrior.
+Experiment	51	It has a key hanging from its collar.
+Bloodworm	52	Think I should keep my distance...
+Leech	52	Yuck! It's all slimy!
+Shadow spider	52	Is it a spider or is it a shadow?
+Ice giant	53	He's got icicles in his beard.
+Jogre	53	An aggressive humanoid.
+Ogre	53	A large dim looking humanoid.
+Witches experiment fourth form	53	Looks unnatural.
+Battle mage	54	He kills in the name of Guthix.
+Battle mage	54	He kills in the name of Saradomin.
+Battle mage	54	He kills in the name of Zamorak.
+Golem	55	A creature made from clay.
+Menaphite Thug	55	Menaphite thug.
+Bandit	56	A vicious thief.
+Bedabin Nomad Fighter	56	A bedabin nomad fighter - a sandy swordsman.
+Cowardly Bandit	56	Probably the weakest bandit in the world ....ever.
+Crypt spider	56	Incey wincey.
+Cyclops	56	A one-eyed man eater.
+Bandit	57	A tough-looking criminal.
+Ice warrior	57	A cold-hearted elemental warrior.
+Ice warrior	57	The Ice Queen's Royal Guard.
+Yeti	58	The abominable snowman.
+Abyssal guardian	59	It seems to have eyes in the back of its head...
+Paladin	59	A military man.
+Tortured Soul	59	This poor soul cannot understand why it has not passed to the next world.
+Phrin Shade	60	The shadowy remains of a long departed soul.
+Phrin Shadow	60	"A shadowy sort of entity, kind of creepy looking."
+Basilisk	61	The eyes of evil.
+Ice spider	61	I think this spider has been genetically modified.
+Monkey	61	It's a monkey.
+Undead One	61	A minion of Rashiliyia.
+Vampire	61	It looks really hungry!
+Paladin	62	A holy warrior.
+Sir Carl	62	A mighty looking warrior.
+Sir Harry	62	A mighty looking warrior.
+Sir Jerro	62	A mighty looking warrior.
+Crocodile	63	Never smile at a...
+Khazard Ogre	63	Khazard's strongest ogre warrior.
+Ogre	63	"Big, ugly, and smelly."
+Shadow Hound	63	Looks hungry!
+Wild dog	63	An unsuitable pet.
+Wild dog	63	Looks like it's got Rabies!
+Jungle Wolf	64	A rare jungle wolf - specific to the Kharazi jungle.
+Otherworldly being	64	Is he invisible or just a set of floating clothing?
+Poison spider	64	I think this spider has been genetically modified.
+Tower Archer	64	Defender of the west tower.
+Wolf	64	Not man's best friend.
+Wolf	64	Not mans' best friend.
+Baby red dragon	65	Young but still dangerous.
+Zamorak Wizard	65	A servant of Zamorak.
+Black Guard Berserker	66	An elite member of the Black Guard.
+Infernal Mage	66	An evil magic user.
+Thrower Troll	67	"Small for a troll but mean, ugly and throws rocks."
+Gorad	68	"Big, dumb and ugly."
+Nazastarool	68	A giant skeleton of huge strength and devastating power.
+Thrower Troll	68	"Small for a troll but mean, ugly and throws rocks."
+Undead One	68	A minion of Rashiliyia.
+Undead One	68	"The animated dead, one of Rashiliyia's minions."
+Hero	69	Heroic!
+Mountain Troll	69	Small for a troll but mean and ugly.
+The Draugen	69	A fearful spirit of the drowned.
+Troll	69	A hideously deformed creature.
+Bandit champion	70	A very tough-looking bandit.
+Ogre merchant	70	"Funnily enough, doesn't actually buy or sell ogres."
+Ogre trader	70	"Funnily enough, doesn't actually buy or sell ogres."
+Salarin the twisted	70	A crazy evil druid
+The Kendal	70	Is that a bear... or a man?
+Ungadulu	70	The Kharazi tribe's elusive Shaman.
+Berry	71	He's guarding the cells.
+Mountain Troll	71	Small for a troll but mean and ugly.
+Troll Spectator	71	He's watching the arena.
+Twig	71	He's guarding the cells.
+Vampire	72	Where did that come from?
+Big Wolf	73	Must be the pack leader.
+Undead One	73	"The animated dead, one of Rashiliyia's minions."
+Bandit	74	A tough-looking criminal.
+Dagannoth	74	A horror from the ocean depths...
+Apmeken	75	"Body of a woman, face of a monkey."
+Arzinian Avatar of Magic	75	"It is the avatar of the Arzinian Being of Bordanzan, representing magic."
+Arzinian Avatar of Ranging	75	"It is the avatar of the Arzinian Being of Bordanzan, representing ranging."
+Arzinian Avatar of Strength	75	"It is the avatar of the Arzinian Being of Bordanzan, representing strength."
+Crondis	75	"Body of a woman, head of a crocodile."
+Scabaras	75	A scarab headed demi-god.
+Tough Guy	75	Tough looking Menaphite.
+Bloodveld	76	The tongue of evil.
+Giant crypt rat	76	A nasty overgrown rodent.
+Ogre guard	76	An ogre that guards.
+Skeleton	77	Could do with gaining a few pounds.
+Jelly	78	Doesn't look so tough...
+Jelly	78	Looks scared to see me.
+Jelly	78	Needs cream.....
+Jelly	78	There's always room for jelly.
+Jelly	78	Wibbly.
+Jelly	78	Wobbly...
+Giant crypt spider	79	Not very incey wincey...
+Green dragon	79	Must be related to Elvarg.
+River troll	79	Likes fish... hates people.
+Rock Golem	79	Rock with attitude.
+Shade	79	The angry dead!
+Tree spirit	79	A very angry nymph.
+Viyeldi	79	The spirit of a long-dead wizard.
+Watchman	79	The strong arm of the law.
+Zombie	79	The walking dead!
+Giant skeleton	80	A giant skeleton.
+Riyl Shade	80	The shadowy remains of a long departed soul.
+Riyl Shadow	80	"A shadowy sort of entity, kind of creepy looking."
+Abyssal walker	81	Apparently walks the abyss.
+Het	81	Guardian of the liver. Guess he doesn't drink.
+Ogre chieftain	81	Tough looking.
+Lesser demon	82	"Lesser, but still pretty big."
+Monkey Zombie	82	A recently deceased monkey. Its flesh seems to be worse for the wear.
+City guard	83	Tries to keep the peace.
+Death wing	83	"A shadowy, barely visible flying entity from some evil place."
+Elvarg	83	Rawr! A dragon!
+Enclave guard	83	Big and ugly looking.
+Ogre guard	83	An ogre that guards.
+Ogre guard	83	These ogres protect the city.
+The Shaikahan	83	"A huge beast, resembling in some ways a lion, but mostly a twisted nightmare."
+Turoth	83	It's one small leg short!
+Fire Warrior of Lesarkus	84	Intimidating!
+Moss giant	84	Bigger than your average moss giant.
+Mummy	84	A tightly wrapped monster.
+Kalphite Soldier	85	I don't think insect repellent will work...
+Turoth	85	It's one leg short!
+Fire giant	86	A very large elemental adversary.
+Monkey Archer	86	A bow wielding ninja monkey.
+Monkey Archer	86	A bow wielding ninja monkey. It looks particularly dangerous.
+Turoth	86	He's one leg short!
+Turoth	87	She's one leg short!
+Dire Wolf	88	What big teeth you have.
+Turoth	88	He's one big leg short!
+Wolfman	88	Eek! A werewolf!
+Wolfwoman	88	Eek! A werewolf!
+Kalrag	89	A giant spider.
+Turoth	89	He's one big leg short!
+Elf warrior	90	He looks pretty handy with that bow.
+Jungle Savage	90	An aggressive native of the Kharazi Jungle.
+Doomion	91	One of the Guardians of Iban.
+Holthion	91	One of the Guardians of Iban.
+Kraka	91	A nasty looking troll.
+Nazastarool	91	A giant zombie of huge strength and devastating power.
+Othainian	91	One of the Guardians of Iban.
+Pee Hat	91	A nasty looking troll.
+Possessed Priest	91	He has a dangerous glint in his eye.
+Dagannoth	92	A horror from the ocean depths...
+Greater demon	92	"Big, red, and incredibly evil."
+Ranalph Devere	92	The spirit of a long dead warrior.
+Scarabs	92	I think they're some kind of beetle...
+Slagilith	92	This monster totally rocks!
+Thrantax the Mighty	92	A terrifying spirit.
+Dustdevil	93	The vacuumed face of evil.
+Nazastarool	93	A giant ghost of huge strength and devastating power.
+Smokedevil	93	The cave-dwelling cousin of the dustdevils.
+Stranger	95	Very mysterious looking...
+Treus Dayth	95	Eeek! A big ghost!
+Aberrant specter	96	A very smelly ghost.
+Ice wolf	96	Not mans' best friend.
+Mummy	96	A tightly wrapped monster.
+Skeleton Hellhound	97	A creature summoned by Vanstrom to kill the remaining Myreque.
+Ahrim the Blighted	98	A vengeful spirit corrupted by dark magic.
+Karil the Tainted	98	A vengeful spirit corrupted by dark magic.
+Monkey Zombie	98	A large and lumbering undead monkey.
+Scarabs	98	I think they're some kind of beetle...
+Ghost	99	Eeek! A ghost!
+Giant frog	99	It didn't get that big eating flies.
+Asyn Shade	100	The shadowy remains of a long departed soul.
+Asyn Shadow	100	"A shadowy sort of entity, kind of creepy looking."
+Dagannoth mother	100	A horror from the ocean depths...
+Dagannoth	100	A horror from the ocean depths...
+Irvig Senay	100	The spirit of a long dead warrior.
+Dad	101	An unusually large troll.
+Tree spirit	101	Guardian of the dramen tree.
+Damis	103	The warrior of darkness.
+Mummy	103	A tightly wrapped monster.
+Mummy	103	A victim of poor first aid.
+Mummy	103	But who's the Daddy?
+Mummy	103	Spooky bandaged dead dude.
+Stick	104	"A big, bad troll."
+Kurask	106	"Large, heavy, with sharp things attached to its head."
+Kurask	106	"Larger, heavier, with sharper things attached to its head."
+San Tojalon	106	The spirit of a long dead warrior.
+Elf warrior	108	I don't wanna be at the wrong end of that pike.
+Saradomin Wizard	108	A follower of Saradomin.
+Tyras guard	110	One of King Tyras's men.
+Blue dragon	111	A mother dragon.
+Gargoyle	111	Flies like a rock.
+Ice Queen	111	A cold hearted lady.
+Rock	111	The biggest and baddest troll.
+Slash Bash	111	A powerful looking Zogre.
+General Khazard	112	He looks really nasty. Smells bad too.
+Khazard warlord	112	"He looks real nasty, smells bad too."
+Kolodion	112	He's a shape shifter.
+Arrg	113	"A massive, scary-looking troll."
+Ogre shaman	113	Seems intelligent... for an ogre.
+Troll General	113	One of the Troll Generals.
+Dharok the Wretched	115	A vengeful spirit corrupted by dark magic.
+Guthan the Infested	115	A vengeful spirit corrupted by dark magic.
+Nechryael	115	An evil death demon.
+Torag the Corrupted	115	A vengeful spirit corrupted by dark magic.
+Verac the Defiled	115	A vengeful spirit corrupted by dark magic.
+Black Knight Titan	120	He looks mean and powerful.
+Fiyr Shade	120	The shadowy remains of a long departed soul.
+Fiyr Shadow	120	"A shadowy sort of entity, kind of creepy looking."
+Ice Troll	120	Brrrrr...he must be cold!
+River troll	120	Likes fish... hates people.
+Rock Golem	120	Rock with attitude.
+Shade	120	The angry dead!
+Tree spirit	120	A very angry nymph.
+Watchman	120	The strong arm of the law.
+Zombie	120	The walking dead!
+Ice Troll	121	Brrrrr...he must be cold!
+Hellhound	122	"Hello, nice doggy..."
+Ice Troll	123	Brrrrr...he must be cold!
+Abyssal demon	124	It's escaped from the abyss.
+Ice Troll	124	Brrrrr...he must be cold!
+Arzinian Avatar of Magic	125	"It is the avatar of the Arzinian Being of Bordanzan, representing magic."
+Arzinian Avatar of Ranging	125	"It is the avatar of the Arzinian Being of Bordanzan, representing ranging."
+Arzinian Avatar of Strength	125	"It is the avatar of the Arzinian Being of Bordanzan, representing strength."
+Monkey Zombie	129	"A large and lumbering undead monkey stands here, blocking the way."
+Bronze dragon	131	Its scales seem to be made of bronze.
+Ice wolf	132	Not man's best friend.
+Ice wolf	132	Not mans' best friend.
+Bouncer	137	Nice doggy.
+Dessous	139	Vampire warrior of Zamorak.
+Kalphite Guardian	141	I don't think insect repellent will work...
+Skeleton	142	It looks just a bit ... underfed.
+Combat Instructor	146	An expert on all forms of combat.
+Duke	149	A large ninja monkey wielding two scimitars.
+Kruk	149	A large ninja monkey wielding two scimitars.
+Monkey Guard	149	A scimitar wielding ninja monkey.
+Oipuis	149	A large ninja monkey wielding two scimitars.
+Ouhai	149	A large ninja monkey wielding two scimitars.
+Padulah	149	A scimitar wielding ninja monkey. He looks like he is guarding something.
+Uodai	149	A large ninja monkey wielding two scimitars.
+Uyoro	149	A large ninja monkey wielding two scimitars.
+Red dragon	152	A big powerful dragon.
+Kamil	154	Ice warrior.
+River troll	159	Likes fish... hates people.
+Rock Golem	159	Rock with attitude.
+Shade	159	The angry dead!
+Tree spirit	159	A very angry nymph.
+Watchman	159	The strong arm of the law.
+Zombie	159	The walking dead!
+Fareed	167	Zamorak's warrior of fire.
+Monkey Guard	167	A huge brutish gorilla armoured with dangerous looking vambraces.
+Ungadulu	169	The Kharazi tribe's elusive Shaman - something doesn't look quite right with him.
+Chronozon	170	Chronozon the blood demon.
+Black Demon	172	"A big, scary, jet-black demon."
+Damis	174	The warrior of darkness.
+Echned Zekin	187	A spirit of the underworld.
+Nezikchened	187	An ancient powerful demon of the underworld.
+Iron dragon	189	Its scales seem to be made of iron.
+Jungle Demon	195	A Greater Jungle Demon. A magical aura emanates from its hide.
+Black dragon	227	A fierce dragon with black scales!
+Steel dragon	246	Its scales seem to be made of steel.
+King black dragon	276	"The biggest, meanest dragon around."
+Hazeel	296	An evil being raised from the dead.
+Kalphite Queen	333	I don't think insect repellent will work...
+Arzinian Being of Bordanzan	781	"It's the Arzinian Being, whatever that is, that comes from Bordanzan, wherever that is."

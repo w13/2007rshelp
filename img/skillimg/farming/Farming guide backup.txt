@@ -1,0 +1,478 @@
+[html]<div class=title1>Table of Contents</div>
+<table>
+<tr>
+<td class="linksmenu">
+<a href="#1">Introduction</a><br>
+<a href="#2">The Seeds</a><br>
+<a href="#3">Farming Equipment</a><br>
+<a href="#4">Strategies [ To Come ]</a><br>
+</td></tr></table><br>
+
+<hr /><br><br>
+
+<a name="1">
+<div class="title1">1.0 Introduction</div></a>
+
+<p>Farming has not yet fully been released, so very little is known about what use the skill will be. This guide will continue to be updated as more information about the twentieth skill is released. Jagex have planned to release the farming skill in July.</p>
+
+
+<p>At the present time, the basis for the farming skill can be found in Draynor Village, with two seed stalls, and two master farmers.</p>
+
+<hr /><Br><br>
+
+<a name="2">
+<div class="title1">2.0 The Seeds</div></a>
+
+<p>The Draynor market area now contains two seed stalls, a seed merchant named Olivia, and two master farmers. The seed stalls require  theiving level 27 to thieve from, and the master farmers require theiving level 38 to thieve from. Olivia runs the seed stores, and will buy or sell seeds. Certain tree seeds can also be obtained from bird nests, which randomly fall out of trees while you're woodcutting.</p>
+
+<p>For more information regarding thieving the seeds, see the <a href="http://www.zybez.com/skills.php?id=5">Thieving Guide</a>.</p>
+
+<table width="100%" cellspacing="0" style="border-left: 1px solid #000000">
+
+<tr>
+<td class="tabletop">Picture</td>
+<td class="tabletop">Name</td>
+<td class="tabletop">Produces</td>
+<td class="tabletop">Rarity</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_acorn.png" /></td>
+<td class="tablebottom">Acorn seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_appletree.png" /></td>
+<td class="tablebottom">Apple tree seed</td>
+<td class="tablebottom">Apple tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_asgarnian.png" /></td>
+<td class="tablebottom">Asgarnian seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_bananatree.png" /></td>
+<td class="tablebottom">Banana tree seed</td>
+<td class="tablebottom">Banana</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_barley.png" /></td>
+<td class="tablebottom">Barley seed</td>
+<td class="tablebottom">Barley stock</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_belladonna.png" /></td>
+<td class="tablebottom">Belladonna seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">Very rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_cabbage.png" /></td>
+<td class="tablebottom">Cabbage seed</td>
+<td class="tablebottom">Cabbage</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_cactus.png" /></td>
+<td class="tablebottom">Cactus seed</td>
+<td class="tablebottom">Cactus</td>
+<td class="tablebottom">Very rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_cadavaberry.png" /></td>
+<td class="tablebottom">Cadavaberry Seed</td>
+<td class="tablebottom">Cadavaberry Bush</td>
+<td class="tablebottom">Average</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_calquattree.png" /></td>
+<td class="tablebottom">Calquat tree seed</td>
+<td class="tablebottom">Calquat tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_curry.png" /></td>
+<td class="tablebottom">Curry tree seed</td>
+<td class="tablebottom">Curry tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_dwellberry.png" /></td>
+<td class="tablebottom">Dwellberry seed</td>
+<td class="tablebottom">Dwellberry bush</td>
+<td class="tablebottom">Uncommon</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_hammerstone.png" /></td>
+<td class="tablebottom">Hammerstone seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">Common</td>
+</tr>
+<tr> 
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #1</td>
+<td class="tablebottom">Guam</td>
+<td class="tablebottom">Average</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #2</td>
+<td class="tablebottom">Marrentill</td>
+<td class="tablebottom">Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #3</td>
+<td class="tablebottom">Tarromin</td>
+<td class="tablebottom">Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #4</td>
+<td class="tablebottom">Harralander</td>
+<td class="tablebottom">Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #5</td>
+<td class="tablebottom">Ranarr weed</td>
+<td class="tablebottom">Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #6</td>
+<td class="tablebottom">Toadflax(?)</td>
+<td class="tablebottom">-</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #7</td>
+<td class="tablebottom">Irit leaf</td>
+<td class="tablebottom">Very Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #8</td>
+<td class="tablebottom">Avantoe</td>
+<td class="tablebottom">Very Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #9</td>
+<td class="tablebottom">Kwuarm</td>
+<td class="tablebottom">Very Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #10</td>
+<td class="tablebottom">Snapdragon</td>
+<td class="tablebottom">-</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #11</td>
+<td class="tablebottom">Cadantine</td>
+<td class="tablebottom">Very Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #12</td>
+<td class="tablebottom">Lantadyme</td>
+<td class="tablebottom">Very Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #13</td>
+<td class="tablebottom">Dwarf weed</td>
+<td class="tablebottom">Very Rare</td>
+</tr>
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_herb.png" /></td>
+<td class="tablebottom">Herb #14</td>
+<td class="tablebottom">Torstol</td>
+<td class="tablebottom">Very Rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_jangerberry.png" /></td>
+<td class="tablebottom">Jangerberry seed</td>
+<td class="tablebottom">Jangerberry bush</td>
+<td class="tablebottom">Rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_jute.png" /></td>
+<td class="tablebottom">Jute seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_krandorian.png" /></td>
+<td class="tablebottom">Krandorian Seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">Average</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_limpwurt.png" /></td>
+<td class="tablebottom">Limpwurt seed</td>
+<td class="tablebottom">Limpwurt root</td>
+<td class="tablebottom">Uncommon</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_magic.png" /></td>
+<td class="tablebottom">Magic seed</td>
+<td class="tablebottom">Magic tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_maple.png" /></td>
+<td class="tablebottom">Maple seed</td>
+<td class="tablebottom">Maple tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_marigold.png" /></td>
+<td class="tablebottom">Marigold seed</td>
+<td class="tablebottom">Marigold flower</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_mushroomspore.png" /></td>
+<td class="tablebottom">Mushroom spore</td>
+<td class="tablebottom">Mushroom</td>
+<td class="tablebottom">Rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_nasturtium.png" /></td>
+<td class="tablebottom">Nasturtium seed</td>
+<td class="tablebottom">Nasturtium flower</td>
+<td class="tablebottom">Average</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_onion.png" /></td>
+<td class="tablebottom">Onion seed</td>
+<td class="tablebottom">Onion</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_orangetree.png" /></td>
+<td class="tablebottom">Orange tree seed</td>
+<td class="tablebottom">Orange tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_palmtree.png" /></td>
+<td class="tablebottom">Palm tree seed</td>
+<td class="tablebottom">Palm tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_papaya.png" /></td>
+<td class="tablebottom">Papaya tree seed</td>
+<td class="tablebottom">Papaya tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_pineapple.png" /></td>
+<td class="tablebottom">Pineapple seed</td>
+<td class="tablebottom">Pineapple plant</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_poisonivy.png" /></td>
+<td class="tablebottom">Poison ivy seed</td>
+<td class="tablebottom">Poison ivy bush</td>
+<td class="tablebottom">Rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_potato.png" /></td>
+<td class="tablebottom">Potato seed</td>
+<td class="tablebottom">Potato</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_redberry.png" /></td>
+<td class="tablebottom">Redberry seed</td>
+<td class="tablebottom">Redberry bush</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_rosemary.png" /></td>
+<td class="tablebottom">Rosemary seed</td>
+<td class="tablebottom">Rosemary leaves</td>
+<td class="tablebottom">Average</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_spirit.png" /></td>
+<td class="tablebottom">Spirit seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_strawberry.png" /></td>
+<td class="tablebottom">Strawberry seed</td>
+<td class="tablebottom">Strawberry plant</td>
+<td class="tablebottom">Average</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_sweetcorn.png" /></td>
+<td class="tablebottom">Sweetcorn seed</td>
+<td class="tablebottom">Sweetcorn stock</td>
+<td class="tablebottom">Common</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_tomato.png" /></td>
+<td class="tablebottom">Tomato seed</td>
+<td class="tablebottom">Tomato plant</td>
+<td class="tablebottom">-</td>
+</tr>
+
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_watermelon.png" /></td>
+<td class="tablebottom">Watermelon seed</td>
+<td class="tablebottom">Watermelon plant</td>
+<td class="tablebottom">Rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_wildblood.png" /></td>
+<td class="tablebottom">Wildblood seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">Uncommon</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_willow.png" /></td>
+<td class="tablebottom">Willow seed</td>
+<td class="tablebottom">Willow tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_woad.png" /></td>
+<td class="tablebottom">Woad seed</td>
+<td class="tablebottom">Woad leaves</td>
+<td class="tablebottom">Rare</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_yanillian.png" /></td>
+<td class="tablebottom">Yanillian seed</td>
+<td class="tablebottom">-</td>
+<td class="tablebottom">Average</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_yew.png" /></td>
+<td class="tablebottom">Yew Seed</td>
+<td class="tablebottom">Yew Tree</td>
+<td class="tablebottom">-</td>
+</tr>
+
+</table><br>
+
+<hr /><br><br>
+
+<a name="3">
+<div class="title1">3.0 Farming Equipment</div></a>
+
+<p>There are various types of equipment involved with farming. These can be obtained by killing level 7 and 15 Farmers, at any farm area. The below table outlines farming equipment</p>
+
+<table width="100%" cellspacing="0" style="border-left: 1px solid #000000">
+
+
+<tr>
+<td class="tabletop">Picture</td>
+<td class="tabletop">Name</td>
+<td class="tabletop">Used for...</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/rake.png" /></td>
+<td class="tablebottom">Rake</td>
+<td class="tablebottom">Used to cultivate the soil.</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/gardening_boots.png" /></td>
+<td class="tablebottom">Gardening boots</td>
+<td class="tablebottom">Gardening protection</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/wateringcan.png" /></td>
+<td class="tablebottom">Watering can (8)</td>
+<td class="tablebottom">Used to water your garden patch.</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/seed_dibber.png" /></td>
+<td class="tablebottom">Seed dibber</td>
+<td class="tablebottom">Used to give the seeds their first dose of water.</td>
+</tr>
+
+<tr>
+<td class="tablebottom"><img src="http://www.zybez.com/img/idbimg/Secateurs.png" /></td>
+<td class="tablebottom">Secateurs</td>
+<td class="tablebottom">Used to snip vines, fruits, stalks etc.</td>
+</tr>
+
+</table><br><br>
+
+<hr /><br>
+<a name="4">
+<div class=title1>4.0 Strategies</div></a>
+<p>To start off your farming career, you will need to collect seeds, and some farming equipment. There are a few methods to obtain the items required to start farming. These include:</p>
+<ul>
+<li>Pickpocketing master farmers in Draynor Village markets;</li>
+<li>Stealing seeds from the Draynor Village seed stall;</li>
+<li>Buying seeds from Olivia, in Draynor; or</li>
+<li>Killing Farmers (level-15/17) for seeds and equipment</li>
+</ul>
+<p>Farmers are scattered throughout RuneScape; making their homes in farms everywhere. Farmers can be found in the below locations:</p>
+<ul>
+<li>Draynor & Lumbridge: Near the Draynor windmill, and north of Lumbridge chicken coop [ <a href="http://www.zybez.com/img/skillimg/farming/lumb.png">Map</a> ]</li>
+<li>Falador: On the way to Port Sarim [ <a href="http://www.zybez.com/img/skillimg/farming/falador.png">Map</a> ]</li>
+<li>Ardougne: Just northeast of the north bank [ <a href=""http://www.zybez.com/img/skillimg/farming/ardougne.png>Map</a> ]</li>
+</ul>
+
+<p>More will appear when the skill is released.</p>[/html]

@@ -1,0 +1,60 @@
+Agility;1;Full Gnome Stronghold Agility Course;calcimg/agility/gnomestronghold_course.png;1;92.5
+Agility;1;Full Barbarian Outpost Agility Course;calcimg/agility/outpost_course.png;35;7.139.5
+Agility;1;Full Wilderness Agility Course;calcimg/agility/wilderness_course.png;52;571.5
+Agility;1;Full Werewolf Agility Course;calcimg/agility/werewolf_course,png;60;540
+Agility;1;Yanille Dungeon (Balancing Ledge);calcimg/agility/area_balance.png;40;22
+Agility;1;Yanille Dungeon (Obstace Pipe);calcimg/agility/area_crawl.png;29;7.5
+Agility;1;Yanille Dungeon (Monkey Bars);calcimg/agility/area_climb.png;57;20
+Agility;1;Yanille Dungeon (Pile of Rubble);calcimg/agility/area_climb.png;67;5.5
+Agility;1;Brimhaven Arena (Monkey Bars);calcimg/agility/area_hold.png;1;14
+Agility;1;Brimhaven Arena (Pillars);calcimg/agility/area_jump.png;1;18
+Agility;1;Brimhaven Arena (Wall);calcimg/agility/area_jump.png;1;8
+Agility;1;Brimhaven Arena (Balancing Ropes);calcimg/agility/area_balance.png;1;10
+Agility;1;Brimhaven Arena (Ledge);calcimg/agility/area_climb.png;1;16
+Agility;1;Brimhaven Arena (Balancing Log);calcimg/agility/area_balance.png;1;12
+Agility;1;Brimhaven Arena (Handholds);calcimg/agility/area_hold.png;20;22
+Agility;1;Brimhaven Arena (Rope Swing);calcimg/agility/area_hold.png;1;20
+Agility;1;Brimhaven Arena (Plank);calcimg/agility/area_balance.png;1;6
+Agility;1;Brimhaven Arena (Saw);calcimg/agility/area_jump.png;40;1
+Agility;1;Brimhaven Arena (Blades);calcimg/agility/area_jump.png;1;28
+Agility;1;Brimhaven Arena (Darts);calcimg/agility/area_crawl.png;40;30
+Agility;1;Brimhaven Arena (Spikes);calcimg/agility/area_jump.png;20;24
+Agility;1;Brimhaven Arena (Presure Pad);calcimg/agility/area_jump.png;20;26
+Agility;1;Falador Shortcut (Crumbling Wall);calcimg/agility/shortcut_jump.png;6;1
+Agility;1;Karamja Shortcut (Rope Swing);calcimg/agility/shortcut_hold.png;10;1
+Agility;1;Brimhaven Dungeon Shortcut (Stepping Stones);calcimg/agility/shortcut_balance.png;12;1
+Agility;1;Edgeville Dungeon Shortcut (Rope Swing);calcimg/agility/shortcut_hold.png;15;1
+Agility;1;Yanille Shortcut (Underwall Tunnel);calcimg/agility/shortcut_crawl.png;16;1
+Agility;1;Coal Trucks Shortcut (Log Balance);calcimg/agility/shortcut_balance.png;20;1
+Agility;1;Varrock Shortcut (Underwall Tunnel);calcimg/agility/shortcut_crawl.png;21;1
+Agility;1;Brimhaven Dungeon Shortcut (Pipe Squeeze);calcimg/agility/shortcut_crawl.png;22;1
+Agility;1;Falador Shortcut(Underwall Tunnel);calcimg/agility/shortcut_crawl.png;26;1
+Agility;1;Lumbridge Graveyard Shortcut(Fence Squeen);calcimg/agility/shortcut_crawl.png;29;1
+Agility;1;Brimhaven Dungeon Shortcut(Stepping Stones);calcimg/agility/shortcut_balance.png;30;1
+Agility;1;Draynor Manor Shortcut(Stepping Stones);calcimg/agility/shortcut_balance.png;31;1
+Agility;1;Ardougne Shortcut (Log Balance);calcimg/agility/shortcut_balance.png;33;1
+Agility;1;Brimhaven Dungeon Shortcut(Pipe Squeeze);calcimg/agility/shortcut_crawl.png;34;1
+Agility;1;Gnome Stronghold Shortcut (Rock Climb);calcimg/agility/shortcut_climb.png;37;1
+Agility;1;Al-Karid Shortcut (Cliff Side Scramble);calcimg/agility/shortcut_climb.png;38;1
+Agility;1;Trollheim Shortcut (Cliff Side Scramble - Easy);calcimg/agility/shortcut_climb.png;41;1
+Agility;1;Dwarven Mine Shortcut (Narrow Crevice);calcimg/agility/shortcut_climb.png;42;1
+Agility;1;Trollheim Shortcut (Cliff Side Scramble - Medium);calcimg/agility/shortcut_climb.png;43;1
+Agility;1;Trollheim Shortcut (Cliff Side Scramble - Advance;calcimg/agility/shortcut_climb.png;44;1
+Agility;1;Elven Land Shortcut (Log Balance);calcimg/agility/shortcut_climb.png;45;1
+Agility;1;Lost City Shortcut (Narrow Walkway - Medium);calcimg/agility/shortcut_balance.png;46;1
+Agility;1;Trollheim Shortcut (Cliff Side Scramble - Hard);calcimg/agility/shortcut_climb.png;47;1
+Agility;1;Fremennik Province Shortcut (Log Balance);calcimg/agility/shortcut_balance.png;48;1
+Agility;1;Edgeville Dungeon/Varrock Sewer Shortcut (Pipe Squeeze);calcimg/agility/shortcut_crawl.png;51;1
+Agility;1;Ecto-pool Shortcut (Weathered Wall);calcimg/agility/shortcut_jump.png;58;1
+Agility;1;Elven Land Shortcut (Cliff Side Scramble- Easy);calcimg/agility/shortcut_climb.png;59;1
+Agility;1;Slayer Town Shortcut (Spiked Chain Climb);calcimg/agility/shortcut_climb.png;61;1
+Agility;1;Slayer Town Shortcut (Narrow Crevice);calcimg/agility/shortcut_crawl.png;62;1
+Agility;1;Trollheim Wilderness Route Shortcut (Climb);calcimg/agility/shortcut_climb.png;64;1
+Agility;1;Temple of the Salve Shortcut (Ornate Railing);calcimg/agility/shortcut_crawl.png;65;1
+Agility;1;Lost City Shortcut (Narrow Walkway - Advanced);calcimg/agility/shortcut_hold.png;66;1
+Agility;1;Elven Land Shortcut (Cliff Side Scramble - Medium);calcimg/agility/shortcut_climb.png;68;1
+Agility;1;Members Dungeon Shortcut (Pipe Squeeze);calcimg/agility/shortcut_crawl.png;70;1
+Agility;1;Slayer Town Shortcut (Spiked Chain Climb);calcimg/agility/shortcut_climb.png;71;1
+Agility;1;Members Dungeon Shortcut (Spiked Blades Jump);calcimg/agility/shortcut_jump.png;80;1
+Agility;1;Slayer Dungeon Shortcut (Spiked Blades Jump);calcimg/agility/shortcut_hold.png;81;1
+Agility;1;Elven Land Shortcut (Cliff Side Scramble - Advance);calcimg/agility/shortcut_hold.png;85;1

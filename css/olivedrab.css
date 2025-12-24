@@ -1,0 +1,19 @@
+body {color:#fff;background:#265186 url('/images/bg2_ol.png') repeat-x fixed top;}
+.navigation a:link, .navigation a:visited {color:#fff;}
+.navigation a:active, .navigation a:hover {background:#4a4a2f;}
+.boxtop, .boxed, .tabletop, .navigation h3 {background-color:#442;color:#fff;}
+.tablebottom, .header, .content, .quote, .boxbottom, .navigation ul {background-color:#5C5C3A;}
+span.postmeta {color:#ccc;}
+.title1, .title2 {border-top:3px #00C100 solid;background-color:#4a4a2f;}
+.title2 {border-top-width:2px;}
+a:link, a:active, a:visited {color:#F5CA78;}
+a:hover, .boxbottom a:hover, .navigation a:active, .navigation a:hover {color:#D8ED41;}
+.step-title, .part {color:#ccc;}
+.vip {color:#FAE4BC;}
+table.misc_list_table {background-color:#393923;}
+ul.guides {border-left:1px #666666 solid;border-top:1px #393923 solid;}
+ul.guides li {background-color:#414129;border-bottom:1px #393923 solid;}
+ul.guides li.alt {background-color:#4a4a2f;}
+.toc {background-color:#4a4a2f;border:1px solid #393923;}
+.faq {border-left:5px #00C100 solid;background-color:#4a4a2f;}
+.info a, .notice a {color:#000 !important;}

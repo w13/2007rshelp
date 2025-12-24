@@ -1,0 +1,18 @@
+Blue dragon;Warrior;436;1;111
+Baby blue dragon;Warrior;200;1;48
+Red dragon;Warrior;580;1;152
+Baby red dragon;Warrior;268;1;65
+Black dragon;Warrior;796;1;227
+Greater demon;Warrior;348;0;92
+Green dragon;Warrior;340;1;79
+Ice warrior;Warrior;236;0;57
+Moss giant;Warrior;240;0;42
+Magic axe;Warrior;180;1;42
+Dagannoth;Warrior;492;1;92
+Dagannoth;Warrior;284;1;74
+Fire giant;Warrior;444;1;86
+Bandit;Warrior;120;1;41/ 56
+Pirate;Warrior;80;1;23
+Earth warrior;Warrior;216;1;51
+Shadow warrior;Warrior;272;1;48
+Wolfman/woman;Warrior;400;1;88

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+
+<script language="JavaScript"><!--
+function refreshIt() {
+   if (!document.images) return;
+   document.images['stats'].src = 'http://www.zybezradio.net/sigs/stats.php?' + Math.random();
+   setTimeout('refreshIt()',60000); // refresh every 60 secs
+}
+//--></script>
+<!--<meta http-equiv="refresh" content="30" > - Auto refresh whole page-->
+<title>Now Playing on Zybez Radio!</title>
+<style type="text/css">
+body {
+	background: #000;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+	}
+</style>
+</head>
+<body onload="setTimeout('refreshIt()',60000)">
+<img name="stats" src="http://www.zybezradio.net/sigs/stats.php" alt="Now Playing!" />
+</body>
+</html>
