@@ -21,9 +21,12 @@ header('X-XSS-Protection: 1; mode=block');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 
 /* Error Handling */
-// In production, set display_errors to 'Off' and log errors instead
-ini_set( 'display_errors' , 'On' );
-error_reporting( E_ALL & ~E_NOTICE & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED );
+// Configure error reporting based on environment
+// For production: set display_errors to 'Off' and enable error logging
+ini_set('display_errors', 'On');
+// Report all errors except notices and warnings (for now)
+// TODO: Enable E_ALL for development, log errors in production
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 
 /* Security For Our Info */
 define( 'IN_ZYBEZ' , TRUE );
@@ -65,7 +68,14 @@ $db->set_mysql_pass( MYSQL_PASS );
 $db->set_mysql_database ( MYSQL_DB );
 
 /* Secure Input */
-if($cleanArr) @extract($disp->cleanVars( $cleanArr ));
+// Extract sanitized variables from cleanArr
+// Note: extract() is used here but input is sanitized via cleanVars()
+if(isset($cleanArr) && is_array($cleanArr)) {
+	$cleaned_vars = $disp->cleanVars($cleanArr);
+	if(is_array($cleaned_vars)) {
+		extract($cleaned_vars);
+	}
+}
 
 
 // Start Function

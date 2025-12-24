@@ -4,12 +4,16 @@
 /* DB Class */
 class db
 {
- var $queries = 0;
- var $host = '';
- var $username = '';
- var $password = '';
- var $database = '';
- var $cache = '';
+	public $queries = 0;
+	private $host = '';
+	private $username = '';
+	private $password = '';
+	private $database = '';
+	public $cache = '';
+	public $connect;
+	public $result;
+	public $row;
+	public $num_rows;
 
 	function set_mysql_host( $host = '' ) {
 		$this->host = $host;
@@ -109,11 +113,11 @@ class db
 /* Display Class */
 class display
 {
- var $default = 'darkblue';
- var $path = '';
- var $ROOT = '';
- var $db;
- var $errlevel = 0;
+	public $default = 'darkblue';
+	public $path = '';
+	public $ROOT = '';
+	public $db;
+	public $errlevel = 0;
 
 	function __construct( $DB_OBJECT, $DIR = '' , $root = '' ) {
 		$this->path = $DIR . 'css/';
@@ -123,7 +127,8 @@ class display
 
 	function get_file( $location ) {
 		ob_start();
-		@require( $this->ROOT . $location );
+		// Include template file - error suppression removed for PHP 8 compatibility
+		require( $this->ROOT . $location );
 		$contents = ob_get_contents();
 		ob_end_clean();
 
