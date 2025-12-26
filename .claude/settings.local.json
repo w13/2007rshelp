@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(php -l:*)",
+      "Bash(chmod:*)",
+      "Bash(php:*)",
+      "Bash(chown:*)",
+      "Bash(apachectl configtest:*)",
+      "Bash(curl:*)",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(grep:*)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(npm install:*)",
+      "Bash(rm:*)"
+    ]
+  }
+}

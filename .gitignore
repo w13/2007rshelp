@@ -1,29 +1,37 @@
-# Environment and credentials
+# Environment and Configuration
 .env
-config.inc.php.local
-*.local.php
-config.inc.php
-editor/config.inc.php
+.env.local
+.env.*.local
+config.local.php
 
-# Logs
-logs/
+# Sensitive files
 *.log
-
-# Cache
-cache/
-*.cache
-
-# Temporary files
-*.tmp
-*.temp
-*~
-
-# Backup files (keep out of version control)
+*.sql
 *.bak
 *.backup
 *.old
-*.save
 
-# OS files
+# Database dumps
+*.dump
+dump.sql
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# Uploaded files (if not needed in repo)
+public_html/editor/uploads/*
+!public_html/editor/uploads/.gitkeep
+
+# Cache files
+*.cache
+public_html/temp/*
+!public_html/temp/.gitkeep
+
+# System files
 Thumbs.db
+desktop.ini

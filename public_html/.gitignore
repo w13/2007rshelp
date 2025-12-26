@@ -1,0 +1,29 @@
+# Environment and credentials
+.env
+config.inc.php.local
+*.local.php
+config.inc.php
+editor/config.inc.php
+
+# Logs
+logs/
+*.log
+
+# Cache
+cache/
+*.cache
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Backup files (keep out of version control)
+*.bak
+*.backup
+*.old
+*.save
+
+# OS files
+.DS_Store
+Thumbs.db
