@@ -1,0 +1,19 @@
+# Protect editor sensitive files
+<FilesMatch "^(config\.inc\.php|classes\.inc\.php|functions\.inc\.php|login_class\.inc\.php)$">
+    Require all denied
+</FilesMatch>
+
+# Protect data and extras
+<DirectoryMatch "^/editor/(data|extras|private)/">
+    Require all denied
+</DirectoryMatch>
+
+# Prevent access to logs and html results in extras
+<FilesMatch "\.(html|txt|log)$">
+    <If "%{REQUEST_URI} =~ m#^/editor/extras/#">
+        Require all denied
+    </If>
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes
