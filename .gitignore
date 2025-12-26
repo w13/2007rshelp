@@ -2,6 +2,8 @@
 .env
 config.inc.php.local
 *.local.php
+config.inc.php
+editor/config.inc.php
 
 # Logs
 logs/
