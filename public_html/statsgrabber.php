@@ -14,7 +14,7 @@ $cleanArr = array(  array('player', $_GET['player'], 'sql', 'l' => 12),
 
 				  
 require( dirname(__FILE__) . '/' . 'backend.php' );
-require( ROOT . '/' . 'calcs_old_functions.inc.php' );
+require( ROOT . '/' . 'stats_functions.inc.php' );
 start_page('Runescape Stats History');
 
 if($disp->errlevel > 0) {

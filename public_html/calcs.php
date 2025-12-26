@@ -269,7 +269,7 @@ content: 'ˇ';
 	</table>
 	
 	<table class="tbl notice" id="status" style="margin: 4px 0; border-top: 0;" cellspacing="0">
-		<tr><td id="status_inner">You must have Javascript enabled to use this calculator.<br />If that is not a possibility, please use our <a href="calcs_old.php?calc=<?php echo $skill; ?>">old calculators</a>.</td></tr>
+		<tr><td id="status_inner"></td></tr>
 	</table>
 	
 	<table class="tbl" id="actions" cellspacing="0">

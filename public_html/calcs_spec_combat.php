@@ -187,7 +187,7 @@ padding: 1px 5px 1px 0;
 
 	<div style="margin: 1pt; font-size: large; font-weight: bold;">
 
-		» <a href="calcs.php">Runescape Calculators</a> » <?php=$skill?>
+		ï¿½ <a href="calcs.php">Runescape Calculators</a> ï¿½ <?php=$skill?>
 	</div>
 	<hr class="main" noshade="noshade" />
 	
@@ -220,7 +220,7 @@ padding: 1px 5px 1px 0;
 				</td>
 			</tr>
 		</table>
-		<div class="notice" id="advance" style="width: auto; margin: 4px 0;">You must have Javascript enabled to use this calculator.<br />If that is not a possibility, please use our <a href="calcs_old.php?calc=<?php=$skill?>">old calculators</a>.</div>
+		<div class="notice" id="advance" style="width: auto; margin: 4px 0;"></div>
 		<div id="debug"></div>
 		<script type="text/javascript">
 			document.getElementById("advance").className="progress";
