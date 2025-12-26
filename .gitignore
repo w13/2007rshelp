@@ -35,3 +35,7 @@ public_html/temp/*
 # System files
 Thumbs.db
 desktop.ini
+
+# AI Assistant Context
+CLAUDE.md
+.claude/
