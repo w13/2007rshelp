@@ -57,21 +57,28 @@ function enum_correct($area, $id) {
 	}
 }
 // Return POST Content in textbox
-function rpostcontent($post_name = '') {
+function rpostcontent($post_name = '', $return = false) {
+    $out = '';
 	if(empty($post_name)) {
 		$post_main = array(1 => 'text', 2 => 'content');
 		for($i = 1; array_key_exists($i, $post_main); $i++) {
 			$post_name = $post_main[$i];
 			if(!empty($_POST[$post_name])) {
-				echo '<p align="center"><textarea rows="3" cols="0" style="width: 95%;">'.stripslashes($_POST[$post_name]).'</textarea></p>'.NL;
+				$out .= '<p align="center"><textarea rows="3" cols="0" style="width: 95%;">'.stripslashes($_POST[$post_name]).'</textarea></p>'.NL;
 			}
 		}
 	}
 	else {
 		if(!empty($_POST[$post_name])) {
-			echo '<p align="center"><textarea rows="3" cols="0" style="width: 95%;">'.stripslashes($_POST[$post_name]).'</textarea></p>'.NL;
+			$out .= '<p align="center"><textarea rows="3" cols="0" style="width: 95%;">'.stripslashes($_POST[$post_name]).'</textarea></p>'.NL;
 		}
 	}
+    
+    if ($return) {
+        return $out;
+    } else {
+        echo $out;
+    }
 }
 
 function last_active() {
@@ -79,6 +86,10 @@ function last_active() {
     global $TITLE;
     $ntitle = explode(' - ',$TITLE);
     $ntitle = $ntitle[0];
+
+    $currentmembers = '';
+    $message = '';
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
 
 /** Get the last active users **/
     $lastactivefile = 'df5g54grf4rf5h6.txt';
@@ -91,18 +102,18 @@ function last_active() {
 
     foreach ($members as $membertime) {
       $info = explode(':', $membertime);
-      if($info[1]+900 >= $latime && $info[0] != $_SESSION['user']) {
+      if(isset($info[1]) && $info[1]+900 >= $latime && $info[0] != $user) {
         if($counter > 0) $currentmembers .= '|' . $info[0] . ':' . $info[1] . ':' . $info[2];
         else $currentmembers .= $info[0] . ':' . $info[1] . ':' . $info[2];
       $counter++;
       }
     }
 
-  if ($_SESSION['user'] != '' && $currentmembers != '') {
-    $currentmembers .=   '|' . $_SESSION['user'] . ':' . $latime . ':' . $ntitle;
+  if ($user != '' && $currentmembers != '') {
+    $currentmembers .=   '|' . $user . ':' . $latime . ':' . $ntitle;
   }
-  elseif($_SESSION['user'] != '') {
-    $currentmembers .=   $_SESSION['user'] . ':' . $latime . ':' . $ntitle;
+  elseif($user != '') {
+    $currentmembers .=   $user . ':' . $latime . ':' . $ntitle;
   }
   else {
     $currentmembers .= 'error'; 
@@ -119,7 +130,7 @@ function last_active() {
   foreach($members as $membertime) {
     $info = explode(':', $membertime);
     
-    $message .= '<acronym title="' . round(($latime-$info[1])/60) . ' mins ago viewing: ' . $info[2] . '">' . $info[0] . '</acronym>';
+    $message .= '<abbr title="' . round(($latime-$info[1])/60) . ' mins ago viewing: ' . $info[2] . '">' . $info[0] . '</abbr>';
     if($counter == $objects) $message .= '.';
     else $message .= ', ';
     $counter++;

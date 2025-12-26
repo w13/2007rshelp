@@ -1,6 +1,8 @@
 <?php
-mysql_connect("localhost", "rsc", "heyplants44") or die(mysql_error());
-mysql_select_db("rsc_site") or die(mysql_error());
+require( dirname(__FILE__) . '/' . 'backend.php' );
+// Connect to DB
+$db->connect();
+$db->select_db( MYSQL_DB );
 
 
 //Update function
@@ -33,50 +35,50 @@ return $expp;
 }
 
   //Start Skill 1 update
-$result1 = mysql_query("SELECT * FROM bonusexp") or die(mysql_error());    
-while($row = mysql_fetch_array( $result1 )) {
+$result1 = $db->query("SELECT * FROM bonusexp");    
+while($row = $db->fetch_array( $result1 )) {
 
 $testtt = updateEXP($row['rsname'],"Construction");
 $namme = $row['rsname'];
 
 //mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
-mysql_query("UPDATE magicexp SET conexp=$testtt WHERE rsname='$namme'"); 
+$db->query("UPDATE magicexp SET conexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }
   //Start Skill 1 update
-$result1 = mysql_query("SELECT * FROM bonusexp") or die(mysql_error());    
-while($row = mysql_fetch_array( $result1 )) {
+$result1 = $db->query("SELECT * FROM bonusexp");    
+while($row = $db->fetch_array( $result1 )) {
 
 $testtt = updateEXP($row['rsname'],"Summoning");
 $namme = $row['rsname'];
 
 //mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
-mysql_query("UPDATE bonusexp SET summonexp=$testtt WHERE rsname='$namme'"); 
+$db->query("UPDATE bonusexp SET summonexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }
  
   
    //Start Skill 1 update
-$result1 = mysql_query("SELECT * FROM bonusexp") or die(mysql_error());    
-while($row = mysql_fetch_array( $result1 )) {
+$result1 = $db->query("SELECT * FROM bonusexp");    
+while($row = $db->fetch_array( $result1 )) {
 
 $testtt = updateEXP($row['rsname'],"Dungeoneering");
 $namme = $row['rsname'];
 
 //mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
-mysql_query("UPDATE bonusexp SET dungexp=$testtt WHERE rsname='$namme'"); 
+$db->query("UPDATE bonusexp SET dungexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }
   
   
     //Start Skill 1 update
-$result1 = mysql_query("SELECT * FROM bonusexp") or die(mysql_error());    
-while($row = mysql_fetch_array( $result1 )) {
+$result1 = $db->query("SELECT * FROM bonusexp");    
+while($row = $db->fetch_array( $result1 )) {
 
 $testtt = updateEXP($row['rsname'],"Divination");
 $namme = $row['rsname'];
 
 //mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
-mysql_query("UPDATE bonusexp SET diveexp=$testtt WHERE rsname='$namme'"); 
+$db->query("UPDATE bonusexp SET diveexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }

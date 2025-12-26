@@ -14,7 +14,7 @@ function display_tree($root_id) {
 	$parents = array();
 
 	// Now, retrieve all descendants of the $root node
-	$result = mysql_query("SELECT * FROM price_groups WHERE lft BETWEEN " . $root['lft'] . " AND " . $root['rgt'] . " ORDER BY lft ASC");
+	$result = $db->query("SELECT * FROM price_groups WHERE lft BETWEEN " . $root['lft'] . " AND " . $root['rgt'] . " ORDER BY lft ASC");
 
 	// Display Each Category Row
 	while($row = $db->fetch_array($result)) {

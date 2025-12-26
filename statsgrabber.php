@@ -33,6 +33,9 @@ if($disp->errlevel > 0) {
   $username = stripslashes($username);
   $username = str_replace($normalise,' ',$username);
   $username = ucwords($username);
+
+  // Security Fix: Escape the username before query
+  $username_safe = $db->escape_string($username);
   
   $skillnames = array('Overall',
                       'Attack',
@@ -70,7 +73,7 @@ function stat_box($var) {
   /*if($_COOKIE['update_time']) {
   echo '<script type="text/javascript" src="http://www.runescapecommunity.com/graphs/statsig.js"></script>';
   }*/
-  $query = mysql_query("SELECT * FROM `stats` WHERE `User`= '".$username."' ORDER BY `time` DESC LIMIT 1");
+    $query = $db->query("SELECT * FROM `stats` WHERE `User`= '" . $username_safe . "' ORDER BY `time` DESC LIMIT 1");
   $info = $db->fetch_array($query);
   
   $images = array('0.jpg','1.jpg','2.jpg','3.jpg','4.gif', '5.gif', '6.gif', '7.gif','8.gif', '9.gif', '10.gif');
@@ -138,7 +141,7 @@ echo '</table>';
 
 /* Runescape Community Stat Boxes */
 if($rscbox) {
-  $query = mysql_query("SELECT * FROM `stats` WHERE `User`= '".$username."' ORDER BY `time` DESC LIMIT 1");
+  $query = $db->query("SELECT * FROM `stats` WHERE `User`= '".$username_safe."' ORDER BY `time` DESC LIMIT 1");
   $info = $db->fetch_array($query);
   
   switch($rscbox) {
@@ -233,7 +236,7 @@ $modes = array('r','l','x');	## RANK, LEVEL, XP
 //  $title = '<h3 style="text-align:center;">Zybez Runescape Help\'s Top 500 Ranked Users</h3>';
 //  }
 //  else 
-  $list = 'WHERE `User`= "'.$username.'" ORDER BY `time` DESC';
+  $list = 'WHERE `User`= "'.$username_safe.'" ORDER BY `time` DESC';
   //if($showduplicates=='yes')
   //else $list = "WHERE `User`= '".$username."' GROUP BY `overallx` ORDER BY `time` DESC";
 

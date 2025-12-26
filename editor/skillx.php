@@ -110,7 +110,7 @@ echo '<div align="left" style="margin:1">
 <hr class="main" noshade="noshade" align="left" />
 <strong>Information:</strong>
 <ol>
-<li>When adding the first batch of names, you must use the following syntax: "runescape name,rsc name,<acronym title="The number at the end of a member\'s profile link.">rsc id</acronym>".  The second and succeeding times, you need to use "runescape name,rsc name,rsc id,team".  This is because the page only auto-picks teams the first time; make sure you\'re keeping teams even! Do not put spaces around the commas.</li>
+<li>When adding the first batch of names, you must use the following syntax: "runescape name,rsc name,<abbr title="The number at the end of a member\'s profile link.">rsc id</abbr>".  The second and succeeding times, you need to use "runescape name,rsc name,rsc id,team".  This is because the page only auto-picks teams the first time; make sure you\'re keeping teams even! Do not put spaces around the commas.</li>
 <li>Enter start/end time in "YYYY-MM-DD HH:MM" form.  Remember to use 24-hour format and that you should always use GMT. Also, the hour should only span from 0-23; 0 being midnight and 23 being 11PM. Setting time to midnight: Say you want the competition to end at the end of November 27, 2008, but at the beginning of November 28, 2008 (midnight).  You\'d set the time to "2008-11-28 00:00".  If the current time is earlier than the start time, it will show a time until event counter.   If it is after start time but before end time, it will show a time left counter.  If the current time is after both times, it will simply say "event is not underway."</li>
 <li>Remember to update the topic ID with each event.</li>
 </ol>

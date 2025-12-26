@@ -2,13 +2,13 @@
 /*** Configuration ***/
 
 /* Site Conf */
-$Confuration['site_name']  = 'RuneScape Help Editor';
-$Confuration['site_url']   = 'https://2007rshelp.com';
+$Configuration['site_name']  = 'RuneScape Help Editor';
+$Configuration['site_url']   = 'https://2007rshelp.com';
 
 /* DB Conf */
-$Confuration['mysql_host'] = 'localhost';
+$Configuration['mysql_host'] = 'localhost';
 $Configuration['mysql_user'] = 'rsc';
-$Configuration['mysql_pass'] = 'heyplants44';
+$Configuration['mysql_pass'] = 'heyplants#44#';
 $Configuration['mysql_db']   = 'rsc_site';
 
 

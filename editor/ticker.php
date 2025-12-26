@@ -166,7 +166,6 @@ else {
     }
     ?>
     </table>
-    <input type="button" value="Update ticker.php Cache" onclick="window.open('http://www.runescapecommunity.com/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fticker.php');">
     <?php
 }
 echo '<br /></div>'. NL;

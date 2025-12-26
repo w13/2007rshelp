@@ -1,11 +1,11 @@
 <?php
 $DEBUG = 0;
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
-					array('order', $_GET['order'], 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
-					array('page', $_GET['page'], 'int', 's' => '1,400', 'd' => 1),
-					array('g_cat', $_GET['category'], 'enum', 'e' => array('location', 'shopkeeper', 'member', 'name', 'item_name', 'item_price', 'item_stock') ),
-					array('search_area', $_GET['search_area'], 'enum', 'e' => array('itemsearch','name','location','shopkeeper','notes') ),
-					array('search_term', $_GET['search_term'], 'sql', 'l' => 40)
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
+					array('order', $_GET['order'] ?? null, 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
+					array('page', $_GET['page'] ?? null, 'int', 's' => '1,400', 'd' => 1),
+					array('g_cat', $_GET['category'] ?? null, 'enum', 'e' => array('location', 'shopkeeper', 'member', 'name', 'item_name', 'item_price', 'item_stock') ),
+					array('search_area', $_GET['search_area'] ?? null, 'enum', 'e' => array('itemsearch','name','location','shopkeeper','notes') ),
+					array('search_term', $_GET['search_term'] ?? null, 'sql', 'l' => 40)
 				  );
 
 /****** SHOP DATABASE ******/
@@ -17,6 +17,108 @@ if($disp->errlevel > 0) {
 }
 ?>
 <div class="boxtop">OSRS RuneScape Shops Database</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
+<script src="/jquery.tablesorter.min.js"></script>
+<style>
+/* Maintain visual language for sortable headers */
+.sortable thead th {
+    background-image: url('/img/gradient_bg.png');
+    background-position: left;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #005474;
+    border: 1px solid #000;
+    text-align: center;
+    cursor: pointer;
+}
+.sortable thead th a img {
+    display: none; /* Hide old sorting arrows as we use CSS indicators */
+}
+.sortable thead th:after {
+    content: ' \2195'; /* Up/down arrow for sortability indicator */
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+</style>
+<script>
+$(document).ready(function() { 
+    var table = $(".sortable");
+    table.tablesorter(); 
+    
+    // Pagination Logic
+    var rows = table.find("tbody tr");
+    var perPage = 50;
+    var numPages = Math.ceil(rows.length / perPage);
+    var currentPage = 1;
+    
+    function showPage(page) {
+        if (page < 1) page = 1;
+        if (page > numPages) page = numPages;
+        currentPage = page;
+        
+        var start = (page - 1) * perPage;
+        var end = start + perPage;
+        
+        rows.hide().slice(start, end).show();
+        updateControls();
+    }
+    
+    function updateControls() {
+        var controls = $("#pagination-controls");
+        if (numPages <= 1) {
+            controls.empty();
+            return;
+        }
+        
+        var html = '';
+        if (currentPage > 1) {
+            html += '<a href="#" class="page-link" data-page="' + (currentPage - 1) + '">&lt; Previous</a> ';
+        }
+        
+        var startPage = Math.max(1, currentPage - 2);
+        var endPage = Math.min(numPages, currentPage + 2);
+        
+        if (startPage > 1) {
+             html += '<a href="#" class="page-link" data-page="1">1</a> ... ';
+        }
+        
+        for (var i = startPage; i <= endPage; i++) {
+            if (i === currentPage) {
+                html += '<b>[' + i + ']</b> ';
+            } else {
+                html += '<a href="#" class="page-link" data-page="' + i + '">' + i + '</a> ';
+            }
+        }
+        
+        if (endPage < numPages) {
+            html += ' ... <a href="#" class="page-link" data-page="' + numPages + '">' + numPages + '</a> ';
+        }
+        
+        if (currentPage < numPages) {
+            html += '<a href="#" class="page-link" data-page="' + (currentPage + 1) + '">Next &gt;</a>';
+        }
+        
+        controls.html(html);
+        
+        $(".page-link").click(function(e) {
+            e.preventDefault();
+            showPage($(this).data("page"));
+        });
+    }
+    
+    // Initialize
+    showPage(1);
+    
+    // Re-paginate after sorting
+    table.bind("sortEnd", function() {
+        // Tablesorter re-orders DOM elements, so we need to re-fetch rows
+        rows = table.find("tbody tr");
+        showPage(currentPage);
+    });
+}); 
+</script>
 <?php
 
 /*** INDEX PAGE ***/
@@ -62,43 +164,13 @@ if( !isset( $id ) )
 
 	/* Page Configuration */
 
-	$entries_per_page = 50;
+    // Load all entries for JS pagination
 	$entry_count = $db->query( "SELECT * " . $search );
 	$entry_count = $db->num_rows( "SELECT * " . $search );
-	$page_links = '';
-	$page_count = ceil( $entry_count / $entries_per_page );
-	$current_page = 0;
-  
-	// Build Page Number String
-	while( $current_page < $page_count ) {
-		$current_page++;
-		if( $current_page == $page ) {
-			$page_links = '' . $page_links . '<b>['. $current_page . ']</b> ';
-		}
-		else {
-			$page_links = $page_links . '<a href="' . $_SERVER['SCRIPT_NAME'] . '?page=' . $current_page . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">'. $current_page . '</a> ';
-		}
-	}
-
-	// Previous Page Function
-	if( $page_count > 1 AND $page > 1 )
-	{
-		  $page_before = $page - 1;
-		  $page_links = '<a href="' . $_SERVER['SCRIPT_NAME']. '?page=' . $page_before . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">< Previous</a> ' . $page_links;
-	}
-
- 	 // Next Page Function
-  	if( $page_count > 1 AND $page != $page_count ) {
-		  $page_after = $page + 1;
-		  $page_links = $page_links . '<a href="' . $_SERVER['SCRIPT_NAME']. '?page=' . $page_after . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Next ></a> ';
-	}
   
 	/* MySQL Retrieve Information */
 
-	$start_from = $page - 1;
-	$start_from = $start_from * $entries_per_page;
-	$end_at = $start_from + $entries_per_page;
-	$query = $db->query( "SELECT * " . $search . " LIMIT " . $start_from . ", " . $entries_per_page ); 
+	$query = $db->query( "SELECT * " . $search ); 
 
 	/* Print The Search Form */
 
@@ -152,12 +224,13 @@ if( !isset( $id ) )
 	// Print The End of the form
 	echo ' <input type="submit" value="Go" />' . NL;
 	echo '</td>' . NL;
-	echo '<td align="right" width="125">Page ' . $page . ' of ' . $page_count . '</td>' . NL;
+	echo '<td align="right" width="125"></td>' . NL;
 	echo '</tr></table></form>' . NL;
 
 	/* Print the Table */
 
-	echo '<table style="border-left: 1px solid #000000;" width="100%" cellpadding="1" cellspacing="0">' . NL;
+	echo '<table class="sortable" style="border-left: 1px solid #000000;" width="100%" cellpadding="1" cellspacing="0">' . NL;
+    echo '<thead>';
 
 	// Item Search Table
 	if( $search_area == 'itemsearch' ) {
@@ -168,6 +241,7 @@ if( !isset( $id ) )
 		echo '<th width="20%" class="tabletop">Location: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=location&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Location, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=location&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Location, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
 		echo '<th width="37%" class="tabletop">Found in Shop: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shop Name, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shop Name, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
 		echo '</tr>' . NL;
+        echo '</thead><tbody>';
 
 		while( $info = $db->fetch_array( $query ) ) {
 			echo '<tr>' . NL;
@@ -195,6 +269,7 @@ if( !isset( $id ) )
 		echo '<th width="15%" class="tabletop">Members? <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Member, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Member, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
 		echo '<th width="23%" class="tabletop">Shopkeeper: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=shopkeeper&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shopkeeper, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=shopkeeper&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shopkeeper, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
 		echo '</tr>' . NL;
+        echo '</thead><tbody>';
 
 		while( $info = $db->fetch_array( $query ) ) {
 			echo '<tr>' . NL;
@@ -210,18 +285,18 @@ if( !isset( $id ) )
 
 	// If No Search Results
 
-	if( $entry_count == 0 or $page <= 0 or $page > $page_count ) {
+	if( $entry_count == 0 ) {
 		echo '<tr>' . NL;
 		echo '<td class="tablebottom" colspan="5">Sorry, no entries match your search criteria.</td>' . NL;
 		echo '</tr>' . NL;
 	}
+    echo '</tbody>';
 
 	echo '</table><br />' . NL;
+    
+    // JS Pagination Controls Container
+    echo '<div id="pagination-controls" style="text-align:center;"></div>';
 
-	// Echo Page Selection
-	if( $page_count > 1 ) {
-		echo '<p align="center">' . $page_links . '</p>' . NL;
-	 }
 }
 
 /*** SHOP PAGE ***/

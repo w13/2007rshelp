@@ -14,6 +14,9 @@ class db
 	public $result;
 	public $row;
 	public $num_rows;
+	public $select_db;
+	public $disconnect;
+	public $escape_string;
 
 	function set_mysql_host( $host = '' ) {
 		$this->host = $host;
@@ -42,6 +45,9 @@ class db
 		else die( '<strong>MySQL Error: ' . mysqli_errno($this->connect) . ' -- ' . mysqli_error($this->connect) . '</strong>' );
 	}
 	function connect() {
+		if ($this->connect instanceof mysqli) {
+			return $this->connect;
+		}
 		$this->connect = mysqli_connect( $this->host , $this->username , $this->password ) or $this->sql_err();
 		return $this->connect;
 	}
@@ -91,7 +97,8 @@ class db
 		return $this->queries;
 	}
 	function escape_string( $string = '' ) {
-		$this->escape_string = mysqli_real_escape_string( $this->connect(), $string ) or $this->sql_err();
+		$this->escape_string = mysqli_real_escape_string( $this->connect, $string );
+		if ($this->escape_string === false) $this->sql_err();
 		return $this->escape_string;
 	}
 	
@@ -209,8 +216,8 @@ class display
 		$this->db->connect();
 		foreach($input as $v) {
 
-			if(strlen($v[1]) < 1) {
-				if($v['d']) $dataArr[$v[0]] = $v['d'];
+			if((string)$v[1] === '') {
+				if(isset($v['d']) && $v['d']) $dataArr[$v[0]] = $v['d'];
 				continue; // skip since there's no data
 			}
 
@@ -243,7 +250,7 @@ class display
 						$this->inputErr(2);
 						$fdata = intval($fdata);
 					}
-					if($v['l']) {
+					if(isset($v['l']) && $v['l']) {
 						if(strlen($fdata) > $v['l']) {
 							$this->inputErr(1);
 							$fdata = substr($fdata, 0, $v['l']);
@@ -260,7 +267,7 @@ class display
 						}
 					}
 				 break;
-				case 'sql': // Clean for SQL
+				case 'sql': // Clean for SQL and display
 					$fdata = html_entity_decode(urldecode(stripslashes(trim($fdata))));
 					if($v['l']) {
 						if(strlen($fdata) > $v['l']) {
@@ -268,7 +275,19 @@ class display
 							$fdata = substr($fdata, 0, $v['l']);
 						}
 					}
-					$fdata = htmlentities($this->db->escape_string($fdata));
+					// Proper order: escape for SQL first, THEN apply htmlentities for display if needed
+					// However, for SQL queries, we really only need escaping.
+					$fdata = htmlentities($this->db->escape_string($fdata), ENT_QUOTES);
+				 break;
+				case 'sql_no_html': // Clean for SQL ONLY
+					$fdata = html_entity_decode(urldecode(stripslashes(trim($fdata))));
+					if($v['l']) {
+						if(strlen($fdata) > $v['l']) {
+							$this->inputErr(2);
+							$fdata = substr($fdata, 0, $v['l']);
+						}
+					}
+					$fdata = $this->db->escape_string($fdata);
 				 break;
 				case 'string': // clean for general use
 					$fdata = html_entity_decode(urldecode(trim($fdata)), ENT_QUOTES);

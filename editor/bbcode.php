@@ -1,16 +1,14 @@
 <?php
 
 require(dirname(__FILE__) . '/' . 'backend.php');
-//--------------------------------------\\
-// Zybez BBcode Guide Convertor v2.03	\\
-// Created: Dec. 16, 2005 [12/16/05]	\\
-// Created by: No1 1000					\\
-//--------------------------------------\\
-// Last modified: 01/28/2006			\\
-// Last modified by: No1 1000			\\
-//--------------------------------------\\
+//--------------------------------------\
+// Zybez BBcode Guide Convertor v2.03\	\n// Created: Dec. 16, 2005 [12/16/05]\	\n// Created by: No1 1000\	\	\n//--------------------------------------\
+// Last modified: 01/28/2006\	\n// Last modified by: No1 1000\	\n//--------------------------------------\
 
-if ($_GET['act'] == 'preview') {
+$act = isset($_GET['act']) ? $_GET['act'] : '';
+$version = ' v2.03';
+
+if ($act == 'preview') {
   $title = 'Previewing XHTML';
 }
 else {
@@ -28,55 +26,57 @@ start_page( 1, $title );
 <hr class="main" noshade="noshade" /><br />
 <?php
 
-if ($_GET['act'] == 'convert') {
- $txt = $_POST['cont'];
+$txt = '';
+if ($act == 'convert') {
+ $txt = isset($_POST['cont']) ? $_POST['cont'] : '';
 
  // Basic BBcode -> HTML [Plus some extra] -- Sadly, essential for the later replacements. Gotta love PERL.
     $txt = str_replace('[', '<', $txt);
     $txt = str_replace(']', '>', $txt);
     $txt = str_replace('\n', '<br />', $txt);
 	$txt = str_replace('&', '&amp;', $txt);
-	$txt = str_replace('–', '-', $txt);
-	$txt = str_replace('“', '"', $txt);
-	$txt = str_replace('”', '"', $txt);
-	$txt = str_replace('‘', "'", $txt);
-	$txt = str_replace('’', "'", $txt);
-	$txt = str_replace('…', '...', $txt);
+	$txt = str_replace('', '-', $txt);
+	$txt = str_replace('', '"', $txt);
+	$txt = str_replace('', '"', $txt);
+	$txt = str_replace('', "'", $txt);
+	$txt = str_replace('', "'", $txt);
+	$txt = str_replace('', '...', $txt);
 
  // Titles - All working now! :D Not picky anymore.
-    $txt = preg_replace("#<br />(<b>|)<size=[0-9]>(<b>|)(.+?)(</b>|)</size>(</b>|)#is", "<div class=\"title1\">$3</div>", $txt);	// Title1
-    $txt = preg_replace("#<br />(<u><b>|<b><u>)(.+?)(</b></u>|</u></b>)#i", "<div class=\"title2\">$2</div>", $txt);				// Title2
-    $txt = preg_replace("#<br /><b>([\s\w]+?)</b>.{1}<br />#i", "<div class=\"title3\">$1</div>\r<br />", $txt);					// Title3
+    $txt = preg_replace("#<br />(<b>|)<size=[0-9]>(<b>|)(.+?)(</b>|)</size>(</b>|)#is", "<div class=\"title1\">$3</div>", $txt); // Title1
+    $txt = preg_replace("#<br />(<u><b>|<b><u>)(.+?)(</b></u>|</u></b>)#i", "<div class=\"title2\">$2</div>", $txt); // Title2
+    $txt = preg_replace("#<br /><b>([\s\w]+?)</b>.{1}<br />#i", "<div class=\"title3\">$1</div>\r<br />", $txt); // Title3
 
  // Misc - All working
-	$txt = preg_replace("#<content>(.+?)</content>#is", "<table>\n<tr>\n<td class=\"linksmenu\">$1\n</td>\n</tr>\n</table>", $txt);	// Table of contents
-	$txt = preg_replace("#<hr>#i", "<hr />", $txt);																					// Horizontal Rule
-    $txt = preg_replace("#<img>(.+?)\</img>#i", "<img src=\"$1\" alt=\"Zybez RuneScape Help's Placeholder\" />", $txt);				// Images
-    $txt = preg_replace("#<url>(.+?)</url>#i", "<a href=\"$1\">$1</a>", $txt);														// Url-1
-    $txt = preg_replace("#<url=(.+?)>(.+?)</url>#i", "<a href=\"$1\">$2</a>", $txt);												// Url-2
-    $txt = preg_replace("#<anchor>(.+?)</anchor>#i", "<a name=\"$1\"></a>", $txt);													// Anchor
-    $txt = preg_replace("#<color=(.+?)>(.+?)</color>#is", "<span style=\"color: $1\">$2</span>", $txt);								// Color
-    $txt = preg_replace("#<left>(.+?)</left>#is", "<div align=\"left\">$1</div>", $txt);											// Left-align
-    $txt = preg_replace("#<center>(.+?)</center>#is", "<div align=\"center\">$1</div>", $txt);										// Center-align
-	$txt = preg_replace("#<right>(.+?)</right>#is", "<div align=\"right\">$1</div>", $txt);											// Right-align
-    $txt = preg_replace("#<list>(.+?)</list>#is", "<ul>$1</ul>", $txt);																// Unordered List
-    $txt = preg_replace("#<list>(.+?)</list>#is", "<ul>$1</ul>", $txt);																// Unordered List [2]
-    $txt = preg_replace("#<list=.>(.+?)</list>#is", "<ol>$1</ol>", $txt);															// Ordered List
-    $txt = preg_replace("#<list=.>(.+?)</list>#is", "<ol>$1</ol>", $txt);															// Ordered List [2]
-    $txt = preg_replace("#(<br />|)<\*>(.+?)\r#i", "<li>$2</li>\r", $txt);															// List Items
-    $txt = preg_replace("#<br /></(u|o)l>#i", "</$1l>", $txt);																		// List Closing
+	$txt = preg_replace("#<content>(.+?)</content>#is", "<table>\n<tr>\n<td class=\"linksmenu\">$1\n</td>\n</tr>\n</table>", $txt); // Table of contents
+	$txt = preg_replace("#<hr>#i", "<hr />", $txt); // Horizontal Rule
+    $txt = preg_replace("#<img>(.+?)\\</img>#i", "<img src=\" $1 \" alt=\"Zybez RuneScape Help's Placeholder\" />", $txt); // Images
+    $txt = preg_replace("#<url>(.+?)</url>#i", "<a href=\" $1 \">$1</a>", $txt); // Url-1
+    $txt = preg_replace("#<url=(.+?)>(.+?)</url>#i", "<a href=\" $1 \">$2</a>", $txt); // Url-2
+    $txt = preg_replace("#<anchor>(.+?)</anchor>#i", "<a name=\" $1 \"></a>", $txt); // Anchor
+    $txt = preg_replace("#<color=(.+?)>(.+?)</color>#is", "<span style=\"color: $1\">$2</span>", $txt); // Color
+    $txt = preg_replace("#<left>(.+?)</left>#is", "<div align=\"left\">$1</div>", $txt); // Left-align
+    $txt = preg_replace("#<center>(.+?)</center>#is", "<div align=\"center\">$1</div>", $txt); // Center-align
+	$txt = preg_replace("#<right>(.+?)</right>#is", "<div align=\"right\">$1</div>", $txt); // Right-align
+    $txt = preg_replace("#<list>(.+?)</list>#is", "<ul>$1</ul>", $txt); // Unordered List
+    $txt = preg_replace("#<list>(.+?)</list>#is", "<ul>$1</ul>", $txt); // Unordered List [2]
+    $txt = preg_replace("#<list=.>(.+?)</list>#is", "<ol>$1</ol>", $txt); // Ordered List
+    $txt = preg_replace("#<list=.>(.+?)</list>#is", "<ol>$1</ol>", $txt); // Ordered List [2]
+    $txt = preg_replace("#(<br />|)<\*>
+(.+?)#i", "<li>$2</li>\r", $txt); // List Items
+    $txt = preg_replace("#<br /></(u|o)l>#i", "</$1l>", $txt); // List Closing
 
  // Clean up the line breaks - Better..
-    $txt = preg_replace("#<br />\r<br />(.+?)\r<br />\r#i", "\r<br />\r<p>$1</p>\r<br />\r", $txt);									// BR-1
-    $txt = preg_replace("#<br />\r<br />(.+?)\r<br />\r#i", "\r\r<p>$1</p>\r\r", $txt);												// BR-2
+    $txt = preg_replace("#<br />\r<br />(.+?)\r<br />\r#i", "\r<br />\r<p>$1</p>\r<br />\r", $txt); // BR-1
+    $txt = preg_replace("#<br />\r<br />(.+?)\r<br />\r#i", "\r\r<p>$1</p>\r\r", $txt); // BR-2
 
  // And we're done! Or are we? Rrgh.. Okay, spit the code out. Then we can go take a nap. Yayy. 3AM probably isn't the best time to work on this kind of thing...
  // [2] - The repeat coding is required for embedded lists. Meh.
 
 }
-if ($_GET['act'] == 'preview') {
+if ($act == 'preview') {
 
-  $text = stripslashes($_POST['code']);
+  $text = isset($_POST['code']) ? stripslashes($_POST['code']) : '';
   ?>
   <table style="border-left: 1px solid #000000; border-top: 1px solid #000000" width="100%" cellpadding="5" cellspacing="0">
   <tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000"><u>Guide Name</u>: Preview</td></tr>
@@ -85,10 +85,10 @@ if ($_GET['act'] == 'preview') {
   </table>
   <?php
 }
-elseif($_GET['act'] == 'news') {
-    $text = stripslashes($_POST['content']);
-    $title = $_POST['title'];
-    $mem_id = $_POST['mem_id'];
+elseif($act == 'news') {
+    $text = isset($_POST['content']) ? stripslashes($_POST['content']) : '';
+    $title = isset($_POST['title']) ? $_POST['title'] : '';
+    $mem_id = isset($_POST['mem_id']) ? $_POST['mem_id'] : '';
     $ftime = time();
     $dnum = date( 'd', $ftime );
     $mname = date( 'F', $ftime );
@@ -113,9 +113,11 @@ elseif($_GET['act'] == 'news') {
 }
 else {
 
+$cont = isset($_POST['cont']) ? stripslashes($_POST['cont']) : '';
+
 echo '<form action="bbcode.php?act=convert" method="post">
 Enter in BBcode-Form: <input type="submit" value="Convert!" /><br />
-<textarea rows="10" name="cont" style="width: 95%;">' . stripslashes($_POST['cont']) . '</textarea>
+<textarea rows="10" name="cont" style="width: 95%;">' . $cont . '</textarea>
 </form><br /><br />
 
 <form action="bbcode.php?act=preview" method="post" target="new">

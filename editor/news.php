@@ -190,13 +190,6 @@ else {
     fwrite( $handle, $record );
     fclose( $handle );
 	}
-	if ($_SESSION['user'] == 'Jeremy' || $_SESSION['user'] == 'Ben_Goten78') {
-		echo '<h2 style="text-align:center;"><a href="?cacheindex">Cache The Index</a></h2>';
-	}
-	if (isset($_GET['cacheindex']) && ($_SESSION['user'] == 'Jeremy' || $_SESSION['user'] == 'Ben_Goten78')) {
-		include('/home/w13/www/zybez.net/html/getzybez.php');
-		pleasecache("http://www.zybez.net/");
-	}
 		
 /* Jer: I commented this out... put the function above in
   $url = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2F';

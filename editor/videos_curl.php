@@ -30,6 +30,21 @@ $output = curl_exec($ch);
 curl_close($ch);
 */
 
+// Security Fix: Whitelist domains to prevent SSRF
+$allowed_domains = array('youtube.com', 'www.youtube.com', 'filefront.com', 'www.filefront.com', 'putfile.com', 'www.putfile.com', 'metacafe.com', 'www.metacafe.com', 'veoh.com', 'www.veoh.com');
+$url_parts = parse_url($_GET['url']);
+$is_allowed = false;
+foreach($allowed_domains as $domain) {
+    if(isset($url_parts['host']) && (strtolower($url_parts['host']) == $domain || substr(strtolower($url_parts['host']), -strlen('.'.$domain)) == '.'.$domain)) {
+        $is_allowed = true;
+        break;
+    }
+}
+
+if (!$is_allowed) {
+    die('Invalid or unauthorized video URL.');
+}
+
   if(stripos($_GET['url'],"youtube") != FALSE) { ## YOUTUBE
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $_GET['url']);
@@ -56,7 +71,7 @@ curl_close($ch);
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $output = curl_exec($ch);
-    echo curl_error($ch);
+    echo htmlspecialchars(curl_error($ch));
     curl_close($ch);
 
     $videoprovider = 'filefront';
@@ -135,11 +150,12 @@ curl_close($ch);
 ?>
 <html><head>
 <script language="javascript">
-top.document.form.name.value = "<?=$videoname?>";
-top.document.form.description.value = "<?=$description?>";
-top.document.form.url.value = "<?=$embedurl?>";
-top.document.form.thumb.value = "<?=$thumb?>";
-top.document.form.keyword.value = "<?=$keyword?>";
+// Security Fix: Escape for JS
+top.document.form.name.value = <?=json_encode($videoname)?>;
+top.document.form.description.value = <?=json_encode($description)?>;
+top.document.form.url.value = <?=json_encode($embedurl)?>;
+top.document.form.thumb.value = <?=json_encode($thumb)?>;
+top.document.form.keyword.value = <?=json_encode($keyword)?>;
 </script>
 </head><body style="margin: 0px; padding: 0px;">
 <?

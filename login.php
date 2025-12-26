@@ -40,8 +40,7 @@ if($session != 1 || $passhash != 1 || $stronghold != 1) { // No valid session
 	if(strlen($_POST['UserName']) > 0 && strlen($_POST['PassWord']) > 2) { // Authenticate
 		$user	= str_replace( '|', '&#124;', substr($_POST['UserName'], 0, 32));
 		$user	= clean_data($user);
-		$pass	= clean_data($_POST['PassWord']);
-		$mid	= $db->fetch_row('SELECT `id` FROM '.$sdb.'.`'.$tst.'members` WHERE `name` = "'.$user.'"');
+		$mid	= $db->fetch_row('SELECT `id` FROM '.$sdb.'.`'.$tst.'members` WHERE `name` = "'.$db->escape_string($user).'"');
 		$mid	= $mid['id'];
 		if(!isset($mid)) {
 			$loginstr = $loginform.'<div style="padding: 4px; text-align: center; color: #c22; font-weight: bold;">Invalid username/password</div>';

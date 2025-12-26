@@ -11,9 +11,9 @@ start_page('Runescape Stats Tracker Competition');
 <tr> </tr>
 <tr><th class='tabletop'>RS Name</th><th class='tabletop'>Gained EXP</th></tr>
 <?php
-$result = mysql_query("SELECT * FROM bonusexp ORDER BY rsname") or die(mysql_error());  
+$result = $db->query("SELECT * FROM bonusexp ORDER BY rsname");  
 
-while($row = mysql_fetch_array($result))
+while($row = $db->fetch_array($result))
   {
   $gainn = ($row['startexp'] - $row['endexp']);
     echo "<tr><td class='tablebottom'>". $row['rsname'] . "</a></td><td class='tablebottom'> " . number_format($gainn) . "</td></tr>";

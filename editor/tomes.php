@@ -176,7 +176,8 @@ else {
 	
 		echo '<tr align="center">' . NL;
 		echo '<td class="tablebottom"><a href="/tomes.php?id=' . $info['id'] . '" target="_new">' . $info['name'] . '</a></td>' . NL;
-		echo '<td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000"><a href="?act=edit&id=' . $info['id'] . '" title="Edit ' . $info['user'] . '">Edit</a>';
+		$user_title = isset($info['user']) ? $info['user'] : 'Unknown';
+		echo '<td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000"><a href="?act=edit&id=' . $info['id'] . '" title="Edit ' . $user_title . '">Edit</a>';
 
 		if( $ses->permit( 15 ) ) {
 			echo ' / <a href="?act=delete&id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;

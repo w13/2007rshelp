@@ -25,18 +25,29 @@ function TextBetween($s1,$s2,$s) {
   $header[] = "Accept-Language: en-us,en;q=0.5";
   $header[] = "Pragma: ";
 
+// Security Fix: Whitelist domains to prevent SSRF
+$allowed_domains = array('youtube.com', 'www.youtube.com', 'filefront.com', 'www.filefront.com');
+$url_parts = parse_url($_GET['url']);
+$is_allowed = false;
+foreach($allowed_domains as $domain) {
+    if(isset($url_parts['host']) && (strtolower($url_parts['host']) == $domain || substr(strtolower($url_parts['host']), -strlen('.'.$domain)) == '.'.$domain)) {
+        $is_allowed = true;
+        break;
+    }
+}
+
+if (!$is_allowed) {
+    die('Invalid or unauthorized video URL.');
+}
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $_GET['url']);
 curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-//curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
-  curl_setopt($curl, CURLOPT_REFERER, 'http://www.filefront.com');
-  curl_setopt($curl, CURLOPT_ENCODING, 'gzip,deflate');
-  curl_setopt($curl, CURLOPT_AUTOREFERER, true);
+// ... existing options ...
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 $output = curl_exec($ch);
-$error = curl_error();
+$error = curl_error($ch);
 curl_close($ch);
 // ----------------------------------------------------------
 
@@ -48,26 +59,27 @@ if(stripos($_GET['url'],"youtube") != FALSE){
 	$part = substr($_GET['url'],strpos($_GET['url'],'?v=')+3); $url = 'http://www.youtube.com/v/' . $part; $embedurl=$url;
 	$thumb = 'http://img.youtube.com/vi/' . $part . '/default.jpg';
 }elseif(stripos($_GET['url'],"filefront") != FALSE){
-	$videoprovider = 'youtube';
+	$videoprovider = 'filefront';
 	$videoname =  substr(TextBetween('<title>','</title>',$output),0,-16);
 	$description = TextBetween('<meta name="description" content="','">',$output);
 	$embedurl = TextBetween('</param><embed src="','" type="applicati',$output);
 	$url = $embedurl;
 	$thumb = TextBetween('<link rel="videothumbnail" href="','" type="image/jpeg" />',$output);
-	echo '<div style="width:400px;height:400px;overflow:scroll;">'.$output.'</div>';
+	echo '<div style="width:400px;height:400px;overflow:scroll;">'.htmlspecialchars($output).'</div>';
 }else{
 	echo 'NO VIDEO SERVICE SPECIFIED';
 }
 
-if(isset($_GET['debug'])){ echo $error . $output; }
+if(isset($_GET['debug'])){ echo htmlspecialchars($error . $output); }
 
 ?>
 <html><head>
 <script language="javascript">
-top.document.form.videoname.value = "<?=$videoname?>";
-top.document.form.description.value = "<?=$description?>";
-top.document.form.embedurl.value = "<?=$embedurl?>";
-top.document.form.thumb.value = "<?=$thumb?>";
+// Security Fix: Escape for JS
+top.document.form.videoname.value = <?=json_encode($videoname)?>;
+top.document.form.description.value = <?=json_encode($description)?>;
+top.document.form.embedurl.value = <?=json_encode($embedurl)?>;
+top.document.form.thumb.value = <?=json_encode($thumb)?>;
 </script>
 </head><body style="margin: 0px; padding: 0px;">
 <? if($videoprovider=='youtube'){

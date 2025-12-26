@@ -28,7 +28,7 @@ $cat_array = array(
 					'Warrior',
 					'Woodcutting');
 					
-if( in_array( $_GET['cat'], $cat_array ) ) {
+if( isset($_GET['cat']) && in_array( $_GET['cat'], $cat_array ) ) {
 	$category = $_GET['cat'];
 }
 else {

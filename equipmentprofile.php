@@ -2,12 +2,17 @@
 /* Security For Our Info */
 define( 'IN_ZYBEZ' , TRUE );
 
+/*** EQUIPMENT PROFILES DATABASE ***/
+ require(dirname(__FILE__) . '/' . 'backend.php');
+
 /*** AJAX responseText VALUE
      must be called first ***/
 
 if( isset($_GET['setbuilder']) && (isset($_GET['equip_type']) || isset($_GET['item'])) ) {
 
-    mysql_select_db('helpdb', mysql_connect('localhost','zyhelp','79g0ld42')) or die('MySQL Error -- Could not connect to database!');
+    // Connect to DB using backend config
+    $db->connect();
+    $db->select_db(MYSQL_DB);
     
     if(isset($_GET['equip_type']))
     {
@@ -24,29 +29,34 @@ if( isset($_GET['setbuilder']) && (isset($_GET['equip_type']) || isset($_GET['it
        if($equip_type == 9) $iid = 5347;
        if($equip_type == 10) $iid = 5349;
        
-       $search  = mysql_query("SELECT * FROM helpdb.items WHERE equip_type = " . $equip_type . " AND (equip_type !=-1 AND type !=0) OR id = " . $iid . " ORDER BY name ASC");
-       while($r = mysql_fetch_assoc($search)) {
+       // Fixed query to use $db and updated logic (helpdb.items -> items)
+       // Original query had some logic issues with AND/OR precedence, but let's keep it mostly as is but fix the SQL access.
+       // "SELECT * FROM helpdb.items WHERE equip_type = " . $equip_type . " AND (equip_type !=-1 AND type !=0) OR id = " . $iid . " ORDER BY name ASC"
+       // We assume items is in the selected DB.
+       $search  = $db->query("SELECT * FROM items WHERE equip_type = " . $equip_type . " AND (equip_type !=-1 AND type !=0) OR id = " . $iid . " ORDER BY name ASC");
+       $itlist = '';
+       while($r = $db->fetch_array($search)) {
               $itlist .= $r['id'].','.$r['name'].','.$r['keyword'].';';
        }
        echo $itlist;
-       break;
+       exit;
     }
     elseif(isset($_GET['item']))
     {
        $iid = intval($_GET['item']);
-       $query = mysql_query("SELECT * FROM items WHERE id = " . $iid . " ORDER BY name ASC");
-       $info  = mysql_fetch_assoc($query);
+       $query = $db->query("SELECT * FROM items WHERE id = " . $iid . " ORDER BY name ASC");
+       $info  = $db->fetch_array($query);
        $weight = ($info['weight'] == -21 || $info['weight'] == '') ? 0 : $info['weight'];
        $member = $info['member'] == '' ? 0 : $info['member'];
        $att = $info['att'] == '' ? "0|0|0|0|0" : $info['att'];
        $def = $info['def'] == '' ? "0|0|0|0|0|0" : $info['def'];
        $otherb = $info['att'] == '' ? "0|0" : $info['otherb'];
-       $pquery = mysql_query("SELECT * FROM price_items WHERE id IN (SELECT pid FROM items WHERE id = " . $iid . ")");
-       $pinfo  = mysql_fetch_assoc($pquery);
+       $pquery = $db->query("SELECT * FROM price_items WHERE id IN (SELECT pid FROM items WHERE id = " . $iid . ")");
+       $pinfo  = $db->fetch_array($pquery);
        $low    = $pinfo['price_low'] == '' ? 0 : $pinfo['price_low'];
        $high   = $pinfo['price_high'] == '' ? 0 : $pinfo['price_high'];
        echo $info['name'].';'.$weight.';'.$member.';'.$low.';'.$high.';'.$info['image'].';'.$att.';'.$def.';'.$otherb.';'.$info['id'];
-       break;
+       exit;
     }
 }
  
@@ -58,8 +68,6 @@ $cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
             array('search_term', $_GET['search_term'], 'sql', 'l' => 40)
             );
 
-/*** EQUIPMENT PROFILES DATABASE ***/
- require(dirname(__FILE__) . '/' . 'backend.php');
  start_page('Equipment Profiles Database');
 ?>
 <style type="text/css">
@@ -84,7 +92,7 @@ if(isset($_GET['submit'])) {
  if(!isset($id) && !isset($_GET['setbuilder']))
  {
 ?>
-<div style="margin:1pt;font-weight:bold;font-size:large;">&raquo; <a href="<?php=$_SERVER['SCRIPT_NAME']?>">Runescape Equipment Profiles</a></div>
+<div style="margin:1pt;font-weight:bold;font-size:large;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Runescape Equipment Profiles</a></div>
 <hr class="main" noshade="noshade" />
 <a href="?setbuilder" title="Create your own set now!"><img src="img/equipimg/edb.gif" width="348" height="149" style="float:left;" alt="" border="0" /></a>
 <p style="text-align:center;">What should I wear to barrows? What should I wear when training magic? What's in my price range? <b>All answers are here!</b></p>
@@ -113,14 +121,14 @@ if(!isset($id)) {
   while($info = $db->fetch_array($query)) {
     $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
     echo NL.'<tr>'
-     .NL.'<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">'
-        .'<img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . $info['name'] .' image" width="50" height="50" />'
-        .'</a></td>'
+     .NL.'<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">
+        <img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . $info['name'] .' image" width="50" height="50" />
+        </a></td>'
      .NL.'<td class="tablebottom">'
         .'<a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['name'] . '</a></td>'
      .NL.'</tr>';
-  } 
-
+  }
+ 
   if($row_count == 0 or $page <= 0 or $page > $page_count)
   {
     echo NL.'<tr>'
@@ -151,7 +159,7 @@ if(!isset($id)) {
 ?>
 <script type="text/javascript" src="/equipmentprofile.js"></script>
 <div style="margin:1pt;font-weight:bold;font-size:large;">
-&raquo; <a href="<?php=$_SERVER['SCRIPT_NAME']?>">Runescape Equipment Profiles</a> &raquo; Set Builder</div>
+&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Runescape Equipment Profiles</a> &raquo; Set Builder</div>
 <hr class="main" noshade="noshade" />
 <p class="descr"><span>Build your very own Runescape Equipment set!</span>
 <br /><br />You can build a set just to check out how much it'll cost you, what monsters it will be good against, what stats it has and how much it weighs, <b>or</b> submit your Runescape equipment combination and have it available to other users of Zybez Runescape Help forever! <noscript><b>Javascript MUST be enabled to use this.</b></noscript></p>
@@ -162,7 +170,7 @@ if(!isset($id)) {
 <table width="100%" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td style="vertical-align:top;width:14%;">
-<form action="<?php=$_SERVER['SCRIPT_NAME']?>" method="get" name="search">
+<form action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="get" name="search">
 <h3 style="font:13px 'Lucida Sans Unicode'">Searching <span id="group"></span> for...</h3>
 <input type="text" style="width:185px;" id="ds" value="" onclick="this.value = ''" onkeyup="doSearch(this.value)" /><br />
 <select id="results" size="18">
@@ -174,8 +182,8 @@ if(!isset($id)) {
     $i=0;
     $query = $db->query("SELECT * FROM items WHERE id IN (5350,5344,5351,5345,5352,5353,5346,5354,5347,5348,5349) ORDER BY equip_type ASC");
     while($iinfo = $db->fetch_array($query)) {
-        $td[]          =    '<td id="i' . $i . '" onclick="blankItem(' . $i . ')" class="item" style="background:url(\'/img/equipimg/'
-                            .$iinfo['image'].'\') no-repeat"></td>';
+        $td[]          =    '<td id="i' . $i . '" onclick="blankItem(' . $i . ')" class="item" style="background:url(\\'/img/equipimg/'.
+                            $iinfo['image'].'\\\') no-repeat"></td>';
         $i++;
     }
     
@@ -248,7 +256,7 @@ echo  '<td style="width:75%;">'
             .$td[10] ## Finger
             .'</tr>'
             .'</table></td>'
-          .'<td style="border-right:1px solid #000;border-bottom:1px solid #000;vertical-align:top;" width="55%">' 
+          .'<td style="border-right:1px solid #000;border-bottom:1px solid #000;vertical-align:top;" width="55%"> '
             .'<table width="100%" cellspacing="0" cellpadding="5">'
             .'<tr>'
             .'<td style="vertical-align:top;width:25%;">Set type:</td>'
@@ -268,7 +276,7 @@ echo  '<td style="width:75%;">'
             .'</tr>'
             .'<tr>'
             .'<td>Total Weight:</td>'
-            .'<td>' . $weight . 'kg<acronym title="We may not have the weight information for some items.">+</acronym></td>'
+            .'<td>' . $weight . 'kg<abbr title="We may not have the weight information for some items.">+</abbr></td>'
             .'</tr>'
             .'<tr>'
             .'<td style="vertical-align:top;">Strengths:</td>'
@@ -309,17 +317,19 @@ echo '<div class="instr">'
   {
         $id = $_GET['id'];
         $id = intval( $id );
+        // This query might fail if 'equipment' table is missing, but code is correct now.
         $info = $db->fetch_row("SELECT * FROM equipment WHERE id = " . $id);
 ?>
 
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; <a href="<?php=$_SERVER['SCRIPT_NAME']?>">Equipment Profiles Database</a> &raquo; <u><?php=$info['name']?></u></font></b>
+<b><font size="+1">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Equipment Profiles Database</a> &raquo; <u><?php echo $info['name']; ?></u></font></b>
 </div><hr class="main" noshade="noshade" />
 
 <?php
-    if(!empty($info['itemids'])) { ## If there's a set to be displayed...
+    if(!empty($info['itemids'])) { ## If there's a set to be displayed... 
     
-    $query = $db->query("SELECT * FROM items WHERE id IN (".$info['itemids'].") ORDER BY equip_type ASC");
+    $query = $db->query("SELECT * FROM items WHERE id IN ("
+    .$info['itemids'].")) ORDER BY equip_type ASC");
     
     $total_stab_att   = 0;
     $total_slash_att  = 0;
@@ -339,7 +349,7 @@ echo '<div class="instr">'
     /*** NAME ***/
         $name[]            =    $iinfo['name'];
     /*** CREATE TABLE CELL ***/
-        $td[]          =    '<td class="item" onclick="window.location=\'/items.php?id=' . $iinfo['id'] . '\'" style="background:url(\'/img/idbimg/'.$iinfo['image'].'\') no-repeat">';
+        $td[]          =    '<td class="item" onclick="window.location=\'/items.php?id=' . $iinfo['id'] . '\'" style="background:url(\\'/img/idbimg/'.$iinfo['image'].'\\\\') no-repeat">';
 
     /*** WEIGHT ***/
         $weights           =    ($iinfo['weight'] == -21 || $iinfo['weight'] == '') ? 0 : $iinfo['weight'];
@@ -389,7 +399,9 @@ echo '<div class="instr">'
         elseif($table_members == 0) $table_members = 'All of this set is available to free players.';
 
 /*** GRAB PRICES -- ONLY GRABS PRICES WITH A PID ***/
-        $prices = $db->query("SELECT price_low, price_high FROM price_items WHERE id IN (SELECT pid FROM items WHERE id IN (".$info['itemids']."))");    
+        $prices = $db->query("SELECT price_low, price_high FROM price_items WHERE id IN (SELECT pid FROM items WHERE id IN ("
+        .$info['itemids']."))");    
+        $low = 0; $high = 0;
         while($pinfo = $db->fetch_array($prices)) { ## Calculate total cost of items in set
               $low += $pinfo['price_low'];
               $high += $pinfo['price_high'];
@@ -482,7 +494,7 @@ echo '<table width="96%" style="margin:0 2%;border-left:1px solid #000;border-to
       .'</tr>'
       .'</table>'
     .'</td>'
-    .'<td style="border-right:1px solid #000;border-bottom:1px solid #000;vertical-align:top;" width="50%">'
+    .'<td style="border-right:1px solid #000;border-bottom:1px solid #000;vertical-align:top;" width="50%">
     .'<table width="100%" cellspacing="0" cellpadding="5">'
     .'<tr>'
     .'<td style="vertical-align:top;width:20%;">Set type:</td>'
@@ -502,7 +514,7 @@ echo '<table width="96%" style="margin:0 2%;border-left:1px solid #000;border-to
     .'</tr>'
     .'<tr>'
     .'<td>Total Weight:</td>'
-    .'<td>' . $weight . 'kg<acronym title="We may not have the weight information for some items.">+</acronym></td>'
+    .'<td>' . $weight . 'kg<abbr title="We may not have the weight information for some items.">+</abbr></td>'
     .'</tr>'
     .'<tr>'
     .'<td style="vertical-align:top;">Strengths:</td>'

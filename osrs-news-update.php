@@ -16,7 +16,7 @@
  
  $debug_mode = 1;
  
- $mysqli = new mysqli('localhost', 'phpbb', 'openbb', 'rsc_mybb');
+ $mysqli = new mysqli('localhost', 'phpbb', 'openbb#44#', 'rsc_mybb');
 
  
  /*  ~  ~  ~ ~ ~ ~ ~   ~  ~   ~     ~   ~    ~ ~ ~   ~    ~    ~ ~   ~ ~ */
@@ -78,6 +78,22 @@ foreach ($xml->channel->item as $element) {
 					/* And now we scrape the news story... */
 					
 			$url = $element->link;
+			
+			// Security Fix: Whitelist domains for SSRF protection
+			$allowed_domains = array('runescape.com', 'services.runescape.com', 'oldschool.runescape.com');
+			$url_parts = parse_url($url);
+			$is_allowed = false;
+			foreach($allowed_domains as $domain) {
+				if(isset($url_parts['host']) && (strtolower($url_parts['host']) == $domain || substr(strtolower($url_parts['host']), -strlen('.'.$domain)) == '.'.$domain)) {
+					$is_allowed = true;
+					break;
+				}
+			}
+
+			if (!$is_allowed) {
+				qq('Unauthorized URL skipped: ' . $url);
+				continue;
+			}
 
 			qq('Attempting to parse using file_get_contents... ');
 			$buffer = file_get_contents($url,FALSE, NULL); 

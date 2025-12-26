@@ -655,7 +655,7 @@ else {
 		
 	$search_term = stripslashes( $search_term );
 
-	$entries_per_page = 15;
+	$entries_per_page = 50;
 	$db->query( $search );
 	$entry_count = $db->num_rows( $search );
 	$page_count = ceil( $entry_count / $entries_per_page );
@@ -764,6 +764,7 @@ $total = $db->query($totq);
 $num_total = $db->num_rows( $totq );
 
 $num_complete = 0;
+$num_started = 0;
 while( $info = $db->fetch_array( $total ) ) {
 	if( $info['complete'] == 1) {
 		$num_complete++;
@@ -775,16 +776,22 @@ while( $info = $db->fetch_array( $total ) ) {
 
 $num_need = $num_total - $num_complete;
 
-$percent_complete = $num_complete / $num_total;
-$percent_complete = $percent_complete * 100;
-$percent_complete = round( $percent_complete , 2 );
+if ($num_total > 0) {
+    $percent_complete = $num_complete / $num_total;
+    $percent_complete = $percent_complete * 100;
+    $percent_complete = round( $percent_complete , 2 );
 
-$percent_started = $num_started / $num_total;
-$percent_started = $percent_started * 100;
-$percent_started = round( $percent_started , 2 );
+    $percent_started = $num_started / $num_total;
+    $percent_started = $percent_started * 100;
+    $percent_started = round( $percent_started , 2 );
 
-$percent_needed = 100 - $percent_complete - $percent_started;
-$percent_needed = round ( $percent_needed , 3 );
+    $percent_needed = 100 - $percent_complete - $percent_started;
+    $percent_needed = round ( $percent_needed , 3 );
+} else {
+    $percent_complete = 0;
+    $percent_started = 0;
+    $percent_needed = 0;
+}
 ?>
 	
 <table class="boxtop" border="0" cellpadding="1" cellspacing="2" width="100%" style="border: 1px solid black; margin: auto;">
@@ -847,6 +854,7 @@ if(isset( $_GET['act'] ) AND $_GET['act'] == 'incomplete') {
     }
 }
 else {
+	if(isset($query) && $query) {
 	while($info = $db->fetch_array( $query ) ) {
 	
 		echo '<tr align="center">';
@@ -877,6 +885,6 @@ if (isset( $_GET['act'] ) AND $_GET['act'] == 'incomplete') {
 /* } */
 
 echo '<br /></div>';
-
+if(!isset($name)) $name = '';
 end_page($name);
 ?>

@@ -5,7 +5,7 @@
 $url = 'https://oldschool.runescape.com/';
 $buffer = file_get_contents($url,FALSE, NULL); 
 $players = getStringBetween($buffer,"player-count'>There are currently "," people playing!");
-preg_replace('#(?<=\d),(?=\d)#','',$players);
+$players = preg_replace('#(?<=\d),(?=\d)#','',$players);
 
 function getStringBetween($str,$from,$to){
     $sub = substr($str, strpos($str,$from)+strlen($from),strlen($str));
@@ -24,7 +24,7 @@ if ($mysqli->connect_errno) {
     exit;
 }
 
-$sql = 'INSERT INTO `osrs` (`players`,`time`) VALUES ("'.$players.'","'.time().'")';
+$sql = 'INSERT INTO `osrs` (`players`,`time`) VALUES ("'.$mysqli->real_escape_string($players).'","'.time().'")';
 $mysqli->query($sql);
 
 ?>

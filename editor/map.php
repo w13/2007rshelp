@@ -8,7 +8,7 @@ $cat_array = array(
 					'dungeonmaps' => 'Dungeon Maps',
 					'miningmaps' => 'Mining Maps');
 					
-if( array_key_exists( $_GET['cat'], $cat_array ) ) {
+if( isset($_GET['cat']) && array_key_exists( $_GET['cat'], $cat_array ) ) {
 	$category = $_GET['cat'];
 }
 else {

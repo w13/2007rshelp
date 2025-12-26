@@ -1,11 +1,11 @@
 <?php
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
-					array('order', $_GET['order'], 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
-					array('page', $_GET['page'], 'int', 's' => '1,400', 'd' => 1),
-					array('category', $_GET['category'], 'enum', 'e' => array('name', 'member', 'combat', 'hp'), 'd' => 'name' ),
-					array('search_area', $_GET['search_area'], 'enum', 'e' => array('name','locations','drops','attstyle','quest','race','notes','training','combat') ),
-					array('search_term', $_GET['search_term'], 'sql', 'l' => 40)
-				  );
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
+                                        array('order', $_GET['order'] ?? null, 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
+                                        array('page', $_GET['page'] ?? null, 'int', 's' => '1,400', 'd' => 1),
+                                        array('category', $_GET['category'] ?? null, 'enum', 'e' => array('name', 'member', 'combat', 'hp'), 'd' => 'name' ),
+                                        array('search_area', $_GET['search_area'] ?? null, 'enum', 'e' => array('name','locations','drops','attstyle','quest','race','notes','training','combat') ),
+                                        array('search_term', $_GET['search_term'] ?? null, 'sql', 'l' => 40)
+                                  );
 
 /*** MONSTER DATABASE ***/
 require(dirname(__FILE__) . '/' . 'backend.php');
@@ -15,8 +15,8 @@ start_page('OSRS RuneScape Monster Database');
 
 
 if($disp->errlevel > 0) {
-	unset($id);
-	unset($search_area);
+        unset($id);
+        unset($search_area);
 }
 ?>
 <div class="boxtop">OSRS RuneScape Monster Database</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
@@ -135,15 +135,15 @@ while($info = $db->fetch_array($query)) {
     
     
        /* if(!empty($search_term) && $search_area == 'name') {
-   	$time_allowed = $area == 'items' ? time() : time() + ( $time_lim * 60 );
-			$ip_address = $_SERVER['REMOTE_ADDR'];
-        $db->query("UPDATE `corrections_ip` SET status = 1, status_expire = " . $time_allowed . " WHERE ip = '" . $ip_address . "'");
-				if( mysql_affected_rows() == 0 ) {
-				
-					$db->query("INSERT INTO `corrections_ip` ( `ip`, `status`, `status_expire` ) VALUES ( '" . $ip_address . "', '1', '" . $time_allowed . "' )");
-				}
-				
-        $db->query("INSERT INTO `helpdb`.`corrections` (`ip`, `text` ,`cor_table` ,`cor_id` ,`time`) VALUES ('".$ip_address."', 'Search ".addslashes($search_area) . ' for ' . addslashes($search_term)."', 'monsters', '2165', NOW())");
+        $time_allowed = $area == 'items' ? time() : time() + ( $time_lim * 60 );
+                        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $db->query("UPDATE  SET status = 1, status_expire = " . $time_allowed . " WHERE ip = '" . $ip_address . "'");
+                                if( mysql_affected_rows() == 0 ) {
+
+                                        $db->query("INSERT INTO  ( , ,  ) VALUES ( '" . $ip_address . "', '1', '" . $time_allowed . "' )");
+                                }
+
+        $db->query("INSERT INTO . (,  , , ,) VALUES ('".$ip_address."', 'Search ".addslashes($search_area) . ' for ' . addslashes($search_term)."', 'monsters', '2165', NOW())");
         }*/
         
         
@@ -179,14 +179,14 @@ while($info = $db->fetch_array($query)) {
 
 <script type="text/javascript">
 function avgxp_calc () {
-	var count = document.Average_XP.avg_xp.value;
+        var count = document.Average_XP.avg_xp.value;
 
-	if (isNaN(count) || count == 0) {
-		return;
-	}
+        if (isNaN(count) || count == 0) {
+                return;
+        }
 
-	var calc_cb = (count * <?php echo $info['hp']; ?> * 4 * 60);
-	var calc_hp = (count * <?php echo $info['hp']; ?> * 1.333 * 60);
+        var calc_cb = (count * <?php echo $info['hp']; ?> * 4 * 60);
+        var calc_hp = (count * <?php echo $info['hp']; ?> * 1.333 * 60);
 document.getElementById("cbxp").innerHTML = Math.round(calc_cb*10)/10;
 document.getElementById("hpxp").innerHTML = Math.round(calc_hp*10)/10;
 }
@@ -198,22 +198,22 @@ echo '<center><a href="/correction.php?area=monsters&amp;id=' . $id . '" title="
 
    $info['member'] = $info['member'] == 1 ? 'Yes' : 'No';
    $ftime = $info['time'];
-	 $date = date( 'l F jS, Y', $ftime );
+         $date = date( 'l F jS, Y', $ftime );
 
-	$quests = explode(';',$info['quest']);
-	$qid[0] = $db->fetch_row("SELECT `id`,`name` FROM `quests` WHERE `name` = '".addslashes($quests[0])."'");
-	for($num = 1; array_key_exists($num, $quests); $num++) { $qid[$num] = $db->fetch_row("SELECT `id`,`name` FROM `quests` WHERE `name` = '".addslashes(trim($quests[$num]))."'"); }
-	foreach($quests as $key => $var) {
-	
-	if($qid[$key]['id'] == ''){ $questlist .= trim($var).', ';
-	}else{
-		
-		$questlist .= '<a href="/quests.php?id='.$qid[$key]['id'].'">' . trim($var) . '</a>, ';
-	}
-		
-	}
-	$questlist = substr($questlist, 0, -2);
-	
+        $quests = explode(';',$info['quest']);
+        $qid[0] = $db->fetch_row("SELECT `id`,`name` FROM `quests` WHERE `name` = '".addslashes($quests[0])."'");
+        for($num = 1; array_key_exists($num, $quests); $num++) { $qid[$num] = $db->fetch_row("SELECT `id`,`name` FROM `quests` WHERE `name` = '".addslashes(trim($quests[$num]))."'"); }
+        foreach($quests as $key => $var) {
+
+        if($qid[$key]['id'] == ''){ $questlist .= trim($var).', ';
+        }else{
+
+                $questlist .= '<a href="/quests.php?id='.$qid[$key]['id'].'">' . trim($var) . '</a>, ';
+        }
+
+        }
+        $questlist = substr($questlist, 0, -2);
+
 if($info['npc'] == '1' && $info['id'] != 950 ) {
 
 $info['drops'] = substr($info['drops'],-1) == '.' ? substr($info['drops'],0,-1) : $info['drops'];
@@ -241,102 +241,102 @@ $idrops = explode('[,]',$info['i_drops']);
     $idroplist = substr($idroplist, 0, -2);
     }
 
-	// NORMAL NPC
-	echo '<table cellspacing="0" width="75%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">';
-	echo '<tr>';
-	echo '<td colspan="3" class="tabletop" style="border-right:none;">' . $info['name'] . '</td></tr>';
-	echo '<tr>';
+        // NORMAL NPC
+        echo '<table cellspacing="0" width="75%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">';
+        echo '<tr>';
+        echo '<td colspan="3" class="tabletop" style="border-right:none;">' . $info['name'] . '</td></tr>';
+        echo '<tr>';
   echo '<td rowspan="';
   echo $info['maxhit'] == '0' ? '9' : '10';
   echo '" width="50%" align="center" style="border:none; border-right:1px solid #000;"><img src="/img/npcimg/' . $info['img'] . '" alt="Picture of ' . $info['name'] . '" /></td></tr>';
-	echo '<tr>';
-	echo '<td width="15%">Combat:</td><td width="35%">' . $info['combat'] . '</td></tr>';
-	echo '<tr>';
-	echo '<td>Hitpoints:</td><td>' . $info['hp'] . '</td></tr>';
+        echo '<tr>';
+        echo '<td width="15%">Combat:</td><td width="35%">' . $info['combat'] . '</td></tr>';
+        echo '<tr>';
+        echo '<td>Hitpoints:</td><td>' . $info['hp'] . '</td></tr>';
   if($info['maxhit'] != '0' ) {
-	echo '<tr>';
-	echo '<td>Max Hit:</td><td>' . $info['maxhit'] . '</td></tr>'; }
-	echo '<tr>';
-	echo '<td>Race:</td><td>' . $info['race'] . '</td></tr>';
-	echo '<tr>';
-	echo '<td>Members:</td><td>'. $info['member'] .'</td></tr>';
-	echo '<tr>';
-	echo '<td>Quest:</td><td>' . $questlist . '</td></tr>';
-	echo '<tr>';
-	echo '<td>Nature:</td><td>' . $info['nature'] . '</td></tr>';
-	echo '<tr>';
-	echo '<td>Attack Style:</td><td>' . $info['attstyle'] . '</td></tr>';
-	echo '<tr>';
-	echo '<td>Examine:</td><td>' . $info['examine'] . '</td></tr>';
-	echo '</table><br />';
-	
-	if($info['hp'] != '1' ) {
-	//-- CALCULATOR
-	echo '<form name="Average_XP" onsubmit="javascript:return false;" action=""><table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
-	echo '<tr>';
-	echo '<td width="20%" title="Input how many you think you kill per minute"><b>Kills per min:</b></td>';
-	echo '<td align="left" width="15%" title="Input how many you think you kill per minute"><input type="text" size="3" autocomplete="off" maxlength="5" onkeyup="javascript:avgxp_calc();" name="avg_xp" /></td>';
-	echo '<td align="left" width="40%"><b>Average Combat XP per hour:</b></td>';
-	echo '<td align="left" width="20%"><span id="cbxp"></span></td></tr>';
-	echo '<tr>';
-	echo '<td colspan="2"></td><td align="left"><b>Average HP XP per hour:</b></td>';
-	echo '<td align="left"><span id="hpxp"></span></td></tr>';
-	echo '</table></form><br />';
+        echo '<tr>';
+        echo '<td>Max Hit:</td><td>' . $info['maxhit'] . '</td></tr>'; }
+        echo '<tr>';
+        echo '<td>Race:</td><td>' . $info['race'] . '</td></tr>';
+        echo '<tr>';
+        echo '<td>Members:</td><td>'. $info['member'] .'</td></tr>';
+        echo '<tr>';
+        echo '<td>Quest:</td><td>' . $questlist . '</td></tr>';
+        echo '<tr>';
+        echo '<td>Nature:</td><td>' . $info['nature'] . '</td></tr>';
+        echo '<tr>';
+        echo '<td>Attack Style:</td><td>' . $info['attstyle'] . '</td></tr>';
+        echo '<tr>';
+        echo '<td>Examine:</td><td>' . $info['examine'] . '</td></tr>';
+        echo '</table><br />';
+
+        if($info['hp'] != '1' ) {
+        //-- CALCULATOR
+        echo '<form name="Average_XP" onsubmit="javascript:return false;" action=""><table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
+        echo '<tr>';
+        echo '<td width="20%" title="Input how many you think you kill per minute"><b>Kills per min:</b></td>';
+        echo '<td align="left" width="15%" title="Input how many you think you kill per minute"><input type="text" size="3" autocomplete="off" maxlength="5" onkeyup="javascript:avgxp_calc();" name="avg_xp" /></td>';
+        echo '<td align="left" width="40%"><b>Average Combat XP per hour:</b></td>';
+        echo '<td align="left" width="20%"><span id="cbxp"></span></td></tr>';
+        echo '<tr>';
+        echo '<td colspan="2"></td><td align="left"><b>Average HP XP per hour:</b></td>';
+        echo '<td align="left"><span id="hpxp"></span></td></tr>';
+        echo '</table></form><br />';
   //-- Calculator -->
   }
 
-	echo '<table cellspacing="0" width="75%" style="border:1px solid #000;" cellpadding="4" align="center">';
-	echo '<tr>';
-	echo '<td width="20%" valign="top">Where Found:</td><td>' . $info['locations'] . '</td></tr>';
-	if(!empty($info['drops'])) {
-	echo '<tr>';
-	echo '<td valign="top">Drops:</td><td>' . $droplist . '</td></tr>'; //$droplist
-	}
-	if(!empty($info['i_drops'])) {
- 	echo '<tr>';
-	echo '<td valign="top">Top Drops:</td><td>' . $idroplist . '</td></tr>'; //$idroplist
-	}
-	if(!empty($info['tactic'])) {
-	echo '<tr><td valign="top">Tactic:</td><td>' . $info['tactic'] . '</td></tr>';
-	}
-		if(!empty($info['notes'])) {
-	echo '<tr>';
-	echo '<td valign="top">Notes:</td><td>' . $info['notes'] . '</td></tr>';
-	}
-	echo '</table><br />';
-	
-	echo '<table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
-	echo '<tr>';
-	echo '<td width="15%">Credits:</td><td align="left">' . $info['credits'] . '</td></tr>';
+        echo '<table cellspacing="0" width="75%" style="border:1px solid #000;" cellpadding="4" align="center">';
+        echo '<tr>';
+        echo '<td width="20%" valign="top">Where Found:</td><td>' . $info['locations'] . '</td></tr>';
+        if(!empty($info['drops'])) {
+        echo '<tr>';
+        echo '<td valign="top">Drops:</td><td>' . $droplist . '</td></tr>'; //$droplist
+        }
+        if(!empty($info['i_drops'])) {
+        echo '<tr>';
+        echo '<td valign="top">Top Drops:</td><td>' . $idroplist . '</td></tr>'; //$idroplist
+        }
+        if(!empty($info['tactic'])) {
+        echo '<tr><td valign="top">Tactic:</td><td>' . $info['tactic'] . '</td></tr>';
+        }
+                if(!empty($info['notes'])) {
+        echo '<tr>';
+        echo '<td valign="top">Notes:</td><td>' . $info['notes'] . '</td></tr>';
+        }
+        echo '</table><br />';
+
+        echo '<table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
+        echo '<tr>';
+        echo '<td width="15%">Credits:</td><td align="left">' . $info['credits'] . '</td></tr>';
   echo '<tr><td valign="top">Last Modified:</td><td>' . $date . '</td></tr></table>';
  } //END NORMAL NPC
  
  elseif($info['npc'] == '0' ) { //NON ATTACKABLE
-	echo '<table cellspacing="0" width="75%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">';
-	echo '<tr>';
-	echo '<td colspan="3" class="tabletop" style="border-right:none;">' . $info['name'] . '</td></tr>';
-	echo '<tr>';
+        echo '<table cellspacing="0" width="75%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">';
+        echo '<tr>';
+        echo '<td colspan="3" class="tabletop" style="border-right:none;">' . $info['name'] . '</td></tr>';
+        echo '<tr>';
     echo '<td rowspan="5" width="50%" align="center" style="border:none; border-right:1px solid #000;"><img src="/img/npcimg/npc/' . $info['img'] . '" alt="Picture of ' . $info['name'] . '" /></td></tr>';
-	echo '<tr>';
-	echo '<td>Race:</td><td>' . $info['race'] . '</td></tr>';
-	echo '<tr>';
-	echo '<td>Members:</td><td>'. $info['member'] .'</td></tr>';
-	echo '<tr>';
-	echo '<td>Quest:</td><td>' . $questlist . '</td></tr>';
-	echo '<tr>';
-	echo '<td>Examine:</td><td>' . $info['examine'] . '</td></tr>';
-	echo '</table><br />';
+        echo '<tr>';
+        echo '<td>Race:</td><td>' . $info['race'] . '</td></tr>';
+        echo '<tr>';
+        echo '<td>Members:</td><td>'. $info['member'] .'</td></tr>';
+        echo '<tr>';
+        echo '<td>Quest:</td><td>' . $questlist . '</td></tr>';
+        echo '<tr>';
+        echo '<td>Examine:</td><td>' . $info['examine'] . '</td></tr>';
+        echo '</table><br />';
   
-	echo '<table cellspacing="0" width="75%" style="border:1px solid #000;" cellpadding="4" align="center">';
-	echo '<tr>';
-	echo '<td width="20%" valign="top">Where Found:</td><td>' . $info['locations'] . '</td></tr>';
-	echo '<tr>';
-	echo '<td valign="top">Notes:</td><td>' . $info['notes'] . '</td></tr>';
-	echo '</table><br />';
-	
-	echo '<table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
-	echo '<tr>';
-	echo '<td width="15%">Credits:</td><td align="left">' . $info['credits'] . '</td></tr>';
+        echo '<table cellspacing="0" width="75%" style="border:1px solid #000;" cellpadding="4" align="center">';
+        echo '<tr>';
+        echo '<td width="20%" valign="top">Where Found:</td><td>' . $info['locations'] . '</td></tr>';
+        echo '<tr>';
+        echo '<td valign="top">Notes:</td><td>' . $info['notes'] . '</td></tr>';
+        echo '</table><br />';
+
+        echo '<table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
+        echo '<tr>';
+        echo '<td width="15%">Credits:</td><td align="left">' . $info['credits'] . '</td></tr>';
   echo '<tr><td valign="top">Last Modified:</td><td>' . $date . '</td></tr></table>';
  } //END NON ATTACKABLE
   else {

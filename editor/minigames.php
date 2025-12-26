@@ -112,7 +112,10 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		echo '<input type="hidden" name="id" value="' . $id . '" />';
 	  $seltyp = $info['type'] == 1 ? 'checked="checked"' : '';
 	  $selcom = $info['complete'] == 1 ? 'checked="checked"' : '';
-	}
+	} else {
+      $seltyp = '';
+      $selcom = '';
+    }
 	echo '<table width="90%" align="center" style="border-left: 1px solid #000000" cellspacing="0">' . NL;
 	echo '<tr>' . NL;
 	echo '<td class="tabletop" colspan="2">General</td>' . NL;
@@ -225,5 +228,6 @@ echo '</form>';
 
 }
 echo '</div>'. NL;
+if(!isset($name)) $name = '';
 end_page($name);
 ?>

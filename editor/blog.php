@@ -198,11 +198,6 @@ else {
 	echo '</form></center>' . NL;
 
 	$query = $db->query( "SELECT * FROM blog WHERE type = " . $category . " ORDER BY `date` DESC" );
-  $url = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D1';
-  $url2 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D2';
-  $url3 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D3';
-  $url4 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D4';
-  echo '<p style="text-align:center;" onclick="window.open(\''.$url.'\'); window.open(\''.$url2.'\');window.open(\''.$url3.'\');window.open(\''.$url4.'\');">Re-Cache Category Indexes</p>';
 	?>
 	<table style="border-left: 1px solid #000;" width="100%" cellpadding="1" cellspacing="0">
 	<tr>
@@ -216,9 +211,7 @@ else {
     echo '<tr align="center">' . NL;
 		echo '<td class="tablebottom"><a href="/blog.php?type=' . $category . '&amp;id=' . $info['id'] . '" target="_new">' . $info['name'] . '</a></td>' . NL;
 		$seotitle = strtolower(preg_replace("/[^A-Za-z0-9_&.]/", "", 'runescape_'.$info['name'].'.htm'));
-		$url = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D' . $category . '%26id%3D' . $info['id'];
-		$url2 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Fblog.php%3Ftype%3D' . $category . '%26id%3D' . $info['id'] . '%26' . $seotitle;
-		echo '<td class="tablebottom"><a href="' . $_SERVER['PHP_SELF'] . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit '.$info['name'].'">Edit</a> / <a onclick="window.open(\''.$url.'\'); window.open(\''.$url2.'\')">Re-cache</a>';
+		echo '<td class="tablebottom"><a href="' . $_SERVER['PHP_SELF'] . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit '.$info['name'].'">Edit</a>';
 		if( $ses->permit( 15 ) ) {
 			echo ' / <a href="' . $_SERVER['PHP_SELF'] . '?act=delete&cat=' . $category . '&id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;
 		}

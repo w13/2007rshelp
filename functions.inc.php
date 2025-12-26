@@ -36,7 +36,14 @@ function dynamify($input) {
       $func_par = explode('||',$func_par);
       
     /** Perform the Function **/
-    $result = call_user_func($func, $func_par[0], $func_par[1]);
+    // Security Fix: Whitelist allowed functions to prevent RCE
+    $allowed_functions = array('city_key', 'city_shops', 'city_npc', 'monsters');
+    if (in_array($func, $allowed_functions)) {
+        $result = call_user_func($func, $func_par[0], $func_par[1]);
+    } else {
+        $result = ''; // Or handle error appropriately
+        error_log("Security Warning: Attempted to call unauthorized function '$func' in dynamify()");
+    }
     /** Restore the Content **/
     $content_array[$count] = substr($content_array[$count], $fn_end+2);
     $output = $output . $result . $content_array[$count];

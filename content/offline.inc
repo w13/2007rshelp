@@ -7,7 +7,7 @@
 <link href="http://www.zybez.net/css/global.css" rel="stylesheet" type="text/css" />
 <!--
 COPYRIGHT NOTICE:
-RuneScape Help © Zybez Corporation. 2001 - 2008; All rights reserved.
+RuneScape Help ï¿½ Zybez Corporation. 2001 - 2008; All rights reserved.
 All content is for use on Zybez.net ONLY!
 Runescape is registered trademark of Jagex Ltd. 
 -->
@@ -23,26 +23,26 @@ Runescape is registered trademark of Jagex Ltd.
 <div id="wrapper">
 <div class="topbar">
 <div style="float:left; width:250px; margin:7px 0 0 15px;">
-<table border="0">
+<table style="border: 0;">
 <tr><td style="padding:0 7px;vertical-align:middle;border:none;color:#fff;font-weight:bold;font-size:12px;">THEMES</td>
-<td style="border:none;"><a onclick="javascript:changeStyle('darkblue')" title="Default Theme"><img src="/images/banner/default.png" alt="Default" /></a>
-<a onclick="javascript:changeStyle('blackblue')" title="Black Blue"><img src="/images/banner/blkbl.png" alt="Black Blue" /></a>
-<a onclick="javascript:changeStyle('redgray')" title="Red Gray"><img src="/images/banner/gryrd.png" alt="Red Gray" /></a>
+<td style="border:none;"><a onclick="changeStyle('darkblue')" title="Default Theme"><img src="/images/banner/default.png" alt="Default" /></a>
+<a onclick="changeStyle('blackblue')" title="Black Blue"><img src="/images/banner/blkbl.png" alt="Black Blue" /></a>
+<a onclick="changeStyle('redgray')" title="Red Gray"><img src="/images/banner/gryrd.png" alt="Red Gray" /></a>
 
-<a onclick="javascript:changeStyle('redblack')" title="Red Black"><img src="/images/banner/blkrd.png" alt="Red Black" /></a>
-<a onclick="javascript:changeStyle('yellowblue')" title="Yellow Blue"><img src="/images/banner/bluyel.png" alt="Yellow Blue" /></a>
-<a onclick="javascript:changeStyle('charcoal')" title="Charcoal"><img src="/images/banner/charc.png" alt="Charcoal" /></a>
-<a onclick="javascript:changeStyle('darkgreen')" title="Dark Green"><img src="/images/banner/grygr.png" alt="Dark Green" /></a>
-<a onclick="javascript:changeStyle('olivedrab')" title="Olive Drab"><img src="/images/banner/olive.png" alt="Olive Drab" /></a></td></tr></table>
+<a onclick="changeStyle('redblack')" title="Red Black"><img src="/images/banner/blkrd.png" alt="Red Black" /></a>
+<a onclick="changeStyle('yellowblue')" title="Yellow Blue"><img src="/images/banner/bluyel.png" alt="Yellow Blue" /></a>
+<a onclick="changeStyle('charcoal')" title="Charcoal"><img src="/images/banner/charc.png" alt="Charcoal" /></a>
+<a onclick="changeStyle('darkgreen')" title="Dark Green"><img src="/images/banner/grygr.png" alt="Dark Green" /></a>
+<a onclick="changeStyle('olivedrab')" title="Olive Drab"><img src="/images/banner/olive.png" alt="Olive Drab" /></a></td></tr></table>
 </div>
 <div style="float: right; width: 200px; margin-top:10px;">
 <a title="Translate to Nederlands" href="/translator.php?lang=nl"><img alt="Nederlands" src="/images/banner/nl.gif" /></a>
 <a title="Translate to Dutch" href="/translator.php?lang=de"><img alt="Deutsch" src="/images/banner/de.gif" /></a>
 <a title="Translate to Lithuanian" href="/translator.php?lang=lt"><img alt="Lithuanian" src="/images/banner/lt.gif" /></a>
-<a title="Translate to French" href="/translator.php?lang=fr"><img alt="Français" src="/images/banner/fr.gif" /></a>
+<a title="Translate to French" href="/translator.php?lang=fr"><img alt="Franï¿½ais" src="/images/banner/fr.gif" /></a>
 <a title="Translate to Italian" href="/translator.php?lang=it"><img alt="Italiano" src="/images/banner/it.gif" /></a>
-<a title="Translate to Portuguese" href="/translator.php?lang=pt"><img alt="Português" src="/images/banner/pt.gif" /></a>
-<a title="Translate to Spanish" href="/translator.php?lang=es"><img alt="Español" src="/images/banner/es.gif" /></a>
+<a title="Translate to Portuguese" href="/translator.php?lang=pt"><img alt="Portuguï¿½s" src="/images/banner/pt.gif" /></a>
+<a title="Translate to Spanish" href="/translator.php?lang=es"><img alt="Espaï¿½ol" src="/images/banner/es.gif" /></a>
 <a title="Translate to Russian" href="/translator.php?lang=ru"><img alt="&#1056;&#1091;&#1089;&#1089;&#1082;&#1086;" src="/images/banner/ru.gif" /></a>
 <a title="Translate to Japanese" href="/translator.php?lang=jp"><img alt="&#26085;&#26412;&#35486;" src="/images/banner/jp.gif" /></a>
 </div>
@@ -50,22 +50,22 @@ Runescape is registered trademark of Jagex Ltd.
 </div>
 <div id="banner"><a href="#" title="Zybez Runescape Help"></a></div>
 <div class="bottombar">
-<table width="100%" border="0">
+<table style="width: 100%; border: 0;">
 <tr>
-<td style="padding-left:10px;" width="10%">
+<td style="padding-left:10px; width: 10%;">
 <a href="/irc.php" title="Zybez IRC"><img alt="Zybez IRC" src="/images/banner/mirc.gif" /></a>
 <a href="/runescapeventrilo.php" title="Zybez Ventrilo Voice Chat"><img alt="Zybez Ventrilo" src="/images/banner/ventrilo.gif" /></a>
 <a href="/radio/index.php" title="Zybez Radio"><img alt="Zybez Radio" src="/images/banner/radio.gif" /></a>
 </td>
-<td width="70%">
-<iframe src="/ticker.php" height="26" width="95%" scrolling="no" allowtransparency="true" frameborder="0" style="vertical-align:middle;background-color:transparent;"></iframe>
+<td style="width: 70%;">
+<iframe src="/ticker.php" height="26" width="95%" scrolling="no" allowtransparency="true" style="vertical-align:middle;background-color:transparent;border: 0;"></iframe>
 </td>
-<td style="padding-right:10px" width="20%">
+<td style="padding-right:10px; width: 20%;">
 <form method="get" action="http://www.google.com/custom" target="_top">
-<input type="text" name="q" value="Search Zybez" onfocus="javascript:if(this.value=='Search Zybez'){ this.value=''; }" style="width: 60%; float:left;" maxlength="255" id="sbi" title="Search Zybez Runescape Help" />
+<input type="text" name="q" value="Search Zybez" onfocus="if(this.value=='Search Zybez'){ this.value=''; }" style="width: 60%; float:left;" maxlength="255" id="sbi" title="Search Zybez Runescape Help" />
 
 <input type="hidden" name="q" value=" -zybez.net/community" />
-<input type="button" name="sa" onclick="javascript:if(this.form.q.value=='Search Zybez'){ }else{this.form.submit();}" value="Search" id="sbb" style="width:35%; float:right;" />
+<input type="button" name="sa" onclick="if(this.form.q.value=='Search Zybez'){ }else{this.form.submit();}" value="Search" id="sbb" style="width:35%; float:right;" />
 <input type="hidden" name="sitesearch" value="www.zybez.net" />
 <input type="hidden" name="domains" value="www.zybez.net" />
 <input type="hidden" name="client" value="pub-0109004644664993" />
@@ -101,7 +101,7 @@ Runescape is registered trademark of Jagex Ltd.
 <div style="clear: both"></div>
 <div id="footer">
 <div style="font: 1em arial, sans-serif">
-<div onclick="javascript: getElementById('copyright').style.display = '';">
+<div onclick="document.getElementById('copyright').style.display = '';">
   ----------------------------------------------------------------------------------------------------
 </div><br />
 <div style="display:none;" id="copyright">
@@ -119,7 +119,7 @@ This site is not affiliated with Jagex Ltd. and must not be mistaken as the offi
 Other sites: [ <a href="http://www.warcrafthelp.com">World of Warcraft</a> ] - [ <a href="http://www.conanhq.com">Age of Conan</a> ] - [ <a href="http://www.guildwarshelp.com">Guild Wars</a> ]
 
 <br />
-<a onclick="javascript: getElementById('copyright').style.display = '';" title="Click for more" style="cursor:pointer;">&copy; 2001 - 2008 Zybez Corporation. All rights reserved.</a>
+<a onclick="document.getElementById('copyright').style.display = '';" title="Click for more" style="cursor:pointer;">&copy; 2001 - 2008 Zybez Corporation. All rights reserved.</a>
 </div>
 </div>
 

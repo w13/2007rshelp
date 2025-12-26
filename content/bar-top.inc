@@ -1,6 +1,6 @@
 <div class="topbar">
 <div style="float:left; width:250px; margin:7px 0 0 15px;">
-<table border="0">
+<table style="border: 0;">
 <tr><td class="theader">THEMES</td>
 <td style="border:none;"><a onclick="changeStyle('bluelight')" title="Default Theme"><img src="/images/banner/default.png" alt="Default" /></a>
 <a onclick="changeStyle('bluedark')" title="Black Blue"><img src="/images/banner/blkbl.png" alt="Black Blue" /></a>

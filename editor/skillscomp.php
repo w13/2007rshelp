@@ -17,7 +17,7 @@ echo '<div class="boxtop">Skills Competition</div>' . NL . '<div class="boxbotto
 	.'<div align="left" style="margin:1"><b><font size="+1">&raquo; Skills Competition';
 
 echo '</font></b></div><hr class="main" noshade="noshade" align="left" />'
-	.'<strong>Information:</strong><ol><li>Only click "Update Start XP at the beginning of the competition (never after) If you screw this up, the previous data <strong>cannot</strong> be recovered.</li><li>When adding names, you must use the following syntax: "runescape name,rsc name,<acronym title="The number at the end of a member\'s profile link.">rsc id</acronym>".  Do not put spaces around the commas.  The only thing needed when deleting names is the runescape name.  Place each new person on a new line.</li></ol><hr class="main" noshade="noshade" align="left" />';
+	.'<strong>Information:</strong><ol><li>Only click "Update Start XP at the beginning of the competition (never after) If you screw this up, the previous data <strong>cannot</strong> be recovered.</li><li>When adding names, you must use the following syntax: "runescape name,rsc name,<abbr title="The number at the end of a member\'s profile link.">rsc id</abbr>".  Do not put spaces around the commas.  The only thing needed when deleting names is the runescape name.  Place each new person on a new line.</li></ol><hr class="main" noshade="noshade" align="left" />';
 
 if ($skill == '') {
 	echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'" style="text-align:center;">'

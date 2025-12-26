@@ -35,9 +35,9 @@ function generate_session($mid) {
 	
 	$mem = $db->fetch_row('SELECT `members_display_name`, `mgroup`, `login_anonymous`, `member_login_key` FROM '.$INFO['sql_database'].'.`'.$tst.'members` WHERE `id` = '.$mid);
 	$anon = intval(substr($mem['login_anonymous'], 0, 1));
-	$agent = mysql_escape_string( substr( $_SERVER['HTTP_USER_AGENT'], 0, 200 ) );
+	$agent = $db->escape_string( substr( $_SERVER['HTTP_USER_AGENT'], 0, 200 ) );
 	
-	$db->query('INSERT INTO '.$INFO['sql_database'].'.`'.$tst.'sessions` (`id`, `member_name`, `member_id`, `member_group`, `login_type`, `running_time`, `ip_address`, `browser`) VALUES ("'.$sess.'", "'.$mem['member_display_name'].'", "'.$mid.'", "'.$mem['mgroup'].'", "'.$anon.'", "'.time().'", "'.$_SERVER['REMOTE_ADDR'].'", "'.$agent.'")');
+	$db->query('INSERT INTO '.$INFO['sql_database'].'.`'.$tst.'sessions` (`id`, `member_name`, `member_id`, `member_group`, `login_type`, `running_time`, `ip_address`, `browser`) VALUES ("'.$sess.'", "'.$mem['members_display_name'].'", "'.$mid.'", "'.$mem['mgroup'].'", "'.$anon.'", "'.time().'", "'.$_SERVER['REMOTE_ADDR'].'", "'.$agent.'")');
 	$db->query('UPDATE '.$INFO['sql_database'].'.`'.$tst.'members` SET `last_visit` = `last_activity`, `last_activity` = "'.time().'" WHERE `id` = '.$mid);
 	
 	setcookie($cst.'member_id', $mid, time()+31536000, '/');

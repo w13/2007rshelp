@@ -1,3 +1,31 @@
+<?php
+require( dirname(__FILE__) . '/' . 'backend.php' );
+// Connect to DB
+$db->connect();
+$db->select_db( MYSQL_DB );
+
+$outfromdb = '';
+
+// Check if APCu is available (apc_* functions are usually APCu in modern PHP)
+// If not available, we might want to fallback or just skip caching.
+// But wait, the original code used apc_exists.
+// Let's assume apc_* functions are available or we can use a polyfill if needed.
+// For now, let's keep the logic but use $db.
+
+if (function_exists('apc_exists') && apc_exists('zybezticker')) {
+    $outfromdb = apc_fetch('zybezticker');
+} else {
+    $query = $db->query("SELECT * FROM `ticker` WHERE NOW() BETWEEN starttime AND endtime ORDER BY priority DESC, starttime DESC LIMIT 15");
+    $num=-1;
+    while($info = $db->fetch_array($query)) {
+        $num++;
+        $outfromdb .= 'arrNewsItems[' . $num . '] = new Array("' . htmlentities($info['content']) . '","' . htmlentities($info['url']) . '"); ';
+    }
+    if (function_exists('apc_store')) {
+        apc_store('zybezticker', $outfromdb);
+    }
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
@@ -8,25 +36,7 @@
 <!--
 var arrNewsItems = new Array();
 <?php
-
-$outfromdb = '';
-
-if (apc_exists('zybezticker')) {
-    $outfromdb = apc_fetch('zybezticker');
-}else{
-
-mysql_select_db('rsc_site', mysql_connect('localhost', 'rsc', 'heyplants44'));
-$query = mysql_query("SELECT * FROM `ticker` WHERE NOW() BETWEEN starttime AND endtime ORDER BY priority DESC, starttime DESC LIMIT 15");
-$num=-1;
-while($info = mysql_fetch_array($query)) {
-$num++;
-$outfromdb .= 'arrNewsItems[' . $num . '] = new Array("' . htmlentities($info['content']) . '","' . htmlentities($info['url']) . '"); ';
-}
-apc_store('zybezticker', $outfromdb);
-}
-
 echo $outfromdb;
-
 ?>
 var intTickSpeed = 5000;
 var intTickPos = 0;

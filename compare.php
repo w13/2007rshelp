@@ -72,7 +72,7 @@ if ($search_term != '' && $search_area != '') {
   echo '<th class="tabletop" width="5%">Picture</th>';
   echo '<th class="tabletop">Name <a href="'.$_SERVER['SCRIPT_NAME'].'?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Name, Ascending" border="0" /></a> <a href="'.$_SERVER['SCRIPT_NAME'].'?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Name, Descending" border="0" /></a></th>';
   
-  echo '<th class="tabletop"><acronym title="Item Comparator Queue">Compare?</th>';
+  echo '<th class="tabletop"><abbr title="Item Comparator Queue">Compare?</abbr></th>';
   
   echo '<th class="tabletop">Members <a href="'.$_SERVER['SCRIPT_NAME'].'?order=ASC&amp;category=member&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Members, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Members, Ascending" border="0" /></a> <a href="'.$_SERVER['SCRIPT_NAME'].'?order=DESC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Members, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Members, Descending" border="0" /></a></th>';
   
@@ -462,7 +462,7 @@ for ($i = 1; $i < count ($items); $i++) {
 							<th class="tabletop">What</th>
 							<th class="tabletop">Value</th>
 							<th class="tabletop">Difference</th>
-							<th class="tabletop"><acronym title="Value as a percentage of ' . $items[$i]["name"] . '\'s">Percent</acronym></th>
+							<th class="tabletop"><abbr title="Value as a percentage of ' . $items[$i]["name"] . '\'s">Percent</abbr></th>
 						</tr>
 						<tr>
 							<th class="tablebottom">Members</th>
@@ -510,7 +510,7 @@ for ($i = 1; $i < count ($items); $i++) {
 							<th class="tabletop">What</th>
 							<th class="tabletop">Value</th>
 							<th class="tabletop">Difference</th>
-							<th class="tabletop"><acronym title="Value as a percentage of ' . $items[0]["name"] . '\'s">Percent</a></th>
+							<th class="tabletop"><abbr title="Value as a percentage of ' . $items[0]["name"] . '\'s">Percent</abbr></th>
 						</tr>
 						<tr>
 							<th class="tablebottom">Members</th>
@@ -557,7 +557,7 @@ for ($i = 1; $i < count ($items); $i++) {
 							<th class="tabletop">What</th>
 							<th class="tabletop">Value</th>
 							<th class="tabletop">Difference</th>
-							<th class="tabletop"><acronym  title="Prices/values as percentages of ' . $items[$i]["name"] . '\'s">Percent</acronym></th>
+							<th class="tabletop"><abbr  title="Prices/values as percentages of ' . $items[$i]["name"] . '\'s">Percent</abbr></th>
 						</tr>';
 
 /*	if ($items[0]["trade"] || $items[$i]["trade"]) {
@@ -663,7 +663,7 @@ for ($i = 1; $i < count ($items); $i++) {
 							<th class="tabletop">What</th>
 							<th class="tabletop">Value</th>
 							<th class="tabletop">Difference</th>
-							<th class="tabletop"><acronym title="Prices/values as percentages of ' . $items[0]["name"] . '\'s">Percent</acronym></th>
+							<th class="tabletop"><abbr title="Prices/values as percentages of ' . $items[0]["name"] . '\'s">Percent</abbr></th>
 						</tr>';
 
 	/* if ($items[$i]["trade"] || $items[0]["trade"]) {
@@ -775,13 +775,13 @@ for ($i = 1; $i < count ($items); $i++) {
 					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:left;">
 						<tr>
-							<th class="tabletop"><acronym title="Statistic">Stat</acronym></th>
-							<th class="tabletop"><acronym title="Attack">Att.</acronym></th>
-							<th class="tabletop"><acronym title="Difference in attack bonuses">&Delta;Att.</acronym></th>
-							<th class="tabletop"><acronym title="Attack bonus as a percentage of ' . $items[$i]["name"] . '\'s">Att. %</acronym></th>
-							<th class="tabletop"><acronym title="Defence">Def.</acronym></th>
-							<th class="tabletop"><acronym title="Difference in defence bonuses">&Delta;Def.</acronym></th>
-							<th class="tabletop"><acronym title="Defence bonus as a percentage of ' . $items[$i]["name"] . '\'s">Def. &</acronym></th>
+							<th class="tabletop"><abbr title="Statistic">Stat</abbr></th>
+							<th class="tabletop"><abbr title="Attack">Att.</abbr></th>
+							<th class="tabletop"><abbr title="Difference in attack bonuses">&Delta;Att.</abbr></th>
+							<th class="tabletop"><abbr title="Attack bonus as a percentage of ' . $items[$i]["name"] . '\'s">Att. %</abbr></th>
+							<th class="tabletop"><abbr title="Defence">Def.</abbr></th>
+							<th class="tabletop"><abbr title="Difference in defence bonuses">&Delta;Def.</abbr></th>
+							<th class="tabletop"><abbr title="Defence bonus as a percentage of ' . $items[$i]["name"] . '\'s">Def. &</abbr></th>
 						</tr>';
 
 		$stats = array (
@@ -834,10 +834,10 @@ for ($i = 1; $i < count ($items); $i++) {
 
 		echo '
 						<tr>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Statistic">Stat</acronym></th>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Extra">Ex.</acronym></th>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Difference in extra bonuses">&Delta;Ex.</acronym></th>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Extra bonus as a percentage of ' . $items[$i]["name"] . '\'s">Ex. %</acronym></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Statistic">Stat</abbr></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Extra">Ex.</abbr></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Difference in extra bonuses">&Delta;Ex.</abbr></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Extra bonus as a percentage of ' . $items[$i]["name"] . '\'s">Ex. %</abbr></th>
 							<th colspan="3">&nbsp;</th>
 						</tr>';
 
@@ -893,13 +893,13 @@ for ($i = 1; $i < count ($items); $i++) {
 					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:right;">
 						<tr>
-							<th class="tabletop"><acronym title="Statistic">Stat</acronym></th>
-							<th class="tabletop"><acronym title="Attack">Att.</acronym></th>
-							<th class="tabletop"><acronym title="Difference in attack bonuses">&Delta;Att.</acronym></th>
-							<th class="tabletop"><acronym title="Attack bonus as a percentage of ' . $items[0]["name"] . '\'s">Att. %</acronym></th>
-							<th class="tabletop"><acronym title="Defence">Def.</acronym></th>
-							<th class="tabletop"><acronym title="Difference in defence bonuses">&Delta;Def.</acronym></th>
-							<th class="tabletop""><acronym title="Defence bonus as a percentage of ' . $items[0]["name"] . '\'s">Def. %</acronym></th>
+							<th class="tabletop"><abbr title="Statistic">Stat</abbr></th>
+							<th class="tabletop"><abbr title="Attack">Att.</abbr></th>
+							<th class="tabletop"><abbr title="Difference in attack bonuses">&Delta;Att.</abbr></th>
+							<th class="tabletop"><abbr title="Attack bonus as a percentage of ' . $items[0]["name"] . '\'s">Att. %</abbr></th>
+							<th class="tabletop"><abbr title="Defence">Def.</abbr></th>
+							<th class="tabletop"><abbr title="Difference in defence bonuses">&Delta;Def.</abbr></th>
+							<th class="tabletop"><abbr title="Defence bonus as a percentage of ' . $items[0]["name"] . '\'s">Def. %</abbr></th>
 						</tr>';
 
 		$stats = array (
@@ -952,10 +952,10 @@ for ($i = 1; $i < count ($items); $i++) {
 
 		echo '
 						<tr>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Statistic">Stat</acronym></th>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Extra">Ex.</acronym></th>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Difference in extra bonuses">&Delta;Ex.</acronym></th>
-							<th class="tabletop" style="border-top:0px;"><acronym title="Extra bonus as a percentage of ' . $items[0]["name"] . '\'s">Ex. %</acronym></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Statistic">Stat</abbr></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Extra">Ex.</abbr></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Difference in extra bonuses">&Delta;Ex.</abbr></th>
+							<th class="tabletop" style="border-top:0px;"><abbr title="Extra bonus as a percentage of ' . $items[0]["name"] . '\'s">Ex. %</abbr></th>
 							<th colspan="3">&nbsp;</th>
 						</tr>';
 

@@ -140,14 +140,14 @@ function printpages($result) {
 
 
 function listcategories() {
-
-			$result = @mysql_query("SELECT * FROM `videoscategory` WHERE `disabled`='0'");
+			global $db;
+			$result = $db->query("SELECT * FROM `videoscategory` WHERE `disabled`='0'");
 			$i=0;
 			
       echo '<tr>'
           .'<td class="caticon">';
       
-      while ($row = @mysql_fetch_assoc($result)) {
+      while ($row = $db->fetch_array($result)) {
             $i++;
             echo '<a href="?cat=' . $row['id'] . '" title="' . $row['name'] . '" class="category">' . $row['name'] . '</a>';
             if(($i % 5) == 0) {
@@ -158,15 +158,17 @@ function listcategories() {
 }
 
 function thiscat($id) {
-			$result = mysql_query("SELECT `name` FROM `videoscategory` WHERE `id`= " . $id . " LIMIT 1");
-			$row = @mysql_fetch_assoc($result);
+			global $db;
+			$result = $db->query("SELECT `name` FROM `videoscategory` WHERE `id`= " . $id . " LIMIT 1");
+			$row = $db->fetch_array($result);
 			return $row['name'];
 }
 
 function loadcats() {
+	global $db;
 	$allcats = array();
-	$result = @mysql_query("SELECT * FROM `videoscategory` WHERE `disabled` = 0");
-	while($row = @mysql_fetch_assoc($result)){
+	$result = $db->query("SELECT * FROM `videoscategory` WHERE `disabled` = 0");
+	while($row = $db->fetch_array($result)){
 		$allcats[$row['id']] = $row['name'];
 	}
 	return $allcats;

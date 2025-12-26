@@ -12,7 +12,7 @@ RuneScape Help 2001 - onwards; All rights reserved.
 All content is for use on 2007rshelp.com ONLY!
 Runescape is registered trademark of Jagex Ltd. 
 -->
-<meta http-equiv="Content-Type" content="text/html; />
+<meta charset="UTF-8" />
 <meta name="DESCRIPTION" content="[#METADESCR#]" />
 <meta name="KEYWORDS" content="Runescape, 2007, oldschool, deadman, help, price, community, guide, items, monsters, quests, skills, database, tutorial, tips, hints, toolkit, video, pking" />
 <meta name="ROBOTS" content="ALL" />

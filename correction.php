@@ -1,11 +1,11 @@
 <?PHP
 require(dirname(__FILE__) . '/editor/extras/correct.inc.php');
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
-					array('area', $_GET['area'], 'enum', 'e' => array_keys($area_arr) ),
-					array('name', $_POST['name'], 'sql', 'l' => $name_len ),
-					array('email', $_POST['email'], 'sql'),
-					array('reply', $_POST['reply'], 'bin'),
-					array('text', $_POST['text'], 'sql', 'l' => $text_len )
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
+					array('area', $_GET['area'] ?? null, 'enum', 'e' => array_keys($area_arr) ),
+					array('name', $_POST['name'] ?? null, 'sql', 'l' => $name_len ),
+					array('email', $_POST['email'] ?? null, 'sql'),
+					array('reply', $_POST['reply'] ?? null, 'bin'),
+					array('text', $_POST['text'] ?? null, 'sql', 'l' => $text_len )
 				  );
 //die('<h2>Sorry, corrections are currently not being taken.</h2>');
 function is_valid_email_address( $email ) {
@@ -77,8 +77,8 @@ elseif( isset( $area ) AND isset( $id ) ) {
 			}
 			
 			$email_t = true;
-			if( !empty( $_POST['email'] ) ) {
-				$email_t = is_valid_email_address( $_POST['email'] );
+			if( !empty( $_POST['email'] ?? null ) ) {
+				$email_t = is_valid_email_address( $_POST['email'] ?? null );
 			}
 			else {
 				$reply = 0;
@@ -148,7 +148,7 @@ echo '<br />We will accept corrections pertaining to the quality (easy-to-read, 
 }
 			if( isset( $error ) ) echo $error;
 
-			echo '<form action="?area=' . $area . '&amp;id=' . $_GET['id']. '" method="post">' . NL;
+			echo '<form action="?area=' . $area . '&amp;id=' . $_GET['id'] ?? null. '" method="post">' . NL;
 			echo '<table width="90%" align="center" style="border-left: 1px solid #000000" cellspacing="0">' . NL;
 			echo '<tr><td class="tabletop" colspan="2">The Correction Area</td></tr>' . NL;
 			echo '<tr><td class="tablebottom">Content Area</td><td class="tablebottom"><input type="text" value="' . $cont_area . '" size="30" disabled="disabled" /></td></tr>' . NL;

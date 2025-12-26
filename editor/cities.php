@@ -5,6 +5,7 @@ require( 'edit_class.php' );
 start_page( 2, 'City Guide' );
 
 $category = 'cities';
+$cat_array = array('cities' => 'City Guide');
 $cat_name = $cat_array[$category];
 $edit = new edit( $category, $db );
 

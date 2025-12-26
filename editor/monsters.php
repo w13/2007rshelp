@@ -357,7 +357,7 @@ else {
 
 	if( isset( $_GET['search_area'] ) and ($_GET['search_area'] == 'name' or $_GET['search_area'] == 'img' or $_GET['search_area'] == 'quest' or $_GET['search_area'] == 'locations' or $_GET['search_area'] == 'drops' or $_GET['search_area'] == 'notes' or $_GET['search_area'] == 'credits' ) )  {
    $search_area = addslashes($_GET['search_area']);
-   $search_term = strip_tags($_GET['search_term']);
+   $search_term = isset($_GET['search_term']) ? strip_tags($_GET['search_term']) : '';
 	if($search_area == 'name' && $search_term != '') { // Keyword search
 		$search_terms_q = str_replace(',', '', addslashes($search_term));
 		$search_terms_q = explode(' ', $search_terms_q);
@@ -367,7 +367,8 @@ else {
 		}
 		$search_terms_q = implode('', $search_terms_q);
 		##ADDED FOR SEARCHING FOR NON-HD MONSTER IMAGES
-		if ($_GET['act'] == 'nohdimg') { $hdimgstring = ' AND `hdimg`=0'; }
+		$hdimgstring = '';
+		if (isset($_GET['act']) && $_GET['act'] == 'nohdimg') { $hdimgstring = ' AND `hdimg`=0'; }
 		##ADDED FOR SEARCHING FOR NON-HD MONSTER IMAGES
 		$search = "WHERE ".$search_terms_q.$hdimgstring." ORDER BY `name` ASC";
 	}
@@ -382,7 +383,8 @@ else {
 		$search_term = '';
 		$search_area = '';
 		##ADDED FOR SEARCHING FOR NON-HD MONSTER IMAGES
-		if ($_GET['act'] == 'nohdimg') { $hdimgstring = 'WHERE `hdimg`=0 '; }
+		if (isset($_GET['act']) && $_GET['act'] == 'nohdimg') { $hdimgstring = 'WHERE `hdimg`=0 '; }
+		else { $hdimgstring = ''; }
 		##ADDED FOR SEARCHING FOR NON-HD MONSTER IMAGES
 		$search = $hdimgstring."ORDER BY `time` DESC";
 	}
@@ -480,7 +482,7 @@ else {
 	}
 	echo '</select> for ' . NL;
 
-	echo '<input type="text" name="search_term" value="' . strip_tags($_GET['search_terms']) . '" maxlength="30" />' . NL;
+	echo '<input type="text" name="search_term" value="' . (isset($_GET['search_terms']) ? strip_tags($_GET['search_terms']) : '') . '" maxlength="30" />' . NL;
 	echo '<input type="submit" value="Go" />' . NL;
 	echo '</form></center>' . NL;
 
@@ -489,6 +491,7 @@ $total = $db->query($tot);
 $num_total = $db->num_rows( $tot );
 
 $num_complete = 0;
+$num_started = 0;
 while( $info = $db->fetch_array( $total ) ) {
 	if( $info['complete'] == 1) {
 		$num_complete++;
@@ -500,15 +503,21 @@ while( $info = $db->fetch_array( $total ) ) {
 
 $num_need = $num_total - $num_complete;
 
-$percent_complete = $num_complete / $num_total;
-$percent_complete = $percent_complete * 100;
-$percent_complete = round( $percent_complete , 2 );
+if ($num_total > 0) {
+    $percent_complete = $num_complete / $num_total;
+    $percent_complete = $percent_complete * 100;
+    $percent_complete = round( $percent_complete , 2 );
 
-$percent_started = $num_started / $num_total;
-$percent_started = $percent_started * 100;
-$percent_started = round( $percent_started , 2 );
+    $percent_started = $num_started / $num_total;
+    $percent_started = $percent_started * 100;
+    $percent_started = round( $percent_started , 2 );
 
-$percent_needed = 100 - $percent_complete - $percent_started;
+    $percent_needed = 100 - $percent_complete - $percent_started;
+} else {
+    $percent_complete = 0;
+    $percent_started = 0;
+    $percent_needed = 0;
+}
 ?>
 <table class="boxtop" border="0" cellpadding="1" cellspacing="2" width="100%" style="border: 1px solid black; margin: auto;">
 <tr>
@@ -620,6 +629,6 @@ if($info['npc'] == 0) $info['combat'] = 'N/A';
 }
 
 echo '<br /></div>'. NL;
-
+if(!isset($name)) $name = '';
 end_page($name);
 ?>

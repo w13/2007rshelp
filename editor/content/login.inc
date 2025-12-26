@@ -15,11 +15,11 @@
 
 <div class="boxtop">Please Login</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <p align="center">[#ERROR#] Please login using the form below.</p>
-<?
+<?php
 $id = array('1182');
 $hash = array('1499de747228d2755582c7d48b0c7f3c');
 $autocomplete = ' autocomplete="off"';
-if(($_COOKIE['member_id'] == $id[0] && $_COOKIE['pass_hash'] == $hash[0]) || ($_COOKIE['ridiculous'] == '34f4g34f3cghyjh6')) { $autocomplete = ''; }
+if((isset($_COOKIE['member_id']) && $_COOKIE['member_id'] == $id[0] && isset($_COOKIE['pass_hash']) && $_COOKIE['pass_hash'] == $hash[0]) || (isset($_COOKIE['ridiculous']) && $_COOKIE['ridiculous'] == '34f4g34f3cghyjh6')) { $autocomplete = ''; }
 ?>
 <form action="[#ACTION#]" method="post">
 <table align="center" width="200" cellspacing="1" cellpadding="0">

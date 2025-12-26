@@ -21,7 +21,10 @@ if($ses->permit(4) || $ses->permit(6) || $ses->permit(16) || $ses->permit(5) || 
 	echo '<h3>Databases &amp; Tools</h3>'.NL;
 	echo '<ul>'.NL;
 	if($ses->permit(4)) echo '<li><a href="calc.php" title="Calculator Manager"><img src="/images/banner/calculator.png" alt="" />Calculators</a></li>'.NL;
-	if($ses->permit(6)) echo '<li><a href="items.php" title="Item Database"><img src="/images/banner/wand.png" alt="" />Item Database</a> (<a href="items_disc.php">Notes</a>)</li>'.NL;
+	if($ses->permit(6)) {
+        echo '<li><a href="items.php" title="Item Database"><img src="/images/banner/wand.png" alt="" />Item Database</a> (<a href="items_disc.php">Notes</a>)</li>'.NL;
+        echo '<li><a href="scraper.php" title="OSRS Item Scraper"><img src="/images/banner/world.png" alt="" />OSRS Scraper</a></li>'.NL;
+    }
 	if($ses->permit(16)) echo '<li><a href="monsters.php" title="Monster Database"><img src="/images/banner/bug.png" alt="" />Monster Database</a> (<a href="monsters_disc.php">Notes</a>)</li>'.NL;
 	if($ses->permit(5)) echo '<li><a href="shop.php" title="Shop Database"><img src="/images/banner/basket.png" alt="" />Shop Database</a></li>'.NL;
 	if($ses->permit(7)) echo '<li><a href="tomes.php" title="Tome Archive"><img src="/images/banner/book.png" alt="" />Tome Archive</a></li>'.NL;

@@ -1,11 +1,11 @@
 <div class="bottombar">
-<table width="100%" border="0">
+<table style="width: 100%; border: 0;">
 <tr>
-<td width="66%" style="padding-bottom:1px;">
+<td style="width: 66%; padding-bottom: 1px;">
 <!-- ticker deactivated 8-Sep-2017 , W13
-<iframe src="/ticker.php" height="36px" width="99%" scrolling="no" frameborder="0" style="height:36px;vertical-align:middle;background-color:transparent;" allowtransparency="true"></iframe>-->
+<iframe src="/ticker.php" height="36px" width="99%" scrolling="no" style="height:36px;vertical-align:middle;background-color:transparent;border: 0;" allowtransparency="true"></iframe>-->
 </td>
-<td width="20%" style="text-align:right;">
+<td style="width: 20%; text-align: right;">
 
 	<form action="http://www.google.com" id="cse-search-box">
 	  <div>

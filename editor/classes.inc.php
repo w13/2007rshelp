@@ -13,6 +13,10 @@ class db
 	public $result;
 	public $row;
 	public $num_rows;
+	public $select_db;
+	public $disconnect;
+	public $escape_string;
+	public $database;
 
  function set_mysql_host($host = '')
   {
@@ -45,6 +49,9 @@ class db
 		else die( '<strong>MySQL Error: ' . mysqli_errno($this->connect) . ' -- ' . mysqli_error($this->connect) . '</strong>' );
 	}
 	function connect() {
+		if ($this->connect instanceof mysqli) {
+			return $this->connect;
+		}
 		$this->connect = mysqli_connect( $this->host , $this->username , $this->password ) or $this->sql_err();
 		return $this->connect;
 	}
@@ -94,7 +101,8 @@ class db
 		return $this->queries;
 	}
 	function escape_string( $string = '' ) {
-		$this->escape_string = mysqli_real_escape_string( $this->connect(), $string ) or $this->sql_err();
+		$this->escape_string = mysqli_real_escape_string( $this->connect, $string );
+		if ($this->escape_string === false) $this->sql_err();
 		return $this->escape_string;
 	}
 	
@@ -269,7 +277,7 @@ class ses {
 
     // Login SESSION Check Function
     function check_session() {
-        if($_SESSION['logged_in']) {    // If SESSION logged in variable is true.
+        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {    // If SESSION logged in variable is true.
             return true;                // Return function true.
         }
         else {                            // If SESSION logged in variable is false.
@@ -279,7 +287,7 @@ class ses {
 
     // Login COOKIE Check Function
     function check_cookie() {
-        if($_COOKIE['logged_in']) {   // If COOKIE has not expired.
+        if(isset($_COOKIE['logged_in']) && $_COOKIE['logged_in']) {   // If COOKIE has not expired.
             $this->cookie_set();        // Reset the cookie expiry time.
             return true;                   // Return function true.
         }
@@ -323,8 +331,8 @@ class ses {
         else {
         // Check for username and password matches
         
-		 $query = $db->query("SELECT * FROM admin WHERE user = '".addslashes($user)."' AND pass = '".$en_pass."'"); //added addslashes
-		 $check = $db->num_rows("SELECT * FROM admin WHERE user = '".addslashes($user)."' AND pass = '".$en_pass."'");
+		 $query = $db->query("SELECT * FROM admin WHERE user = '".$db->escape_string($user)."' AND pass = '".$db->escape_string($en_pass)."'"); // Security Fix
+		 $check = $db->num_rows("SELECT * FROM admin WHERE user = '".$db->escape_string($user)."' AND pass = '".$db->escape_string($en_pass)."'"); // Security Fix
 
 
 		 /* diagnosing this bug... 
@@ -400,7 +408,7 @@ class ses {
         $content = str_replace('[#CSS#]'        , $use_css                , $content);
         $content = str_replace('[#ERROR#]'        , $this->login_error    , $content);
         $content = str_replace('[#ACTION#]'    , $action                , $content);
-        $content = str_replace('[#POSTTXT#]'    , rpostcontent()        , $content);
+        $content = str_replace('[#POSTTXT#]'    , rpostcontent('', true)        , $content);
         return $content;
     }
     
@@ -441,9 +449,9 @@ class ses {
     function record_act($area, $action, $name, $ip) { //ben: ip
         global $db;
         
-        $name = addslashes($name);
-        $area = addslashes($area);
-        $action = addslashes($action);
+        $name = $db->escape_string($name);
+        $area = $db->escape_string($area);
+        $action = $db->escape_string($action);
 	  
         $userid = intval($this->userid);
 		
@@ -456,7 +464,7 @@ class ses {
 		$db->query("INSERT INTO admin_logs (userid, area, action, name, time, ip) VALUES ('".$userid."', '".$area."', '".$action."', '".$name."', '".gmt_time()."', '". $ip2 ."')"); //ben
 		}
 		else {
-		$db->query("INSERT INTO admin_logs (userid, area, action, name, time, ip) VALUES ('".$userid."', '".$area."', '".$action."', '".$name."', '".gmt_time()."', '".$_SERVER['REMOTE_ADDR']."')"); //ben: remote addr/ip
+		$db->query("INSERT INTO admin_logs (userid, area, action, name, time, ip) VALUES ('".$userid."', '".$area."', '".$action."', '".$name."', '".gmt_time()."', '".$db->escape_string($_SERVER['REMOTE_ADDR'])."')"); //ben: remote addr/ip
 		}
 		}
         return;

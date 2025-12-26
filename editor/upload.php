@@ -1,6 +1,6 @@
 <?php
 
-$folder = $_GET['folder'];
+$folder = isset($_GET['folder']) ? $_GET['folder'] : '';
 $folder_array = array('monsters','skills','guilds','misc','quests');
 
 if (in_array($folder,$folder_array)) {

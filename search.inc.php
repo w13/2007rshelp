@@ -20,7 +20,7 @@ $url = $_SERVER['SCRIPT_NAME'];
 
 if($url == '/items.php') ### ITEM
 {
-  $constraint = array('`type` != 0','AND `id` IN (79,958,280,2394,820,3746,4729,3572,181,1904,1874,36)'); 
+  $constraint = array('`type` != 0',''); 
   $search_value = array('name','quest','obtain','examine','notes');
   $search_name = array('Name','Quest','Obtained From','Examine','Notes');
   $table = 'items';
@@ -134,7 +134,7 @@ if(isset($search_area)) {
                 $search = "WHERE `npc` = 1 AND ".$train_constraint." AND `quest` = 'No' ORDER by ".$category." ".$order;
             }
             elseif($search_area == 'drops') {
-                $search = "WHERE id != 950 AND `drops` LIKE '%".$search_term."%' OR `i_drops` LIKE '%".$search_term."%' ORDER BY `".$category."` ".$order;
+                $search = "WHERE id != 950 AND (`drops` LIKE '%".$search_term."%' OR `i_drops` LIKE '%".$search_term."%') ORDER BY `".$category."` ".$order;
             }
             else $search = "WHERE ".$constraint[0]." AND ".$search_area." LIKE '%".$search_term."%' ORDER BY `".$category."` ".$order;
         }
@@ -159,7 +159,7 @@ else {
 /*===========  Page Control  ============*/
 
 if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') {
-$rows_per_page     = 25;
+$rows_per_page     = 50;
 $row_count         = $db->fetch_row("SELECT count(*) as count FROM ".$table." " . $search);
 $row_count         = $row_count['count'];
 $total             = $db->fetch_row("SELECT count(*) as count FROM ".$table." WHERE " . $constraint[0]);

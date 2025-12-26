@@ -1,11 +1,11 @@
 <?php
  
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
-					array('order', $_GET['order'], 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
-					array('page', $_GET['page'], 'int', 's' => '1,400', 'd' => 1),
-					array('category', $_GET['category'], 'enum', 'e' => array('name', 'member', 'trade', 'quest'), 'd' => 'name' ),
-					array('search_area', $_GET['search_area'], 'enum', 'e' => array('name','quest','obtain','examine','notes','type') ),
-					array('search_term', trim($_GET['search_term']), 'sql', 'l' => 40)
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
+					array('order', $_GET['order'] ?? null, 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
+					array('page', $_GET['page'] ?? null, 'int', 's' => '1,400', 'd' => 1),
+					array('category', $_GET['category'] ?? null, 'enum', 'e' => array('name', 'member', 'trade', 'quest'), 'd' => 'name' ),
+					array('search_area', $_GET['search_area'] ?? null, 'enum', 'e' => array('name','quest','obtain','examine','notes','type') ),
+					array('search_term', trim($_GET['search_term'] ?? ''), 'sql', 'l' => 40)
 				  );
 
 /*** ITEM DATABASE ***/
