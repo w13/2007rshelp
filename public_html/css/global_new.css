@@ -35,21 +35,23 @@ a:hover, .boxbottom a:hover {
 }
 
 #banner { 
-  background: url('/images/banner/header.jpg'); 
+  background: url('/images/banner/header.jpg') no-repeat center; 
   height: 100px; 
-  margin: 0 -8px;
+  margin: 0 auto;
 }
 
 #banner a { 
   display: block; 
   height: 100px; 
-  width: 950px;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 .topbar { 
   background: #000 url('/images/banner/navtop.gif') repeat-x; 
   height: 31px; 
-  margin: -10px -8px 0;
+  margin: -10px 0 0;
 }
 
 .topbar a { 
