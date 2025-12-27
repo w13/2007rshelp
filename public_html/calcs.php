@@ -78,6 +78,9 @@ start_page('Old School RuneScape Calculators');
 		require('calcs_spec_'.strtolower($skill).'.php');
 		exit;
 	}
+
+	$current_xp = 0;
+	$current_lvl = 1;
 	if(isset($user)) {
 		$current_xp = getStat($user, $skill, 'xp');
 		$current_lvl = findLevel($current_xp);
@@ -87,6 +90,8 @@ start_page('Old School RuneScape Calculators');
 	$sql = $db->query('select * from calc_info where calc_name="'.$sel.'" order by level asc');
 	$sortarr = array();
 	$i = 0;
+	$cor_id = null;
+	$table = '';
 	while($row = $db->fetch_array($sql)) {
 		if(!$cor_id) $cor_id = $row['id'];
 		$sortarr[$row['calc_type']] = $row['calc_type'];
