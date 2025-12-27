@@ -276,3 +276,21 @@ CREATE TABLE IF NOT EXISTS `tomes` (
   `img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cities`
+--
+CREATE TABLE IF NOT EXISTS `cities` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `type` tinyint(1) DEFAULT '0',
+  `author` varchar(255) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL,
+  `text` longtext,
+  `city_key` varchar(255) DEFAULT 'NA',
+  `map` text,
+  PRIMARY KEY (`id`),
+  KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

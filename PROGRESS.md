@@ -23,6 +23,8 @@
     - Refactored `classes.inc.php`'s `page` class to support centralized, secure guide rendering with area-specific templates and fixed template paths.
     - Secured `locator_image.php` by validating and sanitizing all coordinate and direction inputs.
     - Improved `classes.inc.php`'s `cleanVars` to initialize `$dataArr`, preventing potential `extract()` errors in `backend.php`.
+    - Fixed `Undefined array key "map"` warning in `cities.php` by adding a null coalescing operator.
+    - Updated `schema.sql` to include the `cities` table definition.
     - Modernized frontend layout using Flexbox and CSS variables in `global_new.css`.
     - Refactored theme management to use `localStorage` for better persistence and FOUC prevention.
     - Standardized legacy PHP tags and removed dangerous `document.writeln` calls.

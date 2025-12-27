@@ -88,7 +88,7 @@ function scroll(i)
       echo '</div>';
      }
     echo '</div>';
-    echo '<div onclick="javascript:scroll(\'toscroll\')" id="toscroll" title="Click Me" style="overflow:hidden;height:250px;text-align:center;width:34%; margin-top:5px;">'.$info['map'].'</div>';
+    echo '<div onclick="javascript:scroll(\'toscroll\')" id="toscroll" title="Click Me" style="overflow:hidden;height:250px;text-align:center;width:34%; margin-top:5px;">' . ($info['map'] ?? '') . '</div>';
     echo '<br style="clear:left;"/>';
 
     echo '<div style="width:98%;padding-left:5px;">' . $content . '</div>';
