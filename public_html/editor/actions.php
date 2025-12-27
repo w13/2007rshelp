@@ -10,7 +10,8 @@ if(!isset($_GET['cache']) && !isset($_GET['cachefirst']) && !isset($_GET['nextca
 <hr noshade="noshade" /><br />
 <?php
 
-$total_actions = reset($db->fetch_row("SELECT sum(actions) FROM `admin`"));
+$res_total = $db->fetch_row("SELECT sum(actions) as total FROM `admin` ");
+$total_actions = $res_total['total'];
 	$row = $db->query("SELECT DISTINCT a.user, actions, MAX(time) as TIMES FROM admin_logs al JOIN admin a ON a.id = al.userid WHERE locked = 0 GROUP BY user ORDER BY actions DESC");
 		while($info = $db->fetch_array($row))
 		{
@@ -76,7 +77,7 @@ elseif(isset($_GET['cacheall'])) {
     while ($id < 800) {
 
        $db->query("UPDATE `admin` SET actions = (actions+(SELECT count(*) FROM admin_logs WHERE time > admin.action_cache AND userid = ".$id.")), action_cache = (SELECT MAX(time) FROM admin_logs WHERE userid = ".$id.") WHERE id = ".$id);
-       if(mysqli_affected_rows($db->connect) == 1 ) echo $id . ' query done<br />';
+       if($db->affected_rows() == 1 ) echo $id . ' query done<br />';
        $id++;
        }
 }
@@ -89,7 +90,7 @@ elseif(isset($_GET['deleteactions'])) { ## Delete actions that are five months o
     echo 'Deleting old actions';
     $five_months_old = 13219200; ## Five Months in Unix
     $db->query("DELETE FROM admin_logs WHERE `time` < (UNIX_TIMESTAMP()-".$five_months_old.")");
-		header( 'Refresh: 2; url=https://runescapecommunity.com' . $_SERVER['SCRIPT_NAME'] . '?cache' );
+		header( 'Refresh: 2; url=' . SITE_URL . $_SERVER['SCRIPT_NAME'] . '?cache' );
 }
 elseif(isset($_GET['cachefirst'])) { ## First Caching of a New User.
     $id = intval( $_GET['cachefirst'] );

@@ -99,7 +99,7 @@ elseif(isset($_POST['act']) AND $_POST['act'] == 'new')  {
 	$avgprice = ( $price_low + $price_high ) / 2; // The 1 below, sets the item to visible. There needs to be another with a 0 after it.
 	
 $table = $db->query("SHOW TABLE STATUS LIKE 'price_items'");
-$rows = mysql_fetch_assoc($table);
+$rows = $db->fetch_array($table);
 $next_id = $rows['Auto_increment'];
 	$db->query("INSERT INTO `price_history` (`bin`, `pid`, `avgprice`, `time`) VALUES (1, ".$next_id.", '".$avgprice."', UNIX_TIMESTAMP())");
 	mysqli_query($db->connect, "INSERT INTO `price_history` (`bin`, `pid`, `avgprice`, `time`) VALUES (0, ".$next_id.", '".$avgprice."', UNIX_TIMESTAMP())");

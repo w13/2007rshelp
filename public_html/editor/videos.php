@@ -158,7 +158,7 @@ $options = $category;
 $category = ' ';
 
 $stuff = $db->query("SELECT * FROM `videoscategory`;");
-			while ($rows = mysql_fetch_assoc($stuff)) {
+			while ($rows = $db->fetch_array($stuff)) {
 				$selected = ( $rows['id']==$options ? ' selected="selected"' : '');
 				$category = $category . '<option value="' . $rows['id'] . '"'.$selected.'>'.$rows['name'].'</option>';
 			}

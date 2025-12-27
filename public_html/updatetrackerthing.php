@@ -8,7 +8,7 @@ $db->select_db( MYSQL_DB );
 //Update function
 function updateEXP($rs,$skill)
 {
-$curl = curl_init('http://services.runescape.com/m=hiscore/index_lite.ws?player='.$rs);
+$curl = curl_init('https://services.runescape.com/m=hiscore/index_lite.ws?player='.$rs);
 curl_setopt($curl, CURLOPT_FAILONERROR, true);
 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -17,7 +17,7 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($curl);
 
 //Set the Skill
-		$skills = array('Overall', 'Attack', 'Defence', 'Strength', 'Hitpoints', 'Ranged', 'Prayer', 'Magic', 'Cooking', 'Woodcutting', 'Fletching', 'Fishing', 'Firemaking', 'Crafting', 'Smithing', 'Mining', 'Herblore', 'Agility', 'Thieving', 'Slayer', 'Farming', 'Runecraft', 'Hunter', 'Construction', 'Summoning', 'Dugeoneering', 'Divination');
+		$skills = array('Overall', 'Attack', 'Defence', 'Strength', 'Hitpoints', 'Ranged', 'Prayer', 'Magic', 'Cooking', 'Woodcutting', 'Fletching', 'Fishing', 'Firemaking', 'Crafting', 'Smithing', 'Mining', 'Herblore', 'Agility', 'Thieving', 'Slayer', 'Farming', 'Runecraft', 'Hunter', 'Construction', 'Summoning', 'Dungeoneering', 'Divination');
 
 $stats = explode("\n",$result); //set each skill as a new line
         // Loop through the skills                              
@@ -41,7 +41,7 @@ while($row = $db->fetch_array( $result1 )) {
 $testtt = updateEXP($row['rsname'],"Construction");
 $namme = $row['rsname'];
 
-//mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
+
 $db->query("UPDATE magicexp SET conexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }
@@ -52,7 +52,7 @@ while($row = $db->fetch_array( $result1 )) {
 $testtt = updateEXP($row['rsname'],"Summoning");
 $namme = $row['rsname'];
 
-//mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
+
 $db->query("UPDATE bonusexp SET summonexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }
@@ -65,7 +65,7 @@ while($row = $db->fetch_array( $result1 )) {
 $testtt = updateEXP($row['rsname'],"Dungeoneering");
 $namme = $row['rsname'];
 
-//mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
+
 $db->query("UPDATE bonusexp SET dungexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }
@@ -78,7 +78,7 @@ while($row = $db->fetch_array( $result1 )) {
 $testtt = updateEXP($row['rsname'],"Divination");
 $namme = $row['rsname'];
 
-//mysql_query("UPDATE bonusexp SET startexp=$testtt WHERE rsname='$namme'"); 
+
 $db->query("UPDATE bonusexp SET diveexp=$testtt WHERE rsname='$namme'"); 
   echo "Updated ". $row['rsname'] . "-" . $testtt ."<br />";
   }

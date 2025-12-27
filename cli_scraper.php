@@ -80,7 +80,7 @@ function check_item_exists($name) {
     $esc_name = $db->escape_string($name);
     // Only checking by NAME as requested
     $res = $db->query("SELECT id FROM items WHERE name = '$esc_name'");
-    return $db->num_rows("SELECT id FROM items WHERE name = '$esc_name'") > 0;
+    return mysqli_num_rows($res) > 0;
 }
 
 function add_item($osrs_id, $osrs_name) {

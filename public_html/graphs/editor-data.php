@@ -9,10 +9,14 @@ $cleanArr = array(  array('group', $_GET['group'], 'int', 's' => '1,10'),
 	
   if($group==0) {
 	$query = $db->query("SELECT user, actions FROM admin WHERE actions >0 GROUP BY user, actions");
-    $total = mysql_result($db->query("SELECT sum(actions) FROM admin WHERE actions > 0"),0);
+    $res_total = $db->query("SELECT sum(actions) FROM admin WHERE actions > 0");
+    $row_total = mysqli_fetch_row($res_total);
+    $total = $row_total[0];
   } else {
     $query = $db->query("SELECT user, actions FROM admin WHERE actions >0 AND groups = " . $group . " GROUP BY user, actions");
-    $total = mysql_result($db->query("SELECT sum(actions) FROM admin WHERE actions > 0 AND groups = " . $group),0);
+    $res_total = $db->query("SELECT sum(actions) FROM admin WHERE actions > 0 AND groups = " . $group);
+    $row_total = mysqli_fetch_row($res_total);
+    $total = $row_total[0];
   }
   $data = array();
   while($info = $db->fetch_array($query)) {

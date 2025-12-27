@@ -13,7 +13,9 @@ $cleanArr = array(  array('username', $_GET['username'], 'sql', 'l' => 12),
   $username = ucwords($username);
   
   $query =$db->query("SELECT * FROM stats WHERE User = '" . $username . "' ORDER BY time DESC LIMIT 1");
-  $total = mysql_result($db->query("SELECT max(overalll) FROM stats WHERE User = '" . $username . "'"),0);
+  $res_total = $db->query("SELECT max(overalll) FROM stats WHERE User = '" . $username . "'");
+  $row_total = mysqli_fetch_row($res_total);
+  $total = $row_total[0];
   $data = array();
 
   $skillnames = array('Attack',

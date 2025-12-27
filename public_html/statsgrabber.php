@@ -69,7 +69,7 @@ function stat_box($var) {
   global $skillnames;
   
   echo '<link href="/css/sig.css" rel="stylesheet" type="text/css" />';
-  echo '<script type="text/javascript" src="http://www.runescapecommunity.com/graphs/popup.js"></script>';
+  echo '<script type="text/javascript" src="/graphs/popup.js"></script>';
   /*if($_COOKIE['update_time']) {
   echo '<script type="text/javascript" src="http://www.runescapecommunity.com/graphs/statsig.js"></script>';
   }*/

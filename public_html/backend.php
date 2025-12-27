@@ -22,11 +22,9 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
 
 /* Error Handling */
 // Configure error reporting based on environment
-// For production: set display_errors to 'Off' and enable error logging
+// For development: enable all errors
 ini_set('display_errors', 'On');
-// Report all errors except notices and warnings (for now)
-// TODO: Enable E_ALL for development, log errors in production
-error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+error_reporting(E_ALL);
 
 /* Security For Our Info */
 define( 'IN_ZYBEZ' , TRUE );

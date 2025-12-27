@@ -73,7 +73,7 @@ $info['trade'] = $info['trade'] == 1 ? 'Yes' : 'No';
    $result = $db->query("SELECT name, id FROM `items` WHERE soundex(name) = soundex('".addslashes($search_term)."') LIMIT 0,1");
     echo '<tr>';
     echo '<td class="tablebottom" colspan="5">Sorry, no items match your search criteria.';
-    if (mysql_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
    while($info = $db->fetch_array($result))   {
    if($info['id'] != 950) echo ' Perhaps you meant <a href="'.$_SERVER['SCRIPT_NAME'].'?search_area=name&amp;search_term='.$info['name'].'">'.$info['name'].'</a>?'; }
     }

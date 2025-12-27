@@ -29,21 +29,6 @@
 		elseif( $grp == 4 ) $grp = 'DC: <strong>';
 		else $grp = 'Noob: <strong>';
 		
-		switch($grp) {
-		case 1:
-        echo $grp;
-        echo $vip;
-        break;
-    case 2:
-        echo $grp;
-        break;
-		case 4:
-        echo $grp;
-        break;
-		case 6:
-        echo $grp;
-        break;
-		}
         $sbox .= NL.'<tr title="'.format_time($info['time']).'"><td class="sb">'.$grp . $info['user'].':</strong></td><td'.$vip.'>'.$info['message'].'</td></tr>';
 }
 ?>

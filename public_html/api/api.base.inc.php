@@ -116,12 +116,21 @@ abstract class APIBase
 	protected function cacheStore($key, $object)
 	{
 		$cache_time = 3600;	//	1hr cache
-		apc_store($this->cache_prefix.$key, $object, $cache_time);
+		if (function_exists('apcu_store')) {
+			apcu_store($this->cache_prefix.$key, $object, $cache_time);
+		} elseif (function_exists('apc_store')) {
+			apc_store($this->cache_prefix.$key, $object, $cache_time);
+		}
 	}
 	
 	protected function cacheFetch($key)
 	{
-		return apc_fetch($this->cache_prefix.$key);
+		if (function_exists('apcu_fetch')) {
+			return apcu_fetch($this->cache_prefix.$key);
+		} elseif (function_exists('apc_fetch')) {
+			return apc_fetch($this->cache_prefix.$key);
+		}
+		return false;
 	}
 	
 	protected function errorAndDie($error)

@@ -31,7 +31,7 @@ class API extends APIBase
 			$sql_safe_keyword_where_clause = implode(' AND ', $sql_safe_keyword_clauses);
 			
 			//	The image url that we concat the filename to, in order to get a full url
-			$root_image_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http').'://'.$_SERVER[HTTP_HOST].'/img/npcimg/';
+			$root_image_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/img/npcimg/';
 			
 			//	950 is a placeholder 'missing' monster
 			$result = $db->query("SELECT * FROM monsters WHERE id != 950 AND ".$sql_safe_keyword_where_clause." ORDER BY name ASC LIMIT 50");
@@ -90,7 +90,7 @@ class API extends APIBase
 			$sql_safe_keyword_where_clause = implode(' AND ', $sql_safe_keyword_clauses);
 			
 			//	The image url that we concat the filename to, in order to get a full url
-			$root_image_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http').'://'.$_SERVER[HTTP_HOST].'/img/idbimg/';
+			$root_image_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/img/idbimg/';
 			
 			$result = $db->query("SELECT * FROM items WHERE ".$sql_safe_keyword_where_clause." ORDER BY name ASC LIMIT 50");
 			

@@ -25,11 +25,9 @@ Runescape is registered trademark of Jagex Ltd.
 <meta property="og:image:height" content="300" />
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="/scripts.js"></script>
 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
 function initImage ( url ) {
         img = $('.popUpImage');

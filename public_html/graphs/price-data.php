@@ -9,9 +9,12 @@ $db->connect();
 $db->select_db( MYSQL_DB );
 
 $query = $db->query("SELECT avgprice, time FROM price_history WHERE pid = " . $id . ' GROUP BY avgprice ORDER BY id LIMIT 0, 200');
-$name = mysql_result($db->query("SELECT name FROM price_items WHERE id = " . $id),0);
-$name = ucwords($name);
-$max = mysql_result($db->query("SELECT max(avgprice) FROM price_history WHERE pid = " . $id),0) * 1.1;
+$res_name = $db->query("SELECT name FROM price_items WHERE id = " . $id);
+$row_name = mysqli_fetch_row($res_name);
+$name = ucwords($row_name[0]);
+$res_max = $db->query("SELECT max(avgprice) FROM price_history WHERE pid = " . $id);
+$row_max = mysqli_fetch_row($res_max);
+$max = $row_max[0] * 1.1;
 
 $data = array();
 $date = array();

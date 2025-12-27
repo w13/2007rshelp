@@ -190,26 +190,27 @@ if($page < ($page_count - 1)) {
 }
 
 /*============  SEARCH FORM  ============*/
+if (!isset($hide_search_form)) {
+    echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL;
+    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:left;" width="200">Browsing ' . number_format($row_count) . ' of ' . number_format($total) . ' ' . ucfirst($table) . '(s)</td>'.NL;
+    echo '<td style="text-align:center;">'.NL
+    .'Search <select name="search_area">';
 
-echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL;
-if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:left;" width="200">Browsing ' . number_format($row_count) . ' of ' . number_format($total) . ' ' . ucfirst($table) . '(s)</td>'.NL;
-echo '<td style="text-align:center;">'.NL
-.'Search <select name="search_area">';
+    for($num = 0; array_key_exists($num, $search_value) && array_key_exists($num, $search_name); $num++) {
+        echo $search_area == $search_value[$num] ? '<option value="'.$search_value[$num].'" selected="selected">'.$search_name[$num].'</option>' : '<option value="'.$search_value[$num].'">'.$search_name[$num].'</option>';
+    }
 
-for($num = 0; array_key_exists($num, $search_value) && array_key_exists($num, $search_name); $num++) {
-    echo $search_area == $search_value[$num] ? '<option value="'.$search_value[$num].'" selected="selected">'.$search_name[$num].'</option>' : '<option value="'.$search_value[$num].'">'.$search_name[$num].'</option>';
+    echo '</select> for'.NL
+    .' <input type="text" name="search_term" value="' . htmlspecialchars(stripslashes($search_term), ENT_QUOTES) . '" maxlength="40" />'.NL;
+
+    if (isset($comparator) && $comparator == 'yes') {
+        echo ' <input type="checkbox" name="awonly" value="1" ';
+        if (isset($awonly) && $awonly == 1) echo 'checked="checked" ';
+        echo '/> Weapons & Armour Only?  ';
+    }
+
+    echo ' <input type="submit" value="Go" /></td>'.NL;
+    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:right;" width="140">Page ' . $page . ' of ' . $page_count . '</td>'.NL;
+    echo '</tr></table></form>';
 }
-
-echo '</select> for'.NL
-.' <input type="text" name="search_term" value="' . stripslashes($search_term) . '" maxlength="40" />'.NL;
-
-if ($comparator == 'yes') {
-	echo ' <input type="checkbox" name="awonly" ';
-	if ($awonly == 1) echo 'checked="checked" ';
-	echo '/> Weapons & Armour Only?  ';
-}
-
-echo ' <input type="submit" value="Go" /></td>'.NL;
-if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:right;" width="140">Page ' . $page . ' of ' . $page_count . '</td>'.NL;
-echo '</tr></table></form>';
 ?>

@@ -101,18 +101,20 @@ class db
 		if ($this->escape_string === false) $this->sql_err();
 		return $this->escape_string;
 	}
+
+	function insert_id() {
+		return mysqli_insert_id($this->connect);
+	}
+
+	function affected_rows() {
+		return mysqli_affected_rows($this->connect);
+	}
 	
 	function query_cache( $query = '' ) {
-		/* Puts SQL_CACHE after the SELECT in order to cache it.
-		   If SQL_CACHE or SQL_NO_CACHE exists, then do nothing 
-		   and pass it through. Case insensitive.
+		/* SQL_CACHE is removed in MySQL 8.0. 
+		   This function is now a pass-through.
 		*/
-		$pos1 = stripos($query, 'SQL_NO_CACHE');
-		$pos2 = stripos($query, 'SQL_CACHE');
-		if($pos1 === FALSE && $pos2 === FALSE && $query!=''){
-			$this->query = str_ireplace("SELECT ", "SELECT SQL_CACHE ", $query);
-		}
-		return $this->query;
+		return $query;
 	}
 	
 }
@@ -144,7 +146,9 @@ class display
 
 	function use_css() {
 		if( empty( $_COOKIE['skin'] ) OR $_COOKIE['skin'] == 'default.css' ) {
-			setcookie( 'skin' , $this->default , time() + 1200000 );
+			if (!headers_sent()) {
+				setcookie( 'skin' , $this->default , time() + 1200000 );
+			}
 			$css = $this->path . $this->default;
 		}
 		else $css = $this->path . $_COOKIE['skin'];
@@ -267,17 +271,15 @@ class display
 						}
 					}
 				 break;
-				case 'sql': // Clean for SQL and display
+				case 'sql': // Clean for SQL
 					$fdata = html_entity_decode(urldecode(stripslashes(trim($fdata))));
-					if($v['l']) {
+					if(isset($v['l']) && $v['l']) {
 						if(strlen($fdata) > $v['l']) {
 							$this->inputErr(2);
 							$fdata = substr($fdata, 0, $v['l']);
 						}
 					}
-					// Proper order: escape for SQL first, THEN apply htmlentities for display if needed
-					// However, for SQL queries, we really only need escaping.
-					$fdata = htmlentities($this->db->escape_string($fdata), ENT_QUOTES);
+					$fdata = $this->db->escape_string($fdata);
 				 break;
 				case 'sql_no_html': // Clean for SQL ONLY
 					$fdata = html_entity_decode(urldecode(stripslashes(trim($fdata))));
@@ -346,22 +348,21 @@ class timer
 /* Guides Class */
 class page
 {
- var $guide;
- var $db;
+ public $page;
+ public $db;
  
  function __construct( $page , $DB_OBJECT )
   {
-   $db = $DB_OBJECT;
+   $this->db = $DB_OBJECT;
    if( empty( $page ) ) die( 'Error -- Please enter a valid table name.' );
    $this->page = $page;
   }
   
  function show_list()
   {
-  $db = new db();
    require( ROOT . '/sys/templates/' . 'list_start.inc' );
-   $query = $db->query( 'SELECT * FROM `' . $this->page . '` ORDER BY `name`' );
-    while($info = $db->fetch_array($query))
+   $query = $this->db->query( 'SELECT * FROM `' . $this->page . '` ORDER BY `name`' );
+    while($info = $this->db->fetch_array($query))
      {
       echo ' <tr align="center">' . NL;
       echo '  <td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '">' . $info['name'] . '</a></td>' . NL;

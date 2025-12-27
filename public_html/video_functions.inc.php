@@ -1,4 +1,4 @@
-<?
+<?php
 ////***** VIDEO FUNCTIONS *****////
 function sanitize($var) {
 
@@ -74,7 +74,7 @@ function videoboxes($result) {
             .'<tr>'
             .'<td colspan="2" class="videomiddle">'
             .'<div class="videomiddle">';
-        if(isset($_GET['forumcard'])) echo '<a href="http://www.zybez.net'.$_SERVER['SCRIPT_NAME'].'?id=' . $row['id'] . '" target="_blank" title="See this video on Zybez">';
+        if(isset($_GET['forumcard'])) echo '<a href="'.$_SERVER['SCRIPT_NAME'].'?id=' . $row['id'] . '" target="_blank" title="See this video">';
         else echo '<a href="'.$_SERVER['SCRIPT_NAME'].'?id=' . $row['id'] . '" title="Added: ' . $added . '">';
         echo '<img style="width:208px;height:136px;border:none;" src="' . $row['thumb'] . '" alt="Added: ' . $added . '" /></a>'
             .'</div>'
@@ -105,7 +105,7 @@ function printpages($result) {
 			
       $per_page          = 9;
       $count             = $db->query($result);
-      $count             = @mysql_num_rows($count);
+      $count             = mysqli_num_rows($count);
       $page_count        = ceil($count / $per_page) > 1 ? ceil($count / $per_page) : 1;
       $page_links        = ($page > 1 AND $page < $page_count) ? '|' : '';
       $start_from        = $page - 1;

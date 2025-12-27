@@ -157,7 +157,7 @@ function end_page($title = '') {
     $PAGE = str_replace('[#TIME#]'        , $time->endTimer()       , $PAGE);
     $PAGE = str_replace('[#LASTACTIVE#]'  , last_active()           , $PAGE);
   
-  if($LAYOUT = 'layout.inc') {
+  if($LAYOUT == 'layout.inc') {
 		include(ROOT.'/'.'editor'.'/'.'extras'.'/'.'shoutbox.inc.php');
     $PAGE = str_replace('[#SBOXACTION#]' , $_SERVER['SCRIPT_NAME'].'?'.$_SERVER['QUERY_STRING'] , $PAGE);
 		$PAGE = str_replace('[#SBOXMESS#]'   , $sbox                                                   , $PAGE);

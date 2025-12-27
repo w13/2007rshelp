@@ -7,13 +7,17 @@ $cleanArr = array(  array('user', $_GET['user'], 'sql', 'l' => 12),
   $db->connect();
 	$db->select_db( MYSQL_DB );
 	
-  $stat_history = mysql_result($db->query("SELECT stat_history FROM mybez WHERE id = 1"),0);
+  $res_hist = $db->query("SELECT stat_history FROM mybez WHERE id = 1");
+  $row_hist = mysqli_fetch_row($res_hist);
+  $stat_history = $row_hist[0];
   $stat_history = explode('|',$stat_history);
   $skill_rows = $stat_history[1];
   $skills = explode(',',$skill_rows);
 
   $query = $db->query("SELECT " . $skill_rows . ", `Time` FROM stats WHERE User = '" . $user . "' GROUP BY " . $skill_rows . " ORDER BY `time`");
-  $name = mysql_result($db->query("SELECT User FROM stats WHERE User = '" . $user . "'"),0);
+  $res_name = $db->query("SELECT User FROM stats WHERE User = '" . $user . "'");
+  $row_name = mysqli_fetch_row($res_name);
+  $name = $row_name[0];
   
   /*$axis = mysql_fetch_row(mysql_query("SELECT max(defencel), min(defencel) FROM stats WHERE User = '" . $user . "'"));
   $max = $axis[0] * 1.05;

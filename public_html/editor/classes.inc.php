@@ -105,18 +105,20 @@ class db
 		if ($this->escape_string === false) $this->sql_err();
 		return $this->escape_string;
 	}
+
+	function insert_id() {
+		return mysqli_insert_id($this->connect);
+	}
+
+	function affected_rows() {
+		return mysqli_affected_rows($this->connect);
+	}
 	
 	function query_cache( $query = '' ) {
-		/* Puts SQL_CACHE after the SELECT in order to cache it.
-		   If SQL_CACHE or SQL_NO_CACHE exists, then do nothing 
-		   and pass it through. Case insensitive.
+		/* SQL_CACHE is removed in MySQL 8.0. 
+		   This function is now a pass-through.
 		*/
-		$pos1 = stripos($query, 'SQL_NO_CACHE');
-		$pos2 = stripos($query, 'SQL_CACHE');
-		if($pos1 === FALSE && $pos2 === FALSE && $query!=''){
-			$this->query = str_ireplace("SELECT ", "SELECT SQL_CACHE ", $query);
-		}
-		return $this->query;
+		return $query;
 	}
 
 
@@ -153,7 +155,9 @@ class display
   {
    if(empty($_COOKIE['zybezskin']))
     {
-     setcookie('zybezskin' , $this->default , time() + 1200000, '/');
+     if (!headers_sent()) {
+       setcookie('zybezskin' , $this->default , time() + 1200000, '/');
+     }
      $css = $this->path.$this->default;
     }
     else

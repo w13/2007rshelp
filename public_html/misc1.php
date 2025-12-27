@@ -87,7 +87,7 @@ if(!isset($_GET['id']))
             break;
   }
 
-if(mysql_num_rows($query) != 0) {
+if(mysqli_num_rows($query) != 0) {
     echo '<a name="'.$aname.'"></a><h2>' . $title . '</h2>' . NL
         .'<table width="100%" class="misc_list_table">' . NL
         .'<tr>' . NL

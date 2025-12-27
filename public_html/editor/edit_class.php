@@ -2,15 +2,15 @@
 
 class edit {
 
-	var $db;
-	var $table = '';
+	public $db;
+	public $table = '';
 	
-	var $update_arr = array();
-	var $new_arr = array();
-	var $delete_arr = array();
+	public $update_arr = array();
+	public $new_arr = array();
+	public $delete_arr = array();
 	
-	var $no_errors = true;
-	var $error_mess = '';
+	public $no_errors = true;
+	public $error_mess = '';
 	
 	function __construct( $table, $db ) {
 		$this->table = $table;

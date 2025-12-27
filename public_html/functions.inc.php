@@ -54,7 +54,7 @@ function dynamify($input) {
 ## City Keys
 function city_key($name) {
 if($name != 'NA') {
-  $bname = ucfirst(preg_replace("[_]", " ", $name));
+  $bname = ucfirst(preg_replace("/_/", " ", $name));
   $key_html = '<img src="/img/cimg/key/'.$name.'.gif" alt="Zybez Runescape Help\'s '.$bname.' Key" width="15" height="15" /> - '.$bname.'<br />';
   return $key_html;
  }
@@ -64,55 +64,65 @@ if($name != 'NA') {
 function city_shops($id)
 {
     global $db;
+    $id = intval($id);
+    $output = '';
     if($_SERVER['SCRIPT_NAME'] == '/cities.php') {
-    $squery = $db->query("SELECT * FROM shops WHERE shops.location LIKE CONCAT('%', (SELECT name FROM cities WHERE id = " . $id . "), '%')");
+        $squery = $db->query("SELECT * FROM shops WHERE shops.location LIKE CONCAT('%', (SELECT name FROM cities WHERE id = " . $id . "), '%')");
     }
     else {
-    $squery = $db->query("SELECT * FROM shops WHERE shops.location LIKE CONCAT('%', (SELECT name FROM guilds WHERE id = " . $id . "), '%')");
+        $squery = $db->query("SELECT * FROM shops WHERE shops.location LIKE CONCAT('%', (SELECT name FROM guilds WHERE id = " . $id . "), '%')");
     }
-        if(mysqli_num_rows($squery) != 0) {
-        echo '<br /><div class="title1">Shops</div>';
-        echo '<div style="margin-top:12px;width:98%;display:block;padding:5px;">';
-    while($sinfo = $db->fetch_array($squery)) {
-          $iquery = $db->query("SELECT * FROM shops_items WHERE `shop_id` = '" . $sinfo['id'] . "'");
-              echo '<table cellpadding="5" cellspacing="0">'.NL
-                  .'<tr>'.NL
-                  .'<td style="vertical-align:top;"><img src="/img/shopimg/'.$sinfo['image'].'" alt="Location" title="Shop Location" /></td>'.NL
-                  .'<td style="vertical-align:top;"><div class="title3">'.$sinfo['shop_name'].'</div><em>Speak to: '.$sinfo['shopkeeper'].'</em>'.NL
-                  .'<ul style="padding-left:10px">';
-    while($iinfo = $db->fetch_array($iquery)) {
-    	$iinfo['item_stock'] = $iinfo['item_stock'] == -1 ? '&#8734;' : $iinfo['item_stock'];
-            echo '<li>' . $iinfo['item_name'].' ('.$iinfo['item_stock'].'): ' . number_format( $iinfo['item_price'] ) . '' . $iinfo['item_currency'] . '</li>'.NL;
+    if(mysqli_num_rows($squery) != 0) {
+        $output .= '<br /><div class="title1">Shops</div>';
+        $output .= '<div style="margin-top:12px;width:98%;display:block;padding:5px;">';
+        while($sinfo = $db->fetch_array($squery)) {
+            $iquery = $db->query("SELECT * FROM shops_items WHERE `shop_id` = '" . $sinfo['id'] . "'");
+            $output .= '<table cellpadding="5" cellspacing="0">'.NL
+                .'<tr>'.NL
+                .'<td style="vertical-align:top;"><img src="/img/shopimg/'.$sinfo['image'].'" alt="Location" title="Shop Location" /></td>'.NL
+                .'<td style="vertical-align:top;"><div class="title3">'.$sinfo['shop_name'].'</div><em>Speak to: '.$sinfo['shopkeeper'].'</em>'.NL
+                .'<ul style="padding-left:10px">';
+            while($iinfo = $db->fetch_array($iquery)) {
+                $iinfo['item_stock'] = $iinfo['item_stock'] == -1 ? '&#8734;' : $iinfo['item_stock'];
+                $output .= '<li>' . $iinfo['item_name'].' ('.$iinfo['item_stock'].'): ' . number_format( $iinfo['item_price'] ) . '' . $iinfo['item_currency'] . '</li>'.NL;
+            }
+            $output .= '</ul></td></tr></table><br />';
         }
-      echo '</ul></td></tr></table><br />';
     }
-  }
+    return $output;
 }
 
 ## Display Monsters in City Guides
 function city_npc($id) {
     global $db;
+    $id = intval($id);
+    $output = '';
     $mquery = $db->query("SELECT * FROM monsters WHERE locations LIKE CONCAT('%', (SELECT name FROM cities WHERE id = " . $id . "), '%')");
-        if(mysqli_num_rows($mquery) != 0) {
-        echo '<br /></div>'.NL
+    if(mysqli_num_rows($mquery) != 0) {
+        $output .= '<br /></div>'.NL
             .'<div class="title1">Inhabitants</div>'.NL
             .'<div style="margin-top:12px;width:96%;display:block;padding:5px;height:1000px;overflow:auto">'.NL
             .'<table cellpadding="5" cellspacing="0">'.NL;
-    while($minfo = $db->fetch_array($mquery)) {
-    $seotitle = strtolower(preg_replace("[^A-Za-z0-9]", "", $minfo['name']));
-              echo '<tr>'.NL;
-              if($minfo['npc'] == 1) { echo '<td style="width:125px;height:125px;background-image:url(\'/img/npcimg/'.$minfo['img'].'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; }
-              else { echo '<td style="width:110px;height:110px;background-image:url(\'/img/npcimg/npc/'.$minfo['img'].'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; }
-              echo '<td style="vertical-align:top;">'.NL;
-              if($minfo['npc'] == 1) echo '<div class="title3">'.$minfo['name'].' (level-'.$minfo['combat'].')';
-              else echo '<div class="title3">'.$minfo['name'];
-              echo ' <a href="/monsters.php?id='.$minfo['id'].'&amp;runescape_' . $seotitle . '.htm" title="More information"><img src="http://www.runescapecommunity.com/img/market/idb.gif" border="0" alt="More information" /></a></div>'
+        while($minfo = $db->fetch_array($mquery)) {
+            $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $minfo['name']));
+            $output .= '<tr>'.NL;
+            if($minfo['npc'] == 1) { 
+                $output .= '<td style="width:125px;height:125px;background-image:url(\'/img/npcimg/'.$minfo['img'].'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; 
+            }
+            else { 
+                $output .= '<td style="width:110px;height:110px;background-image:url(\'/img/npcimg/npc/'.$minfo['img'].'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; 
+            }
+            $output .= '<td style="vertical-align:top;">'.NL;
+            if($minfo['npc'] == 1) $output .= '<div class="title3">'.$minfo['name'].' (level-'.$minfo['combat'].')';
+            else $output .= '<div class="title3">'.$minfo['name'];
+            $output .= ' <a href="/monsters.php?id='.$minfo['id'].'&amp;runescape_' . $seotitle . '.htm" title="More information"><img src="/img/market/idb.gif" border="0" alt="More information" /></a></div>'
               .'<b>Examine:</b> '.$minfo['examine'].'<br /><b>Notes:</b> '.$minfo['notes'].'</td>'.NL
               .'</tr>';
-              }
-    echo '</table><br /></div>';
-  }
-  else echo '</div>';
+        }
+        $output .= '</table><br /></div>';
+    }
+    else $output .= '</div>';
+    return $output;
 }
 
 function monsters($field, $search) {

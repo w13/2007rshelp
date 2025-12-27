@@ -9,7 +9,6 @@ $cleanArr = array(  array('group', $_GET['group'], 'int', 's' => '1,10'),
 	
 
   $query = $db->query("SELECT `bday_day`,`bday_month`,`bday_year` FROM `ibfmembers` WHERE `mgroup`!=5 AND `mgroup`!=3 GROUP BY `bday_year` ORDER BY `bday_year` ASC,`bday_month` ASC,`bday_day` ASC");
-  //$total = mysql_result($db->query("SELECT `bday_day`,`bday_month`,`bday_year` FROM `ibfmembers` WHERE `mgroup`!=5 AND `mgroup`!=3"),0);
   $data = array();
 	while($info = $db->fetch_array($query)) {
 		if ($info['bday_day'] !== null && $info['bday_year']>1970)  {

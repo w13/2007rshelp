@@ -1,7 +1,7 @@
 <?php
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,150')
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,150')
 				  );
-/*** QUEST PAGE ***/
+/*** MISC PAGE ***/
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('OSRS RuneScape Miscellaneous Guides');
 if($disp->errlevel > 0) {
@@ -43,6 +43,9 @@ if(!isset($id))
 else
  {
   $info = $db->fetch_row("SELECT * FROM `misc` WHERE `id` = " . $id);
+  if (!$info) {
+      echo 'Error: Invalid Guide ID.';
+  } else {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">
 &raquo; <a href="misc.php">OSRS RuneScape Miscellaneous Guides</a> &raquo; <u><?php echo $info['name']; ?></u></div>
@@ -51,7 +54,7 @@ else
 <?php
   echo '<tr><td class="tablebottom"><a href="/correction.php?area=misc&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a></td></tr>';
   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">' . $info['text'] . '</td></tr>';
-  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . $info['author'] . '</b></td>'
+  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . $info['author'] . '</b></td>';
 ?>  
  </tr>
 </table>
@@ -59,10 +62,11 @@ else
 <p style="text-align:center; font-weight:bold;"><a href="javascript:history.go(-1)">&lt;-- Go Back</a> | <a href="#top">Top -- ^</a></p>
 <br />
 <?php
+  }
  }
  ?>
 [#COPYRIGHT#]
 </div>
 <?php
-end_page( $info['name'] );
+end_page( $info['name'] ?? '' );
 ?>
