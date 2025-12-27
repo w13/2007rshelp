@@ -30,22 +30,21 @@ a:hover, .boxbottom a:hover {
 
 #wrapper { 
   width: 100%; 
-  min-width: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
 }
 
 #banner { 
-  background: url('/images/banner/header.jpg') no-repeat center; 
+  background: url('/images/banner/header.jpg'); 
   height: 100px; 
-  margin: 0 auto;
+  margin: 0;
 }
 
 #banner a { 
   display: block; 
   height: 100px; 
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
+  width: 950px;
 }
 
 .topbar { 
@@ -67,7 +66,7 @@ a:hover, .boxbottom a:hover {
   background: #000 url('/images/banner/nav.gif') repeat-x; 
   border-bottom: 1px #000 solid; 
   height: 31px; 
-  margin: 0 -8px;
+  margin: 0;
 }
 
 .bottombar td { 
@@ -89,7 +88,8 @@ a:hover, .boxbottom a:hover {
 
 #body { 
   margin-top: 5px; 
-  width: 1200px; 
+  width: 100%;
+  max-width: 1200px; 
   margin-left:auto; 
   margin-right:auto;
 }
@@ -496,9 +496,16 @@ img:hover.mainpagethumb {
    ======================================== */
 
 /* Scale banner on smaller screens */
+ @media (max-width: 1200px) {
+  #wrapper {
+    width: calc(100% - 20px);
+  }
+}
+
  @media (max-width: 950px) {
   #banner { 
     margin: 0; 
+    background-size: cover;
   }
   
   #banner a {
