@@ -4,12 +4,6 @@
 <title>[#SITE_NAME#]</title>
 <link rel="shortcut icon" href="[#FAVICON#].ico" />
 <link href="/css/bluelight.css" rel="stylesheet" type="text/css" id="ourstylesheet" />
-<script>
-    (function() {
-        var theme = localStorage.getItem('rshelp_theme') || 'bluelight';
-        document.getElementById('ourstylesheet').setAttribute('href', '/css/' + theme + '.css');
-    })();
-</script>
 <link href="/css/global_new.css" rel="stylesheet" type="text/css" />
 [#EXTRACSS#]
 <!--
@@ -78,6 +72,8 @@ $('a').hover(function(e){
                 }
         }
 );
+</script>
+
 </head>
 <body>
 
