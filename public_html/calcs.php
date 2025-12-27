@@ -64,6 +64,7 @@ start_page('Old School RuneScape Calculators');
 
 	if($disp->errlevel > 0 || empty($skill)) $skill = 'Index';
 
+	$menulinks = '';
 	foreach($skilllist as $key => $val) {
 		$sel = $skill == $val ? ' style="font-weight: bold"' : '';
 		$menulinks .= '<a href="?calc='.$val.'" title="Runescape '.$val.' Calculator"'.$sel.'><img src="/img/calcimg/'.$imglist[$key].'.gif" />'.$val.'</a>';

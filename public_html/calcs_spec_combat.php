@@ -2,17 +2,22 @@
 	if(IN_ZYBEZ !== true) exit;
 
 	if(!empty($user)) {
-		$combatstat = getStat($user, 'Combat', 'level');
-		foreach($combatstat as $key => $val)
-			if($val < 1) $combatstat[$key] = 1;
-		
-		$attack = $combatstat['Attackl'];
-		$strength = $combatstat['Strengthl'];
-		$defence = $combatstat['Defencel'];
-		$magic = $combatstat['Magicl'];
-		$ranged = $combatstat['Rangedl'];
-		$prayer = $combatstat['Prayerl'];
-		$hitpoints = $combatstat['Hitpointsl'];
+		$combatstat = getStat($username ?? $user, 'Combat', 'level');
+		if ($combatstat) {
+			foreach($combatstat as $key => $val) {
+				if($val < 1) $combatstat[$key] = 1;
+			}
+			
+			$attack = $combatstat['Attackl'] ?? 1;
+			$strength = $combatstat['Strengthl'] ?? 1;
+			$defence = $combatstat['Defencel'] ?? 1;
+			$magic = $combatstat['Magicl'] ?? 1;
+			$ranged = $combatstat['Rangedl'] ?? 1;
+			$prayer = $combatstat['Prayerl'] ?? 1;
+			$hitpoints = $combatstat['Hitpointsl'] ?? 10;
+		} else {
+			list($attack, $strength, $defence, $magic, $ranged, $prayer, $hitpoints) = array(1, 1, 1, 1, 1, 1, 10);
+		}
 	}
 	else
 		list($attack, $strength, $defence, $magic, $ranged, $prayer, $hitpoints) = array(1, 1, 1, 1, 1, 1, 10);
@@ -42,12 +47,13 @@ function combatLevel(attack, defence, strength, hitpoints, prayer, ranged, magic
 	var mage = Math.floor(magic * 1.5) * 0.325;
 	var max = Math.max(melee, range, mage);
 	
+	var type = '';
 	if(max == melee)
-		var type = 'Warrior';
+		type = 'Warrior';
 	else if(max == range)
-		var type = 'Ranger';
+		type = 'Ranger';
 	else if(max == mage)
-		var type = 'Mage';
+		type = 'Mage';
 
 	advance = '<div style="text-align: left;">Combat Level: <span class="value"><b>'+Math.round((base + max) * 100) / 100+'</b> '+type+'</span></div><br />';
 	
@@ -186,13 +192,12 @@ padding: 1px 5px 1px 0;
 <div class="boxtop">Runescape Combat Calculator</div><div class="boxbottom" style="padding: 6px 24px">
 
 	<div style="margin: 1pt; font-size: large; font-weight: bold;">
-
-		� <a href="calcs.php">Runescape Calculators</a> � <?php=$skill?>
+		&raquo; <a href="calcs.php">Runescape Calculators</a> &raquo; <?php echo htmlspecialchars($skill ?? 'Combat'); ?>
 	</div>
 	<hr class="main" noshade="noshade" />
 	
 	<div id="menu">
-	<?php=$menulinks?>
+	<?php echo $menulinks ?? ''; ?>
 	</div>
 
 	<div id="wrap">
@@ -201,19 +206,19 @@ padding: 1px 5px 1px 0;
 				<td>
 					<table class="pad noborder" cellspacing="0" style="width: 100%">
 						<tr>
-							<td width="17%">Attack</td><td><input autocomplete="off" tabindex="1" type="text" id="attack" size="5" maxlength="2" value="<?php=$attack?>" onkeyup="reCalculate()" /></td>
-							<td width="17%">Ranged</td><td><input autocomplete="off" tabindex="5" type="text" id="ranged" size="5" maxlength="2" value="<?php=$ranged?>" onkeyup="reCalculate()" /></td>
+							<td width="17%">Attack</td><td><input autocomplete="off" tabindex="1" type="text" id="attack" size="5" maxlength="2" value="<?php echo htmlspecialchars($attack); ?>" onkeyup="reCalculate()" /></td>
+							<td width="17%">Ranged</td><td><input autocomplete="off" tabindex="5" type="text" id="ranged" size="5" maxlength="2" value="<?php echo htmlspecialchars($ranged); ?>" onkeyup="reCalculate()" /></td>
 						</tr>
 						<tr>
-							<td>Strength</td><td><input autocomplete="off" tabindex="2" type="text" id="strength" size="5" maxlength="2" value="<?php=$strength?>" onkeyup="reCalculate()" /></td>
-							<td>Magic</td><td><input autocomplete="off" tabindex="6" type="text" id="magic" size="5" maxlength="2" value="<?php=$magic?>" onkeyup="reCalculate()" /></td>
+							<td>Strength</td><td><input autocomplete="off" tabindex="2" type="text" id="strength" size="5" maxlength="2" value="<?php echo htmlspecialchars($strength); ?>" onkeyup="reCalculate()" /></td>
+							<td>Magic</td><td><input autocomplete="off" tabindex="6" type="text" id="magic" size="5" maxlength="2" value="<?php echo htmlspecialchars($magic); ?>" onkeyup="reCalculate()" /></td>
 						</tr>
 						<tr>
-							<td>Defence</td><td><input autocomplete="off" tabindex="3" type="text" id="defence" size="5" maxlength="2" value="<?php=$defence?>" onkeyup="reCalculate()" /></td>
-							<td>Prayer</td><td><input autocomplete="off" tabindex="7" type="text" id="prayer" size="5" maxlength="2" value="<?php=$prayer?>" onkeyup="reCalculate()" /></td>
+							<td>Defence</td><td><input autocomplete="off" tabindex="3" type="text" id="defence" size="5" maxlength="2" value="<?php echo htmlspecialchars($defence); ?>" onkeyup="reCalculate()" /></td>
+							<td>Prayer</td><td><input autocomplete="off" tabindex="7" type="text" id="prayer" size="5" maxlength="2" value="<?php echo htmlspecialchars($prayer); ?>" onkeyup="reCalculate()" /></td>
 						</tr>
 						<tr>
-							<td>Hitpoints</td><td><input autocomplete="off" tabindex="4" type="text" id="hitpoints" size="5" maxlength="2" value="<?php=$hitpoints?>" onkeyup="reCalculate()" /></td>
+							<td>Hitpoints</td><td><input autocomplete="off" tabindex="4" type="text" id="hitpoints" size="5" maxlength="2" value="<?php echo htmlspecialchars($hitpoints); ?>" onkeyup="reCalculate()" /></td>
 
 						</tr>
 					</table>

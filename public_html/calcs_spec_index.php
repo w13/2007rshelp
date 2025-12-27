@@ -33,16 +33,16 @@ function changeUser() {
 	var usr = prompt("Please enter a character to grab levels from:");
 	if(usr) {
 		if(window.location.href.indexOf('?') == -1)
-			window.location.href += '?user='+usr;
+			window.location.href += '?user='+encodeURIComponent(usr);
 		else
-			window.location.href += '&user='+usr;
+			window.location.href += '&user='+encodeURIComponent(usr);
 	}
 }
 </script>
 <div class="boxtop">Runescape Skill Calculators</div><div class="boxbottom" style="padding: 6px 24px">
 
 <div style="margin: 1pt; font-size: large; font-weight: bold;">
-	» Runescape Calculators
+	&raquo; Runescape Calculators
 </div>
 <hr class="main" noshade="noshade" />
 
@@ -77,7 +77,7 @@ function changeUser() {
 </td></tr></table>
 
 <div style="margin: 1pt; font-size: large; font-weight: bold;">
-	» Experience Table
+	&raquo; Experience Table
 </div>
 <hr class="main" noshade="noshade" />
 

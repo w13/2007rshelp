@@ -14,13 +14,22 @@ function get_stat($user, $skill, $type) {
 
 	$row = $db->fetch_row('SELECT max(`Time`) AS `Time` FROM `stats` WHERE `User` = "' . $escaped_user . '" LIMIT 1');
 	if((intval($row['Time'] ?? 0) + 3600) < time()) {
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$output = trim(curl_exec($ch));
-		curl_close($ch);
+		$url = 'https://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player='.urlencode($user);
+		$output = false;
+
+		if (function_exists('curl_init')) {
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$output = curl_exec($ch);
+			curl_close($ch);
+		} elseif (ini_get('allow_url_fopen')) {
+			$output = @file_get_contents($url);
+		}
 		
-		if(substr($output, 0, 1) != '<' && !empty($output)) {
+		$output = trim($output ?: '');
+		
+		if($output !== '' && substr($output, 0, 1) != '<') {
 			$output_lines = explode("\n", $output);
 			$values = array();
 			foreach($output_lines as $line) {
