@@ -38,12 +38,26 @@ function SendMail(name, company, domain) {
     });
 })();
 
-// ADVERTISING placeholder - simplified and modernized
-function advert_top() {
-    // AdSense or other ad providers would be initialized here
-    console.log('Top ad initialized');
+// ADVERTISING:
+var myDate = new Date();
+var sa = "true";
+var ca = document.cookie.split('; ');
+for(var i=0;i<ca.length;i++) {
+  if (ca[i].indexOf('sa=') == 0) {
+  sa = ca[i].substring(3,ca[i].length);
+  }
 }
 
-function advert_side() {
-    console.log('Side ad initialized');
+function advert_top(){
+	if(sa == "true") {
+		// Curse ad
+		document.writeln('<scr'+'ipt type="text/javascript"> sas_pageid="9168/69696"; sas_formatid=2210; sas_target=""; SmartAdServer(sas_pageid,sas_formatid,sas_target);</sc'+'ript><nosc'+'ript><a href="http://ww38.smartadserver.com/call/pubjumpi/9168/69696/2210/S/[timestamp]/?"><img src="http://ww38.smartadserver.com/call/pubi/9168/69696/2210/S/[timestamp]/?" border="0"></a></nos'+'cript>');
+	}
+}
+
+function advert_side(){
+	if(sa == "true") {
+		// Curse Ad:
+		document.writeln('<sc'+'ript type="text/javascript"> sas_pageid="9168/69696"; sas_formatid=4662; sas_target=""; SmartAdServer(sas_pageid,sas_formatid,sas_target);</sc'+'ript><nosc'+'ript><a href="http://ww38.smartadserver.com/call/pubjumpi/9168/69696/4662/S/[timestamp]/?"><img src="http://ww38.smartadserver.com/call/pubi/9168/69696/4662/S/[timestamp]/?" border="0"></a></nos'+'cript>');
+	}
 }
