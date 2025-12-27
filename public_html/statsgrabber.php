@@ -79,6 +79,11 @@ function stat_box($var) {
     $query = $db->query("SELECT * FROM `stats` WHERE `User`= '" . $username_safe . "' ORDER BY `time` DESC LIMIT 1");
   $info = $db->fetch_array($query);
   
+  if (!$info) {
+      echo '<div class="notice">No stat history found for this user.</div>';
+      return;
+  }
+  
   $images = array('0.jpg','1.jpg','2.jpg','3.jpg','4.gif', '5.gif', '6.gif', '7.gif','8.gif', '9.gif', '10.gif');
   $num = rand(0,(count($images)-1));
   $linkc = "#fff";
@@ -147,6 +152,11 @@ echo '</table>';
 if(isset($rscbox)) {
   $query = $db->query("SELECT * FROM `stats` WHERE `User`= '".$username_safe."' ORDER BY `time` DESC LIMIT 1");
   $info = $db->fetch_array($query);
+  
+  if (!$info) {
+      echo 'Error: No stats found for this user.';
+      die();
+  }
   
   switch($rscbox) {
 

@@ -14,6 +14,14 @@ require(dirname(__FILE__) . '/' . 'backend.php');
 $db->connect();
 $db->select_db(MYSQL_DB);
 
+// Initialize variables to avoid undefined warnings if extract() skipped them
+$search_area = $search_area ?? 'name';
+$search_term = $search_term ?? '';
+$id = $id ?? null;
+$category = $category ?? 'name';
+$order = $order ?? 'ASC';
+$page = $page ?? 1;
+
 if($disp->errlevel > 0) {
 	$id = null;
 	$search_area = 'name';
@@ -45,12 +53,14 @@ start_page('OSRS RuneScape Item Database');
 <hr class="main" noshade="noshade" />
 <br /><?php
   include('search.inc.php');
-  echo '  <table width="96%" style="margin:0 2%;" cellspacing="0" cellpadding="5">
+  echo '
+  <table width="96%" style="margin:0 2%;" cellspacing="0" cellpadding="5">
 <tr style="height:23px;font-size:13px;font-weight:bold;">
-<td style="vertical-align:middle;text-align:right;"><a href="/correction.php?area=items&amp;id=4296">Submit Missing Item</a></td></tr></table><br />  ';
-  echo '<table style="margin:0 12%;border-left: 1px solid #000;" width="76%" cellpadding="1" cellspacing="0">';
+<td style="vertical-align:middle;text-align:right;"><a href="/correction.php?area=items&amp;id=4296">Submit Missing Item</a></td></tr></table><br />
+  ';
+  echo '<table style="margin:0 12%;border-left: 1px solid #000;" width="76%" cellpadding="1" cellspacing="0">
 
-  echo '<tr>';
+  <tr>';
   echo '<th class="tabletop" width="5%">Picture</th>';
   echo '<th class="tabletop">Name <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Name, Ascending" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Name, Descending" border="0" /></a></th>';
   
@@ -122,85 +132,124 @@ $info['trade'] = ($info['trade'] ?? 0) == 1 ? 'Yes' : 'No';
 			
 		$price = $db->fetch_row("SELECT price_high, price_low, id FROM price_items WHERE phold_id = 0 AND name='" . $db->escape_string($info['name'] ?? '') . "' LIMIT 1");
 		
-		if(isset($price['id'])) {
-		echo '
-<script type="text/javascript">
-function km(kString)
-{
-  mulby = 1;
-  if(kString.indexOf("m")>0 || kString.indexOf("M")>0){
-  kString = kString.replace("m", "");
-  kString = kString.replace("M", "");
-  mulby = 1000000;
-  }
-  if(kString.indexOf("k")>0 || kString.indexOf("K")>0){
-  kString = kString.replace("k", "");
-  kString = kString.replace("K", "");
-  mulby = 1000;
-  }
-  kString = eval(Number(kString)*mulby);
-  return kString;
-}
-
-function addCommas(nStr,rangerover,myval)
-{
-	if (isNaN(nStr) || nStr == 0) { 	return "Input the amount you are trading."; }
-	if(nStr == myval){ return rangerover; }
-	nStr = Math.ceil(nStr);
-	nStr += "";
-	x = nStr.split(".");
-	x1 = x[0];
-	x2 = x.length > 1 ? "." + x[1] : "";
-		var rgx = /(\d+)(\d{3})/; 
-		while (rgx.test(x1)) { x1 = x1.replace(rgx, 
-	\'	\' + "," + \'$2\'); 	}
-		return x1 + x2 + "gp";
-}
-</script>
-		';
-			$price_low = number_format($price['price_low']);
-			$price_high = number_format($price['price_high']);
-			$prices = (empty($price_high)) ? $price_low.'gp' : $price_low.'gp - '.$price_high.'gp';
-      $current_avg = $price['price_high'] == 0 ? $price['price_low'] : ( $price['price_low'] + $price['price_high'] ) / 2;
-      $cost = '<input type="text" value="1" style="text-align:center;" size="4" title="Use \'K\' and \'M\' for thousands and millions." autocomplete="off" maxlength="6" onkeyup="javascript:document.getElementById(\'item_'.$id.'\').innerHTML = addCommas(eval(km(this.value)*'.$current_avg.'),range_'.$id.',myval_'.$id.');" name="prices" />';
-			$prices = '<script type="text/javascript">range_'.$id.' = "'.$prices.'"; myval_'.$id.' = "'.$current_avg.'"</script><div style="display:inline;" id="item_'.$id.'">'.$prices.'</div>';
-			$graph = '<a href="/graphs/price.php?id='.$price['id'].'" '.$graphjs.' title="Runescape Item Price History"><img src="/img/stats.gif" alt="Price History" border="0" /></a>';
-			$en_url = base64_encode($_SERVER['QUERY_STRING']);
-			if($price['id'] != 0) {
-			$pricelist = $cost . ' ' . $prices.' <a href="priceguide.php?report='.$price['id'].'&amp;par='.$en_url.'" title="Report Incorrect Price"><img src="/img/!.gif" alt="[!" border="0" /></a> ' . $graph;
-			} else {
-			$pricelist = $cost . ' ' . $prices.' <a href="priceguide.php?report='.$price['id'].'&amp;par='.$en_url.'" title="Report Incorrect Price"><img src="/img/!.gif" alt="[!" border="0" /></a>';
-			}
+		        if(isset($price['id'])) {
+				?>
+		<script type="text/javascript">
+		function km(kString)
+		{
+		  mulby = 1;
+		  if(kString.indexOf("m")>0 || kString.indexOf("M")>0){
+		  kString = kString.replace("m", "");
+		  kString = kString.replace("M", "");
+		  mulby = 1000000;
+		  }
+		  if(kString.indexOf("k")>0 || kString.indexOf("K")>0){
+		  kString = kString.replace("k", "");
+		  kString = kString.replace("K", "");
+		  mulby = 1000;
+		  }
+		  kString = eval(Number(kString)*mulby);
+		  return kString;
 		}
+		
+		function addCommas(nStr,rangerover,myval)
+		{
+			if (isNaN(nStr) || nStr == 0) { 	return "Input the amount you are trading."; }
+			if(nStr == myval){ return rangerover; }
+			nStr = Math.ceil(nStr);
+			nStr += "";
+			x = nStr.split(".");
+			x1 = x[0];
+			x2 = x.length > 1 ? "." + x[1] : "";
+			var rgx = /(\d+)(\d{3})/;
+			while (rgx.test(x1)) { x1 = x1.replace(rgx, '$1' + "," + '$2'); 	}
+			return x1 + x2 + "gp";
+		}
+		</script>
+		<?php
+					$price_low = number_format($price['price_low']);
+			$price_high = number_format($price['price_high']);
+
+			$prices = (empty($price_high)) ? $price_low.'gp' : $price_low.'gp - '.$price_high.'gp';
+
+      $current_avg = $price['price_high'] == 0 ? $price['price_low'] : ( $price['price_low'] + $price['price_high'] ) / 2;
+
+      $cost = '<input type="text" value="1" style="text-align:center;" size="4" title="Use \'K\' and \'M\' for thousands and millions." autocomplete="off" maxlength="6" onkeyup="javascript:document.getElementById(\'item_'.$id.'\').innerHTML = addCommas(eval(km(this.value)*'.$current_avg.'),range_'.$id.',myval_'.$id.');" name="prices" />';
+
+			$prices = '<script type="text/javascript">range_'.$id.' = "'.$prices.'"; myval_'.$id.' = "'.$current_avg.'"</script><div style="display:inline;" id="item_'.$id.'">'.$prices.'</div>';
+
+			$graph = '<a href="/graphs/price.php?id='.$price['id'].'" '.$graphjs.' title="Runescape Item Price History"><img src="/img/stats.gif" alt="Price History" border="0" /></a>';
+
+			$en_url = base64_encode($_SERVER['QUERY_STRING']);
+
+			if($price['id'] != 0) {
+
+			$pricelist = $cost . ' ' . $prices.' <a href="priceguide.php?report='.$price['id'].'&amp;par='.$en_url.'" title="Report Incorrect Price"><img src="/img/!.gif" alt="[!" border="0" /></a> ' . $graph;
+
+			} else {
+
+			$pricelist = $cost . ' ' . $prices.' <a href="priceguide.php?report='.$price['id'].'&amp;par='.$en_url.'" title="Report Incorrect Price"><img src="/img/!.gif" alt="[!" border="0" /></a>';
+
+			}
+
+		}
+
         }
+
 ?>
+
+
 
 <div style="margin:1pt; font-size:large; font-weight:bold;">
 &raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">OSRS RuneScape Item Database</a> &raquo; <u><?php echo htmlspecialchars($info['name'] ?? ''); ?></u></div>
 <hr class="main" noshade="noshade" />
 
+
+
 <?php
-echo '<center><a href="/correction.php?area=items&amp;id=' . (int)$id . '" title="Submit a Correction"><img src="/img/correct.gif" vspace="5" alt="Submit Correction" border="0" /></a></center>';
+
 $info['weight'] = ($info['weight'] ?? 0) == -21.0 ? '0' : $info['weight'];
+
 $info['member'] = ($info['member'] ?? 0) == 1 ? 'Yes' : 'No';
+
 $info['equip'] = ($info['equip'] ?? 0) == 1 ? 'Yes' : 'No';
+
 $info['trade'] = ($info['trade'] ?? 0) == 1 ? 'Yes' : 'No';
+
 $info['stack'] = ($info['stack'] ?? 0) == 1 ? 'Yes' : 'No';
 
+
+
 $quests = explode(';',$info['quest'] ?? '');
+
 $qid = array();
+
 $questlist = '';
+
 foreach($quests as $var) {
+
     $var = trim($var);
+
     if (empty($var)) continue;
+
     $qinfo = $db->fetch_row("SELECT `id`,`name` FROM `quests` WHERE `name` = '" . $db->escape_string($var) . "'");
+
 	if(!$qinfo){ $questlist .= htmlspecialchars($var).', ';
-			}else{
-				$questlist .= '<a href="/quests.php?id=' . (int)$qinfo['id'] . '">' . htmlspecialchars($var) . '</a>, ';
-			}}
+
+	}else{
+
+		$questlist .= '<a href="/quests.php?id=' . (int)$qinfo['id'] . '">' . htmlspecialchars($var) . '</a>, ';
+
+	}
+
+}
+
 $questlist = substr($questlist, 0, -2);
 
+
+
    $ftime = $info['time'] ?? 0;
+
 	 $date = date( 'l F jS, Y', $ftime );
   
   /* Change the query to suit certain items */
@@ -211,10 +260,9 @@ $questlist = substr($questlist, 0, -2);
   elseif(stripos($info['keyword'] ?? '','recipe for disaster') !== false) {
     $mquery = $db->query("SELECT name, id FROM monsters WHERE drops = 'recipe for disaster glove'");
   }
-  elseif(stripos($info['keyword'] ?? '','half of a key') !== false) {
-    $mquery = $db->query("SELECT name, id FROM monsters WHERE drops LIKE '%half of a key%'");
-  }
-  elseif(substr($info['name'] ?? '',0,5) == 'grimy') {
+      elseif(stripos($info['keyword'] ?? '','half of a key') !== false) {
+        $mquery = $db->query("SELECT name, id FROM monsters WHERE drops LIKE '%half of a key%'");
+      }  elseif(substr($info['name'] ?? '',0,5) == 'grimy') {
     $mquery = $db->query("SELECT name, id FROM monsters WHERE drops LIKE '%grimy herb%' GROUP BY name");
   }
   elseif(($info['name'] ?? '') == 'Dragon bones') {
@@ -396,9 +444,9 @@ if(!empty($droplist)) {
  include 'search.inc.php';
   echo '<p style="text-align:center;"><a href="javascript:history.go(-1)"><b>&lt;-- Go Back</b></a></p>';
  ?>
- [#COPYRIGHT#]
- </div>
- 
- <?php
+[#COPYRIGHT#]
+</div>
+
+<?php
  end_page( htmlspecialchars($info['name'] ?? '') );
  ?>

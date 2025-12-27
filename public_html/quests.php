@@ -213,6 +213,9 @@ if (isset($query)) {
 else
  {
   $info = $db->fetch_row("SELECT * FROM `quests` WHERE `id` = " . (int)$id);
+  if (!$info) {
+      echo 'Error: Invalid Quest ID.';
+  } else {
 ?>
 
 <div style="margin:1pt; font-size:large; font-weight:bold;">
@@ -223,7 +226,7 @@ else
 <table style="border-left: 1px solid #000000; border-top: 1px solid #000000" width="100%" cellpadding="5" cellspacing="0">
 <?php
   echo '<tr><td class="tablebottom"><a href="/correction.php?area=quests&amp;id=' . (int)$id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a></td></tr>';
-  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">' . $info['text'] . '</td></tr>';
+  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">' . ($info['text'] ?? '') . '</td></tr>';
   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . htmlspecialchars($info['author'] ?? '') . '</b></td>';
 ?>  
  </tr>
@@ -232,6 +235,7 @@ else
 <p style="text-align:center; font-weight:bold;"><a href="javascript:history.go(-1)">&lt;-- Go Back</a> | <a href="#top">Top -- ^</a></p>
 <br />
 <?php
+  }
  }
  ?>
 [#COPYRIGHT#]
