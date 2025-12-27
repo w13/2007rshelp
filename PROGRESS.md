@@ -82,6 +82,53 @@
     - Removed duplicate `popUpImage` element from `public_html/content/layout.inc` that was appearing at the end of the file.
 - **Result:** The header now uses modern, semantic HTML5 with improved accessibility while maintaining the same visual appearance. Clean layout with no duplication issues and optimized AdSense placement.
 
+### 7. Full-Width Header & Final Polish (Dec 27, 2025 - Part 4)
+- **Full-Width Header Implementation:**
+    - Moved `<header role="banner">` element outside of `#wrapper` div in `public_html/content/layout.inc` to allow the header to span the entire screen width.
+    - Removed negative margins from `.topbar` and `.bottombar` in `public_html/css/global_new.css` that were previously needed to break out of the wrapper constraints.
+    - Header now naturally extends to full browser width on all screen sizes.
+- **Header Background Image Positioning:**
+    - **Critical Fix**: Changed `#banner` background position from `center` to `left` in `public_html/css/global_new.css`.
+    - Prevents left-side clipping of the header image on narrow screens.
+    - Ensures header image always starts from the left edge and extends rightward.
+- **CSS Loading Order Fix (Theme Switching):**
+    - **Critical Fix**: Swapped CSS loading order in `public_html/content/layout.inc`.
+    - Now loads `global_new.css` BEFORE theme CSS files (e.g., `bluelight.css`).
+    - This allows theme stylesheets to properly override base colors defined in global_new.css.
+    - Previously, global_new.css was loading after themes and overriding their color schemes.
+    - Theme selector now works correctly across all available themes.
+- **CSS Reset & Margin Fixes:**
+    - Implemented minimal CSS reset in `public_html/css/global_new.css`: `html, body { margin: 0; padding: 0; box-sizing: border-box; }`
+    - Added box-sizing inheritance: `*, *:before, *:after { box-sizing: inherit; }`
+    - Moved spacing from body to `#wrapper` padding to control content margins without affecting full-width elements.
+    - Restored `margin: 10px;` to `img.mainpagethumb` class that was inadvertently removed by reset.
+- **Theme Selector Layout:**
+    - Fixed cramped display where "THEMES" text was appearing above icon selections.
+    - Changed `.theme-selector` to `display: inline-flex !important` with `white-space: nowrap` to keep all elements on the same line.
+    - Added `gap: 8px` between theme selector elements for proper spacing.
+    - Used `!important` flags to override conflicting styles from theme CSS files.
+- **Search Box Positioning:**
+    - Repositioned search box to the right side of the bottom navigation bar.
+    - Changed `.bottombar-content` to use `justify-content: flex-end !important`.
+    - Added modern styling: rounded borders (`border-radius: 3px`), hover effects, and consistent padding.
+    - Removed legacy ticker placeholder that was no longer in use.
+- **PHP Warning Fixes:**
+    - Fixed `Undefined variable $name_t` warning in `public_html/correction.php` at line 107.
+    - Added initialization of all validation variables (`$name_t`, `$email_t`, `$text_tl`, `$text_ts`) in the else block when `$_POST` is empty.
+    - Prevents PHP notices while maintaining proper validation logic.
+- **Git Commit:**
+    - Staged all changes with `git add -A`
+    - Created comprehensive commit message documenting all header modernization work.
+    - Pushed to GitHub: commit `e5609b73`
+    - Commit message included co-authorship attribution to Claude Sonnet 4.5.
+- **CLI Scraper Maintenance:**
+    - Ran `php cli_scraper.php scan` to check for new OSRS items.
+    - Scraped 377 total items from official RuneScape top 100 lists.
+    - Identified **37 new items** not currently in the database.
+    - Items ready for addition when needed (magic shortbow scroll, voidwaker hilt, expeditious bracelet, etc.).
+- **Result:** The header is now fully responsive, spans the entire screen width, and uses modern semantic HTML5 with flexbox layout. All theme switching works correctly. CSS follows best practices with minimal resets. No PHP warnings. All changes committed to version control.
+
 ## Next Steps
 - Continue reviewing `public_html/editor/` for legacy patterns.
 - Monitor for any layout issues on specific pages with the new responsive ad units.
+- Consider adding the 37 new items identified by CLI scraper when ready.
