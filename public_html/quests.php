@@ -12,8 +12,12 @@ $cleanArr = array(  array('id', $_GET['id'] ?? '', 'int', 's' => '1,999'),
 $amquest = 1;
 require(dirname(__FILE__) . '/' . 'backend.php');
 
+// Ensure database is connected before any queries
+$db->connect();
+$db->select_db(MYSQL_DB);
+
 //--- IP/COOKIE/HIDDEN CHECK
-$usercheck = $db->num_rows("SELECT * FROM `quests_ip` WHERE `ip` = '" . $_SERVER['REMOTE_ADDR'] . "'"); //Check for IP
+$usercheck = $db->num_rows("SELECT * FROM `quests_ip` WHERE `ip` = '" . $db->escape_string($_SERVER['REMOTE_ADDR']) . "'"); //Check for IP
 
 if(empty($_COOKIE['quests']) && $usercheck == 0 && isset($_GET['hide'])) { //User has no cookie and no IP. Set on first hide.
     $db->query("INSERT INTO `quests_ip` (id,ip,hidden_id) VALUES (UNIX_TIMESTAMP(), '" . $_SERVER['REMOTE_ADDR'] . "',0)");
@@ -187,8 +191,8 @@ if (isset($query)) {
         $info['type'] = $info['type'] == 1 ? 'Yes' : 'No';
         
         echo '<tr align="center" id="quest'. $info['id'] .'">' . NL;
-        echo '<td><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '">' . $info['name'] . '</a></td>' . NL;
-        echo '<td>' . $info['type'] . '</td>' . NL;
+        echo '<td><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . $info['id'] . '">' . htmlspecialchars($info['name']) . '</a></td>' . NL;
+        echo '<td>' . htmlspecialchars($info['type']) . '</td>' . NL;
         echo '<td title="Quest Point Rewarded">' . intval($qp[1] ?? 0) . '</td>' . NL;
         echo '<td><img src="/img/qimg/' . $info['difficulty'] . '.gif" alt="Difficulty Rating: ' . $info['difficulty'] . '/7" title="Difficulty Rating: ' . $info['difficulty'] . '/7" class="bar" /></td>' . NL;
         echo '<td><img src="/img/qimg/' . $info['length'] . '.gif" alt="Length Rating: ' . $info['length'] . '/7" title="Length Rating: ' . $info['length'] . '/7" class="bar" /></td>' . NL;
@@ -208,19 +212,19 @@ if (isset($query)) {
  }
 else
  {
-  $info = $db->fetch_row("SELECT * FROM `quests` WHERE `id` = " . $id);
+  $info = $db->fetch_row("SELECT * FROM `quests` WHERE `id` = " . (int)$id);
 ?>
 
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>"><?php echo $ptitle; ?></a> &raquo; <u><?php echo $info['name']; ?></u>
+&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>"><?php echo htmlspecialchars($ptitle); ?></a> &raquo; <u><?php echo htmlspecialchars($info['name'] ?? ''); ?></u>
 </div>
 <hr class="main" noshade="noshade" />
 <br />
 <table style="border-left: 1px solid #000000; border-top: 1px solid #000000" width="100%" cellpadding="5" cellspacing="0">
 <?php
-  echo '<tr><td class="tablebottom"><a href="/correction.php?area=quests&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a></td></tr>';
+  echo '<tr><td class="tablebottom"><a href="/correction.php?area=quests&amp;id=' . (int)$id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a></td></tr>';
   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">' . $info['text'] . '</td></tr>';
-  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . $info['author'] . '</b></td>';
+  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . htmlspecialchars($info['author'] ?? '') . '</b></td>';
 ?>  
  </tr>
 </table>
@@ -233,5 +237,5 @@ else
 [#COPYRIGHT#]
 </div>
 <?php
-end_page( $info['name'] ?? '' );
+end_page( htmlspecialchars($info['name'] ?? '') );
 ?>

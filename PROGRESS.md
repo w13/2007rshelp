@@ -17,22 +17,15 @@
 - **API Robustness:** Added fallbacks for APC/APCu caching in `api.base.inc.php` (both in `api/` and `api_dev/`) to prevent fatal errors when the extension is missing.
 - **General Cleanup:** Standardized logic in `misc.php` and `minigames.php` to handle missing IDs gracefully and avoid PHP notices.
 - **Modernization & Security (Latest):** 
-    - Updated `skills.php`, `misc.php`, `minigames.php`, `cities.php`, `guilds.php`, `dungeonmaps.php`, `miningmaps.php`, `tomes.php`, and `shops.php` to use `htmlspecialchars` for database-sourced content, preventing XSS.
-    - Secured `shops.php` by implementing proper integer casting for IDs and sanitizing search parameters.
-    - Hardened `price_cat_functions.inc.php` against SQL injection by enforcing integer casting and string escaping in all tree-management functions.
-    - Refactored `classes.inc.php`'s `page` class to support centralized, secure guide rendering with area-specific templates.
+    - Fixed `mysqli_sql_exception: No database selected` errors in `quests.php`, `items.php`, `monsters.php`, and `statsgrabber.php` by ensuring early database connection and selection.
+    - Implemented comprehensive XSS protection using `htmlspecialchars` across `quests.php`, `items.php`, `monsters.php`, `statsgrabber.php`, `search.inc.php`, `tomes.php`, `shops.php`, and others.
+    - Secured SQL queries in `stats_functions.inc.php`, `price_cat_functions.inc.php`, and various page scripts by enforcing strict integer casting and string escaping.
+    - Refactored `classes.inc.php`'s `page` class to support centralized, secure guide rendering with area-specific templates and fixed template paths.
     - Secured `locator_image.php` by validating and sanitizing all coordinate and direction inputs.
     - Improved `classes.inc.php`'s `cleanVars` to initialize `$dataArr`, preventing potential `extract()` errors in `backend.php`.
-    - Fixed SQL injection vulnerability in `calcs_functions.inc.php` by properly escaping the `$user` variable before using it in queries and using `urlencode` for CURL requests.
-    - Improved `calcs.php` with proper escaping of database content in tables and headings.
-    - Standardized on standard PHP tags instead of short tags in `cities.php`.
-    - **Frontend Revamp:**
-        - Modernized `global_new.css` to use Flexbox layout instead of floats and fixed widths, improving responsiveness.
-        - Introduced CSS variables for better theme management and consistency.
-        - Refactored `scripts.js` to use `localStorage` for theme persistence instead of cookies with hardcoded expiration dates.
-        - Optimized theme loading in `layout.inc` to prevent "flash of unstyled content" (FONT) by applying the theme early in the `<head>`.
-        - Cleaned up `bar-top.inc` by removing legacy tables and using Flexbox for alignment.
-        - Removed dangerous `document.writeln` calls and cleaned up legacy ad-tracking code in `scripts.js`.
+    - Modernized frontend layout using Flexbox and CSS variables in `global_new.css`.
+    - Refactored theme management to use `localStorage` for better persistence and FOUC prevention.
+    - Standardized legacy PHP tags and removed dangerous `document.writeln` calls.
 
 ### 4. Code Review Findings
 - **Database Patterns:** The codebase generally relies on "clean input" via `cleanVars`. This has been strengthened.

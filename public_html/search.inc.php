@@ -29,7 +29,7 @@ elseif($url == '/compare.php') ### ITEM SEARCH IN COMPARATOR
 {
   $constraint = array('`type` != 0',' AND `type` = 1'); ## 0 is standard, 1 is for weapons/armor only search
   $search_value = array('name', 'quest','obtain','examine','notes');
-  $search_name = array('Name', 'Quest','Obtained From','Examine','Notes');
+  $search_name = array('Name','Quest','Obtained From','Examine','Notes');
   $comparator = 'yes';
   $table = 'items';
 }
@@ -98,20 +98,20 @@ else
 #################  SEARCH FORM
 ############################  
 
-if(isset($search_area)) {
+if(isset($search_area) && $search_area != '') {
     
     /* Keyword Search */
     if( $search_area == 'name' && $search_term != '' && ($table == 'items' || $table == 'monsters' || $table == 'videos' || $table == 'equipment') ) {
         $search_terms_q = str_replace(',', '', $search_term);
         $search_terms_q = explode(' ', trim($search_terms_q));
         for($num = 0; array_key_exists($num, $search_terms_q); $num++) {
-            $search_terms_q[$num] = "AND (name LIKE '%".$search_terms_q[$num]."%' OR keyword LIKE '%".$search_terms_q[$num]."%') ";
+            $search_terms_q[$num] = "AND (name LIKE '%".$db->escape_string($search_terms_q[$num])."%' OR keyword LIKE '%".$db->escape_string($search_terms_q[$num])."%') ";
         }
-		if ($awonly == 1) { //FOR ARMOUR/WEAPONS SEARCH ON COMPARATOR
-			$search = "WHERE ".$constraint[0].$constraint[1]." ".implode('', $search_terms_q)." ORDER BY `".$category."` ".$order;
+		if (isset($awonly) && $awonly == 1) { //FOR ARMOUR/WEAPONS SEARCH ON COMPARATOR
+			$search = "WHERE ".$constraint[0].$constraint[1]." ".implode('', $search_terms_q)." ORDER BY `".$db->escape_string($category)."` ".$db->escape_string($order);
 		}
 		else {
-			$search = "WHERE ".$constraint[0]." ".implode('', $search_terms_q)." ORDER BY `".$category."` ".$order;
+			$search = "WHERE ".$constraint[0]." ".implode('', $search_terms_q)." ORDER BY `".$db->escape_string($category)."` ".$db->escape_string($order);
 		}
     }
     /* Monster DB Search */
@@ -123,7 +123,7 @@ if(isset($search_area)) {
                     case '51-80':     $com_constraint = "`combat` BETWEEN 51 AND 80 AND npc = 1"; break;
                     case '81-781':    $com_constraint = "`combat` BETWEEN 81 AND 781 AND npc = 1"; break;
                 }
-                $search = "WHERE ".$com_constraint." ORDER by `".$category."` ".$order;
+                $search = "WHERE ".$com_constraint." ORDER by `".$db->escape_string($category)."` ".$db->escape_string($order);
             }
             elseif($search_area == 'training' && ($search_term == 'range' || $search_term == 'mage' || $search_term == 'melee')) {
                 switch($search_term) {
@@ -131,73 +131,73 @@ if(isset($search_area)) {
                     case 'range': $train_constraint = "name IN (SELECT name FROM calc_info WHERE calc_name = 'Ranged')"; break;
                     case 'melee': $train_constraint = "name IN (SELECT name FROM calc_info WHERE calc_name = 'Warrior')"; break;
                 }
-                $search = "WHERE `npc` = 1 AND ".$train_constraint." AND `quest` = 'No' ORDER by ".$category." ".$order;
+                $search = "WHERE `npc` = 1 AND ".$train_constraint." AND `quest` = 'No' ORDER by `".$db->escape_string($category)."` ".$db->escape_string($order);
             }
             elseif($search_area == 'drops') {
-                $search = "WHERE id != 950 AND (`drops` LIKE '%".$search_term."%' OR `i_drops` LIKE '%".$search_term."%') ORDER BY `".$category."` ".$order;
+                $search = "WHERE id != 950 AND (`drops` LIKE '%".$db->escape_string($search_term)."%' OR `i_drops` LIKE '%".$db->escape_string($search_term)."%') ORDER BY `".$db->escape_string($category)."` ".$db->escape_string($order);
             }
-            else $search = "WHERE ".$constraint[0]." AND ".$search_area." LIKE '%".$search_term."%' ORDER BY `".$category."` ".$order;
+            else $search = "WHERE ".$constraint[0]." AND `".$db->escape_string($search_area)."` LIKE '%".$db->escape_string($search_term)."%' ORDER BY `".$db->escape_string($category)."` ".$db->escape_string($order);
         }
     /* SHOP DB Search */
         elseif($table == 'shops') {
-        if( $_GET['search_area'] == 'itemsearch' ) {
-            $search = "s JOIN shops_items si ON (s.id = si.shop_id) WHERE `item_name` LIKE '%".$search_term."%' ORDER BY `".$category."` ".$order.", `item_price` ASC, `item_stock` DESC, `item_name` ASC";
+        if( isset($_GET['search_area']) && $_GET['search_area'] == 'itemsearch' ) {
+            $search = "s JOIN shops_items si ON (s.id = si.shop_id) WHERE `item_name` LIKE '%".$db->escape_string($search_term)."%' ORDER BY `".$db->escape_string($category)."` ".$db->escape_string($order).", `item_price` ASC, `item_stock` DESC, `item_name` ASC";
             }
-        else $search = "WHERE ".$search_area." LIKE '%".$search_term."%'";
+        else $search = "WHERE `".$db->escape_string($search_area)."` LIKE '%".$db->escape_string($search_term)."%'";
        }
         /* Standard Search */
         else {
-            $search = "WHERE ".$constraint[0]." AND ".$search_area." LIKE '%".$search_term."%' ORDER BY `".$category."` ".$order;
+            $search = "WHERE ".$constraint[0]." AND `".$db->escape_string($search_area)."` LIKE '%".$db->escape_string($search_term)."%' ORDER BY `".$db->escape_string($category)."` ".$db->escape_string($order);
         }
 }
 else {
     $search_term = '';
     $search_area = '';
-    $search = "WHERE ".$constraint[0]." ".$constraint[1]." ORDER BY `".$category."` ".$order;
+    $search = "WHERE ".$constraint[0]." ".$constraint[1]." ORDER BY `".$db->escape_string($category ?? 'name')."` ".$db->escape_string($order ?? 'ASC');
 }
 //debug: echo $search;
 /*===========  Page Control  ============*/
 
 if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') {
 $rows_per_page     = 50;
-$row_count         = $db->fetch_row("SELECT count(*) as count FROM ".$table." " . $search);
-$row_count         = $row_count['count'];
-$total             = $db->fetch_row("SELECT count(*) as count FROM ".$table." WHERE " . $constraint[0]);
-$total             = $total['count'];
+$row_count_res     = $db->fetch_row("SELECT count(*) as count FROM ".$db->escape_string($table)." " . $search);
+$row_count         = $row_count_res['count'] ?? 0;
+$total_res         = $db->fetch_row("SELECT count(*) as count FROM ".$db->escape_string($table)." WHERE " . $constraint[0]);
+$total             = $total_res['count'] ?? 0;
 $page_count        = ceil($row_count / $rows_per_page) > 1 ? ceil($row_count / $rows_per_page) : 1;
 $page_links        = ($page > 1 AND $page < $page_count) ? '|' : '';
-$start_from        = $page - 1;
+$start_from        = ((int)$page - 1);
 $start_from        = $start_from * $rows_per_page;
 $end_at            = $start_from + $rows_per_page;
 
-$query = $db->query("SELECT * FROM ".$table." " . $search . " LIMIT " . $start_from . ", " . $rows_per_page);
+$query = $db->query("SELECT * FROM ".$db->escape_string($table)." " . $search . " LIMIT " . (int)$start_from . ", " . (int)$rows_per_page);
 
 if($page > 1) {
-    $page_before = $page - 1;
-    $page_links = '<a href="' . $_SERVER['SCRIPT_NAME']. '?page=' . $page_before . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">< Previous</a> ' . $page_links;
+    $page_before = (int)$page - 1;
+    $page_links = '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']). '?page=' . $page_before . '&amp;order=' . htmlspecialchars($order) . '&amp;category=' . htmlspecialchars($category) . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '">< Previous</a> ' . $page_links;
 }
 if($page < $page_count) {
-    $page_after = $page + 1;
-    $page_links = $page_links . ' <a href="' . $_SERVER['SCRIPT_NAME']. '?page=' . $page_after . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Next ></a> ';
+    $page_after = (int)$page + 1;
+    $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']). '?page=' . $page_after . '&amp;order=' . htmlspecialchars($order) . '&amp;category=' . htmlspecialchars($category) . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '">Next ></a> ';
 }
 if($page > 2) {
-    $page_links = '<a href="' . $_SERVER['SCRIPT_NAME']. '?page=1&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">&laquo; First</a> '. $page_links;
+    $page_links = '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']). '?page=1&amp;order=' . htmlspecialchars($order) . '&amp;category=' . htmlspecialchars($category) . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '">&laquo; First</a> '. $page_links;
 }
 if($page < ($page_count - 1)) {
-    $page_links = $page_links . ' <a href="' . $_SERVER['SCRIPT_NAME']. '?page=' . $page_count . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Last &raquo;</a> ';
+    $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']). '?page=' . (int)$page_count . '&amp;order=' . htmlspecialchars($order) . '&amp;category=' . htmlspecialchars($category) . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '">Last &raquo;</a> ';
 }
 
 }
 
 /*============  SEARCH FORM  ============*/
 if (!isset($hide_search_form)) {
-    echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL;
-    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:left;" width="200">Browsing ' . number_format($row_count) . ' of ' . number_format($total) . ' ' . ucfirst($table) . '(s)</td>'.NL;
+    echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL;
+    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:left;" width="200">Browsing ' . number_format($row_count) . ' of ' . number_format($total) . ' ' . htmlspecialchars(ucfirst($table)) . '(s)</td>'.NL;
     echo '<td style="text-align:center;">'.NL
     .'Search <select name="search_area">';
 
     for($num = 0; array_key_exists($num, $search_value) && array_key_exists($num, $search_name); $num++) {
-        echo $search_area == $search_value[$num] ? '<option value="'.$search_value[$num].'" selected="selected">'.$search_name[$num].'</option>' : '<option value="'.$search_value[$num].'">'.$search_name[$num].'</option>';
+        echo $search_area == $search_value[$num] ? '<option value="'.htmlspecialchars($search_value[$num]).'" selected="selected">'.htmlspecialchars($search_name[$num]).'</option>' : '<option value="'.htmlspecialchars($search_value[$num]).'">'.htmlspecialchars($search_name[$num]).'</option>';
     }
 
     echo '</select> for'.NL
@@ -210,7 +210,7 @@ if (!isset($hide_search_form)) {
     }
 
     echo ' <input type="submit" value="Go" /></td>'.NL;
-    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:right;" width="140">Page ' . $page . ' of ' . $page_count . '</td>'.NL;
+    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:right;" width="140">Page ' . (int)$page . ' of ' . (int)$page_count . '</td>'.NL;
     echo '</tr></table></form>';
 }
 ?>

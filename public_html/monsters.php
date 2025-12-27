@@ -10,6 +10,10 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
 /*** MONSTER DATABASE ***/
 require(dirname(__FILE__) . '/' . 'backend.php');
 
+// Ensure database is connected before any queries
+$db->connect();
+$db->select_db(MYSQL_DB);
+
 if($disp->errlevel > 0) {
 	unset($id);
 	unset($search_area);
@@ -34,7 +38,7 @@ start_page('OSRS RuneScape Monster Database');
  if(!isset($id))
   {
 ?>
-<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS RuneScape Monsters and NPC Database</a></div>
+<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">OSRS RuneScape Monsters and NPC Database</a></div>
 <hr class="main" noshade="noshade" />
 <img src="img/news/mdb.gif" style="float:left;padding:10px 5px" alt="" />
 <p>This massive database contains tonnes of information and tips on Runescape's monsters and other NPCs (Non Playing Characters).</p>
@@ -48,8 +52,8 @@ start_page('OSRS RuneScape Monster Database');
 echo '<br /><table width="96%" style="margin:0 2%;" cellspacing="0" cellpadding="5">'
     .'<tr style="height:23px;font-size:13px;font-weight:bold;">'
     .'<td style="vertical-align:middle">
-    <a href="' . $_SERVER['SCRIPT_NAME'] . '?search_area=training&amp;search_term=melee" title="Search for Monsters to Train Melee"><img src="/img/other/melee.gif" alt="" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?search_area=training&amp;search_term=range" title="Search for Monsters to Train Ranged"><img src="/img/other/range.gif" alt="" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?search_area=training&amp;search_term=mage" title="Search for Monsters to Train Magic"><img src="/img/other/magic.gif" alt="" border="0" /></a></td>'
-    .'<td style="vertical-align:middle;">Combat: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=1-25">1 - 25</a> | <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=26-50">26 - 50</a> | <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=51-80">51 - 80</a> | <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=81-781">81+</a></td>'
+    <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?search_area=training&amp;search_term=melee" title="Search for Monsters to Train Melee"><img src="/img/other/melee.gif" alt="" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?search_area=training&amp;search_term=range" title="Search for Monsters to Train Ranged"><img src="/img/other/range.gif" alt="" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?search_area=training&amp;search_term=mage" title="Search for Monsters to Train Magic"><img src="/img/other/magic.gif" alt="" border="0" /></a></td>'
+    .'<td style="vertical-align:middle;">Combat: <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=1-25">1 - 25</a> | <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=26-50">26 - 50</a> | <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=51-80">51 - 80</a> | <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=81-781">81+</a></td>'
     .'<td style="vertical-align:middle;text-align:right;"><a href="/correction.php?area=monster&amp;id=950">Submit Missing NPC</a></td>'
     .'</tr>'
     .'</table><br />';
@@ -57,38 +61,38 @@ echo '<br /><table width="96%" style="margin:0 2%;" cellspacing="0" cellpadding=
   echo '<table style="margin:0 5%;border-left: 1px solid #000;" width="90%" cellpadding="4" cellspacing="0" id="monsterstable">';
   echo '<thead> <tr>';
   echo '<th class="tabletop" width="150px">Picture</th>';
-  echo '<th class="tabletop">Name <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Name, Ascending" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Name, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Name <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=name&amp;page=' . (int)$page . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Name, Ascending" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=DESC&amp;category=name&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Name, Descending" border="0" /></a></th>';
   
-  echo '<th class="tabletop">Members <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=member&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Members, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Members, Ascending" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Members, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Members, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Members <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=member&amp;page=' . (int)$page . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Members, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Members, Ascending" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=DESC&amp;category=member&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Members, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Members, Descending" border="0" /></a></th>';
   
-  echo '<th class="tabletop">Combat <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=combat&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Combat, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Combat, Ascending" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=combat&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Combat, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Combat, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Combat <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=combat&amp;page=' . (int)$page . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Combat, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Combat, Ascending" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=DESC&amp;category=combat&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Combat, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Combat, Descending" border="0" /></a></th>';
   
-  echo '<th class="tabletop">HP <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=hp&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Hitpoints, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Quest, Ascending" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=hp&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Hitpoints, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Quest, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">HP <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=hp&amp;page=' . (int)$page . '&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Hitpoints, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Quest, Ascending" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=DESC&amp;category=hp&amp;search_area=' . htmlspecialchars($search_area) . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Hitpoints, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Quest, Descending" border="0" /></a></th>';
   echo '<th class="tabletop" width="15%">Location</th>'.NL;
   echo '</tr></thead> ';
 
 while($info = $db->fetch_array($query)) {
     $path = "/img/npcimg/";
-    $info['member'] = $info['member'] == 1 ? 'Yes' : 'No';
-    if($info['npc'] == 0) { $info['combat'] = 'N/A';  $info['hp'] = 'N/A'; $path = "/img/npcimg/npc/"; }
+    $info['member'] = ($info['member'] ?? 0) == 1 ? 'Yes' : 'No';
+    if(($info['npc'] ?? 0) == 0) { $info['combat'] = 'N/A';  $info['hp'] = 'N/A'; $path = "/img/npcimg/npc/"; }
       echo '<tr>';
-      if($info['img'] != 'nopic.gif') {
-        echo '<td class="tablebottom" onclick="window.location=\'\' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '\'" style="cursor:pointer;width:150px;height:150px;background:url(\''.$path . $info['img'].'\') no-repeat 50% 50%;" title="' . $info['name'] . '"></td>';
+      if(($info['img'] ?? '') != 'nopic.gif') {
+        echo '<td class="tablebottom" onclick="window.location=\''. htmlspecialchars($_SERVER['SCRIPT_NAME']) .'?id=' . (int)$info['id'] . '\'" style="cursor:pointer;width:150px;height:150px;background:url(\''.$path . htmlspecialchars($info['img'] ?? '').'\') no-repeat 50% 50%;" title="' . htmlspecialchars($info['name'] ?? '') . '"></td>';
         }
     else {
-      echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '"><img src="/img/npcimg/nopic.gif" alt="" border="0" /></a></td>';
+      echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . (int)$info['id'] . '"><img src="/img/npcimg/nopic.gif" alt="" border="0" /></a></td>';
     }
-     echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '">' . $info['name'] . '</a></td>' . NL;
-     echo '<td class="tablebottom">' . $info['member'] . '</td>';
-     echo '<td class="tablebottom">' . $info['combat'] . '</td>';
-     echo '<td class="tablebottom">' . $info['hp'] . '</td>';
-     $location = strip_tags($info['locations']);
+     echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . (int)$info['id'] . '">' . htmlspecialchars($info['name'] ?? '') . '</a></td>' . NL;
+     echo '<td class="tablebottom">' . htmlspecialchars($info['member'] ?? '') . '</td>';
+     echo '<td class="tablebottom">' . htmlspecialchars($info['combat'] ?? '') . '</td>';
+     echo '<td class="tablebottom">' . htmlspecialchars($info['hp'] ?? '') . '</td>';
+     $location = strip_tags($info['locations'] ?? '');
     if(strlen($location) > 70)
       {
        $location = substr($location,0,70) . '...';
       }
       
-    echo '<td class="tablebottom">' . $location . '</td>';    
+    echo '<td class="tablebottom">' . htmlspecialchars($location) . '</td>';    
     echo '</tr>';
 }
 
@@ -99,7 +103,7 @@ while($info = $db->fetch_array($query)) {
     echo '<td class="tablebottom" colspan="6">Sorry, no monsters match your search criteria.';
     if ($db->num_rows("SELECT name, id FROM `monsters` WHERE soundex(name) = soundex('" . $db->escape_string($search_term) . "') LIMIT 0,1") > 0) {
    while($info = $db->fetch_array($result))   {
-   if($info['id'] != 950) echo ' Perhaps you meant <a href="'.$_SERVER['SCRIPT_NAME'].'?search_area=name&amp;search_term=' . urlencode($info['name']) . '" title="Try Again">'.$info['name'].'</a>?'; } 
+   if($info['id'] != 950) echo ' Perhaps you meant <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?search_area=name&amp;search_term=' . urlencode($info['name']) . '" title="Try Again">'.htmlspecialchars($info['name']).'</a>?'; } 
     }
     echo '</td></tr>';
   }
@@ -109,30 +113,30 @@ while($info = $db->fetch_array($query)) {
   if($page_count > 1)
    {
     echo '<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>';
-    echo '<td align="left"><form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get">Jump to page';
+    echo '<td align="left"><form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get">Jump to page';
     echo ' <input type="text" name="page" size="3" maxlength="3" />';
-    echo '<input type="hidden" name="order" value="' . $order . '" />';
-    echo '<input type="hidden" name="category" value="' . $category . '" />';
-    echo '<input type="hidden" name="search_area" value="' . $search_area . '" />';
+    echo '<input type="hidden" name="order" value="' . htmlspecialchars($order) . '" />';
+    echo '<input type="hidden" name="category" value="' . htmlspecialchars($category) . '" />';
+    echo '<input type="hidden" name="search_area" value="' . htmlspecialchars($search_area) . '" />';
     echo '<input type="hidden" name="search_term" value="' . htmlspecialchars($search_term, ENT_QUOTES) . '" />';
     echo ' <input type="submit" value="Go" /></form></td>';
     echo '<td align="right">' . $page_links . '</td></tr>';
-    echo '<tr><td colspan="2" align="right" width="140">Page ' . $page . ' of ' . $page_count . '</td></tr>';
+    echo '<tr><td colspan="2" align="right" width="140">Page ' . (int)$page . ' of ' . (int)$page_count . '</td></tr>';
     echo '</table>';
   }
 
   }
   else
   {
-        $info = $db->fetch_row("SELECT * FROM `monsters` WHERE `id` = " . $id);
+        $info = $db->fetch_row("SELECT * FROM `monsters` WHERE `id` = " . (int)$id);
         if (!$info) {
              echo 'Error: Invalid Monster ID.';
         } else {
-        $type = $info['type'];
+        $type = $info['type'] ?? '';
 ?>
 
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS RuneScape Monster Database</a> &raquo; <u><?php echo $info['name']; ?></u></div>
+&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">OSRS RuneScape Monster Database</a> &raquo; <u><?php echo htmlspecialchars($info['name'] ?? ''); ?></u></div>
 <hr class="main" noshade="noshade" />
 
 <script type="text/javascript">
@@ -143,56 +147,56 @@ function avgxp_calc () {
                 return;
         }
 
-        var calc_cb = (count * <?php echo $info['hp']; ?> * 4 * 60);
-        var calc_hp = (count * <?php echo $info['hp']; ?> * 1.333 * 60);
+        var calc_cb = (count * <?php echo (int)($info['hp'] ?? 0); ?> * 4 * 60);
+        var calc_hp = (count * <?php echo (int)($info['hp'] ?? 0); ?> * 1.333 * 60);
 document.getElementById("cbxp").innerHTML = Math.round(calc_cb*10)/10;
 document.getElementById("hpxp").innerHTML = Math.round(calc_hp*10)/10;
 }
 </script>
 
 <?php
-echo '<center><a href="/correction.php?area=monsters&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" style="padding:5px 0;" alt="Submit Correction" border="0" /></a></center>';
+echo '<center><a href="/correction.php?area=monsters&amp;id=' . (int)$id . '" title="Submit a Correction"><img src="/img/correct.gif" style="padding:5px 0;" alt="Submit Correction" border="0" /></a></center>';
 
-   $info['member'] = $info['member'] == 1 ? 'Yes' : 'No';
-   $ftime = $info['time'];
+   $info['member'] = ($info['member'] ?? 0) == 1 ? 'Yes' : 'No';
+   $ftime = $info['time'] ?? 0;
    $date = date( 'l F jS, Y', $ftime );
 
-    $quests = explode(';',$info['quest']);
+    $quests = explode(';',$info['quest'] ?? '');
     $questlist = '';
     foreach($quests as $var) {
         $var = trim($var);
         if (empty($var)) continue;
         $qinfo = $db->fetch_row("SELECT `id`,`name` FROM `quests` WHERE `name` = '" . $db->escape_string($var) . "'");
-        if(!$qinfo){ $questlist .= $var.', ';
+        if(!$qinfo){ $questlist .= htmlspecialchars($var).', ';
         }else{
-            $questlist .= '<a href="/quests.php?id='.$qinfo['id'].'">' . $var . '</a>, ';
+            $questlist .= '<a href="/quests.php?id='.$qinfo['id'].'">' . htmlspecialchars($var) . '</a>, ';
         }
     }
     $questlist = substr($questlist, 0, -2);
 
-if($info['npc'] == '1' && $info['id'] != 950 ) {
+if(($info['npc'] ?? '') == '1' && ($info['id'] ?? 0) != 950 ) {
 
-$info['drops'] = substr($info['drops'],-1) == '.' ? substr($info['drops'],0,-1) : $info['drops'];
-$info['i_drops'] = substr($info['i_drops'],-1) == '.' ? substr($info['i_drops'],0,-1) : $info['i_drops'];
+$info['drops'] = substr($info['drops'] ?? '',-1) == '.' ? substr($info['drops'],0,-1) : ($info['drops'] ?? '');
+$info['i_drops'] = substr($info['i_drops'] ?? '',-1) == '.' ? substr($info['i_drops'],0,-1) : ($info['i_drops'] ?? '');
 
 $droplist = '';
- if($info['drops'] == 'None.' || $info['drops'] == 'None') $droplist = $info['drops'];
+ if(($info['drops'] ?? '') == 'None.' || ($info['drops'] ?? '') == 'None') $droplist = htmlspecialchars($info['drops']);
   else
     {
-    $drops = explode(',',$info['drops']);
+    $drops = explode(',',$info['drops'] ?? '');
     foreach($drops as $var) {
-        $droplist .= '<a href="/inter.php?item=' . urlencode(trim($var)) . '">' . trim($var) . '</a>, ';
+        $droplist .= '<a href="/inter.php?item=' . urlencode(trim($var)) . '">' . htmlspecialchars(trim($var)) . '</a>, ';
     }
     $droplist = substr($droplist, 0, -2);
     }
     
 $idroplist = '';
-if($info['i_drops'] == 'None.' || $info['i_drops'] == 'None') $idroplist = $info['i_drops'];
+if(($info['i_drops'] ?? '') == 'None.' || ($info['i_drops'] ?? '') == 'None') $idroplist = htmlspecialchars($info['i_drops']);
   else
     {
-    $idrops = explode('[,]',$info['i_drops']);
+    $idrops = explode('[,]',$info['i_drops'] ?? '');
     foreach($idrops as $vars) {
-        $idroplist .= '<a href="/inter.php?item=' . urlencode(trim($vars)) . '">' . trim($vars) . '</a>, ';
+        $idroplist .= '<a href="/inter.php?item=' . urlencode(trim($vars)) . '">' . htmlspecialchars(trim($vars)) . '</a>, ';
     }
     $idroplist = substr($idroplist, 0, -2);
     }
@@ -200,33 +204,33 @@ if($info['i_drops'] == 'None.' || $info['i_drops'] == 'None') $idroplist = $info
         // NORMAL NPC
         echo '<table cellspacing="0" width="75%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">';
         echo '<tr>';
-        echo '<td colspan="3" class="tabletop" style="border-right:none;">' . $info['name'] . '</td></tr>';
+        echo '<td colspan="3" class="tabletop" style="border-right:none;">' . htmlspecialchars($info['name'] ?? '') . '</td></tr>';
         echo '<tr>';
   echo '<td rowspan="';
-  echo $info['maxhit'] == '0' ? '9' : '10';
-  echo '" width="50%" align="center" style="border:none; border-right:1px solid #000;"><img src="/img/npcimg/' . $info['img'] . '" alt="Picture of ' . $info['name'] . '" /></td></tr>';
+  echo ($info['maxhit'] ?? '') == '0' ? '9' : '10';
+  echo '" width="50%" align="center" style="border:none; border-right:1px solid #000;"><img src="/img/npcimg/' . htmlspecialchars($info['img'] ?? '') . '" alt="Picture of ' . htmlspecialchars($info['name'] ?? '') . '" /></td></tr>';
         echo '<tr>';
-        echo '<td width="15%">Combat:</td><td width="35%">' . $info['combat'] . '</td></tr>';
+        echo '<td width="15%">Combat:</td><td width="35%">' . htmlspecialchars($info['combat'] ?? '') . '</td></tr>';
         echo '<tr>';
-        echo '<td>Hitpoints:</td><td>' . $info['hp'] . '</td></tr>';
-  if($info['maxhit'] != '0' ) {
+        echo '<td>Hitpoints:</td><td>' . htmlspecialchars($info['hp'] ?? '') . '</td></tr>';
+  if(($info['maxhit'] ?? '') != '0' ) {
         echo '<tr>';
-        echo '<td>Max Hit:</td><td>' . $info['maxhit'] . '</td></tr>'; } 
+        echo '<td>Max Hit:</td><td>' . htmlspecialchars($info['maxhit'] ?? '') . '</td></tr>'; } 
         echo '<tr>';
-        echo '<td>Race:</td><td>' . $info['race'] . '</td></tr>';
+        echo '<td>Race:</td><td>' . htmlspecialchars($info['race'] ?? '') . '</td></tr>';
         echo '<tr>';
-        echo '<td>Members:</td><td>'. $info['member'] .'</td></tr>';
+        echo '<td>Members:</td><td>'. htmlspecialchars($info['member'] ?? '') .'</td></tr>';
         echo '<tr>';
         echo '<td>Quest:</td><td>' . $questlist . '</td></tr>';
         echo '<tr>';
-        echo '<td>Nature:</td><td>' . $info['nature'] . '</td></tr>';
+        echo '<td>Nature:</td><td>' . htmlspecialchars($info['nature'] ?? '') . '</td></tr>';
         echo '<tr>';
-        echo '<td>Attack Style:</td><td>' . $info['attstyle'] . '</td></tr>';
+        echo '<td>Attack Style:</td><td>' . htmlspecialchars($info['attstyle'] ?? '') . '</td></tr>';
         echo '<tr>';
-        echo '<td>Examine:</td><td>' . $info['examine'] . '</td></tr>';
+        echo '<td>Examine:</td><td>' . htmlspecialchars($info['examine'] ?? '') . '</td></tr>';
         echo '</table><br />';
 
-        if($info['hp'] != '1' ) {
+        if(($info['hp'] ?? '') != '1' ) {
         //-- CALCULATOR
         echo '<form name="Average_XP" onsubmit="javascript:return false;" action=""><table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
         echo '<tr>';
@@ -243,7 +247,7 @@ if($info['i_drops'] == 'None.' || $info['i_drops'] == 'None') $idroplist = $info
 
         echo '<table cellspacing="0" width="75%" style="border:1px solid #000;" cellpadding="4" align="center">';
         echo '<tr>';
-        echo '<td width="20%" valign="top">Where Found:</td><td>' . $info['locations'] . '</td></tr>';
+        echo '<td width="20%" valign="top">Where Found:</td><td>' . htmlspecialchars($info['locations'] ?? '') . '</td></tr>';
         if(!empty($info['drops'])) {
         echo '<tr>';
         echo '<td valign="top">Drops:</td><td>' . $droplist . '</td></tr>'; //$droplist
@@ -253,58 +257,57 @@ if($info['i_drops'] == 'None.' || $info['i_drops'] == 'None') $idroplist = $info
         echo '<td valign="top">Top Drops:</td><td>' . $idroplist . '</td></tr>'; //$idroplist
         }
         if(!empty($info['tactic'])) {
-        echo '<tr><td valign="top">Tactic:</td><td>' . $info['tactic'] . '</td></tr>';
+        echo '<tr><td valign="top">Tactic:</td><td>' . htmlspecialchars($info['tactic']) . '</td></tr>';
         }
                 if(!empty($info['notes'])) {
         echo '<tr>';
-        echo '<td valign="top">Notes:</td><td>' . $info['notes'] . '</td></tr>';
+        echo '<td valign="top">Notes:</td><td>' . htmlspecialchars($info['notes']) . '</td></tr>';
         }
         echo '</table><br />';
 
         echo '<table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
         echo '<tr>';
-        echo '<td width="15%">Credits:</td><td align="left">' . $info['credits'] . '</td></tr>';
+        echo '<td width="15%">Credits:</td><td align="left">' . htmlspecialchars($info['credits'] ?? '') . '</td></tr>';
   echo '<tr><td valign="top">Last Modified:</td><td>' . $date . '</td></tr></table>';
  } //END NORMAL NPC
  
- elseif($info['npc'] == '0' ) { //NON ATTACKABLE
+ elseif(($info['npc'] ?? '') == '0' ) { //NON ATTACKABLE
         echo '<table cellspacing="0" width="75%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">';
         echo '<tr>';
-        echo '<td colspan="3" class="tabletop" style="border-right:none;">' . $info['name'] . '</td></tr>';
+        echo '<td colspan="3" class="tabletop" style="border-right:none;">' . htmlspecialchars($info['name'] ?? '') . '</td></tr>';
         echo '<tr>';
-    echo '<td rowspan="5" width="50%" align="center" style="border:none; border-right:1px solid #000;"><img src="/img/npcimg/npc/' . $info['img'] . '" alt="Picture of ' . $info['name'] . '" /></td></tr>';
+    echo '<td rowspan="5" width="50%" align="center" style="border:none; border-right:1px solid #000;"><img src="/img/npcimg/npc/' . htmlspecialchars($info['img'] ?? '') . '" alt="Picture of ' . htmlspecialchars($info['name'] ?? '') . '" /></td></tr>';
         echo '<tr>';
-        echo '<td>Race:</td><td>' . $info['race'] . '</td></tr>';
+        echo '<td>Race:</td><td>' . htmlspecialchars($info['race'] ?? '') . '</td></tr>';
         echo '<tr>';
-        echo '<td>Members:</td><td>'. $info['member'] .'</td></tr>';
+        echo '<td>Members:</td><td>'. htmlspecialchars($info['member'] ?? '') .'</td></tr>';
         echo '<tr>';
         echo '<td>Quest:</td><td>' . $questlist . '</td></tr>';
         echo '<tr>';
-        echo '<td>Examine:</td><td>' . $info['examine'] . '</td></tr>';
+        echo '<td>Examine:</td><td>' . htmlspecialchars($info['examine'] ?? '') . '</td></tr>';
         echo '</table><br />';
   
         echo '<table cellspacing="0" width="75%" style="border:1px solid #000;" cellpadding="4" align="center">';
         echo '<tr>';
-        echo '<td width="20%" valign="top">Where Found:</td><td>' . $info['locations'] . '</td></tr>';
+        echo '<td width="20%" valign="top">Where Found:</td><td>' . htmlspecialchars($info['locations'] ?? '') . '</td></tr>';
         echo '<tr>';
-        echo '<td valign="top">Notes:</td><td>' . $info['notes'] . '</td></tr>';
+        echo '<td valign="top">Notes:</td><td>' . htmlspecialchars($info['notes'] ?? '') . '</td></tr>';
         echo '</table><br />';
 
         echo '<table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';
         echo '<tr>';
-        echo '<td width="15%">Credits:</td><td align="left">' . $info['credits'] . '</td></tr>';
+        echo '<td width="15%">Credits:</td><td align="left">' . htmlspecialchars($info['credits'] ?? '') . '</td></tr>';
   echo '<tr><td valign="top">Last Modified:</td><td>' . $date . '</td></tr></table>';
- } //END NON ATTACKABLE
+ }
         }
   }
       echo '<br />';
       include 'search.inc.php';
  echo '<p style="text-align:center;"><a href="javascript:history.go(-1)"><b>&lt;-- Go Back</b></a></p>';
- }
 ?>
 [#COPYRIGHT#]
 </div>
 
 <?php
-end_page( $info['name'] ?? '' );
+end_page( htmlspecialchars($info['name'] ?? '') );
 ?>
