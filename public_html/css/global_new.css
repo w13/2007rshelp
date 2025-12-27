@@ -36,15 +36,20 @@ a:hover, .boxbottom a:hover {
 }
 
 #banner { 
-  background: url('/images/banner/header.jpg'); 
+  background: url('/images/banner/header.jpg') no-repeat center; 
+  background-size: auto;
   height: 100px; 
-  margin: 0;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
 }
 
 #banner a { 
   display: block; 
   height: 100px; 
-  width: 950px;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 .topbar { 

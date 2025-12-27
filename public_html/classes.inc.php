@@ -183,7 +183,7 @@ class display
 		$key = array_search($file, array_keys($metas) );
 		$meta = $key == False ? $metas['default'] : $metas[$file];
 
-		if($file == 'misc.php' && $_GET['id'] == '57') $meta = $metas['misc.php?id=57'];
+		if($file == 'misc.php' && isset($_GET['id']) && $_GET['id'] == '57') $meta = $metas['misc.php?id=57'];
 
 		return $meta;
 	}
