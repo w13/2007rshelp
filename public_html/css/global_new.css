@@ -30,32 +30,26 @@ a:hover, .boxbottom a:hover {
 
 #wrapper { 
   width: 100%; 
-  max-width: 1200px;
-  margin: 0 auto;
+  min-width: 950px;
   position: relative;
 }
 
 #banner { 
-  background: url('/images/banner/header.jpg') no-repeat center; 
-  background-size: auto;
+  background: url('/images/banner/header.jpg'); 
   height: 100px; 
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
+  margin: 0 -8px;
 }
 
 #banner a { 
   display: block; 
   height: 100px; 
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
+  width: 950px;
 }
 
 .topbar { 
   background: #000 url('/images/banner/navtop.gif') repeat-x; 
   height: 31px; 
-  margin: -10px 0 0;
+  margin: -10px -8px 0;
 }
 
 .topbar a { 

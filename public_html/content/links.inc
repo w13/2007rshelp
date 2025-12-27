@@ -48,12 +48,10 @@ if($_SERVER['PHP_SELF']!="/index.php"){
 <!-- Google vertical banner below nav -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- SideBar -->
-<div style="display: flex; justify-content: center; width: 100%;">
 <ins class="adsbygoogle"
      style="display:block; margin: 0 auto; width:160px;height:600px"
      data-ad-client="ca-pub-0109004644664993"
      data-ad-slot="2647397929"></ins>
-</div>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
