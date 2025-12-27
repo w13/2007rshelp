@@ -79,12 +79,12 @@ function city_shops($id)
             $iquery = $db->query("SELECT * FROM shops_items WHERE `shop_id` = '" . $sinfo['id'] . "'");
             $output .= '<table cellpadding="5" cellspacing="0">'.NL
                 .'<tr>'.NL
-                .'<td style="vertical-align:top;"><img src="/img/shopimg/'.$sinfo['image'].'" alt="Location" title="Shop Location" /></td>'.NL
-                .'<td style="vertical-align:top;"><div class="title3">'.$sinfo['shop_name'].'</div><em>Speak to: '.$sinfo['shopkeeper'].'</em>'.NL
+                .'<td style="vertical-align:top;"><img src="/img/shopimg/'.htmlspecialchars($sinfo['image']).'" alt="Location" title="Shop Location" /></td>'.NL
+                .'<td style="vertical-align:top;"><div class="title3">'.htmlspecialchars($sinfo['name']).'</div><em>Speak to: '.htmlspecialchars($sinfo['shopkeeper']).'</em>'.NL
                 .'<ul style="padding-left:10px">';
             while($iinfo = $db->fetch_array($iquery)) {
                 $iinfo['item_stock'] = $iinfo['item_stock'] == -1 ? '&#8734;' : $iinfo['item_stock'];
-                $output .= '<li>' . $iinfo['item_name'].' ('.$iinfo['item_stock'].'): ' . number_format( $iinfo['item_price'] ) . '' . $iinfo['item_currency'] . '</li>'.NL;
+                $output .= '<li>' . htmlspecialchars($iinfo['item_name']).' ('.$iinfo['item_stock'].'): ' . number_format( $iinfo['item_price'] ) . '' . htmlspecialchars($iinfo['item_currency']) . '</li>'.NL;
             }
             $output .= '</ul></td></tr></table><br />';
         }
@@ -104,19 +104,19 @@ function city_npc($id) {
             .'<div style="margin-top:12px;width:96%;display:block;padding:5px;height:1000px;overflow:auto">'.NL
             .'<table cellpadding="5" cellspacing="0">'.NL;
         while($minfo = $db->fetch_array($mquery)) {
-            $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $minfo['name']));
+            $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $minfo['name'] ?? ''));
             $output .= '<tr>'.NL;
-            if($minfo['npc'] == 1) { 
-                $output .= '<td style="width:125px;height:125px;background-image:url(\'/img/npcimg/'.$minfo['img'].'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; 
+            if(($minfo['npc'] ?? 0) == 1) { 
+                $output .= '<td style="width:125px;height:125px;background-image:url(\'/img/npcimg/'.htmlspecialchars($minfo['img'] ?? '').'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; 
             }
             else { 
-                $output .= '<td style="width:110px;height:110px;background-image:url(\'/img/npcimg/npc/'.$minfo['img'].'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; 
+                $output .= '<td style="width:110px;height:110px;background-image:url(\'/img/npcimg/npc/'.htmlspecialchars($minfo['img'] ?? '').'\'); background-repeat:no-repeat; background-position:50% 50%;"></td>'.NL; 
             }
             $output .= '<td style="vertical-align:top;">'.NL;
-            if($minfo['npc'] == 1) $output .= '<div class="title3">'.$minfo['name'].' (level-'.$minfo['combat'].')';
-            else $output .= '<div class="title3">'.$minfo['name'];
-            $output .= ' <a href="/monsters.php?id='.$minfo['id'].'&amp;runescape_' . $seotitle . '.htm" title="More information"><img src="/img/market/idb.gif" border="0" alt="More information" /></a></div>'
-              .'<b>Examine:</b> '.$minfo['examine'].'<br /><b>Notes:</b> '.$minfo['notes'].'</td>'.NL
+            if(($minfo['npc'] ?? 0) == 1) $output .= '<div class="title3">'.htmlspecialchars($minfo['name'] ?? '').' (level-'.htmlspecialchars($minfo['combat'] ?? '').')';
+            else $output .= '<div class="title3">'.htmlspecialchars($minfo['name'] ?? '');
+            $output .= ' <a href="/monsters.php?id='.(int)($minfo['id'] ?? 0).'&amp;runescape_' . $seotitle . '.htm" title="More information"><img src="/img/market/idb.gif" border="0" alt="More information" /></a></div>'
+              .'<b>Examine:</b> '.htmlspecialchars($minfo['examine'] ?? '').'<br /><b>Notes:</b> '.htmlspecialchars($minfo['notes'] ?? '').'</td>'.NL
               .'</tr>';
         }
         $output .= '</table><br /></div>';
