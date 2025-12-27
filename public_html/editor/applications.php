@@ -22,8 +22,8 @@ else $edit = new edit( 'applications', $db );
 	}
 	else {
 		echo '<p style="text-align:center;">Application Updated.</p>' . NL;
-		if(isset($_GET['radioap'])) header( 'refresh: 0; url=' . $_SERVER['PHP_SELF'].'?radio' );
-		else header( 'refresh: 0; url=' . $_SERVER['PHP_SELF'] );
+		if(isset($_GET['radioap'])) header( 'refresh: 0; url=' . htmlspecialchars($_SERVER['PHP_SELF']).'?radio' );
+		else header( 'refresh: 0; url=' . htmlspecialchars($_SERVER['PHP_SELF']) );
 	}
 }
 elseif( (isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['id'] ) ) OR $_GET['act'] == 'new' )) OR isset($_GET['radioap']) ) {
@@ -102,7 +102,7 @@ if ($_SESSION['user'] == 'Jeremy') {
 }
 ?>
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Applications</a> &raquo; <u><a href="/community/index.php?showuser=<?php echo $info['rscid']; ?>" target="_blank"><?php echo $info['name']; ?></a>'s Application</u> (<a href="/recruiting.php" target="_blank">view form</a>)</font></b>
+<b><font size="+1">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">Applications</a> &raquo; <u><a href="/community/index.php?showuser=<?php echo $info['rscid']; ?>" target="_blank"><?php echo $info['name']; ?></a>'s Application</u> (<a href="/recruiting.php" target="_blank">view form</a>)</font></b>
 </div><hr class="main" noshade="noshade" />
 <br />
 <?php
@@ -111,7 +111,7 @@ $yes = $info['processed'] == 1 ? ' selected="selected"' : '';
 $inc = $info['processed'] == 2 ? ' selected="selected"' : '';
 $wl = $info['processed'] == 3 ? ' selected="selected"' : '';
 if(isset($_GET['radioap'])) {
-echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?radioap">'
+echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?radioap">'
 	  .'<input type="hidden" name="act" value="edit" />'
     .'<input type="hidden" name="id" value="' . $id . '" />'
     .'<table cellspacing="0" width="85%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">'
@@ -183,7 +183,7 @@ if ($_SESSION['user'] == 'Jeremy') {
 	 setcookie("applications",$_COOKIE['applications'].'|'.$id);
 }
 /*END COOKIE VIEWED STUFF*/
-echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '">'
+echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">'
 	  .'<input type="hidden" name="act" value="edit" />'
     .'<input type="hidden" name="id" value="' . $id . '" />'
     .'<table cellspacing="0" width="85%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">'
@@ -268,7 +268,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 			if(isset($_GET['radio'])) $db->query("DELETE FROM `applicationsr` WHERE id = " . $_POST['del_id'] );
 			else $db->query("DELETE FROM `applications` WHERE id = " . $_POST['del_id'] );
 			$ses->record_act( 'Applications', 'Delete', $_POST['del_name'], $ip );
-			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] );
+			header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) );
 			echo '<p style="text-align:center;">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
@@ -281,9 +281,9 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 		
 			$name = $info['fname'];
 			echo '<p style="text-align:center;">Are you sure you want to delete \'' . $name . 's\' Application?</p>';
-			if(isset($_GET['radio']))	echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?act=delete&amp;radio"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
-			else echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?act=delete"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
-			echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '"><center><input type="submit" value="No" /></center></form>' . NL;
+			if(isset($_GET['radio']))	echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&amp;radio"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
+			else echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '"><center><input type="submit" value="No" /></center></form>' . NL;
 		}
 		else {
 			
@@ -294,7 +294,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 else {
 ?>
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Applications</a> (<a href="<?php echo $_SERVER['PHP_SELF'];?>?radio">Radio</a>)</font></b>
+<b><font size="+1">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">Applications</a> (<a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?radio">Radio</a>)</font></b>
 </div><hr class="main" noshade="noshade" />
 <br />
 <?php
@@ -340,20 +340,20 @@ else {
 
 if($page > 1) {
     $page_before = $page - 1;
-    $page_links = '<a href="' . $_SERVER['PHP_SELF']. '?page=' . $page_before . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">< Previous</a> ' . $page_links;
+    $page_links = '<a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=' . $page_before . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">< Previous</a> ' . $page_links;
 }
 if($page < $page_count) {
     $page_after = $page + 1;
-    $page_links = $page_links . ' <a href="' . $_SERVER['PHP_SELF']. '?page=' . $page_after . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Next ></a> ';
+    $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=' . $page_after . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Next ></a> ';
 }
 if($page > 2) {
-    $page_links = '<a href="' . $_SERVER['PHP_SELF']. '?page=1&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">&laquo; First</a> '. $page_links;
+    $page_links = '<a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=1&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">&laquo; First</a> '. $page_links;
 }
 if($page < ($page_count - 1)) {
-    $page_links = $page_links . ' <a href="' . $_SERVER['PHP_SELF']. '?page=' . $page_count . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Last &raquo;</a> ';
+    $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=' . $page_count . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Last &raquo;</a> ';
 }
 
-echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL
+echo '<form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL
 .'<td align="left" width="150">Browsing ' . $row_count . ' ' . ucfirst($table) . '(s)</td>'.NL
 .'<td align="center">'.NL
 .'Search <select name="search_area">';
@@ -373,7 +373,7 @@ echo '</select> for'.NL
   echo '<table style="border-left: 1px solid #000000;" width="95%" align="center" cellpadding="1" cellspacing="0">';
   echo '<tr>';
   echo '<th class="tabletop">RSC Name</th>';
-  echo '<th class="tabletop">Applied for <a href="' . $_SERVER['PHP_SELF'] . '?order=ASC&amp;category=crew&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Crew, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Crew, Ascending" border="0" /></a> <a href="' . $_SERVER['PHP_SELF'] . '?order=DESC&amp;category=crew&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Crew, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Crew, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Applied for <a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?order=ASC&amp;category=crew&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Crew, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Crew, Ascending" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?order=DESC&amp;category=crew&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Crew, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Crew, Descending" border="0" /></a></th>';
   echo '<th class="tabletop">Options</th>';
   echo '<th class="tabletop">Accepted?</th>';
   echo '</tr>';
@@ -400,17 +400,17 @@ $info['crew'] = $info['crew'] == 'SC' ? 'Support Crew' : $info['crew'];
 $info['crew'] = $info['crew'] == 'BLO' ? 'Blog' : $info['crew'];
 
     echo '<tr>';
-if(isset($_GET['radio'])) echo '<td class="tablebottom"><a href="'.$_SERVER['PHP_SELF'].'?id='.$info['id'].'&amp;act=edit&amp;radioap">'.$info['name'].'</a></td>';
+if(isset($_GET['radio'])) echo '<td class="tablebottom"><a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?id='.$info['id'].'&amp;act=edit&amp;radioap">'.$info['name'].'</a></td>';
 else {
 	echo '<td class="tablebottom"';
 	/*ADDED BY JEREMY FOR HIM TO SEE WHICH APPS HE HAS VIEWED*/
 	if (in_array($info['id'],explode("|",$_COOKIE['applications'])) && $_SESSION['user']=='Jeremy') echo ' style="background-color:#000;"';
 	/*END COOKIE STUFF*/
-	echo '><a href="'.$_SERVER['PHP_SELF'].'?id='.$info['id'].'&amp;act=edit">'.$info['name'].'</a> ('.$info['total'].')</td>';
+	echo '><a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?id='.$info['id'].'&amp;act=edit">'.$info['name'].'</a> ('.$info['total'].')</td>';
 }
     echo '<td class="tablebottom">'.$info['crew'].'</td>';
-if( $ses->permit( 15 ) && isset($_GET['radio'])) echo '<td class="tablebottom"><a href="' . $_SERVER['PHP_SELF'] . '?act=delete&amp;radio&amp;id=' . $info['id'] . '" title="Delete \'' . $info['fname'] . '\'">Delete</a></td>' . NL;
-elseif( $ses->permit( 15 ) ) echo '<td class="tablebottom"<a href="' . $_SERVER['PHP_SELF'] . '?act=delete&amp;id=' . $info['id'] . '" title="Delete \'' . $info['fname'] . '\'">Delete</a></td>' . NL;
+if( $ses->permit( 15 ) && isset($_GET['radio'])) echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&amp;radio&amp;id=' . $info['id'] . '" title="Delete \'' . $info['fname'] . '\'">Delete</a></td>' . NL;
+elseif( $ses->permit( 15 ) ) echo '<td class="tablebottom"<a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&amp;id=' . $info['id'] . '" title="Delete \'' . $info['fname'] . '\'">Delete</a></td>' . NL;
     echo '<td class="tablebottom">'.$info['processed'].'</td>';
     echo '</tr>';
   }
@@ -426,7 +426,7 @@ elseif( $ses->permit( 15 ) ) echo '<td class="tablebottom"<a href="' . $_SERVER[
   if($page_count > 1)
    {
     echo '<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>';
-    echo '<td align="left"><form action="' . $_SERVER['PHP_SELF'] . '" method="get">Jump to page';
+    echo '<td align="left"><form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="get">Jump to page';
     echo ' <input type="text" name="page" size="3" maxlength="3" />';
     echo '<input type="hidden" name="order" value="' . $order . '" />';
     echo '<input type="hidden" name="category" value="' . $category . '" />';

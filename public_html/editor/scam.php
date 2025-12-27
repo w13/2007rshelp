@@ -5,8 +5,8 @@ start_page(10, 'Scam Manager');
 $edit = new edit('price_scams', $db);
 echo '<div class="boxtop">Scam Manager</div>'.NL.'<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">'.NL;
 ?>
-<div style="float: right;"><a href="<?=$_SERVER['PHP_SELF']?>?"><img src="images/browse.gif" title="Browse" border="0" /></a>
-<a href="<?=$_SERVER['PHP_SELF']?>?act=new"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
+<div style="float: right;"><a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>?"><img src="images/browse.gif" title="Browse" border="0" /></a>
+<a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>?act=new"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
 <b><font size="+1">&raquo; Scam Manager</font></b>
 </div>
@@ -27,7 +27,7 @@ if(isset($_POST['act']) AND $_POST['act'] == 'edit' AND isset($_POST['id'])) {
     else {
         $ses->record_act('Scam Alert', 'Edit', $name, $ip);
         echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>'.NL;
-        header('refresh: 2; url='.$_SERVER['PHP_SELF']);
+        header('refresh: 2; url='.htmlspecialchars($_SERVER['PHP_SELF']));
     }
 }
 elseif(isset($_POST['act']) AND $_POST['act'] == 'new') {
@@ -44,7 +44,7 @@ elseif(isset($_POST['act']) AND $_POST['act'] == 'new') {
     else {
         $ses->record_act('Scam Alert', 'New', $name, $ip);
         echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>'.NL;
-        header('refresh: 2; url='.$_SERVER['PHP_SELF']);
+        header('refresh: 2; url='.htmlspecialchars($_SERVER['PHP_SELF']));
     }
 }
 elseif(isset($_GET['act']) AND (($_GET['act'] == 'edit' AND isset($_GET['id'])) OR $_GET['act'] == 'new')) {
@@ -103,7 +103,7 @@ elseif(isset($_GET['act']) AND $_GET['act'] == 'delete' AND $ses->permit(15)) {
         }
         else {
             $ses->record_act('Scam Alert', 'Delete', $_POST['del_name'], $ip);
-            header('refresh: 2; url='.$_SERVER['PHP_SELF']);
+            header('refresh: 2; url='.htmlspecialchars($_SERVER['PHP_SELF']));
             echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>'.NL;
         }
     }
@@ -113,8 +113,8 @@ elseif(isset($_GET['act']) AND $_GET['act'] == 'delete' AND $ses->permit(15)) {
         if($info) {
             $name = $info['name'];
             echo '<p align="center">Are you sure you want to delete the scam \''.$name.'\'';
-            echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'?act=delete"><center><input type="hidden" name="del_id" value="'.$id.'" / ><input type="hidden" name="del_name" value="'.$name.'" / ><input type="submit" value="Yes" /></center></form>'.NL;
-            echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'"><center><input type="submit" value="No" /></center></form>'.NL;
+            echo '<form method="post" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'?act=delete"><center><input type="hidden" name="del_id" value="'.$id.'" / ><input type="hidden" name="del_name" value="'.$name.'" / ><input type="submit" value="Yes" /></center></form>'.NL;
+            echo '<form method="post" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'"><center><input type="submit" value="No" /></center></form>'.NL;
         }
         else {
             echo '<p align="center">That identification number does not exist.</p>'.NL;
@@ -134,9 +134,9 @@ else {
     while($info = $db->fetch_array($query)) {
         echo '<tr align="center">'.NL;
         echo '<td class="tablebottom"><a href="/development/price_guide.php?scam='.$info['id'].'" target="_new" title="View Scam">'.$info['name'].'</a></td>'.NL;
-        echo '<td class="tablebottom"><a href="'.$_SERVER['PHP_SELF'].'?act=edit&id='.$info['id'].'" title="Edit '.$info['name'].'">Edit</a>';
+        echo '<td class="tablebottom"><a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?act=edit&id='.$info['id'].'" title="Edit '.$info['name'].'">Edit</a>';
         if($ses->permit(15)) {
-            echo ' / <a href="'.$_SERVER['PHP_SELF'].'?act=delete&id='.$info['id'].'" title="Delete '.$info['name'].'">Delete</a></td>'.NL;
+            echo ' / <a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?act=delete&id='.$info['id'].'" title="Delete '.$info['name'].'">Delete</a></td>'.NL;
         }
         echo '<td class="tablebottom">'.format_time($info['time']).'</td>'.NL;
         echo '</tr>'.NL;

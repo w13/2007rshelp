@@ -1,0 +1,12 @@
+public_html/img/
+public_html/images/
+public_html/editor/uploads/
+.git/
+node_modules/
+*.log
+*.sql
+*.bak
+*.backup
+*.old
+*.dump
+dump.sql

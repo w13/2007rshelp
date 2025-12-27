@@ -75,7 +75,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	else {
 		$ses->record_act( 'Quest Guides', 'Edit', $name, $ip );
 		echo '<p align="center">Entry successfully edited into OSRS RuneScape Help Quest Guide Area.</p>' . NL;
-		//header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
+		//header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category );
 	}
 
 }

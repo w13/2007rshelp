@@ -3,8 +3,8 @@
 <head>
 <title>[#SITE_NAME#]</title>
 <link rel="shortcut icon" href="[#FAVICON#].ico" />
-<link href="/css/bluelight.css" rel="stylesheet" type="text/css" id="ourstylesheet" />
 <link href="/css/global_new.css" rel="stylesheet" type="text/css" />
+<link href="/css/bluelight.css" rel="stylesheet" type="text/css" id="ourstylesheet" />
 [#EXTRACSS#]
 <!--
 COPYRIGHT NOTICE:
@@ -77,25 +77,14 @@ $('a').hover(function(e){
 </head>
 <body>
 
+<header role="banner">
+    [#TOPBAR#]
+    <div id="banner">
+        <a href="/index.php" title="Old-School RuneScape Help" aria-label="Go to homepage"></a>
+    </div>
+    [#BOTBAR#]
+</header>
 <div id="wrapper">
-[#TOPBAR#]
-<div id="banner"><a href="/index.php" title="Old-School RuneScape Help"></a></div>
-
-<!-- Top Leaderboard -->
-<div style="position:absolute;right:5px;top:37px;width:728px;height:90px;z-index:10">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 2007RsHelpTop -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-0109004644664993"
-     data-ad-slot="3891980502"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-
-[#BOTBAR#]
-<div style="clear:both;"></div>
 <div id="body">
 <div id="sidebar">
 [#LINKS#]
@@ -144,7 +133,6 @@ $('a').hover(function(e){
 
 <script src="https://www.google.com/cse/api/partner-pub-0109004644664993/cse/3478413701/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
 
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z60SEVLSGL"></script>
 <script>
@@ -155,7 +143,5 @@ $('a').hover(function(e){
   gtag('config', 'G-Z60SEVLSGL');
 </script>
 
-<img class="popUpImage" style="display:none;" src="https://i.imgur.com/ulym44H.png" alt="RuneScape
-Help's Screenshot" />
 </body>
 </html>

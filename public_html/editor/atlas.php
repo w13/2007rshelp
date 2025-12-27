@@ -11,8 +11,8 @@ $edit = new edit( $category, $db );
 echo '<div class="boxtop">World Maps</div>' . NL . '<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right:24px;">' . NL;
 
 ?>
-<div style="float: right;"><a href="<?php echo $_SERVER['PHP_SELF']; ?>?cat=<?php echo $category; ?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
-<a href="<?php echo $_SERVER['PHP_SELF']; ?>?act=new&cat=<?php echo $category; ?>"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
+<div style="float: right;"><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?cat=<?php echo $category; ?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
+<a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?act=new&cat=<?php echo $category; ?>"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
 <b><font size="+1">&raquo; World Maps</font></b>
 </div>
@@ -63,7 +63,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	else {
 		$ses->record_act( 'World Maps', 'New', $name, $ip );
 		echo '<p align="center">New entry was successfully added into OSRS RuneScape Help World Map Area. No Cache has been performed.</p>' . NL;
-		header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
+		header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category );
 	}
 }
 
@@ -101,7 +101,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 	
 	
 	
-	echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?cat=' . $category . '">' . NL;
+	echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category . '">' . NL;
 	echo '<input type="hidden" name="act" value="' . $_GET['act'] . '" />';
 	
 	if( $_GET['act'] == 'edit' ) {
@@ -135,7 +135,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		}
 		else {
 			$ses->record_act( 'World Map', 'Delete', $_POST['del_name'], $ip );
-			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
+			header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category );
 			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
@@ -148,8 +148,8 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		
 			$name = $info['name'];
 			echo '<p align="center">Are you sure you want to delete this world map, \'' . $name . '\'?</p>';
-			echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?act=delete&cat=' . $category . '"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
-			echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?cat=' . $category . '"><center><input type="submit" value="No" /></center></form>' . NL;
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&cat=' . $category . '"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category . '"><center><input type="submit" value="No" /></center></form>' . NL;
 		}
 		else {
 			
@@ -175,9 +175,9 @@ else {
 	
     echo '<tr align="center">' . NL;
 		echo '<td class="tablebottom"><a href="/development/worldmapses.php?id=' . $info['id'] . '" target="_new">' . $info['name'] . '</a></td>' . NL;
-		echo '<td class="tablebottom"><a href="' . $_SERVER['PHP_SELF'] . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit '.$info['name'].'">Edit</a>';
+		echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit '.$info['name'].'">Edit</a>';
 		if( $ses->permit( 15 ) ) {
-			echo ' / <a href="' . $_SERVER['PHP_SELF'] . '?act=delete&cat=' . $category . '&id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;
+			echo ' / <a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&cat=' . $category . '&id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;
 		}
 		echo '<td class="tablebottom">' . format_time( $info['time'] ) . '</td>' . NL;
 		echo '</tr>' . NL;
@@ -200,7 +200,7 @@ if( isset( $_POST['text'] ) ) {
     header("Location: atlas.php");
 	}
 
-echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post">';
+echo '<form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">';
 echo 'Last Update: ' . $last . ' (GMT)<br />';
 echo '<textarea name="text" rows="25" style="width: 95%; font: 10px Verdana, Arial, Helvetica, sans, sans serif;">' . $info['text'] . '</textarea><br />';
 echo '<input type="submit" value="Update" />&nbsp;<input type="reset" value="Undo Changes" />';

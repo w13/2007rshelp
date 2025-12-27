@@ -50,8 +50,8 @@ function hide(i)
 }
 </script>
 
-<div style="float: right;"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?cat=<?php echo $category; ?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
-<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?act=new&cat=<?php echo $category; ?>"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
+<div style="float: right;"><a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>?cat=<?php echo $category; ?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
+<a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>?act=new&cat=<?php echo $category; ?>"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
 <b><font size="+1">&raquo; Testing Area</font></b>
 </div>
@@ -94,7 +94,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 		$db->query("UPDATE `testing` SET `locked`=0,`locked_user`='' WHERE `id`=".$id);
 		$ses->record_act( $cat_name, 'Edit', $name, $ip );
 		echo '<p align="center">Entry successfully edited into OSRS RuneScape Help Testing Area.</p>' . NL;
-		header( 'refresh: 20; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
+		header( 'refresh: 20; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cat=' . $category );
 	}
 
 }
@@ -115,7 +115,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	else {
 		$ses->record_act( $cat_name, 'New', $name, $ip );
 		echo '<p align="center">New entry was successfully added into OSRS RuneScape Help Testing Area.</p>' . NL;
-		header( 'refresh: 2; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
+		header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cat=' . $category );
 	}
 }
 
@@ -157,7 +157,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 	
 	if ($locked != 0 && ($locked + (120 * 60)) > time() && $locked_user != $_SESSION['user']) {
 		echo '<p class="info">This guide is currently being edited by '.$info['locked_user'].'.  If '.$locked_user.' does not submit the changes he/she has made in '. (120 - round( (time() - $locked) / 60 ) ).' minutes, the guide will be unlocked automatically.  If you are having issues with a guide being locked, please contact a manager.<br /><br />This page will refresh after 10 seconds.</p><br /><br />';
-		header('refresh:10;url='.$_SERVER['SCRIPT_NAME']);
+		header('refresh:10;url='.htmlspecialchars($_SERVER['SCRIPT_NAME']));
 	}
 	
 	else {
@@ -166,7 +166,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		$db->query("UPDATE `testing` SET `locked`=" . time() . ",`locked_user`='" . $_SESSION['user'] . "' WHERE `id`=".$id);
 	}
 	
-	echo '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category . '">' . NL;
+	echo '<form method="post" action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cat=' . $category . '">' . NL;
 	echo '<input type="hidden" name="act" value="' . $_GET['act'] . '" />';
 	
 	if( $_GET['act'] == 'edit' ) {
@@ -204,7 +204,7 @@ echo '<div class="boxtop">Test Area Notepad</div><div class="boxbottom" style="p
 $info = $db->fetch_row("SELECT * FROM `admin_pads` WHERE `file` = 'testingarea'");
 $last = format_time( $info['time'] + 21600 );
 
-echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="post">';
+echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="post">';
 echo 'Last Update: ' . $last . ' (GMT)<br />';
 echo '<textarea name="notepad2" rows="20" style="background: #B3B8BA; width: 95%; font: 10px Verdana, Arial, Helvetica, sans, sans serif; border-style-left: 1px black; border-style-right: 1px black; border-style-top; 1px black; border-style-bottom; 1px black">' 
 . $info['text'] . '</textarea><br /><br />';
@@ -225,7 +225,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 		}
 		else {
 			$ses->record_act( $cat_name, 'Delete', $_POST['del_name'], $ip );
-			header( 'refresh: 2; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
+			header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cat=' . $category );
 			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
@@ -238,12 +238,12 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 		
 			$name = $info['name'];
 			echo '<p align="center">Are you sure you want to delete this test, \'' . $name . '\'?</p>';
-			echo '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '?act=delete&cat=' . $category . '"><center><input type="hidden" 
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?act=delete&cat=' . $category . '"><center><input type="hidden" 
 
 name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" 
 
 /></center></form>' . NL;
-			echo '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category . '"><center><input type="submit" value="No" 
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cat=' . $category . '"><center><input type="submit" value="No" 
 
 /></center></form>' . NL;
 		}
@@ -256,7 +256,7 @@ name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value=
 
 else {
 
-	echo '<center><form action="' . $_SERVER['SCRIPT_NAME'] . '?cat=testing" method="get">' . NL;
+	echo '<center><form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cat=testing" method="get">' . NL;
 	echo '<input type="submit" value="Go To" /> ' . NL;
 	echo '<select name="cat">' . NL;
 	
@@ -299,12 +299,12 @@ $info['name'] . '</a></td>' . NL;
 				echo ' <img src="/editor/extras/locked.png" alt="locked" />';
 			}
 		} else {
-			echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit ' 
+			echo '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit ' 
 . $info['name'] . '">Edit</a>'; 
 		}
 
 		if( $ses->permit( 15 ) ) {
-			echo ' / <a href="' . $_SERVER['SCRIPT_NAME'] . '?act=delete&cat=' . $category . '&id=' . $info['id'] . '" title="Delete \'' . 
+			echo ' / <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?act=delete&cat=' . $category . '&id=' . $info['id'] . '" title="Delete \'' . 
 
 $info['name'] . '\'">Delete</a></td>' . NL;
 		}
@@ -333,7 +333,7 @@ if( isset( $_POST['text'] ) ) {
     header("Location: testing_area.php");
 	}
 
-echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="post">';
+echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="post">';
 echo 'Last Update: ' . $last . ' (GMT)<br />';
 echo '<textarea name="text" rows="25" style="width: 95%; font: 10px Verdana, Arial, Helvetica, sans, sans serif;">' . $info['text'] . '</textarea><br />';
 echo '<input type="submit" value="Update" />&nbsp;<input type="reset" value="Undo Changes" />';

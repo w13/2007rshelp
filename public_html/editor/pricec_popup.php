@@ -99,7 +99,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] =='new' AND isset( $_GET['aft
 		$text = '';
 	}
 	echo '<script src="/editor/extras/disable.js" type="text/javascript"></script>'.NL;
-	echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post" name="form">' . NL;
+	echo '<form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post" name="form">' . NL;
 	echo '<input type="hidden" name="act" value="' . $_GET['act'] . '" />' . NL;
 	
 	if( $_GET['act'] =='edit' ) {

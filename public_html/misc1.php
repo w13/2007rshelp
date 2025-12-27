@@ -10,7 +10,7 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('Runescape Guides');
 $ptitle = '&raquo; Runescape Miscellaneous Guides';
-if(isset($search_area) && isset($search_term)) $ptitle = '&raquo; <a href="'.$_SERVER['SCRIPT_NAME'].'" title="Runescape Help Guides Index">Runescape Miscellaneous Guides</a> &raquo; Search Results';
+if(isset($search_area) && isset($search_term)) $ptitle = '&raquo; <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'" title="Runescape Help Guides Index">Runescape Miscellaneous Guides</a> &raquo; Search Results';
 ?>
 <div class="boxtop">Runescape Miscellaneous Guides</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
@@ -103,9 +103,9 @@ if($title && mysqli_num_rows($query) != 0) {
    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
    $img = '<img src="/img/f2p.gif" alt="F2P" /> ';
    if($info['type'] == 1) $img = '<img src="/img/member.gif" alt="P2P" /> ';
-echo '<li' . $alt . ' id="g'.$info['id'].'" style="cursor: pointer;" onmouseover="chBg(\'g'.$info['id']. '\');" onmouseout="chBg(\'g'.$info['id']. '\');" onclick="window.location=\''.$_SERVER['SCRIPT_NAME'].'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm\'">'.NL
+echo '<li' . $alt . ' id="g'.$info['id'].'" style="cursor: pointer;" onmouseover="chBg(\'g'.$info['id']. '\');" onmouseout="chBg(\'g'.$info['id']. '\');" onclick="window.location=\''.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm\'">'.NL
     .'<div class="guide_title"><span>'
-    .$img . '<a href="'.$_SERVER['SCRIPT_NAME'].'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm" title="Runescape Guide">' . $info['name'] . '</a>'
+    .$img . '<a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm" title="Runescape Guide">' . $info['name'] . '</a>'
     .'</span></div>'.NL
     .'<div class="guide_descr"><p>' . $info['keyword'] . '</p></div>' . NL
     .'</li>'.NL;
@@ -128,7 +128,7 @@ else
   } else {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-<a href="<?=$_SERVER['SCRIPT_NAME']?>"><?=$ptitle?></a> &raquo; <u><?=$info['name']?></u></div>
+<a href="<?=htmlspecialchars($_SERVER['SCRIPT_NAME'])?>"><?=$ptitle?></a> &raquo; <u><?=$info['name']?></u></div>
 <hr noshade="noshade" />
 <table style="border-left: 1px solid #000000; border-top: 1px solid #000000" width="100%" cellpadding="5" cellspacing="0">
 <?php

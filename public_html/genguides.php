@@ -29,7 +29,7 @@ if(empty($id))
    {
     echo '<tr align="center">';
     $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['title']));
-    echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['tid'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['title'] . '</a></td>' . NL;
+    echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . $info['tid'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['title'] . '</a></td>' . NL;
     echo '<td class="tablebottom">' . $info['starter_name'] . '</td>';
     echo '</tr>';
    } 
@@ -44,7 +44,7 @@ else
 ?>
 
 <div style="margin:1px;font-size:large;font-weight:bold;">
-&raquo; <a href="<?php=$_SERVER['SCRIPT_NAME']?>">Player Guides and Tips</a> &raquo; <u><?php=$info['title']?></u></div>
+&raquo; <a href="<?php=htmlspecialchars($_SERVER['SCRIPT_NAME'])?>">Player Guides and Tips</a> &raquo; <u><?php=$info['title']?></u></div>
 <hr class="main" noshade="noshade" />
 <style type="text/css">
 #content span, #content p { color:#000 !important; }

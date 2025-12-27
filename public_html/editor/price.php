@@ -9,7 +9,7 @@ $cat_ph = 350;
 if(isset($_GET['anchor'])) {
      $anchor = $_GET['anchor'];
      $query = str_replace('&anchor='.$anchor, '', $_SERVER['QUERY_STRING']);
-     header('refresh: 0; url='.$_SERVER['PHP_SELF'].'?'.$query.'#'.$anchor);
+     header('refresh: 0; url='.htmlspecialchars($_SERVER['PHP_SELF']).'?'.$query.'#'.$anchor);
 }
 
 require('backend.php');
@@ -31,9 +31,9 @@ function hide(i)
 }
 </script>
 <?php
-echo '<div class="boxed" style="width:578px;"><a href="'.$_SERVER['PHP_SELF'].'">Marketplace Manager</a></div>'.NL.'<div class="boxbottom" style="padding-left: 24px; padding-top: 1px; padding-right: 24px;width:530px;">'.NL.NL;
+echo '<div class="boxed" style="width:578px;"><a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'">Marketplace Manager</a></div>'.NL.'<div class="boxbottom" style="padding-left: 24px; padding-top: 1px; padding-right: 24px;width:530px;">'.NL.NL;
 
-echo '<form action="'.$_SERVER['PHP_SELF'].'" method="get">'.NL.NL;
+echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="get">'.NL.NL;
 
 $query = $db->query("SELECT * FROM price_groups WHERE parent = 1 ORDER BY lft ASC");
 
@@ -46,7 +46,7 @@ while($info = $db->fetch_array($query)) {
     else {
         $class = 'boxed';
     }
-    echo '<div class="'.$class.'" style="float: '.$align.'; width: 49%; margin-top: 5px;"><a href="'.$_SERVER['PHP_SELF'].'?area='.$info['id'].'" />'.$info['title'].'</a></div>'.NL;
+    echo '<div class="'.$class.'" style="float: '.$align.'; width: 49%; margin-top: 5px;"><a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?area='.$info['id'].'" />'.$info['title'].'</a></div>'.NL;
 
     if($align == 'right') {
         $align = 'left';
@@ -83,16 +83,16 @@ if(isset($_POST['moveitm']) AND isset($_POST['ids']) AND isset($_POST['category'
             $db->query("UPDATE price_items SET category = ".$category." WHERE ".$idq);
             $db->query("UPDATE price_items SET phold_cat = ".$category." WHERE ".$idq);
             echo '<p align="center">The selected items have been moved.</p>'.NL;
-            //header('refresh: 1; url='.$_SERVER['PHP_SELF'].'?'.$par);
+            //header('refresh: 1; url='.htmlspecialchars($_SERVER['PHP_SELF']).'?'.$par);
         }
         else {
             echo '<p align="center">No action. There were no items selected.</p>';
-            //header('refresh: 1; url='.$_SERVER['PHP_SELF'].'?'.$par);
+            //header('refresh: 1; url='.htmlspecialchars($_SERVER['PHP_SELF']).'?'.$par);
         }
     }
     else {
         echo '<p align="center">Items cannot be placed in this category.</p>';
-        header('refresh: 1; url='.$_SERVER['PHP_SELF'].'?'.$par);
+        header('refresh: 1; url='.htmlspecialchars($_SERVER['PHP_SELF']).'?'.$par);
     }
 }
 elseif(isset($_POST['iact']) AND $_POST['iact'] == 'move') {
@@ -118,7 +118,7 @@ elseif(isset($_POST['iact']) AND $_POST['iact'] == 'move') {
         else $par = $_POST['par'];
         $ids_enc = base64_encode(serialize($ids));
         $query = $db->query("SELECT * FROM price_items WHERE ".$idq);
-        echo '<form action="'.$_SERVER['PHP_SELF'].'" method="post">'.NL;
+        echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post">'.NL;
         echo '<input type="hidden" name="ids" value="'.$ids_enc.'" /><input type="hidden" name="moveitm" value="true" /><input type="hidden" name="par" value="'.$par.'" />'.NL;
         echo '<p><span class="title3">Move the following items to </span><select name="category">'.NL;
         echo '<option value="0">Select a Category</option>'.NL;
@@ -155,7 +155,7 @@ elseif(isset($_POST['delitm']) AND isset($_GET['par']) AND $ses->permit(15)) {
     $db->query("DELETE FROM price_items WHERE id = ".$id." OR phold_id = ".$id);
     $db->query("UPDATE price_items SET iorder = iorder - 1 WHERE category = '".$_POST['category']."' AND iorder > ".$_POST['iorder']);
     $par = base64_decode($_GET['par']);
-    header('refresh: 1; url='.$_SERVER['PHP_SELF'].'?'.$par);
+    header('refresh: 1; url='.htmlspecialchars($_SERVER['PHP_SELF']).'?'.$par);
     echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>'.NL;
 }
 elseif(isset($_GET['delitm']) AND isset($_GET['par']) AND $ses->permit(15)) {
@@ -171,8 +171,8 @@ elseif(isset($_GET['delitm']) AND isset($_GET['par']) AND $ses->permit(15)) {
         $name = $info['name'];
         $before = (!empty($info['phold_id'])) ? 'placeholder' : 'item';
         echo '<p align="center">Are you sure you want to delete the '.$before.', \''.$name.'\'</p>';
-        echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'?par='.$_GET['par'].'"><center><input type="hidden" name="delitm" value="'.$id.'" / ><input type="hidden" name="iorder" value="'.$info['iorder'].'" / ><input type="hidden" name="category" value="'.$info['category'].'" / ><input type="hidden" name="right" value="'.$info['rgt'].'" / ><input type="submit" value="Yes" /></center></form>'.NL;
-        echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'?'.$par.'"><center><input type="submit" value="No" /></center></form>'.NL;
+        echo '<form method="post" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'?par='.$_GET['par'].'"><center><input type="hidden" name="delitm" value="'.$id.'" / ><input type="hidden" name="iorder" value="'.$info['iorder'].'" / ><input type="hidden" name="category" value="'.$info['category'].'" / ><input type="hidden" name="right" value="'.$info['rgt'].'" / ><input type="submit" value="Yes" /></center></form>'.NL;
+        echo '<form method="post" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'?'.$par.'"><center><input type="submit" value="No" /></center></form>'.NL;
 			$ses->record_act('Price Guide', 'Delete', $name, $ip);
     }
     else {
@@ -183,7 +183,7 @@ elseif(isset($_GET['delitm']) AND isset($_GET['par']) AND $ses->permit(15)) {
 elseif(isset($_POST['delcat']) AND isset($_GET['area']) AND $ses->permit(15)) {
     echo '<br /><hr />'.NL.NL;
     delete_category($_POST['delcat'], $_POST['left'], $_POST['right']);
-    header('refresh: 1; url='.$_SERVER['PHP_SELF'].'?area='.$_GET['area'].'&conf=yes');
+    header('refresh: 1; url='.htmlspecialchars($_SERVER['PHP_SELF']).'?area='.$_GET['area'].'&conf=yes');
     echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>'.NL;
 }
 elseif(isset($_GET['delcat']) AND isset($_GET['area']) AND $ses->permit(15)) {
@@ -200,8 +200,8 @@ elseif(isset($_GET['delcat']) AND isset($_GET['area']) AND $ses->permit(15)) {
     
         $title = $info['title'];
         echo '<p align="center">Are you sure you want to delete the category, \''.$title.'\'</p>';
-        echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'?area='.$_GET['area'].'&conf=yes"><center><input type="hidden" name="delcat" value="'.$id.'" / ><input type="hidden" name="left" value="'.$info['lft'].'" / ><input type="hidden" name="right" value="'.$info['rgt'].'" / ><input type="submit" value="Yes" /></center></form>'.NL;
-        echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'?area='.$_GET['area'].'&conf=yes"><center><input type="submit" value="No" /></center></form>'.NL;
+        echo '<form method="post" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'?area='.$_GET['area'].'&conf=yes"><center><input type="hidden" name="delcat" value="'.$id.'" / ><input type="hidden" name="left" value="'.$info['lft'].'" / ><input type="hidden" name="right" value="'.$info['rgt'].'" / ><input type="submit" value="Yes" /></center></form>'.NL;
+        echo '<form method="post" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'?area='.$_GET['area'].'&conf=yes"><center><input type="submit" value="No" /></center></form>'.NL;
     }
     elseif($info AND $check > 0) {
         $title = $info['title'];
@@ -227,7 +227,7 @@ elseif(isset($_GET['conf']) AND isset($_GET['area'])) {
     echo '<div style="font-size: 14px;"><b>Configuring '.$tree[0]['title'].'</b></div>'.NL;
     echo '<a name="'.$tree[0]['id'].'" href="javascript: void(0)" onclick="javascript:window.open(\'/editor/pricec_popup.php?act=edit&id='.$tree[0]['id'].'&par='.$en_url.'\', \'cat'.$tree[0]['id'].'\', \'left=600,width='.$cat_pw.',height='.$cat_ph.',scrollbars=no,location=yes\')">Edit</a>';
     if($ses->permit(15)) {
-        echo ' / <a href="'.$_SERVER['PHP_SELF'].'?delcat='.$tree[0]['id'].'&area='.$area.'">Delete</a>';
+        echo ' / <a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?delcat='.$tree[0]['id'].'&area='.$area.'">Delete</a>';
     }
     echo '<br /><br />'.NL;
     echo '<table style="border-left: 1px solid #000000;" width="100%" cellpadding="1" cellspacing="0">'.NL;
@@ -255,7 +255,7 @@ elseif(isset($_GET['conf']) AND isset($_GET['area'])) {
         echo '</td>'.NL;
         echo '<td class="tablebottom"><a name="'.$info['id'].'" href="javascript: void(0)" onclick="javascript:window.open(\'/editor/pricec_popup.php?act=edit&id='.$id.'&par='.$en_url.'\', \'cat'.$id.'\', \'left=600,width='.$cat_pw.',height='.$cat_ph.',scrollbars=no,location=yes\')">Edit</a>';
         if($ses->permit(15)) {
-            echo ' / <a href="'.$_SERVER['PHP_SELF'].'?delcat='.$id.'&area='.$area.'">Delete</a>';
+            echo ' / <a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?delcat='.$id.'&area='.$area.'">Delete</a>';
         }
         echo '</td>'.NL;
         echo '</tr>'.NL;
@@ -285,7 +285,7 @@ elseif(isset($_GET['area']) OR isset($_GET['category'])) {
     }
     $tree = display_tree($area);
 
-    echo '<a href="'.$_SERVER['PHP_SELF'].'?area='.$tree[0]['id'].'&conf=yes" title="Configure \''.$title.'\'"><img src="images/area_configuration.gif" alt="Area Configuration" align="right" border="0" /></a>'.NL;
+    echo '<a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?area='.$tree[0]['id'].'&conf=yes" title="Configure \''.$title.'\'"><img src="images/area_configuration.gif" alt="Area Configuration" align="right" border="0" /></a>'.NL;
     echo '<div style="font-size: 14px;"><b>Browsing '.$tree[0]['title'].'</b></div><br />'.NL.NL;
     for($num = 1; array_key_exists($num, $tree); $num++) {
     
@@ -305,7 +305,7 @@ elseif(isset($_GET['area']) OR isset($_GET['category'])) {
         $marg = 20 * $ind;
         
         if($items) {
-            echo '<div style="font-size: '.$fsize.'px; margin-left: '.$marg.'px; margin-bottom: 2px;">'.$sym.' <a href="'.$_SERVER['PHP_SELF'].'?category='.$id.'#ilist" title="View Category">'.$title.'</a></div>'.NL;
+            echo '<div style="font-size: '.$fsize.'px; margin-left: '.$marg.'px; margin-bottom: 2px;">'.$sym.' <a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?category='.$id.'#ilist" title="View Category">'.$title.'</a></div>'.NL;
         }
         else {
             echo '<div style="font-size: '.$fsize.'px; margin-left: '.$marg.'px; margin-bottom: 2px;">'.$sym.' '.$title.'</div>'.NL;
@@ -354,7 +354,7 @@ elseif(isset($_GET['area']) OR isset($_GET['category'])) {
             $total = mysqli_num_rows($query);
             $ids = array();
             
-            echo '<form action="'.$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'" method="post">'.NL;
+            echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF']).'?'.$_SERVER['QUERY_STRING'].'" method="post">'.NL;
             echo '<table style="border-left: 1px solid #000000;" width="100%" cellpadding="1" cellspacing="0">'.NL;
             echo '<tr>'.NL;
             echo '<td class="tabletop">&nbsp;</td>'.NL;
@@ -388,7 +388,7 @@ elseif(isset($_GET['area']) OR isset($_GET['category'])) {
                     echo '<td class="tablebottom"><a name="'.$info['id'].'" href="javascript: void(0)" onclick="javascript:window.open(\'/editor/pricep_popup.php?act=edit&id='.$info['id'].'&par='.$en_url.'\', '.$info['id'].', \'left=600,width='.$item_pw.',height='.$item_ph.',scrollbars=no,location=yes\')">Edit</a>';
                 }
                 if($ses->permit(15)) {
-                    echo ' / <a href="'.$_SERVER['PHP_SELF'].'?delitm='.$info['id'].'&par='.$en_url.'">Delete</a>';
+                    echo ' / <a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?delitm='.$info['id'].'&par='.$en_url.'">Delete</a>';
                 }
                 echo '</td>'.NL;
                 echo '<td class="tablebottom"><input type="hidden" name="id'.$count.'" value="'.$info['id'].'" /><select name="iorder'.$count.'">';
@@ -430,7 +430,7 @@ elseif(isset($_GET['search_terms'])) {
     
     echo '<div style="font-size: 12px; margin-bottom: 10px; margin-top: 8px;"><b>Search Results</b></div>'.NL.NL;
     
-    echo '<form action="'.$_SERVER['PHP_SELF'].'" method="post">'.NL;
+    echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post">'.NL;
     echo '<table style="border-left: 1px solid #000000;" width="100%" cellpadding="1" cellspacing="0">'.NL;
     echo '<tr>'.NL;
     echo '<td class="tabletop">Name:</td>'.NL;
@@ -474,7 +474,7 @@ elseif(isset($_GET['search_terms'])) {
         echo '<td class="tablebottom">'.$price.'</td>'.NL;
         echo '<td class="tablebottom"><a name="'.$info['id'].'" href="javascript: void(0)" onclick="javascript:window.open(\'/editor/price_popup.php?act=edit&id='.$info['id'].'&par='.$en_url.'\', \'itm'.$info['id'].'\', \'left=600,width='.$item_pw.',height='.$item_ph.',scrollbars=no,location=yes\')">Edit</a>';
         if($ses->permit(15)) {
-            echo ' / <a href="'.$_SERVER['PHP_SELF'].'?delitm='.$info['id'].'&par='.$en_url.'">Delete</a>';
+            echo ' / <a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?delitm='.$info['id'].'&par='.$en_url.'">Delete</a>';
         }
         echo '</td>'.NL;
         echo '<td class="tablebottom"><input type="checkbox" name="sel'.$i.'" value="'.$info['id'].'" /></td>'.NL;
@@ -528,7 +528,7 @@ else {
   $query = $db->query("SELECT * FROM price_items WHERE jagex_pid = 0 and phold_id = 0 ORDER BY reports DESC, price_low DESC, price_high DESC LIMIT 0,10");
   //$query = $db->query("SELECT * FROM price_items WHERE  ORDER BY name ASC LIMIT 50");
 	$info = $db->fetch_row("SELECT COUNT(*) as total FROM `price_items` WHERE reports >= 2");
-    echo '<form action="'.$_SERVER['PHP_SELF'].'" method="post">'.NL;
+    echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post">'.NL;
     echo '<div style="font-size: 14px;"><b>Viewing Most Reported Items ( '.mysqli_num_rows($query).' / '.$info['total'].' )</b></div><br />'.NL.NL;
     echo '<b>Instructions:</b> <a href="#" onclick=hide(\'tohide\')>Show/Hide</a><br />' . NL;
     echo '<div id="tohide" style="display:none">' . NL;
@@ -557,7 +557,7 @@ else {
         echo '<td class="tablebottom">'.$info['reports'].'</td>'.NL;
         echo '<td class="tablebottom"><a name="'.$info['id'].'" href="javascript: void(0)" onclick="javascript:window.open(\'/editor/price_popup.php?act=edit&id='.$info['id'].'&par='.$en_url.'\', '.$info['id'].', \'left=600,width='.$item_pw.',height='.$item_ph.',scrollbars=no,location=yes\')">Edit</a>';
         if($ses->permit(15)) {
-            echo ' / <a href="'.$_SERVER['PHP_SELF'].'?delitm='.$info['id'].'&par='.$en_url.'">Delete</a>';
+            echo ' / <a href="'.htmlspecialchars($_SERVER['PHP_SELF']).'?delitm='.$info['id'].'&par='.$en_url.'">Delete</a>';
         }
         echo '</td>'.NL;
         echo '<td class="tablebottom"><input type="checkbox" name="sel'.$count.'" value="'.$info['id'].'" /></td>'.NL;
@@ -585,5 +585,5 @@ echo '<br /></div>'.NL;
 
 end_page();
 
-//echo '<a href="' .$_SERVER['PHP_SELF'].'?rebuild='.$_GET['area'].'&left=1">Rebuild</a><br /><br />'.NL;
+//echo '<a href="' .htmlspecialchars($_SERVER['PHP_SELF']).'?rebuild='.$_GET['area'].'&left=1">Rebuild</a><br /><br />'.NL;
 ?>

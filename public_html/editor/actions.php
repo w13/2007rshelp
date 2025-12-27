@@ -34,7 +34,7 @@ else
 {
 echo '<div class="boxtop">Actions Maintenance</div>'.NL.'<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">'.NL;
 ?>
-<div style="text-align:left;margin:1pt;font-size:large;font-weight:bold;">&raquo; Actions Maintenance (<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Back</a>)</div>
+<div style="text-align:left;margin:1pt;font-size:large;font-weight:bold;">&raquo; Actions Maintenance (<a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Back</a>)</div>
 <hr class="main" noshade="noshade" align="left" />
 <br />
 <?php
@@ -54,10 +54,10 @@ echo '</tr>';
         echo '<td class="tablebottom" width="5%">'.$info['id'].'</a></td>'.NL;
         echo '<td class="tablebottom">'.$info['user'].'</a></td>'.NL;
       if($info['actions'] == 0) {
-        echo '<td class="tablebottom"><a href="'.$_SERVER['SCRIPT_NAME'].'?cachefirst='.$info['id'].'">First Cache (new user)</a></td>'.NL;
+        echo '<td class="tablebottom"><a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?cachefirst='.$info['id'].'">First Cache (new user)</a></td>'.NL;
         }
       else {
-        echo '<td class="tablebottom"><a href="'.$_SERVER['SCRIPT_NAME'].'?nextcache='.$info['id'].'">Next Cache (old user)</a></td>'.NL;
+        echo '<td class="tablebottom"><a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?nextcache='.$info['id'].'">Next Cache (old user)</a></td>'.NL;
         }
         echo '<td class="tablebottom">'.$info['actions'].'</a></td>'.NL;
         echo '</tr>'.NL;
@@ -69,8 +69,8 @@ elseif(isset($_GET['nextcache'])) { ## Caching once a user's action cache has be
     $id = intval( $_GET['nextcache'] );
     $first_time = 1192197000;  	## Fri, 12 Oct 2007 13:50:02 GMT
     $db->query("UPDATE `admin` SET actions = (actions+(SELECT count(*) FROM admin_logs WHERE time > admin.action_cache AND userid = ".$id.")), action_cache = (SELECT MAX(time) FROM admin_logs WHERE userid = ".$id.") WHERE id = ".$id);
-		if($ses->permit(18)) header( 'Location: ' . $_SERVER['SCRIPT_NAME'] . '?cache' );
-		else header( 'Location: ' . $_SERVER['SCRIPT_NAME'] );
+		if($ses->permit(18)) header( 'Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cache' );
+		else header( 'Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) );
 }
 elseif(isset($_GET['cacheall'])) {
     $id=0;
@@ -90,7 +90,7 @@ elseif(isset($_GET['deleteactions'])) { ## Delete actions that are five months o
     echo 'Deleting old actions';
     $five_months_old = 13219200; ## Five Months in Unix
     $db->query("DELETE FROM admin_logs WHERE `time` < (UNIX_TIMESTAMP()-".$five_months_old.")");
-		header( 'Refresh: 2; url=' . SITE_URL . $_SERVER['SCRIPT_NAME'] . '?cache' );
+		header( 'Refresh: 2; url=' . SITE_URL . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cache' );
 }
 elseif(isset($_GET['cachefirst'])) { ## First Caching of a New User.
     $id = intval( $_GET['cachefirst'] );
@@ -98,7 +98,7 @@ elseif(isset($_GET['cachefirst'])) { ## First Caching of a New User.
     ## Create a Cache of their total actions
     ## Set the date of last cache so only actions greater than the last cache are recorded.
     $db->query("UPDATE `admin` SET actions = (SELECT count(*) FROM admin_logs WHERE userid = ".$id."), action_cache = (SELECT MAX(time) FROM admin_logs WHERE userid = ".$id.") WHERE id = ".$id);
-		header( 'Location: ' . $_SERVER['SCRIPT_NAME'] . '?cache' );
+		header( 'Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cache' );
 }
 ?>
 

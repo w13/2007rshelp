@@ -112,7 +112,7 @@ if( isset( $_POST['count'] ) ) {
 	$stuff = 'Correction Listing';
 	$ses->record_act( $stuff, 'Process', $_POST['entry'], $ip ); }
     echo '<p align="center">All requested actions have been taken. Redirecting to Correction Listings...</p>' . NL;
-    header( 'refresh: 0; url=' . $_SERVER['SCRIPT_NAME'] );
+    header( 'refresh: 0; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']) );
 }
 elseif( isset( $_GET['area'] ) AND array_key_exists( $_GET['area'], $area_arr ) AND isset( $_GET['id'] ) ) {
 
@@ -133,14 +133,16 @@ elseif( isset( $_GET['area'] ) AND array_key_exists( $_GET['area'], $area_arr ) 
 	$url = '/editor/'.$area_arr[$area]['editor'].$id;
 	$url2 = '/'.$area.'.php?id='.$id;
 	?>
-	<div style="font-size: large; font-weight: bold;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME'; ?>">Correction Listing</a> &raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME'; ?>?area=<?php echo $area;?>"><?php echo $area_nm; ?></a> &raquo; <a href="<?php echo $url; ?>" target="_new"><?php echo $entry_name; ?></a> (<a href="<?php echo $url2;?>" target="_new">Preview</a>)</div>
+	      <div style="font-size: large; font-weight: bold;">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Correction Listing</a> &raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>?area=<?php echo $area;?>"><?php echo $area_nm; ?></a> &raquo; <a href="<?php echo $url; ?>" target="_new"><?php echo $entry_name; ?></a> (<a href="<?php echo $url2;?>" target="_new">Preview</a>)</div>
+	
 	<hr class="main" noshade="noshade" />
 	<p style="text-align:center;">Make sure the submission is CORRECT. If you are unsure, ask in the Questions Forum.<br />If you don't think a correction is a useful addition to a guide, get a second opinion first before NFing it.<br />If someone needs to be banned, please LEAVE the correction and post a link in the shoutbox.<br />For those who NF a LOT, make sure you are 100% sure that the correction is useless to the guide/entry. If someone asks a question, why are they asking? Because it's not in the guide! Fix that correction and add it!</p>
 	<?php
 	if($_GET['area'] == 'price_items') echo '<h3 style="text-align:center;color:red;">These corrections have automatically been submitted by a script I created, to help update our keywords.<br />These are not user submitted!</h3>';
 	if($_GET['id'] == 5577 || $_GET['id'] == 2165) echo '<p style="text-align:center;font-weight:bold;color:red;">THESE ARE AUTO-SUBMITTED CORRECTIONS.<br />When a user fails a search in the database, it automatically submits this correction. <span style="color:#fff;">If you can figure out what item they were trying to find, add the search term they used to that entry\'s keywords.</span><br />ONLY add the part of their search term that we dont have in the name or keyword field. E.G. bandos cheset. Only add cheset, because bandos is in the name.</p>';
 	?>
-	<form action="<?php echo $_SERVER['SCRIPT_NAME'; ?>" method="post">
+	      <form action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" method="post">
+	
 	<input type="hidden" name="entry" value="<?php echo $entry_name; ?>" />
 	<table width="90%" align="center" cellpadding="1" cellspacing="0" style="border-left: 1px solid #000000;">
 	<tr>
@@ -223,7 +225,8 @@ elseif( isset( $_GET['area'] ) AND array_key_exists( $_GET['area'], $area_arr ) 
 	$num = $db->num_rows( $quack );
 	
 	?>
-	<div style="font-size: large; font-weight: bold;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME'; ?>">Correction Listing</a> &raquo; <?php echo $area_nm;?> </div>
+	        <div style="font-size: large; font-weight: bold;">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Correction Listing</a> &raquo; <?php echo $area_nm;?> </div>
+	
 	<hr class="main" noshade="noshade" /><br />
 	<table style="border-left: 1px solid #000000;" width="80%" align="center" cellpadding="1" cellspacing="0">
 	<tr>
@@ -242,7 +245,7 @@ elseif( isset( $_GET['area'] ) AND array_key_exists( $_GET['area'], $area_arr ) 
 		}
 
 		echo '<tr>' . NL;
-		echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?area=' . $area . '&id=' . $info['cor_id'] . '">' . $name . '</a></td>' . NL;
+		echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?area=' . $area . '&id=' . $info['cor_id'] . '">' . $name . '</a></td>' . NL;
 		echo '<td class="tablebottom">' . $info['amount'] . '</td>' . NL;
 		echo '</tr>' . NL;
 	}
@@ -285,7 +288,7 @@ else {
 		$area_name = $area_arr[$area]['area_name'];
 		
 		echo '<tr>' . NL;
-		echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?area=' . $area . '">' .$area_name . '</a></td>' . NL;
+		echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?area=' . $area . '">' .$area_name . '</a></td>' . NL;
 		echo '<td class="tablebottom">' . $info['amount'] . '</td>' . NL;
 		echo '</tr>' . NL;
 	}

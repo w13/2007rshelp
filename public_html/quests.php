@@ -24,21 +24,21 @@ if(empty($_COOKIE['quests']) && $usercheck == 0 && isset($_GET['hide'])) { //Use
     $cookie_id = $db->fetch_row("SELECT id FROM `quests_ip` WHERE ip = '" . $_SERVER['REMOTE_ADDR'] . "'");
     $expire = time() + 60 * 60 * 24 * 90;
     setcookie('quests',$cookie_id['id'],$expire);
-    header( 'Location: ' . $_SERVER['SCRIPT_NAME'] );
+    header( 'Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) );
     exit;
 }
 elseif(!empty($_COOKIE['quests']) && $usercheck == 0) { //User has Cookie and no IP/IP needs updating.
     $checkid = $db->num_rows("SELECT id FROM quests_ip WHERE id = '" . $db->escape_string($_COOKIE['quests']) . "'");
     if($checkid == 0) $db->query("INSERT INTO `quests_ip` (id,ip,hidden_id) VALUES ('" . $db->escape_string($_COOKIE['quests']) . "', '" . $db->escape_string($_SERVER['REMOTE_ADDR']) . "',0)");
     if($checkid != 0) $db->query("UPDATE `quests_ip` SET `ip` = '" . $db->escape_string($_SERVER['REMOTE_ADDR']) . "' WHERE `id` = '" . (int)$_COOKIE['quests'] . "'");
-    header( 'Location: ' . $_SERVER['SCRIPT_NAME'] );
+    header( 'Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) );
     exit;
 }
 elseif(empty($_COOKIE['quests']) && $usercheck != 0) { //User has IP, but no Cookie.
     $cookie_id = $db->fetch_row("SELECT id FROM `quests_ip` WHERE ip = '" . $_SERVER['REMOTE_ADDR'] . "'");
     $expire = time() + 60 * 60 * 24 * 90;
     setcookie('quests',$cookie_id['id'],$expire);
-    header( 'Location: ' . $_SERVER['SCRIPT_NAME'] );
+    header( 'Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) );
     exit;
 }
 
@@ -48,7 +48,7 @@ if(isset($hide) && $hide > 0) {
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         exit; // Exit for AJAX
     }
-    header('Location: ' . $_SERVER['SCRIPT_NAME']);
+    header('Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']));
     exit;
 }
 
@@ -66,7 +66,7 @@ if(isset($_GET['unhide']) && $_GET['unhide'] > 0) {
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         exit; // Exit for AJAX
     }
-    header('Location: ' . $_SERVER['SCRIPT_NAME'] . '?unhide');
+    header('Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?unhide');
     exit;
 }
 
@@ -86,7 +86,7 @@ if($disp->errlevel > 0) {
   if(isset($_GET['information'])) {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>"><?php echo $ptitle; ?></a>
+&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>"><?php echo $ptitle; ?></a>
 </div>
 <hr class="main" noshade="noshade" />
 <br />
@@ -111,7 +111,7 @@ echo '<h3>Length</h3>'.NL
  }
   elseif(empty($id)) {
 ?>
-<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>"><?php echo $ptitle; ?></a></div>
+<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>"><?php echo $ptitle; ?></a></div>
 <hr class="main" noshade="noshade" />
 <p style="text-align: center;">Welcome to RuneScape Help\'s Quest Guides section. Here you will find step-by-step help and walkthroughs for all Runescape quests.<br />You can hide quests you\'ve completed by clicking the image to the right, and unhide selected ones by clicking the <a href="/quests.php?unhide">Unhide</a> link.<br />If you\'re training a skill, use the search feature to find which quests give XP rewards for that skill.<br />Happy Questing!</p>
 <!--AJAX FUNCTIONS -->
@@ -119,13 +119,13 @@ echo '<h3>Length</h3>'.NL
 function hide(id)
 {
     document.getElementById('quest'+id).style.display = 'none';
-    $.get('<?php echo $_SERVER['SCRIPT_NAME']; ?>', { hide: id });
+    $.get('<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>', { hide: id });
 }
 
 function unhide(id)
 {
     document.getElementById('quest'+id).style.display = 'none';
-    $.get('<?php echo $_SERVER['SCRIPT_NAME']; ?>', { unhide: id });
+    $.get('<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>', { unhide: id });
 }
 </script>
 
@@ -143,7 +143,7 @@ function unhide(id)
    $search2 = "ORDER BY `". $category . "` ".$order;
  }
  
-   echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get" style="text-align:center;">';
+   echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get" style="text-align:center;">';
    echo 'Search <select name="search_area">';
    
   $areas = array('name' => 'Name', 'reward' => 'XP Rewards', 'text' => 'Guide Content');
@@ -159,8 +159,8 @@ function unhide(id)
 
 $up = '<img src="/img/up.GIF" width="9" height="9" alt="Sort Ascending" border="0" />';
 $down = '<img src="/img/down.GIF" width="9" height="9" alt="Sort Descending" border="0" />';
-$url = $_SERVER['SCRIPT_NAME'] . '?';
-if(isset($_GET['unhide'])) $url = $_SERVER['SCRIPT_NAME'] . '?unhide&amp;';
+$url = htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?';
+if(isset($_GET['unhide'])) $url = htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?unhide&amp;';
 echo '<table width="100%" cellpadding="5" cellspacing="0" class="quest-list">'.NL
 .'<tr align="center" style="font-size: 17px;">'.NL
 .'<th>Name <a href="' . $url . 'order=ASC&amp;category=name&amp;search_area='.$search_area.'&amp;search_term='.urlencode($search_term).'" title="Sort by: Name, Ascending (A-Z)">'.$up.'</a> <a href="' . $url . 'order=DESC&amp;category=name&amp;search_area='.$search_area.'&amp;search_term='.urlencode($search_term) .'" title="Sort by: Name, Descending  (Z-A)">'.$down.'</a></th>'.NL
@@ -170,7 +170,7 @@ echo '<table width="100%" cellpadding="5" cellspacing="0" class="quest-list">'.N
 .'<th>Length (<a href="' . $url . 'information" title="Click here to see what the bars mean">?</a>) <a href="' . $url . 'order=ASC&amp;category=length&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Length, Ascending (Short-Long)">'.$up.'</a> <a href="' . $url . 'order=DESC&amp;category=length&amp;search_area=' . $search_area . '&amp;search_term=' . urlencode($search_term) . '" title="Sort by: Length, Descending (Long-Short)">'.$down.'</a></th>'.NL;
 
 if(isset($_GET['unhide']) || empty($_COOKIE['quests'])) { echo '<th>&nbsp;</th>'.NL; }
-elseif(!isset($_GET['unhide'])) { echo '<th><a href="' . $_SERVER['SCRIPT_NAME'] . '?unhide" title="View your Hidden Guides">Unhide</a></th>'.NL; }
+elseif(!isset($_GET['unhide'])) { echo '<th><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?unhide" title="View your Hidden Guides">Unhide</a></th>'.NL; }
 echo '</tr>'.NL;
 
 //-- START VIEW AREA
@@ -198,9 +198,9 @@ if (isset($query)) {
         echo '<td><img src="/img/qimg/' . $info['length'] . '.gif" alt="Length Rating: ' . $info['length'] . '/7" title="Length Rating: ' . $info['length'] . '/7" class="bar" /></td>' . NL;
         
         if (isset($_GET['unhide'])) {
-            echo '<td><noscript><a href="' . $_SERVER['SCRIPT_NAME'] . '?unhide=' . $info['id'] . '" title="Click to unhide this guide"></noscript><img src="/img/unhide.gif" title="Click to unhide this guide" style="cursor:pointer;" alt="Unhide" onclick="unhide('.$info['id'].')" /><noscript></a></noscript></td>' . NL;
+            echo '<td><noscript><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?unhide=' . $info['id'] . '" title="Click to unhide this guide"></noscript><img src="/img/unhide.gif" title="Click to unhide this guide" style="cursor:pointer;" alt="Unhide" onclick="unhide('.$info['id'].')" /><noscript></a></noscript></td>' . NL;
         } else {
-            echo '<td><noscript><a href="' . $_SERVER['SCRIPT_NAME'] . '?hide=' . $info['id'] . '" title="Click to hide this guide"></noscript><img src="/img/hide.gif" title="Click to hide this guide" style="cursor:pointer;" alt="Hide" onclick="hide('.$info['id'].')" /><noscript></a></noscript></td>' . NL;
+            echo '<td><noscript><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?hide=' . $info['id'] . '" title="Click to hide this guide"></noscript><img src="/img/hide.gif" title="Click to hide this guide" style="cursor:pointer;" alt="Hide" onclick="hide('.$info['id'].')" /><noscript></a></noscript></td>' . NL;
         }
         echo '</tr>' . NL;
     }

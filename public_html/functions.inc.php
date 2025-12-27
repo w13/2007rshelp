@@ -66,7 +66,7 @@ function city_shops($id)
     global $db;
     $id = intval($id);
     $output = '';
-    if($_SERVER['SCRIPT_NAME'] == '/cities.php') {
+    if(htmlspecialchars($_SERVER['SCRIPT_NAME']) == '/cities.php') {
         $squery = $db->query("SELECT * FROM shops WHERE shops.location LIKE CONCAT('%', (SELECT name FROM cities WHERE id = " . $id . "), '%')");
     }
     else {

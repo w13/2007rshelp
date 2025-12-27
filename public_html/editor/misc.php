@@ -236,7 +236,7 @@ if( isset( $_POST['text'] ) ) {
     header("Location: misc.php");
 	}
 
-echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post">';
+echo '<form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">';
 echo 'Last Update: ' . $last . ' (GMT)<br />';
 echo '<textarea name="text" rows="25" style="width: 95%; font: 10px Verdana, Arial, Helvetica, sans, sans serif;">' . $info['text'] . '</textarea><br />';
 echo '<input type="submit" value="Update" />&nbsp;<input type="reset" value="Undo Changes" />';

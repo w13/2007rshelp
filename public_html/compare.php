@@ -70,15 +70,15 @@ if ($search_term != '' && $search_area != '') {
 
   echo '<tr>';
   echo '<th class="tabletop" width="5%">Picture</th>';
-  echo '<th class="tabletop">Name <a href="'.$_SERVER['SCRIPT_NAME'].'?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Name, Ascending" border="0" /></a> <a href="'.$_SERVER['SCRIPT_NAME'].'?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Name, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Name <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Name, Ascending" border="0" /></a> <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Name, Descending" border="0" /></a></th>';
   
   echo '<th class="tabletop"><abbr title="Item Comparator Queue">Compare?</abbr></th>';
   
-  echo '<th class="tabletop">Members <a href="'.$_SERVER['SCRIPT_NAME'].'?order=ASC&amp;category=member&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Members, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Members, Ascending" border="0" /></a> <a href="'.$_SERVER['SCRIPT_NAME'].'?order=DESC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Members, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Members, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Members <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=ASC&amp;category=member&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Members, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Members, Ascending" border="0" /></a> <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=DESC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Members, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Members, Descending" border="0" /></a></th>';
   
-  echo '<th class="tabletop">Tradable <a href="'.$_SERVER['SCRIPT_NAME'].'?order=ASC&amp;category=trade&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Tradable, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Tradable, Ascending" border="0" /></a> <a href="'.$_SERVER['SCRIPT_NAME'].'?order=DESC&amp;category=trade&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Tradable, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Tradable, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Tradable <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=ASC&amp;category=trade&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Tradable, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Tradable, Ascending" border="0" /></a> <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=DESC&amp;category=trade&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Tradable, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Tradable, Descending" border="0" /></a></th>';
   
-  echo '<th class="tabletop">Quest <a href="'.$_SERVER['SCRIPT_NAME'].'?order=ASC&amp;category=quest&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Quest, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Quest, Ascending" border="0" /></a> <a href="'.$_SERVER['SCRIPT_NAME'].'?order=DESC&amp;category=quest&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Quest, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Quest, Descending" border="0" /></a></th>';
+  echo '<th class="tabletop">Quest <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=ASC&amp;category=quest&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Quest, Ascending"><img src="/img/up.GIF" width="9" height="9" alt="Sort by: Quest, Ascending" border="0" /></a> <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?order=DESC&amp;category=quest&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Quest, Descending"><img src="/img/down.GIF" width="9" height="9" alt="Sort by: Quest, Descending" border="0" /></a></th>';
   echo '</tr>';
 
 
@@ -126,7 +126,7 @@ while($info = $db->fetch_array($query))   {
     echo '<td class="tablebottom" colspan="6">Sorry, no items match your search criteria.';
     if ($db->num_rows($quayre) > 0) {
    while($info = $db->fetch_array($result))   {
-   if($info['id'] != 950) echo ' Perhaps you meant <a href="'.$_SERVER['SCRIPT_NAME'].'?search_area=name&amp;search_term='.$info['name'].'">'.$info['name'].'</a>?'; }
+   if($info['id'] != 950) echo ' Perhaps you meant <a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?search_area=name&amp;search_term='.$info['name'].'">'.$info['name'].'</a>?'; }
     }
     echo '</td></tr>';
    
@@ -139,7 +139,7 @@ while($info = $db->fetch_array($query))   {
   if($page_count > 1)
    {
     echo '<br /><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>';
-    echo '<td align="left"><form action="'.$_SERVER['SCRIPT_NAME'] . '" method="get">Jump to page';
+    echo '<td align="left"><form action="'.htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get">Jump to page';
     echo ' <input type="text" name="page" size="3" maxlength="3" />';
     echo '<input type="hidden" name="order" value="' . $order . '" />';
     echo '<input type="hidden" name="category" value="' . $category . '" />';
@@ -152,7 +152,7 @@ while($info = $db->fetch_array($query))   {
   }
   
 } else {
-	echo '<form method="get" action="' . $_SERVER['SCRIPT_NAME'] . '" style="text-align:center;">
+	echo '<form method="get" action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" style="text-align:center;">
 Search <select name="search_area"><option value="name">Name</option><option value="quest">Quest</option><option value="obtain">Obtained From</option><option value="examine">Examine</option><option value="notes">Notes</option></select> for
  <input type="text" name="search_term" value="" maxlength="40" /> 
  <input type="checkbox" name="awonly" /> Weapons & Armour Only? 
@@ -256,7 +256,7 @@ if (count($queue) != 0) {
 	echo '<div style="width:30%;float:right;"><div class="boxtop">Choose Your Comparison</div>'
 		.'<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">';
 	echo '<p>Select up to five items to compare from the boxes below. All items will be compared to the primary item only. See the table to the left for a quick overview of the items.</p>
-			<form action="'.$_SERVER['SCRIPT_NAME'].'" method="get" name="myform">
+			<form action="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'" method="get" name="myform">
 						<strong>Primary</strong> item:<br />
 						<select id="sel_1" name="item1">
 							<option value="not-used">--NONE--</option>';

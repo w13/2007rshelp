@@ -30,7 +30,7 @@ echo '<div class="boxtop">Inactivity</div>' . NL . '<div class="boxbottom" style
 <p>If you are going to be inactive because of school, a holiday, family reasons or work, please give a short description below detailing the start date, what type of inactivity, and anticipated end date of inactivity.</p>
 <p>If we find you are very active on RSC while doing absolutely nothing in here, you will be sent a warning message.</p>
 <?php
-echo '<form action="'.$_SERVER['PHP_SELF'].'" method="post" style="text-align:center;">';
+echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post" style="text-align:center;">';
 echo '<textarea name="inactive" style="font:10px Verdana; width:50%;height:150px;">'.$info['inactive'].'</textarea>';
 echo '<br /><input type="submit" value="Submit" />';
 echo '</form>';

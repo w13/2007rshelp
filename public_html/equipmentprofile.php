@@ -92,7 +92,7 @@ if(isset($_GET['submit'])) {
  if(empty($id) && !isset($_GET['setbuilder']))
  {
 ?>
-<div style="margin:1pt;font-weight:bold;font-size:large;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Runescape Equipment Profiles</a></div>
+<div style="margin:1pt;font-weight:bold;font-size:large;">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Runescape Equipment Profiles</a></div>
 <hr class="main" noshade="noshade" />
 <a href="?setbuilder" title="Create your own set now!"><img src="img/equipimg/edb.gif" width="348" height="149" style="float:left;" alt="" border="0" /></a>
 <p style="text-align:center;">What should I wear to barrows? What should I wear when training magic? What's in my price range? <b>All answers are here!</b></p>
@@ -113,7 +113,7 @@ if(isset($_GET['submit'])) {
      .NL.'<table style="border-left: 1px solid #000000;" width="95%" align="center" cellpadding="1" cellspacing="0">'
      .NL.'<tr>'
      .NL.'<th class="tabletop" width="5%">Picture</th>'
-     .NL.'<th class="tabletop">Name <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" border="0" /></a></th>'
+     .NL.'<th class="tabletop">Name <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" border="0" /></a> <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" border="0" /></a></th>'
      .NL.'</tr>';
 
 if(empty($id)) {
@@ -121,11 +121,11 @@ if(empty($id)) {
   while($info = $db->fetch_array($query)) {
     $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
     echo NL.'<tr>'
-     .NL.'<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">
+     .NL.'<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">
         <img src="/img/idbimg/' . $info['image'] . '" alt="OSRS RuneScape Help\'s ' . $info['name'] .' image" width="50" height="50" />
         </a></td>'
      .NL.'<td class="tablebottom">'
-        .'<a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['name'] . '</a></td>'
+        .'<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['name'] . '</a></td>'
      .NL.'</tr>';
   }
  
@@ -141,7 +141,7 @@ if(empty($id)) {
   if($page_count > 1)
    {
     echo '<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>';
-    echo '<td style="text-align:left;"><form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get">Jump to page';
+    echo '<td style="text-align:left;"><form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get">Jump to page';
     echo ' <input type="text" name="page" size="3" maxlength="3" />';
     echo '<input type="hidden" name="order" value="' . $order . '" />';
     echo '<input type="hidden" name="category" value="' . $category . '" />';
@@ -159,7 +159,7 @@ if(empty($id)) {
 ?>
 <script type="text/javascript" src="/equipmentprofile.js"></script>
 <div style="margin:1pt;font-weight:bold;font-size:large;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Runescape Equipment Profiles</a> &raquo; Set Builder</div>
+&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Runescape Equipment Profiles</a> &raquo; Set Builder</div>
 <hr class="main" noshade="noshade" />
 <p class="descr"><span>Build your very own Runescape Equipment set!</span>
 <br /><br />You can build a set just to check out how much it'll cost you, what monsters it will be good against, what stats it has and how much it weighs, <b>or</b> submit your Runescape equipment combination and have it available to other users of OSRS RuneScape Help forever! <noscript><b>Javascript MUST be enabled to use this.</b></noscript></p>
@@ -170,7 +170,7 @@ if(empty($id)) {
 <table width="100%" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td style="vertical-align:top;width:14%;">
-<form action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="get" name="search">
+<form action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" method="get" name="search">
 <h3 style="font:13px 'Lucida Sans Unicode'">Searching <span id="group"></span> for...</h3>
 <input type="text" style="width:185px;" id="ds" value="" onclick="this.value = ''" onkeyup="doSearch(this.value)" /><br />
 <select id="results" size="18">
@@ -295,7 +295,7 @@ echo  '<td style="width:75%;">'
             .'<td>Grab</td>'
             .'</tr>'
             .'<tr>'
-            .'<td colspan="2" style="text-align:center;"><form action="'. $_SERVER['SCRIPT_NAME'] . '?submit" method="post" style="display:inline;">' . $description . '</td>'
+            .'<td colspan="2" style="text-align:center;"><form action="'. htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?submit" method="post" style="display:inline;">' . $description . '</td>'
             .'</tr>'
             .'</table>'
           .'</td></tr>'
@@ -322,7 +322,7 @@ echo '<div class="instr">'
 ?>
 
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Equipment Profiles Database</a> &raquo; <u><?php echo $info['name']; ?></u></font></b>
+<b><font size="+1">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Equipment Profiles Database</a> &raquo; <u><?php echo $info['name']; ?></u></font></b>
 </div><hr class="main" noshade="noshade" />
 
 <?php

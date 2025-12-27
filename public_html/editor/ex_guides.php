@@ -4,7 +4,7 @@ start_page( 21, 'External Guides' );
 
 echo '<div class="boxtop">External Guides</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">';
 echo '<p align="center">' . NL;
-echo '<a href="' . $_SERVER['PHP_SELF'] . '?guide=1"><img src="/img/community/radio/banner.png" alt="OSRS RuneScape Help Radio" border="0" /></a>&nbsp;&nbsp;' . NL;
+echo '<a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?guide=1"><img src="/img/community/radio/banner.png" alt="OSRS RuneScape Help Radio" border="0" /></a>&nbsp;&nbsp;' . NL;
 echo '</p>' . NL;
 echo '</div>' . NL;
 
@@ -33,7 +33,7 @@ if( isset( $_GET['guide'] ) ) {
 		
 		if( $handle AND $erase AND $write AND $close ) {
 			$ses->record_act( 'External Guides', 'Edit', $title, $ip );
-			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] );
+			header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) );
 			echo '<p align="center">The \'' . $title . '\' guide has been updated. Please wait while you are being transfered...</p>' . NL;
 		}
 		else {
@@ -48,7 +48,7 @@ if( isset( $_GET['guide'] ) ) {
 		
 		enum_correct( 'external', $guide );	
 		
-		echo '<form action="' . $_SERVER['PHP_SELF'] . '?guide=' . $guide . '" method="post">' . NL;
+		echo '<form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?guide=' . $guide . '" method="post">' . NL;
 		echo 'Last Update: ' . $last . ' (GMT)<br />';
 		echo '<textarea name="content" rows="20" style="width: 95%;">' . htmlentities( $content ) . '</textarea><br />' . NL;
 		echo '<input type="submit" value="Update \'' . $title . '\'" />&nbsp;<input type="reset" value="Undo Changes" />' . NL;

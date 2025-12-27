@@ -5,7 +5,7 @@ start_page( 18, 'Activity Monitoring');
 ?>
 <div class="boxtop">Activity Monitoring</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Activity Monitoring</a> (<a href="<? echo $_SERVER['testingarea']; ?>?inactive">Inactive</a>)</font></b>
+<b><font size="+1">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">Activity Monitoring</a> (<a href="<? echo $_SERVER['testingarea']; ?>?inactive">Inactive</a>)</font></b>
 </div>
 <hr class="main" noshade="noshade" />
 <br />

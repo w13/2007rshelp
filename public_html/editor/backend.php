@@ -159,7 +159,7 @@ function end_page($title = '') {
   
   if($LAYOUT == 'layout.inc') {
 		include(ROOT.'/'.'editor'.'/'.'extras'.'/'.'shoutbox.inc.php');
-    $PAGE = str_replace('[#SBOXACTION#]' , $_SERVER['SCRIPT_NAME'].'?'.$_SERVER['QUERY_STRING'] , $PAGE);
+    $PAGE = str_replace('[#SBOXACTION#]' , htmlspecialchars($_SERVER['SCRIPT_NAME']).'?'.$_SERVER['QUERY_STRING'] , $PAGE);
 		$PAGE = str_replace('[#SBOXMESS#]'   , $sbox                                                   , $PAGE);
 		}
 		

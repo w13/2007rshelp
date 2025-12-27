@@ -14,7 +14,7 @@
 		else {
 		$db->query("INSERT INTO admin_message SET userid=".$_SESSION['userid'].", message='".htmlentities(stripslashes($_POST['shout']), ENT_QUOTES)."', time=".gmt_time());
 		}
-			header('Location: ..'.$_SERVER['SCRIPT_NAME'].'?'.$_SERVER['QUERY_STRING'].'#sbox');
+			header('Location: ..'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?'.$_SERVER['QUERY_STRING'].'#sbox');
 			exit;
 		}
 		

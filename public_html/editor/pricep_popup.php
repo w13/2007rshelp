@@ -136,7 +136,7 @@ elseif(isset($_GET['act']) AND (($_GET['act'] =='new' AND isset($_GET['category'
 	
 	if($cat) {
 	
-		echo '<form name="form" action="'.$_SERVER['PHP_SELF'].'" method="post">'.NL;
+		echo '<form name="form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post">'.NL;
 		echo '<input type="hidden" name="act" value="'.$_GET['act'].'" />'.NL;
 		
 		if($_GET['act'] =='edit') {

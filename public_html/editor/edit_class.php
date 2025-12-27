@@ -99,11 +99,11 @@ class edit {
 			if( !empty( $sets ) ) {
 				$db->query( "UPDATE " . $this->table . " SET " . $sets . " WHERE id = " . $id );
 
-        header( 'refresh: 1; url=' . $_SERVER['SCRIPT_NAME'] );
+        header( 'refresh: 1; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']) );
 /*
 ## Caching
 
-	$url = $_SERVER['PHP_SELF'];		
+	$url = htmlspecialchars($_SERVER['PHP_SELF']);		
   $ignore = array('/editor/fact.php','/editor/ticker.php','/editor/applications.php','/editor/news.php');
     if(!in_array($url, $ignore) && !isset($_POST['item_id'])) { ## Ignore SEO title
       //$shops = "SELECT shop_name FROM ".$this->table." WHERE id = ".$id;
@@ -123,7 +123,7 @@ class edit {
     else {
     $id = "?id=" . $id;
     }
-	$this->table = $_SERVER['PHP_SELF'] == "/editor/scam.php" ? "priceguide" : $this->table;
+	$this->table = htmlspecialchars($_SERVER['PHP_SELF']) == "/editor/scam.php" ? "priceguide" : $this->table;
   cache($this->table, $id, $seotitle);
   */
 			}
@@ -157,10 +157,10 @@ class edit {
 			}
 			if( !empty( $field_str ) AND !empty( $value_str ) ) {
 				$db->query( "INSERT INTO " . $this->table . " (" . $field_str . ") VALUES (" . $value_str . ")" );
-        header( 'refresh: 1; url=' . $_SERVER['PHP_SELF'] );
+        header( 'refresh: 1; url=' . htmlspecialchars($_SERVER['PHP_SELF']) );
 	/*			
 ## CACHING
-	$url = $_SERVER['PHP_SELF'];
+	$url = htmlspecialchars($_SERVER['PHP_SELF']);
 	$ignore = array('/editor/quests.php','/editor/shop.php','/editor/applications.php');
 	if(!in_array($url, $ignore)) {
 	
@@ -199,10 +199,10 @@ class edit {
 		if( !empty( $wheres ) ) {
 			$db->query( "DELETE FROM " . $this->table . " WHERE " . $wheres );
 			$db->query( "DELETE FROM corrections WHERE cor_table = '" . $this->table . "' AND cor_" . substr($wheres,1) ); // To delete correction
-			header( 'refresh: 1; url=' . $_SERVER['PHP_SELF'] );
+			header( 'refresh: 1; url=' . htmlspecialchars($_SERVER['PHP_SELF']) );
 /*
 ## CACHING
-	$url = $_SERVER['PHP_SELF'];
+	$url = htmlspecialchars($_SERVER['PHP_SELF']);
 	$ignore = array('/editor/quests.php','/editor/shop.php','/editor/videos.php','/editor/applications.php');
 	if(!in_array($url, $ignore)) {
 	

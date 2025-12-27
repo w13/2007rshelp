@@ -174,7 +174,7 @@ if( empty($id) )
 
 	/* Print The Search Form */
 
-	echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' . NL;
+	echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' . NL;
 	echo '<td align="left" width="125">Browsing ' . $entry_count . ' Entries</td>' . NL;
 	echo '<td align="center">' . NL;
 	echo 'Search <select name="search_area">' . NL;

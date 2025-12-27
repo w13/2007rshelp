@@ -18,7 +18,7 @@ if(!isset($_POST['submit'])) {
     
     $sdquery = $db->query("SELECT * FROM shops ORDER BY name");
     
-    echo '<form action="'.$_SERVER['SCRIPT_NAME'].'" method="post">'.NL;
+    echo '<form action="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'" method="post">'.NL;
     echo '<p style="text-align: center;"><input type="submit" value="Submit" /></p>'.NL;
     echo '<input type="hidden" name="submit" value="true" />'.NL;
     echo '<table style="border-left: 1px solid #000000;" width="100%" cellpadding="1" cellspacing="0">'.NL;

@@ -37,8 +37,8 @@ window.onbeforeunload = function() {
 </script>
 <div class="boxtop">OSRS RuneScape Help News Manager</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
-<div style="float: right;"><a href="<?=$_SERVER['SCRIPT_NAME']?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
-<a href="<?=$_SERVER['SCRIPT_NAME']?>?act=new"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
+<div style="float: right;"><a href="<?=htmlspecialchars($_SERVER['SCRIPT_NAME'])?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
+<a href="<?=htmlspecialchars($_SERVER['SCRIPT_NAME'])?>?act=new"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
 <b><font size="+1">&raquo; OSRS RuneScape Help News Manager</font></b>
 </div>
@@ -99,13 +99,13 @@ if( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['id'] 
 		$_GET['act'] == 'edit';
 		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>';
 		$ses->record_act( 'OSRS RuneScape Help News', 'New', $title, $ip );
-		header( 'refresh: 0; url=' . $_SERVER['SCRIPT_NAME']);
+		header( 'refresh: 0; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']));
 		
 	}
 	elseif( $_GET['act'] == 'edit' AND isset( $_POST['do'] ) )  {
 		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>';
 		$ses->record_act( 'OSRS RuneScape Help News', 'Edit', $title, $ip );
-		header( 'refresh: 0; url=' . $_SERVER['SCRIPT_NAME']);
+		header( 'refresh: 0; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']));
 	}
 	
 	if( $_GET['act'] == 'edit' ) {
@@ -115,7 +115,7 @@ if( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['id'] 
 		$action = 'act=new';
 	}
 
-	echo '<br /><form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '?' . $action . '">' . NL;
+	echo '<br /><form method="post" action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?' . $action . '">' . NL;
 	echo '<input type="hidden" name="do" value="true" />' . NL;
 	echo '<table width="90%" align="center" style="border-left: 1px solid #000" cellspacing="0">' . NL;
 	echo '<tr>' . NL;
@@ -138,8 +138,8 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND isset( $_GET['id'
 	
 		$name = $info['title'];
 		echo '<p align="center">Are you sure you want to delete the entry, \'' . $name . '\'?</p>';
-		echo '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
-		echo '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '"><center><input type="submit" value="No" /></center></form>' . NL;
+		echo '<form method="post" action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
+		echo '<form method="post" action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '"><center><input type="submit" value="No" /></center></form>' . NL;
 	}
 	else {
 		
@@ -156,7 +156,7 @@ else {
 		}
 		else {
 			$ses->record_act( 'OSRS RuneScape Help News', 'Delete', $_POST['del_name'], $ip );
-		header( 'refresh: 0; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
+		header( 'refresh: 0; url=' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?cat=' . $category );
 		}
 	}
 	
@@ -170,7 +170,7 @@ else {
     $left = $call[3];
     $right =$call[4];
     
-    echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="post" autocomplete="off">';
+    echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="post" autocomplete="off">';
     echo '<table width="50%" style="margin: 0 25%;" border="0" cellspacing="0" cellpadding="5">';
     echo '<tr><th>URL to file:</th><td><input type="text" size="60" name="p0" value="' . $call[0] . '" /></td></tr>';
     echo '<tr><th>URL title tag:</th><td><input type="text" size="60" name="p1" value="' . $call[1] . '" /></td></tr>';
@@ -215,10 +215,10 @@ else {
 	
 		echo '<tr align="center">' . NL;
 		echo '<td style="border-bottom: 1px solid #000; border-right: 1px solid #000">' . $info['title'] . '</a></td>' . NL;
-		echo '<td style="border-bottom: 1px solid #000; border-right: 1px solid #000"><a href="' . $_SERVER['SCRIPT_NAME'] . '?act=edit&id=' . $info['id'] . '" title="Edit ' . $info['user'] . '">Edit</a>';
+		echo '<td style="border-bottom: 1px solid #000; border-right: 1px solid #000"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?act=edit&id=' . $info['id'] . '" title="Edit ' . $info['user'] . '">Edit</a>';
 
 		if( $ses->permit( 15 ) ) {
-			echo ' / <a href="' . $_SERVER['SCRIPT_NAME'] . '?act=delete&id=' . $info['id'] . '" title="Delete \'' . $info['title'] . '\'">Delete</a></td>' . NL;
+			echo ' / <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?act=delete&id=' . $info['id'] . '" title="Delete \'' . $info['title'] . '\'">Delete</a></td>' . NL;
 		}
 		echo '  <td style="border-bottom: 1px solid #000; border-right: 1px solid #000">' . $info['author'] . '</td>' . NL;
 		echo '  <td style="border-bottom: 1px solid #000; border-right: 1px solid #000">' . format_time( $info['time'] ) . '</td>' . NL;

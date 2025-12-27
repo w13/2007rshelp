@@ -79,12 +79,12 @@ switch (true) {
 
 				case 'clearlogs':
 					clearLogs();
-					redirect($_SERVER['PHP_SELF'] . '?reqType=home');
+					redirect(htmlspecialchars($_SERVER['PHP_SELF']) . '?reqType=home');
 					break;
 
 				case 'logout':
 					logout();
-					redirect($_SERVER['PHP_SELF']);
+					redirect(htmlspecialchars($_SERVER['PHP_SELF']));
 					break;
 
 				case 'bans':

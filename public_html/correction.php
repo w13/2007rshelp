@@ -102,8 +102,12 @@ elseif( isset( $area ) AND !empty( $id ) ) {
 			$email = '';
 			$reply = 0;
 			$text = '';
+			$name_t = true;
+			$email_t = true;
+			$text_tl = false;
+			$text_ts = false;
 		}
-	
+
 		if( ( !isset( $text ) AND !isset( $reply ) ) OR ( isset( $text ) AND isset( $reply ) AND ( !$name_t OR !$text_tl OR !$text_ts OR !$email_t ) ) ) {
 		
 			if( $_POST ) {

@@ -65,7 +65,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	else {
 		$ses->record_act( $cat_name, 'Edit', $name, $ip );
 		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
-		//header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
+		//header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category );
 	}
 	
 }
@@ -86,7 +86,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	else {
 		$ses->record_act( $cat_name, 'New', $name, $ip );
 		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
-		//header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
+		//header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category );
 	}
 	
 }

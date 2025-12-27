@@ -20,8 +20,8 @@ echo '<div class="boxtop">'.$ptitle.'</div>' . NL . '<div class="boxbottom" styl
 ?>
 
 <div style="float: right;">
-<a href="<?=$_SERVER['PHP_SELF']?>"><img src="images/browse.gif" title="Browse" border="0" /></a></div>
-<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?=$_SERVER['PHP_SELF']?>"><?=$ptitle?></a> (<a href="?area=vidreports">Video Reports</a>) (<a href="?area=commentreports">Comment Reports</a>)</div>
+<a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>"><img src="images/browse.gif" title="Browse" border="0" /></a></div>
+<div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>"><?=$ptitle?></a> (<a href="?area=vidreports">Video Reports</a>) (<a href="?area=commentreports">Comment Reports</a>)</div>
 
 <hr class="main" noshade="noshade" align="left" />
 <br />
@@ -144,7 +144,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 			$date = '';
 	}
 
-	echo '<form method="post" name="form" action="' . $_SERVER['PHP_SELF'] . '">'
+	echo '<form method="post" name="form" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">'
 	    .'<input type="hidden" name="act" value="' . $_GET['act'] . '" />';
 	    if($disabled == 1) echo '<input type="hidden" name="date" value="' . time() . '" />'; //New vid approved
 	    else echo '<input type="hidden" name="date" value="' . $date . '" />'; //Old vid edited
@@ -210,7 +210,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 		else {
 			$db->query("DELETE FROM ".$ptable." WHERE id = " . $_POST['del_id'] );
 			$ses->record_act( $ptitle, 'Delete', $_POST['del_name'], $ip );
-			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] );
+			header( 'refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']) );
 			echo '<p style="text-align:center;">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
@@ -223,8 +223,8 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 		
 			$name = $info['name'];
 			echo '<p style="text-align:center;">Are you sure you want to delete \'' . $name . '\'?</p>';
-			echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?act=delete"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
-			echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '"><center><input type="submit" value="No" /></center></form>' . NL;
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '"><center><input type="submit" value="No" /></center></form>' . NL;
 		}
 		else {
 			
@@ -243,9 +243,9 @@ elseif ($_GET['area'] == 'vidreports') { ## VIDEO REPORTS!
 		echo '<tr><td class="tablebottom" style="width:130px;height:97px;"><a href="/runescapevideos.php?id=' . $vinfo['id'] . '" title="View Video" target="_blank"><img src="' . $vinfo['thumb'] . '" alt="" style="width:130px;height:97px;" border="0" /></a></td>'
 			.'<td class="tablebottom">'.$vinfo['name'].'</td>'
 			.'<td class="tablebottom">'.$rinfo['report'].'</td>'
-			.'<td class="tablebottom"><a href="?deletereport=' . $rinfo['id'] . '">Delete Report</a><br /><br /><a href="' . $_SERVER['PHP_SELF'] . '?act=edit&amp;id=' . $vinfo['id'] . '" title="Edit">Edit</a>';
+			.'<td class="tablebottom"><a href="?deletereport=' . $rinfo['id'] . '">Delete Report</a><br /><br /><a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=edit&amp;id=' . $vinfo['id'] . '" title="Edit">Edit</a>';
 		if( $ses->permit( 15 ) ) {
-			echo ' / <a href="' . $_SERVER['PHP_SELF'] . '?act=delete&amp;id=' . $vinfo['id'] . '" title="Delete \'' . $vinfo['name'] . '\'">Delete</a></td>';
+			echo ' / <a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&amp;id=' . $vinfo['id'] . '" title="Delete \'' . $vinfo['name'] . '\'">Delete</a></td>';
 		}
 		echo '</td></tr>';
 	}
@@ -308,23 +308,23 @@ $query = $db->query("SELECT * FROM ".$ptable." " . $search . " LIMIT " . $start_
 
 if($page > 1) {
     $page_before = $page - 1;
-    $page_links = '<a href="' . $_SERVER['PHP_SELF']. '?page=' . $page_before . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">< Previous</a> ' . $page_links;
+    $page_links = '<a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=' . $page_before . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">< Previous</a> ' . $page_links;
 }
 if($page < $page_count) {
     $page_after = $page + 1;
-    $page_links = $page_links . ' <a href="' . $_SERVER['PHP_SELF']. '?page=' . $page_after . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Next ></a> ';
+    $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=' . $page_after . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Next ></a> ';
 }
 if($page > 2) {
-    $page_links = '<a href="' . $_SERVER['PHP_SELF']. '?page=1&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">&laquo; First</a> '. $page_links;
+    $page_links = '<a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=1&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">&laquo; First</a> '. $page_links;
 }
 if($page < ($page_count - 1)) {
-    $page_links = $page_links . ' <a href="' . $_SERVER['PHP_SELF']. '?page=' . $page_count . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Last &raquo;</a> ';
+    $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['PHP_SELF']). '?page=' . $page_count . '&amp;order=' . $order . '&amp;category=' . $category . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '">Last &raquo;</a> ';
 }
 
 
 /*============  SEARCH FORM  ============*/
 
-echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL
+echo '<form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL
 .'<td align="left" width="150">Browsing ' . $row_count . ' ' . ucfirst($table) . '(s)</td>'.NL
 .'<td align="center">'.NL
 .'Search <select name="search_area">';
@@ -358,9 +358,9 @@ echo '</select> for'.NL
 		echo '<td class="tablebottom">' . $info['name'] . '</td>' . NL;
 		echo '<td class="tablebottom">' . $info['author'] . '</td>' . NL;
 		echo '<td class="tablebottom">';
-		echo '<a href="' . $_SERVER['PHP_SELF'] . '?act=edit&amp;id=' . $info['id'] . '" title="Edit">Edit</a>';
+		echo '<a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=edit&amp;id=' . $info['id'] . '" title="Edit">Edit</a>';
 		if( $ses->permit( 15 ) ) {
-			echo ' / <a href="' . $_SERVER['PHP_SELF'] . '?act=delete&amp;id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;
+			echo ' / <a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&amp;id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;
 		}
 		echo '<td class="tablebottom">' . format_time( $info['date'] ) . '</td>' . NL;
 		echo '</tr>' . NL;

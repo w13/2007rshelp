@@ -67,7 +67,7 @@ function scroll(i)
 </script>
 
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS RuneScape City Guides</a> &raquo; <u><?php echo htmlspecialchars($info['name']); ?></u></div>
+&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">OSRS RuneScape City Guides</a> &raquo; <u><?php echo htmlspecialchars($info['name']); ?></u></div>
 <hr class="main" noshade="noshade" /><br />
 <table style="border-left: 1px solid #000; border-top: 1px solid #000" width="100%" cellpadding="5" cellspacing="0">
     <?php

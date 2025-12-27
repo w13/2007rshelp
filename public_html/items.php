@@ -33,7 +33,7 @@ if (empty($id) && !empty($search_term)) {
     include('search.inc.php');
     if (isset($row_count) && $row_count == 1) {
         $info = $db->fetch_array($query);
-        header('Location: ' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id']);
+        header('Location: ' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . $info['id']);
         exit;
     }
     unset($hide_search_form);

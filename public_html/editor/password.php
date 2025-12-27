@@ -75,7 +75,7 @@ echo $message;
 if( !isset( $done ) ) {
 ?>
 <br />
-<form action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="POST">
+<form action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" method="POST">
 <table width="50%" align="center" style="border-left: 1px solid #000000" cellspacing="0">
 <tr>
 <td class="tabletop" colspan="2">Change Password Form</td>

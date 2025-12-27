@@ -196,7 +196,7 @@ elseif(isset($grabstats)) {
     echo '<div class="boxtop"><a name="top">Runescape Stats History</a></div>'
       .'<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">'
       .'<p style="text-align:center;">Updating hiscore info for '.htmlspecialchars($grabstats).'. Please wait...</p></div>';
-      header("refresh: 1; url=" . $_SERVER['SCRIPT_NAME'] . "?player=" . urlencode($grabstats));
+      header("refresh: 1; url=" . htmlspecialchars($_SERVER['SCRIPT_NAME']) . "?player=" . urlencode($grabstats));
      // setcookie('update_time', time(), time() + 432000);
   }
 elseif(isset($set_username)) {
@@ -206,7 +206,7 @@ elseif(isset($set_username)) {
       .'<p style="text-align:center;">Storing '.htmlspecialchars($set_username).' as your default account. Please wait...<br /><br />'
       .'Please note this will also change the account used in the <a href="calcs.php?settings">Runescape Calculators</a> settings.</p></div>';
       setcookie('calc_user', $set_username, time() + 12000000);
-      header("refresh: 4; url=" . $_SERVER['SCRIPT_NAME'] . "?player=" . urlencode($set_username));
+      header("refresh: 4; url=" . htmlspecialchars($_SERVER['SCRIPT_NAME']) . "?player=" . urlencode($set_username));
   }
 else {
 ?>

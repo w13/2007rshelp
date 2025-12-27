@@ -407,7 +407,7 @@ class ses {
         require('content/login.inc');
         $content = ob_get_clean();
         
-        $action = $_SERVER['SCRIPT_NAME'].'?'.$_SERVER['QUERY_STRING'];
+        $action = htmlspecialchars($_SERVER['SCRIPT_NAME']).'?'.$_SERVER['QUERY_STRING'];
         
         $content = str_replace('[#CSS#]'        , $use_css                , $content);
         $content = str_replace('[#ERROR#]'        , $this->login_error    , $content);

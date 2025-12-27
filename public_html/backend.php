@@ -108,8 +108,8 @@ function end_page( $title = '' )
 	$navigation	= $disp->get_file( '/content/links.inc' );
 	$ads		    = $disp->get_file( '/content/ads.inc' );
 	$copyright	= $disp->get_file( '/content/copyright.inc' );
-	$metadescr	= $disp->metadesc( basename($_SERVER['SCRIPT_NAME']) );
-	$extra_css	= $disp->extra_css( basename($_SERVER['SCRIPT_NAME']) );
+	$metadescr	= $disp->metadesc( basename(htmlspecialchars($_SERVER['SCRIPT_NAME'])) );
+	$extra_css	= $disp->extra_css( basename(htmlspecialchars($_SERVER['SCRIPT_NAME'])) );
 	$TITLE		  = $disp->title( $TITLE , $title , SITE_NAME );
 //	$favicon	  = IN_TIKO === true ? 'favicont' : 'favicon';
 $favicon = 'favicon';

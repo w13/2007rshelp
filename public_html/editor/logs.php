@@ -47,26 +47,26 @@ if($_SESSION['user'] == 'J36') echo '<h2 style="text-align:center;">Maintenance:
 			$page_links = '' . $page_links . '<b>['. $current_page . ']</b> ';
 		}
 		else {
-			$page_links = $page_links . '<a href="' . $_SERVER['SCRIPT_NAME'] . '?page=' . $current_page . '&amp;search_area=' . $search_area . '&amp;search_term=' . strip_tags($_GET['search_term']) . '">'. $current_page . '</a> ';
+			$page_links = $page_links . '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?page=' . $current_page . '&amp;search_area=' . $search_area . '&amp;search_term=' . strip_tags($_GET['search_term']) . '">'. $current_page . '</a> ';
 		}
 	}
 
 	if( $page_count > 1 AND $page > 1 )
 	{
 		  $page_before = $page - 1;
-		  $page_links = '<a href="' . $_SERVER['SCRIPT_NAME']. '?page=' . $page_before . '&amp;search_area=' . $search_area . '&amp;search_term=' . strip_tags($_GET['search_term']) . '">< Previous</a> ' . $page_links;
+		  $page_links = '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']). '?page=' . $page_before . '&amp;search_area=' . $search_area . '&amp;search_term=' . strip_tags($_GET['search_term']) . '">< Previous</a> ' . $page_links;
 	}
 
   	if( $page_count > 1 AND $page != $page_count ) {
 		  $page_after = $page + 1;
-		  $page_links = $page_links . '<a href="' . $_SERVER['SCRIPT_NAME']. '?page=' . $page_after . '&amp;search_area=' . $search_area . '&amp;search_term=' . strip_tags($_GET['search_term']) . '">Next ></a> ';
+		  $page_links = $page_links . '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']). '?page=' . $page_after . '&amp;search_area=' . $search_area . '&amp;search_term=' . strip_tags($_GET['search_term']) . '">Next ></a> ';
 	}
 
 	$start_from = $page - 1;
 	$start_from = $start_from * $entries_per_page;
 	$query = $db->query( $search . " LIMIT " . $start_from . ", " . $entries_per_page );
 
-	echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="get">' . NL;
+	echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get">' . NL;
 	echo '<table width="100%"><tr>' . NL;
 	echo '<td align="left" width="150">Total Actions: ' . number_format($total) . '</td>' . NL;
 

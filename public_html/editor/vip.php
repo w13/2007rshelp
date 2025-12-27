@@ -19,7 +19,7 @@ if( isset( $_POST['text'] ) ) {
     header("Location: vip.php");
 	}
 
-echo '<form action="' . $_SERVER['SCRIPT_NAME'] . '" method="post">';
+echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="post">';
 echo 'Last Update: ' . $last . ' (GMT)<br />';
 echo '<textarea name="text" rows="40" style="width: 95%; font: 10px Verdana, Arial, Helvetica, sans, sans serif;">' . $info['text'] . '</textarea><br />';
 echo '<input type="submit" value="Update" />&nbsp;<input type="reset" value="Undo Changes" />';

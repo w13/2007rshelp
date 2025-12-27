@@ -25,7 +25,7 @@ function hide(i)
 <div class="boxtop">Item Database</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Item Database</a></font></b></div>
+<b><font size="+1">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">Item Database</a></font></b></div>
 <hr class="main" noshade="noshade" />
 <p>Click to expand lists.</p>
 

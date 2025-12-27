@@ -23,8 +23,8 @@ $cat_name = $cat_array[$category];
 echo '<div class="boxtop">OSRS RuneScape Help Blog</div>' . NL . '<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right:24px;">' . NL;
 
 ?>
-<div style="float: right;"><a href="<?=$_SERVER['PHP_SELF']?>?cat=<?=$category?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
-<a href="<?=$_SERVER['PHP_SELF']?>?act=new&cat=<?=$category?>"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
+<div style="float: right;"><a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>?cat=<?=$category?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
+<a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>?act=new&cat=<?=$category?>"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
 <b><font size="+1">&raquo; OSRS RuneScape Help Blog</font></b>
 </div>
@@ -114,7 +114,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 	
 	
 	
-	echo '<form method="post" name="blog" action="' . $_SERVER['PHP_SELF'] . '?cat=' . $category . '">' . NL;
+	echo '<form method="post" name="blog" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category . '">' . NL;
 	echo '<input type="hidden" name="act" value="' . $_GET['act'] . '" />';
 	
 	if( $_GET['act'] == 'edit' ) {
@@ -170,8 +170,8 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		
 			$name = $info['name'];
 			echo '<p align="center">Are you sure you want to delete this Blog, \'' . $name . '\'?</p>';
-			echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?act=delete&cat=' . $category . '"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
-			echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?cat=' . $category . '"><center><input type="submit" value="No" /></center></form>' . NL;
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&cat=' . $category . '"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_name" value="' . $name . '" / ><input type="submit" value="Yes" /></center></form>' . NL;
+			echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category . '"><center><input type="submit" value="No" /></center></form>' . NL;
 		}
 		else {
 			
@@ -182,7 +182,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 
 else {
 
-	echo '<center><form action="' . $_SERVER['PHP_SELF'] . '?cat=' . $category . '" method="get">' . NL;
+	echo '<center><form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?cat=' . $category . '" method="get">' . NL;
 	echo '<input type="submit" value="Go To" /> ' . NL;
 	echo '<select name="cat">' . NL;
 	
@@ -211,9 +211,9 @@ else {
     echo '<tr align="center">' . NL;
 		echo '<td class="tablebottom"><a href="/blog.php?type=' . $category . '&amp;id=' . $info['id'] . '" target="_new">' . $info['name'] . '</a></td>' . NL;
 		$seotitle = strtolower(preg_replace("/[^A-Za-z0-9_&.]/", "", 'runescape_'.$info['name'].'.htm'));
-		echo '<td class="tablebottom"><a href="' . $_SERVER['PHP_SELF'] . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit '.$info['name'].'">Edit</a>';
+		echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=edit&cat=' . $category . '&id=' . $info['id'] . '" title="Edit '.$info['name'].'">Edit</a>';
 		if( $ses->permit( 15 ) ) {
-			echo ' / <a href="' . $_SERVER['PHP_SELF'] . '?act=delete&cat=' . $category . '&id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;
+			echo ' / <a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&cat=' . $category . '&id=' . $info['id'] . '" title="Delete \'' . $info['name'] . '\'">Delete</a></td>' . NL;
 		}
 		echo '<td class="tablebottom">' . format_time( strtotime($info['date']) ) . '</td>' . NL;
 		echo '</tr>' . NL;

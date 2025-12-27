@@ -51,7 +51,7 @@ Please ensure your image has been appropriately cropped before uploading.<br />
 If you are uploading a newer picture of an image already in a guide, give it the same file name.<br />
 The filename for the image will be whatever you call it, provided it's appropriate; your image will be moved to the right folder.
 </div><br />
-<form name="form1" enctype="multipart/form-data" method="post" action="<?=$_SERVER['PHP_SELF']?>">
+<form name="form1" enctype="multipart/form-data" method="post" action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>">
 <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max_size; ?>">
 <table style="border: 2px solid #000; padding: 2px; border-bottom:none;" align="center" width="75%">
 <tr>
@@ -96,7 +96,7 @@ if( isset( $_POST['text'] ) ) {
     header("Location: upload.php");
 	}
 
-echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post"><table style="border: 2px solid #000; text-align:center; padding: 2px;" align="center" width="75%">';
+echo '<form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post"><table style="border: 2px solid #000; text-align:center; padding: 2px;" align="center" width="75%">';
 echo '<tr><td><textarea name="text" rows="15" style="width: 95%; font: 10px Verdana, Arial, Helvetica, sans, sans serif;">' . $info['text'] . '</textarea></td></tr>';
 echo '<tr><td><input type="submit" value="Update" />&nbsp;<input type="reset" value="Undo Changes" /></td></tr></table>';
 echo '</form><br /><br />';

@@ -27,7 +27,7 @@ echo '<div align="left" style="margin:1">
 <hr class="main" noshade="noshade" align="left" /><br />
 '. $saved . '
 <br />
-<form method="POST" action="' . $_SERVER['PHP_SELF'] . '" style="text-align:center">
+<form method="POST" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" style="text-align:center">
 <input type="submit" value="Save" name="Save"><br />
 <textarea name="savethisplz" cols="60" rows="15">' . $load . '</textarea><br />
 <input type="submit" value="Save" name="Save">

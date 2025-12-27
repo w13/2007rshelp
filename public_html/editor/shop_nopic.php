@@ -16,7 +16,7 @@ if(!isset($_GET['id']))
 ?>
 
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Shop Database -No Pics-</a></font></b></div>
+<b><font size="+1">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Shop Database -No Pics-</a></font></b></div>
 <hr class="main" noshade="noshade" />
 
 <table style="border-left: 1px solid #000000;" width="100%" cellpadding="1" cellspacing="0">

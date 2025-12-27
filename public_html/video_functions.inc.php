@@ -74,8 +74,8 @@ function videoboxes($result) {
             .'<tr>'
             .'<td colspan="2" class="videomiddle">'
             .'<div class="videomiddle">';
-        if(isset($_GET['forumcard'])) echo '<a href="'.$_SERVER['SCRIPT_NAME'].'?id=' . $row['id'] . '" target="_blank" title="See this video">';
-        else echo '<a href="'.$_SERVER['SCRIPT_NAME'].'?id=' . $row['id'] . '" title="Added: ' . $added . '">';
+        if(isset($_GET['forumcard'])) echo '<a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?id=' . $row['id'] . '" target="_blank" title="See this video">';
+        else echo '<a href="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?id=' . $row['id'] . '" title="Added: ' . $added . '">';
         echo '<img style="width:208px;height:136px;border:none;" src="' . $row['thumb'] . '" alt="Added: ' . $added . '" /></a>'
             .'</div>'
             .'</td></tr>'
@@ -115,17 +115,17 @@ function printpages($result) {
       
       if($page > 1) {
           $page_before = $page - 1;
-          $page_links = '<a href="' . $_SERVER['SCRIPT_NAME'] . $qstring . '&amp;page=' . $page_before . '">< Previous</a> ' . $page_links;
+          $page_links = '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . $qstring . '&amp;page=' . $page_before . '">< Previous</a> ' . $page_links;
       }
       if($page < $page_count) {
           $page_after = $page + 1;
-          $page_links = $page_links . ' <a href="' . $_SERVER['SCRIPT_NAME'] . $qstring . '&amp;page=' . $page_after . '">Next ></a> ';
+          $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . $qstring . '&amp;page=' . $page_after . '">Next ></a> ';
       }
       if($page > 2) {
-          $page_links = '<a href="' . $_SERVER['SCRIPT_NAME'] . $qstring . '&amp;page=1">&laquo; First</a> '. $page_links;
+          $page_links = '<a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . $qstring . '&amp;page=1">&laquo; First</a> '. $page_links;
       }
       if($page < ($page_count - 1)) {
-          $page_links = $page_links . ' <a href="' . $_SERVER['SCRIPT_NAME'] . $qstring . '&amp;page=' . $page_count . '">Last &raquo;</a> ';
+          $page_links = $page_links . ' <a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . $qstring . '&amp;page=' . $page_count . '">Last &raquo;</a> ';
       }
       
       if(!empty($_SERVER['QUERY_STRING'])) {

@@ -5,8 +5,8 @@ start_page(13, 'Facts Manager');
 $edit = new edit('facts', $db);
 echo '<div class="boxtop">Facts Manager</div>' . NL . '<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">' . NL;
 ?>
-<div style="float: right;"><a href="<?=$_SERVER['PHP_SELF']?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
-<a href="<?=$_SERVER['PHP_SELF']?>?act=new"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
+<div style="float: right;"><a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
+<a href="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>?act=new"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
 <b><font size="+1">&raquo; Facts Manager</font></b>
 </div>
@@ -64,7 +64,7 @@ elseif(isset($_GET['act']) AND (($_GET['act'] == 'edit' AND isset($_GET['id'])) 
         $votes = 0;
         $stime = $info['starttime'] + 604800;
     }
-    echo '<br /><form method="post" action="' . $_SERVER['PHP_SELF'] . '">' . NL; //?cat=' . $category . '
+    echo '<br /><form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">' . NL; //?cat=' . $category . '
     if($_GET['act'] == 'edit') {
         echo '<input type="hidden" name="id" value="' . $id . '" />';
     }
@@ -91,7 +91,7 @@ elseif(isset($_GET['act']) AND $_GET['act'] == 'delete' AND $ses->permit(15)) {
         }
         else {
             $ses->record_act('Facts', 'Delete', $_POST['del_txt'], $ip);
-            header('refresh: 2; url=' . $_SERVER['PHP_SELF']);
+            header('refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']));
             echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
         }
     }
@@ -101,8 +101,8 @@ elseif(isset($_GET['act']) AND $_GET['act'] == 'delete' AND $ses->permit(15)) {
         if($info) {
             $text = $info['text'];
             echo '<p align="center">Are you sure you want to delete the following fact?</p><p>"' . $text . '"</p>';
-            echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '?act=delete"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_txt" value="' . substr(strip_tags($text), 0, 20).'..." / ><input type="submit" value="Yes" /></center></form>' . NL;
-            echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '"><center><input type="submit" value="No" /></center></form>' . NL;
+            echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete"><center><input type="hidden" name="del_id" value="' . $id . '" / ><input type="hidden" name="del_txt" value="' . substr(strip_tags($text), 0, 20).'..." / ><input type="submit" value="Yes" /></center></form>' . NL;
+            echo '<form method="post" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '"><center><input type="submit" value="No" /></center></form>' . NL;
         }
         else {
             echo '<p align="center">That identification number does not exist.</p>' . NL;
@@ -113,7 +113,7 @@ elseif(isset($_GET['donttouch']) && $_SESSION['user'] == 'Ben_Goten78') {
 $convert = 604800 / 60 / 60 / 24;
 echo '<h2 style="text-align:center;">Wiping Fact IPs more than '.$convert.' days old</h2>';
 $db->query("DELETE FROM facts_ip WHERE fid IN (SELECT id FROM facts WHERE starttime < ( UNIX_TIMESTAMP( ) -604800 ))");
-header('refresh: 2; url=' . $_SERVER['PHP_SELF']);
+header('refresh: 2; url=' . htmlspecialchars($_SERVER['PHP_SELF']));
 }
 
 else {
@@ -129,9 +129,9 @@ else {
     while($info = $db->fetch_array($query)) {
         echo '<tr align="center">' . NL;
         echo '<td class="tablebottom">' . substr(strip_tags($info['text']), 0, 40) . '...</td>' . NL;
-        echo '<td class="tablebottom"><a href="' . $_SERVER['PHP_SELF'] . '?act=edit&id=' . $info['id'] . '" title="Edit Fact">Edit</a>';
+        echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=edit&id=' . $info['id'] . '" title="Edit Fact">Edit</a>';
         if($ses->permit(15)) {
-            echo ' / <a href="' . $_SERVER['PHP_SELF'] . '?act=delete&id=' . $info['id'] . '" title="Delete Fact">Delete</a></td>' . NL;
+            echo ' / <a href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?act=delete&id=' . $info['id'] . '" title="Delete Fact">Delete</a></td>' . NL;
         }
         echo '<td class="tablebottom">' . format_time($info['starttime']) . '</td>' . NL;
         echo '</tr>' . NL;

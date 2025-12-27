@@ -16,7 +16,7 @@
 ########  Shop Database: 
 ########  Quest Guides: 
 
-$url = $_SERVER['SCRIPT_NAME'];
+$url = htmlspecialchars($_SERVER['SCRIPT_NAME']);
 
 if($url == '/items.php') ### ITEM
 {
@@ -88,7 +88,7 @@ elseif($url == '/development/quests.php')  ### QUEST
 }
 else
 {
-    // echo $_SERVER['SCRIPT_NAME'];
+    // echo htmlspecialchars($_SERVER['SCRIPT_NAME']);
     return;
 }
 ############################  SEARCH BEGINS

@@ -44,6 +44,44 @@
     - The current Google Analytics code uses Universal Analytics (`UA-` prefix), which was sunset by Google in July 2023. It needs to be updated to Google Analytics 4 (GA4).
     - AdSense snippets are using old manual placement styles. Modern "Auto-Ads" or responsive ad units would work better with the new Flexbox layout.
 
+### 5. UI & Advertising Modernization (Dec 27, 2025 - Part 2)
+- **Responsive AdSense:**
+    - Replaced legacy `advert_side()` and `advert_top()` JS calls in `public_html/content/ads.inc` with modern, responsive AdSense units.
+    - Updated `public_html/content/layout.inc` top leaderboard to use a responsive AdSense unit.
+    - Added CSS in `public_html/css/global_new.css` to handle the `.top-leaderboard-container` with absolute positioning on desktop and static/centered positioning on mobile.
+- **XSS Protection (Global):**
+    - Identified and fixed a widespread XSS vulnerability where `$_SERVER['SCRIPT_NAME']` and `$_SERVER['PHP_SELF']` were echoed directly without escaping.
+    - Fixed typos in `public_html/editor/correction.php` (e.g., `$_SERVER['SCRIPT_NAME';`).
+- **CLI Optimization:**
+    - Created `.geminiignore` to exclude large directories (like `public_html/img` at 536MB) and sensitive files from CLI indexing, preventing "JavaScript heap out of memory" errors.
+
+### 6. Header Banner Layout Fix & Modernization (Dec 27, 2025 - Part 3)
+- **Fixed Duplicate Header Issue:**
+    - Modified `public_html/css/global_new.css` to ensure the `#banner` element properly displays the header background image without duplication.
+    - Added `background-size: cover` to the `#banner` div for proper scaling of the header image.
+    - Changed `#banner a` to use `position: absolute` instead of being a block element in the normal document flow, ensuring it overlays the entire banner area without taking up space.
+    - **Root Cause**: Discovered the responsive CSS at `@media (max-width: 950px)` was setting `.top-leaderboard-container` to `position: static` and `height: auto`, which caused the AdSense container to expand the banner div beyond its 100px height, creating the appearance of duplicate headers.
+- **Removed Top Horizontal AdSense Banner:**
+    - Completely removed the horizontal AdSense banner from the header area in `public_html/content/layout.inc`.
+    - Removed associated `.top-leaderboard-container` CSS styles from `public_html/css/global_new.css`.
+    - Simplified the responsive CSS for the banner section.
+- **Removed Redundant AdSense Units:**
+    - Removed duplicate sidebar AdSense banner from `public_html/content/ads.inc`.
+    - Now only 2 AdSense units remain: 1 sidebar (in links.inc) and 1 bottom-of-content (in layout.inc).
+- **Modernized Header HTML:**
+    - Replaced outdated table-based layout in `public_html/content/bar-top.inc` with semantic HTML5 using `<nav>`, flexbox, and proper structure.
+    - Replaced table-based layout in `public_html/content/bar-bottom.inc` with modern flexbox layout.
+    - Added semantic `<header role="banner">` wrapper in `public_html/content/layout.inc`.
+    - Added ARIA labels and accessibility improvements (aria-label, role attributes).
+    - Added new CSS classes for modern layout: `.theme-selector`, `.theme-options`, `.bottombar-content`, `.search-container`, `.sr-only`.
+    - Fixed theme selector layout to keep "THEMES" text and icons on the same line using `flex-wrap: nowrap`.
+    - Positioned search box to the right side of the bottom bar with `justify-content: flex-end` and added modern styling (rounded borders, hover effects).
+    - Removed unnecessary sr-only span from banner (accessibility maintained via aria-label on anchor).
+    - Maintained identical visual appearance while using modern, accessible HTML5 markup.
+- **Cleaned Up Layout:**
+    - Removed duplicate `popUpImage` element from `public_html/content/layout.inc` that was appearing at the end of the file.
+- **Result:** The header now uses modern, semantic HTML5 with improved accessibility while maintaining the same visual appearance. Clean layout with no duplication issues and optimized AdSense placement.
+
 ## Next Steps
-- **Action Required:** Review and update AdSense snippets for better mobile performance.
-- Investigate remaining files in `public_html/` for similar XSS and SQLi patterns.
+- Continue reviewing `public_html/editor/` for legacy patterns.
+- Monitor for any layout issues on specific pages with the new responsive ad units.

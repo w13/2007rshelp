@@ -95,7 +95,7 @@ if(!isset($_GET['do_keys'])) {
 
     echo '<p align="center">Please select the keys for the city guide below, then press \'Generate City Keys\'.</p>'.NL;
 
-    echo '<form action="'.$_SERVER['SCRIPT_NAME'].'?do_keys" method="post">'.NL;
+    echo '<form action="'.htmlspecialchars($_SERVER['SCRIPT_NAME']).'?do_keys" method="post">'.NL;
     echo '<table width="80%" align="center">'.NL;
 
     $col = 1;
