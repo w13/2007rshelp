@@ -158,7 +158,7 @@ else {
 //debug: echo $search;
 /*===========  Page Control  ============*/
 
-if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') {
+if(empty($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') {
 $rows_per_page     = 50;
 $row_count_res     = $db->fetch_row("SELECT count(*) as count FROM ".$db->escape_string($table)." " . $search);
 $row_count         = $row_count_res['count'] ?? 0;
@@ -192,7 +192,7 @@ if($page < ($page_count - 1)) {
 /*============  SEARCH FORM  ============*/
 if (!isset($hide_search_form)) {
     echo '<form action="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '" method="get"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'.NL;
-    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:left;" width="200">Browsing ' . number_format($row_count) . ' of ' . number_format($total) . ' ' . htmlspecialchars(ucfirst($table)) . '(s)</td>'.NL;
+    if(empty($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:left;" width="200">Browsing ' . number_format($row_count) . ' of ' . number_format($total) . ' ' . htmlspecialchars(ucfirst($table)) . '(s)</td>'.NL;
     echo '<td style="text-align:center;">'.NL
     .'Search <select name="search_area">';
 
@@ -210,7 +210,7 @@ if (!isset($hide_search_form)) {
     }
 
     echo ' <input type="submit" value="Go" /></td>'.NL;
-    if(!isset($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:right;" width="140">Page ' . (int)$page . ' of ' . (int)$page_count . '</td>'.NL;
+    if(empty($id) && $url !='/runescapevideos.php' && $url != '/misc.php' && $url != '/minigames.php') echo '<td style="text-align:right;" width="140">Page ' . (int)$page . ' of ' . (int)$page_count . '</td>'.NL;
     echo '</tr></table></form>';
 }
 ?>

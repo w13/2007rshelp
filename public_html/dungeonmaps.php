@@ -11,7 +11,7 @@ if($disp->errlevel > 0) {
 <div class="boxtop">OSRS RuneScape Dungeon Maps</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <a name="top"></a>
 <?php
-if(!isset($id))
+if(empty($id))
  {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; OSRS RuneScape Dungeon Maps</div>

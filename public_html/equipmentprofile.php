@@ -89,7 +89,7 @@ if(isset($_GET['submit'])) {
       echo 'penis';
   }
   
- if(!isset($id) && !isset($_GET['setbuilder']))
+ if(empty($id) && !isset($_GET['setbuilder']))
  {
 ?>
 <div style="margin:1pt;font-weight:bold;font-size:large;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Runescape Equipment Profiles</a></div>
@@ -116,7 +116,7 @@ if(isset($_GET['submit'])) {
      .NL.'<th class="tabletop">Name <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=name&amp;page=' . $page . '&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" width="9" height="9" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" width="9" height="9" border="0" /></a></th>'
      .NL.'</tr>';
 
-if(!isset($id)) {
+if(empty($id)) {
 
   while($info = $db->fetch_array($query)) {
     $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
@@ -182,8 +182,8 @@ if(!isset($id)) {
     $i=0;
     $query = $db->query("SELECT * FROM items WHERE id IN (5350,5344,5351,5345,5352,5353,5346,5354,5347,5348,5349) ORDER BY equip_type ASC");
     while($iinfo = $db->fetch_array($query)) {
-        $td[]          =    '<td id="i' . $i . '" onclick="blankItem(' . $i . ')" class="item" style="background:url(\\'/img/equipimg/'.
-                            $iinfo['image'].'\\\') no-repeat"></td>';
+        $td[]          =    '<td id="i' . $i . '" onclick="blankItem(' . $i . ')" class="item" style="background:url(\'/img/equipimg/'.
+                            htmlspecialchars($iinfo['image'] ?? '') . '\') no-repeat"></td>';
         $i++;
     }
     
@@ -349,7 +349,7 @@ echo '<div class="instr">'
     /*** NAME ***/
         $name[]            =    $iinfo['name'];
     /*** CREATE TABLE CELL ***/
-        $td[]          =    '<td class="item" onclick="window.location=\'/items.php?id=' . $iinfo['id'] . '\'" style="background:url(\\'/img/idbimg/'.$iinfo['image'].'\\\\') no-repeat">';
+        $td[]          =    '<td class="item" onclick="window.location=\'/items.php?id=' . (int)$iinfo['id'] . '\'" style="background:url(\'/img/idbimg/' . htmlspecialchars($iinfo['image'] ?? '') . '\') no-repeat">';
 
     /*** WEIGHT ***/
         $weights           =    ($iinfo['weight'] == -21 || $iinfo['weight'] == '') ? 0 : $iinfo['weight'];
@@ -493,10 +493,9 @@ echo '<table width="96%" style="margin:0 2%;border-left:1px solid #000;border-to
       .$td[10] . $member[10] . '</td>' ## Finger
       .'</tr>'
       .'</table>'
-    .'</td>'
-    .'<td style="border-right:1px solid #000;border-bottom:1px solid #000;vertical-align:top;" width="50%">
-    .'<table width="100%" cellspacing="0" cellpadding="5">'
-    .'<tr>'
+          .'</td>'
+          .'<td style="border-right:1px solid #000;border-bottom:1px solid #000;vertical-align:top;" width="50%">'
+          .'<table width="100%" cellspacing="0" cellpadding="5">'    .'<tr>'
     .'<td style="vertical-align:top;width:20%;">Set type:</td>'
     .'<td>' . $info['themed'] . $info['type'] . '</td>'
     .'</tr>'

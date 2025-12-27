@@ -27,10 +27,10 @@ if(empty($_COOKIE['quests']) && $usercheck == 0 && isset($_GET['hide'])) { //Use
     header( 'Location: ' . $_SERVER['SCRIPT_NAME'] );
     exit;
 }
-elseif($_COOKIE['quests'] && !empty($_COOKIE['quests']) && $usercheck == 0) { //User has Cookie and no IP/IP needs updating.
-    $checkid = $db->num_rows("SELECT id FROM quests_ip WHERE id = '" . $_COOKIE['quests'] . "'");
-    if($checkid == 0) $db->query("INSERT INTO `quests_ip` (id,ip,hidden_id) VALUES ('" . $_COOKIE['quests'] . "', '" . $_SERVER['REMOTE_ADDR'] . "',0)");
-    if($checkid != 0) $db->query("UPDATE `quests_ip` SET `ip` = '" . $_SERVER['REMOTE_ADDR'] . "' WHERE `id` = '" . intval($_COOKIE['quests']) . "'");
+elseif(!empty($_COOKIE['quests']) && $usercheck == 0) { //User has Cookie and no IP/IP needs updating.
+    $checkid = $db->num_rows("SELECT id FROM quests_ip WHERE id = '" . $db->escape_string($_COOKIE['quests']) . "'");
+    if($checkid == 0) $db->query("INSERT INTO `quests_ip` (id,ip,hidden_id) VALUES ('" . $db->escape_string($_COOKIE['quests']) . "', '" . $db->escape_string($_SERVER['REMOTE_ADDR']) . "',0)");
+    if($checkid != 0) $db->query("UPDATE `quests_ip` SET `ip` = '" . $db->escape_string($_SERVER['REMOTE_ADDR']) . "' WHERE `id` = '" . (int)$_COOKIE['quests'] . "'");
     header( 'Location: ' . $_SERVER['SCRIPT_NAME'] );
     exit;
 }
@@ -109,7 +109,7 @@ echo '<h3>Length</h3>'.NL
     .'<img src="/img/qimg/6.gif" alt="Length" /> Very, very long. May take 4-6 hours depending on your combat level, skills and equipment.<br />'.NL
     .'<img src="/img/qimg/7.gif" alt="Length" /> Uber long. May take 6+ hours depending on your combat level, skills and equipment.<br /><br /><br />'.NL;
  }
-  elseif(!isset($id)) {
+  elseif(empty($id)) {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>"><?php echo $ptitle; ?></a></div>
 <hr class="main" noshade="noshade" />

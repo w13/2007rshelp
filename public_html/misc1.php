@@ -15,7 +15,7 @@ if(isset($search_area) && isset($search_term)) $ptitle = '&raquo; <a href="'.$_S
 <div class="boxtop">Runescape Miscellaneous Guides</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <?php
-if(!isset($id))
+if(empty($id))
  {
 ?>
 <a name="top"></a>

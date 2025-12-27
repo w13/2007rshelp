@@ -20,7 +20,7 @@ if($disp->errlevel > 0) {
 }
 
 // Redirect if search returns exactly one result
-if (!isset($id) && !empty($search_term)) {
+if (empty($id) && !empty($search_term)) {
     $hide_search_form = true;
     include('search.inc.php');
     if (isset($row_count) && $row_count == 1) {
@@ -35,7 +35,7 @@ start_page('OSRS RuneScape Monster Database');
 ?>
 <div class="boxtop">OSRS RuneScape Monster Database</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <?php
- if(!isset($id))
+ if(empty($id))
   {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">OSRS RuneScape Monsters and NPC Database</a></div>

@@ -82,7 +82,7 @@ if ($search_term != '' && $search_area != '') {
   echo '</tr>';
 
 
-if(!isset($id)) {
+if(empty($id)) {
 
 while($info = $db->fetch_array($query))   {
 	$seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name'] ?? ''));

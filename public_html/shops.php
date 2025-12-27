@@ -123,7 +123,7 @@ $(document).ready(function() {
 
 /*** INDEX PAGE ***/
 
-if( !isset( $id ) )
+if( empty($id) )
 	{
 
 ?>

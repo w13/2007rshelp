@@ -58,7 +58,7 @@ if( isset( $c_time )  ) {
 	echo '<p align="center">You must wait ' . $time_lim . ' minutes between correction submissions.</p>' . NL;
 	echo '<p align="center">You must wait ' . $minutes . ' more minute(s).</p>' . NL;
 }
-elseif( isset( $area ) AND isset( $id ) ) {
+elseif( isset( $area ) AND !empty( $id ) ) {
 
 	if( $area == 'external' AND !array_key_exists( $id, $external ) ) {
 		direct_back();
@@ -148,8 +148,7 @@ echo '<br />We will accept corrections pertaining to the quality (easy-to-read, 
 }
 			if( isset( $error ) ) echo $error;
 
-			echo '<form action="?area=' . $area . '&amp;id=' . $_GET['id'] ?? null. '" method="post">' . NL;
-			echo '<table width="90%" align="center" style="border-left: 1px solid #000000" cellspacing="0">' . NL;
+			                        echo '<form action="?area=' . $area . '&amp;id=' . (int)$id . '" method="post">' . NL;			echo '<table width="90%" align="center" style="border-left: 1px solid #000000" cellspacing="0">' . NL;
 			echo '<tr><td class="tabletop" colspan="2">The Correction Area</td></tr>' . NL;
 			echo '<tr><td class="tablebottom">Content Area</td><td class="tablebottom"><input type="text" value="' . $cont_area . '" size="30" disabled="disabled" /></td></tr>' . NL;
 			echo '<tr><td class="tablebottom">Content Name</td><td class="tablebottom"><input type="text" value="' . $cont_name . '" size="30" disabled="disabled" /></td></tr>' . NL;
