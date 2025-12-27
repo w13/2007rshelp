@@ -44,7 +44,7 @@
 if($_SERVER['PHP_SELF']!="/index.php"){
 
 ?>
-<div class="navigation">
+<div class="navigation" style="text-align: center;">
 <!-- Google vertical banner below nav -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- SideBar -->

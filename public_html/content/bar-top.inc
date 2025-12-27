@@ -11,7 +11,4 @@
             <a onclick="changeStyle('olivedrab')" title="Olive Drab"><img src="/images/banner/olive.png" alt="Olive Drab" /></a>
         </div>
     </div>
-    <div style="margin: 0 15px;">
-        <div class="fb-like" data-href="https://www.facebook.com/osrs_helprunescape" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-    </div>
 </div>
