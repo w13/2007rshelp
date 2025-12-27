@@ -5,7 +5,7 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,50')
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('OSRS RuneScape Mini Game Guides');
 if($disp->errlevel > 0) {
-	unset($id);
+	$id = null;
 }
 ?>
 <div class="boxtop">RuneScape Mini Game Guides</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">

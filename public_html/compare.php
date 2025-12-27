@@ -15,7 +15,7 @@ require_once("compare_functions.php"); //HOLDS ALL THE FUNCTIONS
 
 
 if($disp->errlevel > 0) {
-	unset($id);
+	$id = null;
 	unset($search_area);
 }
 //END OF STUFF FOR IDB

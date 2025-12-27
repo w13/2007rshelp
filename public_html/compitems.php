@@ -11,7 +11,7 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('Runescape Item Database');
 if($disp->errlevel > 0) {
-	unset($id);
+	$id = null;
 	unset($search_area);
 }
 

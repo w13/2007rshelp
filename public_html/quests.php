@@ -4,8 +4,8 @@ $cleanArr = array(  array('id', $_GET['id'] ?? '', 'int', 's' => '1,999'),
 					array('unhide', $_GET['unhide'] ?? '', 'int', 's' => '1,999'),
 					array('order', $_GET['order'] ?? '', 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
 					array('category', $_GET['category'] ?? '', 'enum', 'e' => array('name', 'type', 'text', 'reward', 'difficulty', 'length'), 'd' => 'name' ),
-					array('search_area', $_GET['search_area'] ?? '', 'enum', 'e' => array('name', 'text', 'reward') ),
-					array('search_term', $_GET['search_term'] ?? '', 'sql', 'l' => 40)
+					array('search_area', $_GET['search_area'] ?? '', 'enum', 'e' => array('name', 'text', 'reward'), 'd' => 'name' ),
+					array('search_term', $_GET['search_term'] ?? '', 'sql', 'l' => 40, 'd' => '')
 				  );
 
 /*** QUEST PAGE ***/
@@ -74,8 +74,8 @@ $ptitle = 'OSRS RuneScape Quest Guides';
 start_page($ptitle);
 
 if($disp->errlevel > 0) {
-	unset($id);
-	unset($search_area);
+	$id = null;
+	$search_area = 'name';
 }
 
 ?>

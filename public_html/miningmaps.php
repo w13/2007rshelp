@@ -5,7 +5,7 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,250')
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('OSRS RuneScape Mining Maps');
 if($disp->errlevel > 0) {
-	unset($id);
+	$id = null;
 }
 ?>
 <div class="boxtop">OSRS RuneScape Mining Maps</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">

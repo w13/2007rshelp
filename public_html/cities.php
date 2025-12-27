@@ -5,7 +5,7 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,250')
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('City Guides');
 if($disp->errlevel > 0) {
-	unset($id);
+	$id = null;
 }
 ?>
 <div class="boxtop">

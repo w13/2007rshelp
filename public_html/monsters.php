@@ -3,8 +3,8 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
 					array('order', $_GET['order'] ?? null, 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
 					array('page', $_GET['page'] ?? null, 'int', 's' => '1,400', 'd' => 1),
 					array('category', $_GET['category'] ?? null, 'enum', 'e' => array('name', 'member', 'combat', 'hp'), 'd' => 'name' ),
-					array('search_area', $_GET['search_area'] ?? null, 'enum', 'e' => array('name','locations','drops','attstyle','quest','race','notes','training','combat') ),
-					array('search_term', $_GET['search_term'] ?? null, 'sql', 'l' => 40)
+					array('search_area', $_GET['search_area'] ?? null, 'enum', 'e' => array('name','locations','drops','attstyle','quest','race','notes','training','combat'), 'd' => 'name' ),
+					array('search_term', $_GET['search_term'] ?? null, 'sql', 'l' => 40, 'd' => '')
 				  );
 
 /*** MONSTER DATABASE ***/
@@ -15,8 +15,8 @@ $db->connect();
 $db->select_db(MYSQL_DB);
 
 if($disp->errlevel > 0) {
-	unset($id);
-	unset($search_area);
+	$id = null;
+	$search_area = 'name';
 }
 
 // Redirect if search returns exactly one result

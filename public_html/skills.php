@@ -3,9 +3,10 @@ $cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,50')
 				  );
 /*** SKILLS PAGE ***/
 require(dirname(__FILE__) . '/' . 'backend.php');
+
 start_page('OSRS RuneScape Skill Guides');
 if($disp->errlevel > 0) {
-	unset($id);
+	$id = null;
 }
 ?>
 <div class="boxtop">Old-School RuneScape Skill Guides</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">

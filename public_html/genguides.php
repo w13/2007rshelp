@@ -5,7 +5,7 @@ $cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,2000000')
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('Runescape Player Guides and Tips');
 if($disp->errlevel > 0) {
-	unset($id);
+	$id = null;
 }
 ?>
 

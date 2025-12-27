@@ -220,9 +220,15 @@ class display
 		$this->db->connect();
 		$dataArr = array();
 		foreach($input as $v) {
+			// Initialize with default value or a type-appropriate empty value
+			$default = $v['d'] ?? null;
+			if ($default === null) {
+				if ($v[2] == 'int') $default = 0;
+				elseif ($v[2] == 'sql' || $v[2] == 'string' || $v[2] == 'sql_no_html') $default = '';
+			}
+			$dataArr[$v[0]] = $default;
 
-			if((string)$v[1] === '') {
-				if(isset($v['d']) && $v['d']) $dataArr[$v[0]] = $v['d'];
+			if(!isset($v[1]) || (string)$v[1] === '') {
 				continue; // skip since there's no data
 			}
 
