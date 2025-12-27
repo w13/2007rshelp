@@ -364,7 +364,7 @@ else {
     echo '</table></td></tr><tr><td colspan="2">';
     echo '<table cellspacing="0" cellpadding="4" style="width:100%;border:1px solid #000">';
     echo '<tr><td width="24%">Obtained From:</td><td>' . htmlspecialchars($info['obtain'] ?? '') . '</td></tr>';
-    echo '<tr><td style="vertical-align:top;">Notes:</td><td>' . htmlspecialchars($info['notes'] ?? '') . '</td></tr>';
+    echo '<tr><td style="vertical-align:top;">Notes:</td><td>' . ($info['notes'] ?? '') . '</td></tr>';
 if(!empty($droplist)) {
     echo '<tr><td style="vertical-align:top;" title="Up to 15 of lowest level droppers">Dropped By:</td><td>' . $droplist . '</td></tr>';
     }
@@ -401,7 +401,7 @@ else {
     echo '<tr><td style="vertical-align:top;">Keep/Drop:</td><td>' . htmlspecialchars($info['keepdrop'] ?? '') . '</td></tr>';
     echo '<tr><td style="vertical-align:top;">Retrieval:</td><td>' . htmlspecialchars($info['retrieve'] ?? '') . '</td></tr>';
     echo '<tr><td style="vertical-align:top;">Quest Use:</td><td>' . htmlspecialchars($info['questuse'] ?? '') . '</td></tr>';
-    echo '<tr><td style="vertical-align:top;">Notes:</td><td>' . htmlspecialchars($info['notes'] ?? '') . '</td></tr></table>';
+    echo '<tr><td style="vertical-align:top;">Notes:</td><td>' . ($info['notes'] ?? '') . '</td></tr></table>';
     echo '<br /><table cellspacing="0" cellpadding="4" style="width:76%;margin:0 12%;border: 1px solid #000">';
     echo '<tr><td style="width:20%;vertical-align:top;">Credits: </td><td>' . htmlspecialchars($info['credits'] ?? '') . '</td></tr>';
     echo '<tr><td>Last Modified:</td><td>' . $date . '</td></tr></table>';
@@ -431,7 +431,7 @@ if($info['trade']=='Yes') {
     echo '</table><br />';
     echo '<table cellspacing="0" width="76%" style="margin:0 12%;border: 1px solid #000" cellpadding="4">';
     echo '<tr><td style="width:25%;vertical-align:top;">Obtained From: </td><td>' . htmlspecialchars($info['obtain'] ?? '') . '</td></tr>';
-    echo '    <tr><td style="vertical-align:top;">Notes:</td><td>' . htmlspecialchars($info['notes'] ?? '') . '</td></tr>';
+    echo '    <tr><td style="vertical-align:top;">Notes:</td><td>' . ($info['notes'] ?? '') . '</td></tr>';
 if(!empty($droplist)) {
     echo '<tr><td style="vertical-align:top;" title="Up to 15 of lowest level droppers">Dropped By:</td><td>' . $droplist . '</td></tr>';
     }

@@ -261,7 +261,7 @@ if(($info['i_drops'] ?? '') == 'None.' || ($info['i_drops'] ?? '') == 'None') $i
         }
                 if(!empty($info['notes'])) {
         echo '<tr>';
-        echo '<td valign="top">Notes:</td><td>' . htmlspecialchars($info['notes']) . '</td></tr>';
+        echo '<td valign="top">Notes:</td><td>' . $info['notes'] . '</td></tr>';
         }
         echo '</table><br />';
 
@@ -291,7 +291,7 @@ if(($info['i_drops'] ?? '') == 'None.' || ($info['i_drops'] ?? '') == 'None') $i
         echo '<tr>';
         echo '<td width="20%" valign="top">Where Found:</td><td>' . htmlspecialchars($info['locations'] ?? '') . '</td></tr>';
         echo '<tr>';
-        echo '<td valign="top">Notes:</td><td>' . htmlspecialchars($info['notes'] ?? '') . '</td></tr>';
+        echo '<td valign="top">Notes:</td><td>' . ($info['notes'] ?? '') . '</td></tr>';
         echo '</table><br />';
 
         echo '<table cellspacing="0" width="75%" style="border: 1px solid #000;" cellpadding="4" align="center">';

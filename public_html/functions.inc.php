@@ -116,7 +116,7 @@ function city_npc($id) {
             if(($minfo['npc'] ?? 0) == 1) $output .= '<div class="title3">'.htmlspecialchars($minfo['name'] ?? '').' (level-'.htmlspecialchars($minfo['combat'] ?? '').')';
             else $output .= '<div class="title3">'.htmlspecialchars($minfo['name'] ?? '');
             $output .= ' <a href="/monsters.php?id='.(int)($minfo['id'] ?? 0).'&amp;runescape_' . $seotitle . '.htm" title="More information"><img src="/img/market/idb.gif" border="0" alt="More information" /></a></div>'
-              .'<b>Examine:</b> '.htmlspecialchars($minfo['examine'] ?? '').'<br /><b>Notes:</b> '.htmlspecialchars($minfo['notes'] ?? '').'</td>'.NL
+              .'<b>Examine:</b> '.htmlspecialchars($minfo['examine'] ?? '').'<br /><b>Notes:</b> '.($minfo['notes'] ?? '').'</td>'.NL
               .'</tr>';
         }
         $output .= '</table><br /></div>';

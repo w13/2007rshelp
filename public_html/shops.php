@@ -335,7 +335,7 @@ else {
 	echo '<td width="20%">Location:</td><td><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?search_area=location&amp;search_term=' . urlencode($info['location'] ?? '') . '" title="Find other shops at this location.">' . htmlspecialchars($info['location'] ?? '') . '</a></td></tr>' . NL;
 	echo '<tr><td>Members:</td><td>' . htmlspecialchars($info['member'] ?? '') . '</td></tr>' . NL;
 	echo '<tr><td>Shopkeeper:</td><td>' . htmlspecialchars($info['shopkeeper'] ?? '') . '</td></tr>' . NL;
-	echo '<tr><td>Extra Notes:</td><td>' . htmlspecialchars($info['notes'] ?? '') . '</td></tr>' . NL;
+	echo '<tr><td>Extra Notes:</td><td>' . ($info['notes'] ?? '') . '</td></tr>' . NL;
 	echo '</table><br />' . NL;
 
 	// Inventory Information
