@@ -128,7 +128,27 @@
     - Items ready for addition when needed (magic shortbow scroll, voidwaker hilt, expeditious bracelet, etc.).
 - **Result:** The header is now fully responsive, spans the entire screen width, and uses modern semantic HTML5 with flexbox layout. All theme switching works correctly. CSS follows best practices with minimal resets. No PHP warnings. All changes committed to version control.
 
+### 8. Database Maintenance - Item Addition (Dec 27, 2025)
+- **CLI Scraper Execution:**
+    - Ran `php cli_scraper.php auto` to add all new items identified in previous scan.
+    - Successfully added **37 new OSRS items** to the database.
+    - Each item scraped included: name, examine text, member status, and item image.
+    - All images downloaded and saved to `public_html/img/idbimg/`.
+- **Items Added:**
+    - **Combat Equipment**: Voidwaker hilt, Blue moon tassets, Armadyl d'hide body, Ahrim's hood, Ahrim's robeskirt
+    - **Teleport Items**: Barrows teleport, Camelot teleport, Digsite teleport, Iorwerth camp teleport, Zul-andra teleport, West ardougne teleport, Salve graveyard teleport, Fenkenstrain's castle teleport, Civitas illa fortis teleport, Annakarl teleport, Mokhaiotl waystone
+    - **Potions**: Combat potion(4), Combat potion(3), Attack potion(1)
+    - **Magic Items**: Tome of fire (empty), Burnt page, Magic shortbow scroll, Frozen tear
+    - **Skilling Items**: Ultracompost, Drift net, Oak hull parts, Granite (5kg)
+    - **Cosmetic/Treasure Trail Items**: Adamant kiteshield (g), Adamant full helm (g), Green d'hide chaps (t), Teal boots, Wolf cloak, Holy sandals
+    - **Miscellaneous**: Dragonfruit pie, Gnomish firelighter, Green robe top, Expeditious bracelet
+- **Database Impact:**
+    - 37 new rows added to `items` table
+    - 37 new item images added to filesystem
+    - All items now searchable via item database at `/items.php`
+- **Result:** Item database is now up-to-date with latest OSRS content from official database Top 100 lists. All new items fully integrated with images and metadata.
+
 ## Next Steps
 - Continue reviewing `public_html/editor/` for legacy patterns.
 - Monitor for any layout issues on specific pages with the new responsive ad units.
-- Consider adding the 37 new items identified by CLI scraper when ready.
+- Run CLI scraper periodically to keep item database current with new OSRS releases.
