@@ -1,7 +1,7 @@
 /*
  *	Javascripted Runescape Calculator
  *	Created by Ryan Hoerr, December 2008
- *	(c) 2008 Zybez Corporation
+ *	(c) 2008 OSRS RuneScape Help Corporation
  */
  
 function reCalculate() {

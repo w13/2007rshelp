@@ -1,6 +1,6 @@
 
 /* Made by Sofox - Feb 2014
-   http://forums.zybez.net/topic/1603114-2007rshelp-image-mouseover/ 
+   http://forums.2007rshelp.com/topic/1603114-2007rshelp-image-mouseover/ 
    */
 
  function initImage ( url ) {

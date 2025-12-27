@@ -69,7 +69,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( $ptitle, 'Edit', $name, $ip );
-		echo '<p style="text-align:center;">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p style="text-align:center;">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 	}
 	
 }
@@ -418,7 +418,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 			$db->query("DELETE FROM ".$ptable." WHERE id = " . $_POST['del_id'] );
 			$ses->record_act( $ptitle, 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] );
-			echo '<p style="text-align:center;">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p style="text-align:center;">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

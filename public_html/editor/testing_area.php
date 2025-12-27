@@ -93,7 +93,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	else {
 		$db->query("UPDATE `testing` SET `locked`=0,`locked_user`='' WHERE `id`=".$id);
 		$ses->record_act( $cat_name, 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited into Zybez Testing Area.</p>' . NL;
+		echo '<p align="center">Entry successfully edited into OSRS RuneScape Help Testing Area.</p>' . NL;
 		header( 'refresh: 20; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
 	}
 
@@ -114,7 +114,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( $cat_name, 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added into Zybez Testing Area.</p>' . NL;
+		echo '<p align="center">New entry was successfully added into OSRS RuneScape Help Testing Area.</p>' . NL;
 		header( 'refresh: 2; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
 	}
 }
@@ -226,7 +226,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 		else {
 			$ses->record_act( $cat_name, 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

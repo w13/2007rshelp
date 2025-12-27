@@ -4,7 +4,7 @@ require('backend.php');
 start_page('Sitemap');
 
 ?>
-<div class="boxtop">Zybez Runescape Help Sitemap</div>
+<div class="boxtop">OSRS RuneScape Help Sitemap</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <h3>Main Sections</h3>
 <ul>

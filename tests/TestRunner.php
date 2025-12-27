@@ -111,7 +111,7 @@ $test = new TestRunner();
 // Test 1: Configuration File
 $test->section("Configuration");
 try {
-    define('IN_ZYBEZ', TRUE);
+    define('IN_OSRS_HELP', TRUE);
     require_once dirname(__DIR__) . '/public_html/config.inc.php';
 
     $test->assert(defined('MYSQL_HOST'), "MYSQL_HOST constant is defined");
@@ -296,7 +296,7 @@ try {
 $test->section("Security Features");
 try {
     // Test that $_SERVER['REQUEST_URI'] in config.inc.php is sanitized
-    $test->assert(defined('IN_ZYBEZ'), "Security constant IN_ZYBEZ is defined");
+    $test->assert(defined('IN_OSRS_HELP'), "Security constant IN_OSRS_HELP is defined");
 
     // Test that configuration array is unset (should not be accessible)
     $test->assert(!isset($Configuration), "Configuration array is cleaned up from memory");

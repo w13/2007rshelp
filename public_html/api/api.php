@@ -2,7 +2,7 @@
 
 //	Created by dTwizy
 //	Don't make any changes without consulting dTwizy
-//	http://forums.zybez.net/user/162695-dtwizy/
+//	http://forums.2007rshelp.com/user/162695-dtwizy/
 
 require_once('api.inc.php');
 

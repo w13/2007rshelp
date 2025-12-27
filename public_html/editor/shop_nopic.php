@@ -1,7 +1,7 @@
 <?php
 
 /* Security For Our Info */
-define( 'IN_ZYBEZ' , TRUE );
+define( 'IN_OSRS_HELP' , TRUE );
 
 /*** SHOP DATABASE ***/
  require(dirname(__FILE__) . '/' . 'backend.php');
@@ -38,8 +38,8 @@ if(!isset($_GET['id']))
 		
 <p style="text-align:center; font-weight: bold;">
 <u>Database Copyright Notice</u>:<br />
-All Database Information is Copyright &copy; Zybez, 2001 - 2005, All Rights Reserved.<br /><br />
-All images and information submitted to Zybez become property of Zybez. Use on any other website is PROHIBITED! Content may only be used on other websites with permission from Zybez.</p>
+All Database Information is Copyright &copy; OSRS RuneScape Help, 2001 - 2005, All Rights Reserved.<br /><br />
+All images and information submitted to OSRS RuneScape Help become property of OSRS RuneScape Help. Use on any other website is PROHIBITED! Content may only be used on other websites with permission from OSRS RuneScape Help.</p>
 </div><br />
 <?php
 end_page();

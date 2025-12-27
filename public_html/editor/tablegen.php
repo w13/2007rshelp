@@ -40,7 +40,7 @@ $weapons = Array('Scimitars'=>$scimitars,'Battleaxes'=>$battleaxes,'Daggers'=>$d
 		$query = $db->query("SELECT * FROM `items` WHERE `id`=".$itemid);
 		while ($info = $db->fetch_array($query)) {
 			$name = $info['name'];
-			$linkedname = '<a href="/items.php?id='.$itemid.'" title="Zybez Runescape Help\'s '.$info['name'].' Item Database Entry">'.$info['name'].'</a>';
+			$linkedname = '<a href="/items.php?id='.$itemid.'" title="OSRS RuneScape Help\'s '.$info['name'].' Item Database Entry">'.$info['name'].'</a>';
 			$image = $info['image'];
 			if ($info['member'] == 1) $member = ' <img src="/img/member.gif" alt="Members Weapon" title="Members Weapon" />';
 			else $member = '';
@@ -66,7 +66,7 @@ $weapons = Array('Scimitars'=>$scimitars,'Battleaxes'=>$battleaxes,'Daggers'=>$d
 				else $otherb[$key] = '+'.$value;
 			}
 			echo '<tr>
-<td class="tablebottom" rowspan="3"><img src="http://www.zybez.net/img/idbimg/'.$image.'" alt="Zybez RuneScape Help\'s image of a '.$name.'" width="50" height="50" /></td>
+<td class="tablebottom" rowspan="3"><img src="http://2007rshelp.com/img/idbimg/'.$image.'" alt="OSRS RuneScape Help\'s image of a '.$name.'" width="50" height="50" /></td>
 
 <td class="tablebottom" rowspan="3">'.$linkedname.$member.'</td>
 <td class="tablebottom" rowspan="3">&nbsp;</td>

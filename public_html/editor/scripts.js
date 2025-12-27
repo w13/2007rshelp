@@ -8,7 +8,7 @@ function SendMail(name, company, domain)
 
 
 // Skin Cookie and Changing Stuff
-var tothis = get_cookie( "zybezskin" );
+var tothis = get_cookie( "rshelpskin" );
 if(tothis != null || tothis != undefined){
 	changeStyle(tothis);
 }else{
@@ -18,7 +18,7 @@ if(tothis != null || tothis != undefined){
 function changeStyle(towhat) {
 	
 	document.getElementById('ourstylesheet').href = '/css/' + escape(towhat) + '.css';
-	document.cookie = "zybezskin=" + towhat + "; expires=13/12/2036 00:00:00; path=/";
+	document.cookie = "rshelpskin=" + towhat + "; expires=13/12/2036 00:00:00; path=/";
 }
 
 function get_cookie ( cookie_name )

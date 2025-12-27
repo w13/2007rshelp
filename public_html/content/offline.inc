@@ -1,20 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Zybez Runescape Help</title>
+<title>OSRS RuneScape Help</title>
 <link rel="shortcut icon" href="favicon.ico" />
-<link href="http://www.zybez.net/css/darkblue.css" rel="stylesheet" type="text/css" id="ourstylesheet" />
-<link href="http://www.zybez.net/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://2007rshelp.com/css/darkblue.css" rel="stylesheet" type="text/css" id="ourstylesheet" />
+<link href="http://2007rshelp.com/css/global.css" rel="stylesheet" type="text/css" />
 <!--
 COPYRIGHT NOTICE:
-RuneScape Help � Zybez Corporation. 2001 - 2008; All rights reserved.
-All content is for use on Zybez.net ONLY!
+RuneScape Help � OSRS RuneScape Help Corporation. 2001 - 2008; All rights reserved.
+All content is for use on OSRS RuneScape Help.net ONLY!
 Runescape is registered trademark of Jagex Ltd. 
 -->
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
 <script type="text/javascript" src="/scripts.js"></script>
-<link rel="alternate" type="application/rss+xml" title="Runescape News" href="http://feeds.feedburner.com/zybez/RunescapeNews" />
+<link rel="alternate" type="application/rss+xml" title="Runescape News" href="http://feeds.feedburner.com/osrs_help/RunescapeNews" />
 <link rel="alternate" type="application/rss+xml" title="Runescape Clan News" href="http://feeds.feedburner.com/RunescapeClans" />
 <link rel="alternate" type="application/rss+xml" title="Runescape Discussion" href="http://feeds.feedburner.com/RunescapeDiscussion" />
 <link rel="alternate" type="application/rss+xml" title="Runescape Questions" href="http://feeds.feedburner.com/RunescapeQuestions" />
@@ -48,26 +48,26 @@ Runescape is registered trademark of Jagex Ltd.
 </div>
 
 </div>
-<div id="banner"><a href="#" title="Zybez Runescape Help"></a></div>
+<div id="banner"><a href="#" title="OSRS RuneScape Help"></a></div>
 <div class="bottombar">
 <table style="width: 100%; border: 0;">
 <tr>
 <td style="padding-left:10px; width: 10%;">
-<a href="/irc.php" title="Zybez IRC"><img alt="Zybez IRC" src="/images/banner/mirc.gif" /></a>
-<a href="/runescapeventrilo.php" title="Zybez Ventrilo Voice Chat"><img alt="Zybez Ventrilo" src="/images/banner/ventrilo.gif" /></a>
-<a href="/radio/index.php" title="Zybez Radio"><img alt="Zybez Radio" src="/images/banner/radio.gif" /></a>
+<a href="/irc.php" title="OSRS RuneScape Help IRC"><img alt="OSRS RuneScape Help IRC" src="/images/banner/mirc.gif" /></a>
+<a href="/runescapeventrilo.php" title="OSRS RuneScape Help Ventrilo Voice Chat"><img alt="OSRS RuneScape Help Ventrilo" src="/images/banner/ventrilo.gif" /></a>
+<a href="/radio/index.php" title="OSRS RuneScape Help Radio"><img alt="OSRS RuneScape Help Radio" src="/images/banner/radio.gif" /></a>
 </td>
 <td style="width: 70%;">
 <iframe src="/ticker.php" height="26" width="95%" scrolling="no" allowtransparency="true" style="vertical-align:middle;background-color:transparent;border: 0;"></iframe>
 </td>
 <td style="padding-right:10px; width: 20%;">
 <form method="get" action="http://www.google.com/custom" target="_top">
-<input type="text" name="q" value="Search Zybez" onfocus="if(this.value=='Search Zybez'){ this.value=''; }" style="width: 60%; float:left;" maxlength="255" id="sbi" title="Search Zybez Runescape Help" />
+<input type="text" name="q" value="Search OSRS RuneScape Help" onfocus="if(this.value=='Search OSRS RuneScape Help'){ this.value=''; }" style="width: 60%; float:left;" maxlength="255" id="sbi" title="Search OSRS RuneScape Help" />
 
-<input type="hidden" name="q" value=" -zybez.net/community" />
-<input type="button" name="sa" onclick="if(this.form.q.value=='Search Zybez'){ }else{this.form.submit();}" value="Search" id="sbb" style="width:35%; float:right;" />
-<input type="hidden" name="sitesearch" value="www.zybez.net" />
-<input type="hidden" name="domains" value="www.zybez.net" />
+<input type="hidden" name="q" value=" -2007rshelp.com/community" />
+<input type="button" name="sa" onclick="if(this.form.q.value=='Search OSRS RuneScape Help'){ }else{this.form.submit();}" value="Search" id="sbb" style="width:35%; float:right;" />
+<input type="hidden" name="sitesearch" value="2007rshelp.com" />
+<input type="hidden" name="domains" value="2007rshelp.com" />
 <input type="hidden" name="client" value="pub-0109004644664993" />
 <input type="hidden" name="forid" value="1" />
 <input type="hidden" name="channel" value="5506166622" />
@@ -85,7 +85,7 @@ Runescape is registered trademark of Jagex Ltd.
 <div id="body">
 <div id="content" style="margin-left: 0; width: 100%;">
 
-<div class="boxtop">Zybez Runescape Help: OFFLINE</div>
+<div class="boxtop">OSRS RuneScape Help: OFFLINE</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <span>We'll be back in a minute!</span>
 <p style="font-size: 1.8em; font-weight: bold;text-align:center;"><a href="/index.php">Reload</a></p>
@@ -119,7 +119,7 @@ This site is not affiliated with Jagex Ltd. and must not be mistaken as the offi
 Other sites: [ <a href="http://www.warcrafthelp.com">World of Warcraft</a> ] - [ <a href="http://www.conanhq.com">Age of Conan</a> ] - [ <a href="http://www.guildwarshelp.com">Guild Wars</a> ]
 
 <br />
-<a onclick="document.getElementById('copyright').style.display = '';" title="Click for more" style="cursor:pointer;">&copy; 2001 - 2008 Zybez Corporation. All rights reserved.</a>
+<a onclick="document.getElementById('copyright').style.display = '';" title="Click for more" style="cursor:pointer;">&copy; 2001 - 2008 OSRS RuneScape Help Corporation. All rights reserved.</a>
 </div>
 </div>
 

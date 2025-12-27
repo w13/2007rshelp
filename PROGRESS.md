@@ -29,6 +29,12 @@
     - Refactored theme management to use `localStorage` for better persistence and FOUC prevention.
     - Standardized legacy PHP tags and removed dangerous `document.writeln` calls.
     - Updated Google Analytics to GA4 (`G-Z60SEVLSGL`) in `layout.inc` and `osrsplayers.php`.
+    - **Rebranding:**
+        - Renamed the project from "Zybez" to "OSRS RuneScape Help" across all code, text, and documentation.
+        - Updated security constant from `IN_ZYBEZ` to `IN_OSRS_HELP`.
+        - Updated URLs from `zybez.net` to `2007rshelp.com`.
+        - Cleaned up sitemap XML tags and files.
+        - Created `update_project_name.sql` for database data migration.
 
 ### 4. Code Review Findings
 - **Database Patterns:** The codebase generally relies on "clean input" via `cleanVars`. This has been strengthened.

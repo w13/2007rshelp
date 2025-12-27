@@ -16,7 +16,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `cities` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/cities.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/cities.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -28,7 +28,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `concepts` ORDER BY `type`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/concepts.php?type=' . $info['type'] . '&id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/concepts.php?type=' . $info['type'] . '&id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -40,7 +40,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `dungeonmaps` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/dungeonmaps.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/dungeonmaps.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -52,7 +52,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `guilds` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/guilds.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/guilds.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -64,7 +64,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `items`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/items.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/items.php?id=' . $info['id'] . NL;
    }
 ?>
 </textarea>
@@ -76,7 +76,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `minigames` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/minigames.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/minigames.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -87,7 +87,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `miningmaps` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/miningmaps.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/miningmaps.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -99,7 +99,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `misc` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/misc.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/misc.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -111,7 +111,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `monsters`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/monsters.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/monsters.php?id=' . $info['id'] . NL;
    }
 ?>
 </textarea>
@@ -123,7 +123,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `price_scams` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/priceguide.php?scam=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/priceguide.php?scam=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -134,7 +134,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `quests` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/quests.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/quests.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -145,7 +145,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `shops` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/shops.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/shops.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -156,7 +156,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `screenshots` ORDER BY `type`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/screenshots.php?type=' . $info['type'] . '&id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/screenshots.php?type=' . $info['type'] . '&id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -167,7 +167,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `skills` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/skills.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/skills.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>
@@ -179,7 +179,7 @@ if(!isset($_GET['id']))
   $query = $db->query("SELECT * FROM `tomes` ORDER BY `id`");
   while($info = $db->fetch_array($query))
    {
-    echo 'http://www.zybez.net/tomes.php?id=' . $info['id'] . NL;
+    echo 'http://2007rshelp.com/tomes.php?id=' . $info['id'] . NL;
    } 
 ?>
 </textarea>

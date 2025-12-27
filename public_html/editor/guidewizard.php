@@ -57,11 +57,11 @@ if(isset($_GET['quest'])) {
 <tr>
 <td class="tablebottom" align="center"><a onClick="insert('\n<br /><br /><em>Note: text</em>\n<br /><br />'); return false;">Insert a note</a></td></tr>
 <tr>
-<td class="tablebottom" align="center"><a onClick="insert('(<a href=&quot;/img/qimg/folder/file.ext&quot; title=&quot;Zybez RuneScape Help\'s Screenshot of ____________ &quot;>Picture</a>)'); return false;">Picture link</a></td></tr>
+<td class="tablebottom" align="center"><a onClick="insert('(<a href=&quot;/img/qimg/folder/file.ext&quot; title=&quot;OSRS RuneScape Help\'s Screenshot of ____________ &quot;>Picture</a>)'); return false;">Picture link</a></td></tr>
 <tr>
-<td class="tablebottom" align="center"><a onClick="insert('<span style=&quot;color:#FFFFF;&quot;>NPC</span>'); return false;">NPC</a><a onClick="insert('(<a href=&quot;/img/qimg/folder/file.ext&quot; title=&quot;Zybez RuneScape Help\'s Screenshot of ____________ &quot;>Picture</a>)'); return false;"></a></td></tr>
+<td class="tablebottom" align="center"><a onClick="insert('<span style=&quot;color:#FFFFF;&quot;>NPC</span>'); return false;">NPC</a><a onClick="insert('(<a href=&quot;/img/qimg/folder/file.ext&quot; title=&quot;OSRS RuneScape Help\'s Screenshot of ____________ &quot;>Picture</a>)'); return false;"></a></td></tr>
 <tr>
-<td class="tablebottom" align="center"><a onClick="insert('\n<img src=&quot;/img/qimg/folder/scroll.gif&quot; alt=&quot;Zybez RuneScape Help\'s Quest Scroll&quot; style=&quot;display:block; margin:0 auto; padding:1em; border-bottom:1px dashed #808080;&quot; /><br />'); return false;">Scroll Image</a></td></tr>
+<td class="tablebottom" align="center"><a onClick="insert('\n<img src=&quot;/img/qimg/folder/scroll.gif&quot; alt=&quot;OSRS RuneScape Help\'s Quest Scroll&quot; style=&quot;display:block; margin:0 auto; padding:1em; border-bottom:1px dashed #808080;&quot; /><br />'); return false;">Scroll Image</a></td></tr>
 <tr>
 <td class="tablebottom" align="center"><a onClick="insert('\n<div class=&quot;title1&quot;>Frequently Asked Questions</div>\n<div class=&quot;title3&quot;>Q: </div>\n<p>A: </p>'); return false;">Frequently Asked Questions</a></td></tr>
 <tr>
@@ -72,7 +72,7 @@ if(isset($_GET['quest'])) {
 <tr>
 <td class="tablebottom" align="center"><a onClick="insert('\n<img src=&quot;/img/qimg/folder/file.ext&quot; alt=&quot;&quot; style=&quot;display:block; margin:0 auto; padding:1em;&quot; />'); return false;">New Image (middle)</a></td></tr>
 <tr>
-<td class="tablebottom" align="center"><a onClick="insert('\n\n&lt;div class=&quot;title1&quot;&gt;Quest Map&lt;/div&gt;&lt;div class=&quot;related&quot;&gt;&lt;div class=&quot;title3&quot;&gt;&lt;img src=&quot;/img/idbimg/IMAGE.png&quot; alt=&quot;Zybez RuneScape Help\'s ITEM Image&quot; class=&quot;fright&quot; /&gt;NAME Quest sequence:&lt;/div&gt;&lt;br /&gt;&lt;div class=&quot;title3&quot;&gt;Related Quests:&lt;/div&gt;&lt;br /&gt;&lt;div class=&quot;title3&quot;&gt;Helpful Guides:&lt;/div&gt;&lt;/div&gt;\n'); return false;">Quest Map</a></td></tr>
+<td class="tablebottom" align="center"><a onClick="insert('\n\n&lt;div class=&quot;title1&quot;&gt;Quest Map&lt;/div&gt;&lt;div class=&quot;related&quot;&gt;&lt;div class=&quot;title3&quot;&gt;&lt;img src=&quot;/img/idbimg/IMAGE.png&quot; alt=&quot;OSRS RuneScape Help\'s ITEM Image&quot; class=&quot;fright&quot; /&gt;NAME Quest sequence:&lt;/div&gt;&lt;br /&gt;&lt;div class=&quot;title3&quot;&gt;Related Quests:&lt;/div&gt;&lt;br /&gt;&lt;div class=&quot;title3&quot;&gt;Helpful Guides:&lt;/div&gt;&lt;/div&gt;\n'); return false;">Quest Map</a></td></tr>
 <tr><td class="tablebottom" align="center" colspan="2"><input type="submit" value="Preview Guide" /></td></tr>
 </table>
 </form></center><br />
@@ -99,7 +99,7 @@ else {
 <tr>
 <td colspan="2" class="tabletop" align="center">General Guide Wizard</td></tr>
 <tr>
-<td class="tablebottom" align="center"><a onClick="insert('<img src=&quot;&quot; alt=&quot;Zybez RuneScape Help\'s _______ Image&quot; class=&quot;toc_img&quot; />\n<div class=&quot;title1&quot;>Table of Contents</div>\n<ul class=&quot;toc&quot;>\n<li><a href=&quot;#S1.0&quot;>1.0 - Title</a>\n<ul>\n<li><a href=&quot;#S1.1&quot;>1.1 - Subtitle</a></li>\n<li><a href=&quot;#S1.2&quot;>1.2 - Subtitle</a></li></ul></li>\n<li><a href=&quot;#S2.0&quot;>2.0 - Title</a>\n<ul>\n<li><a href=&quot;#S2.1&quot;>2.1 - Subtitle</a></li>\n<li><a href=&quot;#S2.2&quot;>2.2 - Subtitle</a></li></ul></li>\n</ul>'); return false;">Table of Contents</a></td>
+<td class="tablebottom" align="center"><a onClick="insert('<img src=&quot;&quot; alt=&quot;OSRS RuneScape Help\'s _______ Image&quot; class=&quot;toc_img&quot; />\n<div class=&quot;title1&quot;>Table of Contents</div>\n<ul class=&quot;toc&quot;>\n<li><a href=&quot;#S1.0&quot;>1.0 - Title</a>\n<ul>\n<li><a href=&quot;#S1.1&quot;>1.1 - Subtitle</a></li>\n<li><a href=&quot;#S1.2&quot;>1.2 - Subtitle</a></li></ul></li>\n<li><a href=&quot;#S2.0&quot;>2.0 - Title</a>\n<ul>\n<li><a href=&quot;#S2.1&quot;>2.1 - Subtitle</a></li>\n<li><a href=&quot;#S2.2&quot;>2.2 - Subtitle</a></li></ul></li>\n</ul>'); return false;">Table of Contents</a></td>
 <td rowspan="13" align="center" class="tablebottom"><textarea name="code" cols="100%" rows="35" onchange="formChanged = true;" onClick="chk(1)" style="margin: auto; font: 11px Verdana, Arial, Helvetica, sans, sans serif;"/></textarea></td></tr>
 <tr>
 <td class="tablebottom" align="center"><a onClick="insert('\n<p class=&quot;info&quot;>text here</p>'); return false;">Important Info</a></td></tr>
@@ -116,9 +116,9 @@ else {
 <tr>
 <td class="tablebottom" align="center"><a onClick="insert('<span style=&quot;color:#FFFFF;&quot;>NPC</span>'); return false;">NPC</a></td></tr>
 <tr>
-<td class="tablebottom" align="center"><a onClick="insert('(<a href=&quot;/&quot; title=&quot;Zybez RuneScape Help\'s Screenshot of ____________ &quot;>Picture</a>)'); return false;">Image Link</a></td></tr>
+<td class="tablebottom" align="center"><a onClick="insert('(<a href=&quot;/&quot; title=&quot;OSRS RuneScape Help\'s Screenshot of ____________ &quot;>Picture</a>)'); return false;">Image Link</a></td></tr>
 <tr>
-<td class="tablebottom" align="center">Images: <a onClick="insert('\n<img src=&quot;&quot; alt=&quot;Zybez RuneScape Help\'s _________ Image&quot; class=&quot;fleft&quot; />'); return false;">Left</a> | <a onClick="insert('\n<img src=&quot;&quot; alt=&quot;Zybez RuneScape Help\'s _________ Image&quot; class=&quot;fmid&quot; />'); return false;">Center</a> | <a onClick="insert('\n<img src=&quot;&quot; alt=&quot;Zybez RuneScape Help\'s _________ Image&quot; class=&quot;fright&quot; />'); return false;">Right</a></td></tr>
+<td class="tablebottom" align="center">Images: <a onClick="insert('\n<img src=&quot;&quot; alt=&quot;OSRS RuneScape Help\'s _________ Image&quot; class=&quot;fleft&quot; />'); return false;">Left</a> | <a onClick="insert('\n<img src=&quot;&quot; alt=&quot;OSRS RuneScape Help\'s _________ Image&quot; class=&quot;fmid&quot; />'); return false;">Center</a> | <a onClick="insert('\n<img src=&quot;&quot; alt=&quot;OSRS RuneScape Help\'s _________ Image&quot; class=&quot;fright&quot; />'); return false;">Right</a></td></tr>
 <tr>
 <td class="tablebottom" align="center"><a onClick="insert('\n<div class=&quot;title1&quot;>?.0 - FAQ</div>\n<div class=&quot;faq&quot;>\n<span>Q: Question?</span>\n<p>A: Answer.</p>\n</div>'); return false;">Frequently Asked Questions</a></td></tr>
 <tr>

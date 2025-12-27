@@ -19,7 +19,7 @@ start_page(1,'The Guide to Creating Guides');
 
 <a name="1"></a>
 <div class="title1">Introduction and General Guide Advice</div>
-<p>Use this guide as a reference if you are unsure how to progress when an update is released, or alternatively if you just want to produce a new guide afresh. Although writing a guide can be quite simple, for many beginners it can be a bit overwhelming as to <em>just where</em> to start. You should already be familiar Zybez's pledges to innovation, quality, and detail regarding our content. Refer to the HTML or Image guide if you are confused over those aspects of work. The table below can remind you of common mistakes that can be made when writing guides.</p>
+<p>Use this guide as a reference if you are unsure how to progress when an update is released, or alternatively if you just want to produce a new guide afresh. Although writing a guide can be quite simple, for many beginners it can be a bit overwhelming as to <em>just where</em> to start. You should already be familiar OSRS RuneScape Help's pledges to innovation, quality, and detail regarding our content. Refer to the HTML or Image guide if you are confused over those aspects of work. The table below can remind you of common mistakes that can be made when writing guides.</p>
 
 <table cellspacing="0" style="border-left: 1px solid #000000; 90%;margin:0 5%;" summary="">
 <tr>
@@ -29,7 +29,7 @@ start_page(1,'The Guide to Creating Guides');
 <tr>
 <td class="tablebottom">Game terms</td>
 <td class="tablebottom"><span style="color:#33FF00;">RuneScape<br />JaGex<br />Battleaxe<br />Woodcutting axe<br />Platebody<br />Saradomin<br />Port Phasmatys<br />Gielinor<br />Kharazi Jungle<br />Meiyerditch<br />Mos Le'Harmless<br />Mini games</span></td>
-<td class="tablebottom"><span style="color:red;">Runescape (can be used for Zybez Runescape Help)<br />Jagex, JAGEX<br />Battle axe<br />Hatchet, Woodcuttingaxe<br />Plate<br />Saradom, Saradmin<br />Port Phastymasy<br />Gielnor, Geilnor<br />Khazari Jungle<br />Meyeriditch<br />Mos Harmless, Moss leHarmless<br />Mini-games, Minigames</span></td></tr>
+<td class="tablebottom"><span style="color:red;">Runescape (can be used for OSRS RuneScape Help)<br />Jagex, JAGEX<br />Battle axe<br />Hatchet, Woodcuttingaxe<br />Plate<br />Saradom, Saradmin<br />Port Phastymasy<br />Gielnor, Geilnor<br />Khazari Jungle<br />Meyeriditch<br />Mos Harmless, Moss leHarmless<br />Mini-games, Minigames</span></td></tr>
 <tr>
 <td class="tablebottom">British English spellings<br />(JaGex spellings)</td>
 <td class="tablebottom"><span style="color:#33FF00;">Armour<br />Artefact<br />Colour (except in coding)<br />Defence</span></td>
@@ -42,7 +42,7 @@ start_page(1,'The Guide to Creating Guides');
 <p>When you're making a guide, particularly your first few, don't try to over complicate things. Put down what you need to and then try to experiment with the layout or how the guide is divided afterwards. You should of course be keeping back ups or work as you go, and if you use the quest guide wizard as a sandbox nothing can go wrong.</p>
 
 <div class="title2">General Update Information</div>
-<p>As a general rule over in-game updates, communication with each other is more important than anything. Speak to one another in-game, over the shoutbox, in our IRC, or over MSN. Just be sure to be discrete, keeping zybez information secret and not endangering your RuneScape account.</p>
+<p>As a general rule over in-game updates, communication with each other is more important than anything. Speak to one another in-game, over the shoutbox, in our IRC, or over MSN. Just be sure to be discrete, keeping osrs_help information secret and not endangering your RuneScape account.</p>
 
 <div class="info"; >JaGex often releases the biggest update of the month on a Tuesday, particularly if its in the first week, or if no actual update preceded it in the week before. <br />Why? Who knows, maybe they like to run final checks on Monday, or perhaps they are too lazy to finish work properly on Friday ready for Monday. But as a general rule of thumb this has held out for almost two years now.</div>
 
@@ -79,7 +79,7 @@ start_page(1,'The Guide to Creating Guides');
 <br />A. If the the mini game is based entirely within a set enclosed location, it is usually best to explain the interface first and each part's function.</li>
 <br /><br />B. If the mini game is more complex and involving a wider range of skills, it is better to explain the objectives of the game, and then to attach interface icons to each action as you explain.</p>
 
-<p>Mini games also will often favour a certain niche of players that the content team may not actually possess. Write what you can, and then consult players or willing RSC staff who <em>do</em> actively use the mini game. If needed Zybez can give credit to players in the strategies or recommendations for certain games, just be sure to standardise what we receive if they write it themselves.</p>
+<p>Mini games also will often favour a certain niche of players that the content team may not actually possess. Write what you can, and then consult players or willing RSC staff who <em>do</em> actively use the mini game. If needed OSRS RuneScape Help can give credit to players in the strategies or recommendations for certain games, just be sure to standardise what we receive if they write it themselves.</p>
 
 </td></tr><tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>Tzu Men</b></td>  
 </tr>

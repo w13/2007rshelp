@@ -1,6 +1,6 @@
 <?php
 /* Security For Our Info */
-define( 'IN_ZYBEZ' , TRUE );
+define( 'IN_OSRS_HELP' , TRUE );
 
 /*** EQUIPMENT PROFILES DATABASE ***/
  require(dirname(__FILE__) . '/' . 'backend.php');
@@ -122,7 +122,7 @@ if(empty($id)) {
     $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
     echo NL.'<tr>'
      .NL.'<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">
-        <img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . $info['name'] .' image" width="50" height="50" />
+        <img src="/img/idbimg/' . $info['image'] . '" alt="OSRS RuneScape Help\'s ' . $info['name'] .' image" width="50" height="50" />
         </a></td>'
      .NL.'<td class="tablebottom">'
         .'<a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['name'] . '</a></td>'
@@ -162,7 +162,7 @@ if(empty($id)) {
 &raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">Runescape Equipment Profiles</a> &raquo; Set Builder</div>
 <hr class="main" noshade="noshade" />
 <p class="descr"><span>Build your very own Runescape Equipment set!</span>
-<br /><br />You can build a set just to check out how much it'll cost you, what monsters it will be good against, what stats it has and how much it weighs, <b>or</b> submit your Runescape equipment combination and have it available to other users of Zybez Runescape Help forever! <noscript><b>Javascript MUST be enabled to use this.</b></noscript></p>
+<br /><br />You can build a set just to check out how much it'll cost you, what monsters it will be good against, what stats it has and how much it weighs, <b>or</b> submit your Runescape equipment combination and have it available to other users of OSRS RuneScape Help forever! <noscript><b>Javascript MUST be enabled to use this.</b></noscript></p>
 
 <div id="holder"></div>
 <br /><div id="images"></div>
@@ -410,7 +410,7 @@ echo '<div class="instr">'
 
 /*** SUBMITTER ***/
 $info['submit_type']  = $info['submit_type'] == 0 ? 'User Submitted' : $info['submit_type'];
-$info['submit_type']  = $info['submit_type'] == 1 ? 'Submitted by Zybez Staff' : $info['submit_type'];
+$info['submit_type']  = $info['submit_type'] == 1 ? 'Submitted by OSRS RuneScape Help Staff' : $info['submit_type'];
 
 /*** GROUPS ***/
 $info['themed']  = $info['themed'] == -1 ? 'Unsorted': $info['themed'] ;

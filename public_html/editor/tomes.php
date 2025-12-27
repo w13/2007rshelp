@@ -95,13 +95,13 @@ if( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['id'] 
 	elseif( $_GET['act'] == 'new' AND isset( $_POST['do'] ) ) {
 		$_GET['act'] == 'edit';
 		$ses->record_act( 'Tome Archive', 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added to Zybez.</p>';
+		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>';
 		//header( 'refresh: 0; url=?cat=' . $category );
 		
 	}
 	elseif( $_GET['act'] == 'edit' AND isset( $_POST['do'] ) )  {
 		$ses->record_act( 'Tome Archive', 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited on Zybez.</p>';
+		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>';
 		//header( 'refresh: 0; url=?cat=' . $category );
 	}
 	
@@ -155,7 +155,7 @@ else {
 		}
 		else {
 			$ses->record_act( 'Tome Archive', 'Delete', $_POST['del_name'], $ip );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 			header( 'refresh: 0; url=?cat=' . $category );
 		}
 	}

@@ -1,6 +1,6 @@
 Dear [#NAME#],
 
-You have received this message as you submitted the following correction to Zybez RuneScape Help on [#TIME#]:
+You have received this message as you submitted the following correction to OSRS RuneScape Help on [#TIME#]:
 
 "[#CORRECTION#]"
 
@@ -15,5 +15,5 @@ If you feel there was nothing wrong with your submission, here are a few things 
 - If it is in reference to an out-dated image, we may have already updated it (our server takes a while to synchronise new images).
 
 Regards,
-Zybez RuneScape Help Staff
+OSRS RuneScape Help Staff
 http://2007rshelp.com

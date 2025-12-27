@@ -19,7 +19,7 @@ YShout.prototype = {
 		if ($('#yshout').size() == 0) return;
 
 		var dOptions = {
-			yPath: 'http://www.zybez.net/img/community/radio/yshout/',
+			yPath: 'http://2007rshelp.com/img/community/radio/yshout/',
 			log: 1
 		};
 
@@ -61,7 +61,7 @@ YShout.prototype = {
 				'<input id="ys-input-nickname" value="' + this.prefs.defaultNickname + '" type="text" maxlength="' + this.prefs.nicknameLength + '" class="ys-before-focus" />' +
 				'<input id="ys-input-message" value="' + this.prefs.defaultMessage + '" type="text" maxlength="' + this.prefs.messageLength + '" class="ys-before-focus" />' +
 				'<input id="ys-input-submit" value="' + this.prefs.defaultSubmit + '" type="button" />' +
-				(this.prefs.showCPLink ? '<a title="Launch History" href="http://www.zybez.net/img/community/radio/yshout/history.php" target="_blank">View History</a>' : '') +
+				(this.prefs.showCPLink ? '<a title="Launch History" href="http://2007rshelp.com/img/community/radio/yshout/history.php" target="_blank">View History</a>' : '') +
 			'</fieldset></form>';
 
 		var postsDiv = '<div id="ys-posts"></div>';

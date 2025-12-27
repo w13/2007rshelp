@@ -1,10 +1,10 @@
 <?php
 
 require( 'backend.php' );
-start_page( 0, 'Zybez Structure and Job Descriptions' );
+start_page( 0, 'OSRS RuneScape Help Structure and Job Descriptions' );
 ?>
 <a name="top"></a>
-<div class="boxtop">Zybez Structure and Job Descriptions</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
+<div class="boxtop">OSRS RuneScape Help Structure and Job Descriptions</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 
 <div class="title1" style="text-align:center;">Head of Content</div>
 <b>Job Description:</b>
@@ -12,7 +12,7 @@ start_page( 0, 'Zybez Structure and Job Descriptions' );
 <li>Designate jobs to Content Team members and ensure they are followed through.</li>
 <li>Monitor Team Managers and Team Leaders, make sure they know what they're doing.</li>
 <li>Ensure that the Content Teams are operating to maximum efficiency.</li>
-<li>Ensure Zybez meets its <a href="/editor/intro.php#2">mission statement</a> goals: quality, detail, enthusiasm and innovation.</li>
+<li>Ensure OSRS RuneScape Help meets its <a href="/editor/intro.php#2">mission statement</a> goals: quality, detail, enthusiasm and innovation.</li>
 </ol>
  
 <div class="title2" style="text-align:center;">Managers</div>
@@ -45,7 +45,7 @@ start_page( 0, 'Zybez Structure and Job Descriptions' );
 <ol>
 <li>Fixing corrections submitted by our users.</li>
 <li>Acquiring pictures needed for guides.</li>
-<li>Helping with future Zybez projects, creatively and in producing them.</li>
+<li>Helping with future OSRS RuneScape Help projects, creatively and in producing them.</li>
 </ol><p><u>Break down of tasks:</u></p>
 <ol>
 <li>Updating skill guides to include new items and pictures, ways to make money or train, changes in methods of making items, quests giving XP rewards to skills etc.</li>
@@ -60,7 +60,7 @@ start_page( 0, 'Zybez Structure and Job Descriptions' );
 <ol>
 <li>Ensure guides are of a high quality before release.</li>
 <li>Skim through guides and note any with .JPEG bad quality images. Note these in the main notepad. If possible, retake them yourself.</li>
-<li>Whilst using Zybez, if a guide is too hard to read for whatever reason, go and fix it up.</li>
+<li>Whilst using OSRS RuneScape Help, if a guide is too hard to read for whatever reason, go and fix it up.</li>
 <li>Read through guides checking for grammar/ punctuation/ spelling errors, how easily it reads, the quality of its images etc.</li>
 </ol>
 
@@ -73,9 +73,9 @@ start_page( 0, 'Zybez Structure and Job Descriptions' );
 <li>Working on the item and monster databases in particular so we can get them released.</li>
 <li>Updating the shop database after new game updates.</li></ol>
 
-<div class="title2">Zybez Alumni</div>
+<div class="title2">OSRS RuneScape Help Alumni</div>
 <p><b>Members:</b> Prince, Cyrax, Kod Flame, Zug313, Jon Dudley, Atarah, Phoenix Zero<br />
-The Zybez Alumni is the group of people who have done some outstanding work for Zybez and have since retired. They don't have to do anything, but are still valued members, regardless of whether or not they have an editor account.</p>
+The OSRS RuneScape Help Alumni is the group of people who have done some outstanding work for OSRS RuneScape Help and have since retired. They don't have to do anything, but are still valued members, regardless of whether or not they have an editor account.</p>
 
 
 

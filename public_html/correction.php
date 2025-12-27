@@ -136,10 +136,10 @@ elseif( isset( $area ) AND !empty( $id ) ) {
 				$info = $db->fetch_array( $query );
 				$cont_name = $info[$area_arr[$area]['sql_name']];
 			}
-			//if($_COOKIE['member_id']) echo '<h3 style="text-align:center;">Member of RSC? Ever thought of joining the Zybez Content Team and helping make Zybez a better fansite directly?<br /><a href="/community/index.php?showtopic=1051278">Click here to find out more!</a></h3>';
+			//if($_COOKIE['member_id']) echo '<h3 style="text-align:center;">Member of RSC? Ever thought of joining the OSRS RuneScape Help Content Team and helping make OSRS RuneScape Help a better fansite directly?<br /><a href="/community/index.php?showtopic=1051278">Click here to find out more!</a></h3>';
 			if($cont_name != "Missing item") { echo '<p>You are submitting a correction for our <b>\'' . $cont_name . '\'</b> entry. Abusing this form will result in a seven day suspension, or permanent ban from using it. Please only use it to submit a correction to our content.</p>' . NL; }
 			else { echo '<p>You are submitting a correction informing us of a missing item. Please specify whether it is for the Item Database or Price Guide. Also double check that it is indeed missing before submitting. Abusing this form will result in a seven day suspension, or permanent ban from using it.</p>' . NL; }
-			echo '<p>Any content submitted that is not a correction will be disregarded. This form is <b>not</b> for RuneScape assistance. Use Runescape Community\'s <a href="http://forums.zybez.net/forum/202-questions/">Questions</a> forums if you cannot find an answer to your question on <a href="/index.php">Zybez</a>.</p>'. NL;
+			echo '<p>Any content submitted that is not a correction will be disregarded. This form is <b>not</b> for RuneScape assistance. Use Runescape Community\'s <a href="http://forums.2007rshelp.com/forum/202-questions/">Questions</a> forums if you cannot find an answer to your question on <a href="/index.php">OSRS RuneScape Help</a>.</p>'. NL;
 if($cont_area == "Item Database" && $cont_name != "Missing item" ) {
 echo '<p style="text-align:center;"><span style="font-size:15px;"><b>Submitting Item Database Corrections</b></span>'.NL;
 echo '<br />If you are reporting a <b>MISSING</b> item, please <a href="/correction.php?area=items&id=4296">click here</a>.'.NL;
@@ -178,11 +178,11 @@ echo '<br />We will accept corrections pertaining to the quality (easy-to-read, 
 			$info = $db->fetch_row( "SELECT * FROM corrections_ip WHERE ip = '" . $ip_address . "'" );
 
 			if( $info['status'] == 3 ) {
-				echo '<p align="center">This IP address has been <b>permanently banned</b> from use of the correction form.<br />It was used to send unacceptable content to the staff members of Zybez RuneScape Help.</p>' . NL;
+				echo '<p align="center">This IP address has been <b>permanently banned</b> from use of the correction form.<br />It was used to send unacceptable content to the staff members of OSRS RuneScape Help.</p>' . NL;
 			}
 			elseif( $info['status'] == 2 AND $info['status_expire'] > time() ) {
 				$days = ceil( ( $info['status_expire'] - time() ) / 86400 );
-				echo '<p align="center">This IP address has been <b>suspended</b> from use of the correction form for 7 days.<br />It was used to send unacceptable content to the staff members of Zybez RuneScape Help.</p>' . NL;
+				echo '<p align="center">This IP address has been <b>suspended</b> from use of the correction form for 7 days.<br />It was used to send unacceptable content to the staff members of OSRS RuneScape Help.</p>' . NL;
 				echo '<p align="center">The suspension will end in ' . $days . ' days.</p>' . NL;
 			}
 			elseif( $info['status'] == 1 AND $info['status_expire'] > time() ) {
@@ -206,7 +206,7 @@ echo '<br />We will accept corrections pertaining to the quality (easy-to-read, 
 				setcookie( 'correct' , $time_allowed , $time_allowed );
 				
 				echo '<p><b>Thank you for your submission!</b></p>' . NL;
-				echo '<p>A Zybez Runescape Help staff member will now review your submission. ';
+				echo '<p>A OSRS RuneScape Help staff member will now review your submission. ';
 				
 				if( $reply ) {
 					echo 'When your submission is delt with, we will send an email to <i>' . $email . '</i> notifying you what we decided to do. ';

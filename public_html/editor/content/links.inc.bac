@@ -12,7 +12,7 @@ if($ses->permit(2) || $ses->permit(24) || $ses->permit(3)) {
 		echo '<li><a href="minigames.php" title="Mini Game Guide Manager"><img src="/images/banner/minigame.png" alt="" />Mini Games</a></li>'.NL;
 		echo '<li><a href="cities.php" title="City Guide Manager"><img src="/images/banner/building.png" alt="" />Cities</a></li>'.NL;
 	}
-	if($ses->permit(24)) echo '<li><a href="atlas.php" title="Atlas Manager"><img src="/images/banner/map_go.png" alt="" />Zybez Atlas</a></li>'.NL;   
+	if($ses->permit(24)) echo '<li><a href="atlas.php" title="Atlas Manager"><img src="/images/banner/map_go.png" alt="" />OSRS RuneScape Help Atlas</a></li>'.NL;   
 	if($ses->permit(3)) echo '<li><a href="map.php" title="Map Manager"><img src="/images/banner/map.png" alt="" />Maps</a></li>'.NL;
 	echo '</ul>'.NL;
 }
@@ -38,8 +38,8 @@ if($ses->permit(8) OR $ses->permit(9) OR $ses->permit(12) OR $ses->permit(13) OR
     echo '<ul>'.NL;
     if($ses->permit(9)) echo '<li><a href="concepts.php" title="Concepts Manager"><img alt="" src="/images/banner/palette.png" />Concepts</a></li>'.NL;
     if($ses->permit(8)) echo '<li><a href="screenshots.php" title="Screenshots Manager"><img alt="" src="/images/banner/picture.png" />Screenshots</a></li>'.NL;
-    if($ses->permit(17)) echo '<li><a href="blog.php" title="Zybez Blogs"><img alt="" src="/images/banner/page_white_edit.png" />Zybez Blogs</a></li>'.NL;
-    if($ses->permit(12)) echo '<li><a href="news.php" title="Zybez News Manager"><img alt="" src="/images/banner/newspaper.png" />News Manager</a></li>'.NL;
+    if($ses->permit(17)) echo '<li><a href="blog.php" title="OSRS RuneScape Help Blogs"><img alt="" src="/images/banner/page_white_edit.png" />OSRS RuneScape Help Blogs</a></li>'.NL;
+    if($ses->permit(12)) echo '<li><a href="news.php" title="OSRS RuneScape Help News Manager"><img alt="" src="/images/banner/newspaper.png" />News Manager</a></li>'.NL;
     if($ses->permit(13)) echo '<li><a href="fact.php" title="Facts Manager"><img alt="" src="/images/banner/information.png" />Facts Manager</a></li>'.NL;
     if($ses->permit(20)) {
 		echo '<li><a href="ticker.php" title="Ticker Manager"><img alt="" src="/images/banner/hourglass.png" />Ticker Manager</a></li>'.NL;

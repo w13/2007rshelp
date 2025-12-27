@@ -156,7 +156,7 @@ elseif(isset($_POST['delitm']) AND isset($_GET['par']) AND $ses->permit(15)) {
     $db->query("UPDATE price_items SET iorder = iorder - 1 WHERE category = '".$_POST['category']."' AND iorder > ".$_POST['iorder']);
     $par = base64_decode($_GET['par']);
     header('refresh: 1; url='.$_SERVER['PHP_SELF'].'?'.$par);
-    echo '<p align="center">Entry successfully deleted from Zybez.</p>'.NL;
+    echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>'.NL;
 }
 elseif(isset($_GET['delitm']) AND isset($_GET['par']) AND $ses->permit(15)) {
     echo '<br /><hr />'.NL.NL;
@@ -184,7 +184,7 @@ elseif(isset($_POST['delcat']) AND isset($_GET['area']) AND $ses->permit(15)) {
     echo '<br /><hr />'.NL.NL;
     delete_category($_POST['delcat'], $_POST['left'], $_POST['right']);
     header('refresh: 1; url='.$_SERVER['PHP_SELF'].'?area='.$_GET['area'].'&conf=yes');
-    echo '<p align="center">Entry successfully deleted from Zybez.</p>'.NL;
+    echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>'.NL;
 }
 elseif(isset($_GET['delcat']) AND isset($_GET['area']) AND $ses->permit(15)) {
     echo '<br /><hr />'.NL.NL;

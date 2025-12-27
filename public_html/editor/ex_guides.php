@@ -4,7 +4,7 @@ start_page( 21, 'External Guides' );
 
 echo '<div class="boxtop">External Guides</div><div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">';
 echo '<p align="center">' . NL;
-echo '<a href="' . $_SERVER['PHP_SELF'] . '?guide=1"><img src="/img/community/radio/banner.png" alt="Zybez Radio" border="0" /></a>&nbsp;&nbsp;' . NL;
+echo '<a href="' . $_SERVER['PHP_SELF'] . '?guide=1"><img src="/img/community/radio/banner.png" alt="OSRS RuneScape Help Radio" border="0" /></a>&nbsp;&nbsp;' . NL;
 echo '</p>' . NL;
 echo '</div>' . NL;
 
@@ -12,7 +12,7 @@ if( isset( $_GET['guide'] ) ) {
 
 	switch( $_GET['guide'] ) {
 		case 1:
-			$title = 'Zybez Radio';
+			$title = 'OSRS RuneScape Help Radio';
 			$file = '/radio/DJs.txt';
 			$guide = 1;
 			break;

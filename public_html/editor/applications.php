@@ -1,7 +1,7 @@
 <?php
 require( 'backend.php' );
 require( 'edit_class.php' );
-start_page(21, 'Zybez Applications');
+start_page(21, 'OSRS RuneScape Help Applications');
 if(isset($_GET['radioap'])) $edit = new edit( 'applicationsr', $db );
 else $edit = new edit( 'applications', $db );
 ?>
@@ -57,7 +57,7 @@ $info['crew'] = $info['crew'] == 'MC' ? 'Maintenance' : $info['crew'];
 //$info['crew'] = $info['crew'] == 'QC' ? 'Quality Control' : $info['crew'];
 $info['crew'] = $info['crew'] == 'DC' ? 'Database' : $info['crew'];
 //$info['crew'] = $info['crew'] == 'FDI' ? 'Future Dev' : $info['crew'];
-//$info['crew'] = $info['crew'] == 'ZET' ? 'Zybez Events Team' : $info['crew'];
+//$info['crew'] = $info['crew'] == 'ZET' ? 'OSRS RuneScape Help Events Team' : $info['crew'];
 $info['crew'] = $info['crew'] == 'BLO' ? 'Blog' : $info['crew'];
 //$info['crew'] = $info['crew'] == 'DEV' ? 'Developer / Coder' : $info['crew'];
 $info['crew'] = $info['crew'] == 'SC' ? 'Support' : $info['crew'];
@@ -94,7 +94,7 @@ $result_av = $db->fetch_array($query_av);
 $av = $result_av['avatar_location'];
 $av_size = $result_av['avatar_size'];
 $av_array = explode('x',$av_size);
-if (strlen($av)<15) $av = 'http://www.zybez.net/community/uploads/' . $av;
+if (strlen($av)<15) $av = 'http://2007rshelp.com/community/uploads/' . $av;
 
 /*Jer added for IP Checking*/
 if ($_SESSION['user'] == 'Jeremy') {
@@ -139,7 +139,7 @@ echo '</td><td>Hours/Week:</td><td>'.$info['hours'].'</td></tr>'
     .'<table cellspacing="0" width="85%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">'
     .'<tr>'
     .'<td style="vertical-align:top;">Warn Log Contents (earliest to latest)</td><td><ol>'
-	.'<a href="http://www.zybez.net/community/index.php?act=Search&CODE=getalluser&mid='.$info['rscid'].'" target="_blank"><img src="'.$av.'" class="fright" title="View Member\'s Posts" style="width:'.$av_array[0].'px;height:'.$av_array[1].'px;" /></a>';
+	.'<a href="http://2007rshelp.com/community/index.php?act=Search&CODE=getalluser&mid='.$info['rscid'].'" target="_blank"><img src="'.$av.'" class="fright" title="View Member\'s Posts" style="width:'.$av_array[0].'px;height:'.$av_array[1].'px;" /></a>';
     $query1 = $db->query("SELECT ibfwarn_logs.* FROM helpdb.applicationsr, community.ibfwarn_logs WHERE rscid=wlog_mid AND id=".$id);
     while($infos = mysqli_fetch_array($query1))  {
     $infos['wlog_notes'] = str_replace(",d","",$infos['wlog_notes']);
@@ -209,14 +209,14 @@ echo '</td><td>Dependability:</td><td>'.$info['dep'].'/10</td></tr>'
     .'<tr>'
     .'<td>RSC Join Date:</td><td>'.date("j M Y",$info['joined']).' ('.$yrs.')</td><td>Graphics:</td><td>'.$info['gfx'].'/10</td></tr>'
     .'<tr>'
-    .'<td>Posts:</td><td>'.number_format($info['posts']).' ('.round($ppd,2).' per day)</td><td width="10%">Zybez Interest:</td><td>'.$info['intr'].'/10</td></tr></table>'
+    .'<td>Posts:</td><td>'.number_format($info['posts']).' ('.round($ppd,2).' per day)</td><td width="10%">OSRS RuneScape Help Interest:</td><td>'.$info['intr'].'/10</td></tr></table>'
     .'<table cellspacing="0" width="85%" style="border: 1px solid #000; border-top: none" cellpadding="4" align="center">'
     .'<tr>'
     .'<td width="20%">Programming Languages:</td><td>'.$info['plang'].'</td>'
     .'</tr>'
     .'<tr>'
     .'<td style="vertical-align:top;">Warn Log Contents (earliest to latest)</td><td><ol>'
-	.'<a href="http://www.zybez.net/community/index.php?act=Search&CODE=getalluser&mid='.$info['rscid'].'" target="_blank"><img src="'.$av.'" class="fright" title="View Member\'s Posts" style="width:'.$av_array[0].'px;height:'.$av_array[1].'px;" /></a>';
+	.'<a href="http://2007rshelp.com/community/index.php?act=Search&CODE=getalluser&mid='.$info['rscid'].'" target="_blank"><img src="'.$av.'" class="fright" title="View Member\'s Posts" style="width:'.$av_array[0].'px;height:'.$av_array[1].'px;" /></a>';
     $query1 = $db->query("SELECT ibfwarn_logs.* FROM helpdb.applications, community.ibfwarn_logs WHERE rscid=wlog_mid AND id=".$id);
     while($infos = mysqli_fetch_array($query1))  {
     $infos['wlog_notes'] = str_replace(",d","",$infos['wlog_notes']);
@@ -269,7 +269,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 			else $db->query("DELETE FROM `applications` WHERE id = " . $_POST['del_id'] );
 			$ses->record_act( 'Applications', 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] );
-			echo '<p style="text-align:center;">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p style="text-align:center;">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {
@@ -389,12 +389,12 @@ if ($info['processed'] == 1) {
 	$info['processed'] = '<img src="/img/calcimg/a_yellow.PNG" alt="" /> Under Review';
 }
 
-$info['crew'] = isset($_GET['radio']) ? 'Zybez Radio' : $info['crew'];
+$info['crew'] = isset($_GET['radio']) ? 'OSRS RuneScape Help Radio' : $info['crew'];
 $info['crew'] = $info['crew'] == 'MC' ? 'Maintenance Crew' : $info['crew'];
 //$info['crew'] = $info['crew'] == 'QC' ? 'Quality Control Crew' : $info['crew'];
 $info['crew'] = $info['crew'] == 'DC' ? 'Database Crew' : $info['crew'];
 //$info['crew'] = $info['crew'] == 'FDI' ? 'Future Dev' : $info['crew'];
-//$info['crew'] = $info['crew'] == 'ZET' ? 'Zybez Events Team' : $info['crew'];
+//$info['crew'] = $info['crew'] == 'ZET' ? 'OSRS RuneScape Help Events Team' : $info['crew'];
 //$info['crew'] = $info['crew'] == 'DEV' ? 'Developer / Coder' : $info['crew'];
 $info['crew'] = $info['crew'] == 'SC' ? 'Support Crew' : $info['crew'];
 $info['crew'] = $info['crew'] == 'BLO' ? 'Blog' : $info['crew'];

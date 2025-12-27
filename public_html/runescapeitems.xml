@@ -3,10 +3,10 @@
   <button>
       <title>Runescape Item Database</title>
       <description>Look up Runescape item descriptions</description>
-      <site>http://www.zybez.net/items.php</site>
-      <search>http://www.zybez.net/items.php?search_area=name&amp;search_term={query}</search>
-      <send>http://www.zybez.net/items.php?search_area=name&amp;search_term={selection}</send>
+      <site>http://2007rshelp.com/items.php</site>
+      <search>http://2007rshelp.com/items.php?search_area=name&amp;search_term={query}</search>
+      <send>http://2007rshelp.com/items.php?search_area=name&amp;search_term={selection}</send>
       <icon mode="base64" type="image/x-icon">R0lGODlhEAAQAMQAAAAAAP///yQCBBwCBAwCBERCTFRWZAwGBGQOBFQKBEwKBFQaFFwiHGwqJFwKBCwGBEQGBDwGBDQGBGweHGQeHEQWFGQmJHQuLP///wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABgALAAAAAAQABAAAAVYICaOZGmeaFoaBCY9wjC0QkFGQhQxkcQICMlg5IAIK5DFQlJJRB5E5wBygEQOD4dCciAdDorq9fFFOcBUaCpx+VrUqEmCQolMVIlEQ2FUYSYUgH6DhIUkIQA7</icon>
-      <update>http://www.zybez.net/runescapeitems.xml</update>
+      <update>http://2007rshelp.com/runescapeitems.xml</update>
   </button>
 </custombuttons>

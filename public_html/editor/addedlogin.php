@@ -5,13 +5,13 @@ header("Pragma: no-cache");
 
 if( isset($_GET['user']) ) {
  $referrer = $_SERVER['HTTP_REFERER'];
- $find = 'corporate.zybez.net';
+ $find = 'corporate.2007rshelp.com';
  $pos = strpos($referrer, $find);
  //echo '<script type="text/javascript">alert(\'Level 1: User is set.\')</script>';
   
  //if(empty($referrer)) echo 'You have referrers disabled.';
  if( $pos != '7' ){
- //echo '<script type="text/javascript">alert(\'Level 2: User is set, but didnt come from corporate.zybez.net, they came from: ' . $referer . '.\')</script>';
+ //echo '<script type="text/javascript">alert(\'Level 2: User is set, but didnt come from corporate.2007rshelp.com, they came from: ' . $referer . '.\')</script>';
  //die();
   header('Location: http://www.runescapecommunity.com');
  }else{

@@ -54,8 +54,8 @@ The Item Comparator is a Runescape tool that will enable you to see the pros and
 <strong>&raquo;</strong> No more math! The differences of every item are right before your eyes.<br />
 <strong>&raquo;</strong> In-depth break down of any item.<br />
 <strong>&raquo;</strong> Easily make informed decisions on which items better suit <strong>your</strong> needs, rather than just going with the general consensus.<br />
-<strong>&raquo;</strong> Add items to compare right from our own <a href="items.php" title="Zybez Runescape Help's Item Database">Item Database</a>.  Using the Comparator is fast and simple!
-<p>You may visit the <a href="items.php" title="Zybez Runescape Help's Item Database" target="_blank">Item Database</a> to find items you wish to compare now or search the <a href="items.php" title="Zybez Runescape Help's Item Database" target="_blank">Item Database</a> using the form below.  Once you have started adding items, they will appear on a queue below this search.</p>
+<strong>&raquo;</strong> Add items to compare right from our own <a href="items.php" title="OSRS RuneScape Help's Item Database">Item Database</a>.  Using the Comparator is fast and simple!
+<p>You may visit the <a href="items.php" title="OSRS RuneScape Help's Item Database" target="_blank">Item Database</a> to find items you wish to compare now or search the <a href="items.php" title="OSRS RuneScape Help's Item Database" target="_blank">Item Database</a> using the form below.  Once you have started adding items, they will appear on a queue below this search.</p>
 <?php
 
 ## ITEM DATABASE INSERT TO ALLOW FOR EASY SEARCHING 
@@ -107,7 +107,7 @@ while($info = $db->fetch_array($query))   {
 	} else $queueimage = $addSnippet;
 	
     echo '<tr>';
-    echo '<td class="tablebottom"><a href="/items.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm"><img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . htmlspecialchars($info['name'] ?? '') .' image" width="50" height="50" /></a></td>';
+    echo '<td class="tablebottom"><a href="/items.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm"><img src="/img/idbimg/' . $info['image'] . '" alt="OSRS RuneScape Help\'s ' . htmlspecialchars($info['name'] ?? '') .' image" width="50" height="50" /></a></td>';
     echo '<td class="tablebottom"><a href="/items.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . htmlspecialchars($info['name'] ?? '') . '</a></td>' . NL;
 	echo '<td class="tablebottom">'.$queueimage.'</td>';
     echo '<td class="tablebottom">' . htmlspecialchars($info['member'] ?? '') . '</td>';
@@ -219,7 +219,7 @@ if (count($queue) != 0) {
 	echo '<div style="width:69%;float:left;"><div class="boxtop">Comparison Queue</div>'
 		.'<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">'
 		
-		.'			<p>These are the items in your comparison queue. You can view their individual information pages by clicking the names, and you can remove them from the queue by clicking the icons in the "Remove" column. Alternatively, you can click the "(wipe)" link to clear your entire queue.  To add more items to the queue, visit the <a href="items.php" title="Zybez Runescape Help\'s Item Database">Item Database</a>.</p>
+		.'			<p>These are the items in your comparison queue. You can view their individual information pages by clicking the names, and you can remove them from the queue by clicking the icons in the "Remove" column. Alternatively, you can click the "(wipe)" link to clear your entire queue.  To add more items to the queue, visit the <a href="items.php" title="OSRS RuneScape Help\'s Item Database">Item Database</a>.</p>
 			<table style="border-left:1px #000 solid;width:80%;margin:0 10%;" cellspacing="0" id="list_queue">
 				<tr>
 					<th class="tabletop" style="width:50px;">Picture</th>
@@ -236,7 +236,7 @@ if (count($queue) != 0) {
 		
 	foreach ($items as $item) {
 		echo '<tr id="queue'.$item["id"].'">
-					<td class="tablebottom"><img src="'.$item["image"].'" alt="Zybez RuneScape Help\'s picture of '.$item["name"].'" /></td>
+					<td class="tablebottom"><img src="'.$item["image"].'" alt="OSRS RuneScape Help\'s picture of '.$item["name"].'" /></td>
 					<td class="tablebottom"><a href="items.php?id='.$item["id"].'">'.$item["name"].'</a></td>
 					<td class="tablebottom">'.boolf ($item["p2p"]).'</td>
 					<td class="tablebottom">'.boolf ($item["trade"]).'</td>
@@ -455,10 +455,10 @@ for ($i = 1; $i < count ($items); $i++) {
 
 	echo '
 				<div style="float:left;width:46%;">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:left;">
 						<tr>
-							<th class="tablebottom" rowspan="8" style="width:25%;border-top:1px solid #000;"><img src="' . $items[0]["image"] . '" alt="Zybez RuneScape Help\'s picture of ' . $items[0]["name"] . '" style="margin:auto;display:block;" /></th>
+							<th class="tablebottom" rowspan="8" style="width:25%;border-top:1px solid #000;"><img src="' . $items[0]["image"] . '" alt="OSRS RuneScape Help\'s picture of ' . $items[0]["name"] . '" style="margin:auto;display:block;" /></th>
 							<th class="tabletop">What</th>
 							<th class="tabletop">Value</th>
 							<th class="tabletop">Difference</th>
@@ -503,10 +503,10 @@ for ($i = 1; $i < count ($items); $i++) {
 
 	echo '
 				<div style="float:right;width:46%;">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:right;">
 						<tr>
-							<th class="tablebottom" rowspan="8" style="width:25%;border-top:1px solid #000;"><img src="' . $items[$i]["image"] .'" alt="Zybez RuneScape Help\'s picture of ' . $items[$i]["name"] . '" style="margin:auto;display:block;" /></th>
+							<th class="tablebottom" rowspan="8" style="width:25%;border-top:1px solid #000;"><img src="' . $items[$i]["image"] .'" alt="OSRS RuneScape Help\'s picture of ' . $items[$i]["name"] . '" style="margin:auto;display:block;" /></th>
 							<th class="tabletop">What</th>
 							<th class="tabletop">Value</th>
 							<th class="tabletop">Difference</th>
@@ -551,7 +551,7 @@ for ($i = 1; $i < count ($items); $i++) {
 
 	echo '
 				<div style="float:left;width:49%;">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:left;">
 						<tr>
 							<th class="tabletop">What</th>
@@ -657,7 +657,7 @@ for ($i = 1; $i < count ($items); $i++) {
 
 	echo '
 				<div style="float:right;width:49%;">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:right;">
 						<tr>
 							<th class="tabletop">What</th>
@@ -772,7 +772,7 @@ for ($i = 1; $i < count ($items); $i++) {
 
 		echo '
 				<div style="float:left;width:49%;">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:left;">
 						<tr>
 							<th class="tabletop"><abbr title="Statistic">Stat</abbr></th>
@@ -890,7 +890,7 @@ for ($i = 1; $i < count ($items); $i++) {
 
 		echo '
 				<div style="float:right;width:49%;">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-left:1px solid #000;width:94%;float:right;">
 						<tr>
 							<th class="tabletop"><abbr title="Statistic">Stat</abbr></th>
@@ -1014,7 +1014,7 @@ for ($i = 1; $i < count ($items); $i++) {
 
 	echo '
 				<div style="float:left;width:49%">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[0]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[0]["name"] . '">' . $items[0]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-top:1px solid #000;border-left:1px solid #000;width:94%;float:left;">
 						<tr>
 							<th class="boxed" style="border-top:0px;border-bottom:0px;border-left:0px;">Obtained from</th>
@@ -1088,7 +1088,7 @@ echo '
 
 	echo '
 				<div style="float:right;width:49%">
-					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="Zybez Runescape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
+					<h3 style="text-align:center;"><a href="items.php?id=' . $items[$i]["id"] . '" title="OSRS RuneScape Help\'s item details for ' . $items[$i]["name"] . '">' . $items[$i]["name"] . '</a></h3>
 					<table cellspacing="0" style="border-top:1px solid #000;border-left:1px solid #000;width:94%;float:right;">
 						<tr>
 							<th class="boxed" style="border-bottom:0px;border-top:0px;border-left:0px;">Obtained from</th>

@@ -2,7 +2,7 @@
 
 require(dirname(__FILE__) . '/' . 'backend.php');
 //--------------------------------------\
-// Zybez BBcode Guide Convertor v2.03\	\n// Created: Dec. 16, 2005 [12/16/05]\	\n// Created by: No1 1000\	\	\n//--------------------------------------\
+// OSRS RuneScape Help BBcode Guide Convertor v2.03\	\n// Created: Dec. 16, 2005 [12/16/05]\	\n// Created by: No1 1000\	\	\n//--------------------------------------\
 // Last modified: 01/28/2006\	\n// Last modified by: No1 1000\	\n//--------------------------------------\
 
 $act = isset($_GET['act']) ? $_GET['act'] : '';
@@ -50,7 +50,7 @@ if ($act == 'convert') {
  // Misc - All working
 	$txt = preg_replace("#<content>(.+?)</content>#is", "<table>\n<tr>\n<td class=\"linksmenu\">$1\n</td>\n</tr>\n</table>", $txt); // Table of contents
 	$txt = preg_replace("#<hr>#i", "<hr />", $txt); // Horizontal Rule
-    $txt = preg_replace("#<img>(.+?)\\</img>#i", "<img src=\" $1 \" alt=\"Zybez RuneScape Help's Placeholder\" />", $txt); // Images
+    $txt = preg_replace("#<img>(.+?)\\</img>#i", "<img src=\" $1 \" alt=\"OSRS RuneScape Help's Placeholder\" />", $txt); // Images
     $txt = preg_replace("#<url>(.+?)</url>#i", "<a href=\" $1 \">$1</a>", $txt); // Url-1
     $txt = preg_replace("#<url=(.+?)>(.+?)</url>#i", "<a href=\" $1 \">$2</a>", $txt); // Url-2
     $txt = preg_replace("#<anchor>(.+?)</anchor>#i", "<a name=\" $1 \"></a>", $txt); // Anchor

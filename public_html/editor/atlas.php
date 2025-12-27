@@ -42,7 +42,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( 'World Maps', 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited into Zybez World Map Area.</p>' . NL;
+		echo '<p align="center">Entry successfully edited into OSRS RuneScape Help World Map Area.</p>' . NL;
 	}
 
 }
@@ -62,7 +62,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( 'World Maps', 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added into Zybez World Map Area. No Cache has been performed.</p>' . NL;
+		echo '<p align="center">New entry was successfully added into OSRS RuneScape Help World Map Area. No Cache has been performed.</p>' . NL;
 		header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
 	}
 }
@@ -136,7 +136,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		else {
 			$ses->record_act( 'World Map', 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

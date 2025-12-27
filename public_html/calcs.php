@@ -2,7 +2,7 @@
 /*
  *	Javascripted Runescape Calculator
  *	Created by Ryan Hoerr, December 2008
- *	(c) 2008 Zybez Corporation
+ *	(c) 2008 OSRS RuneScape Help Corporation
  */
  
 $skilllist	= array('Agility', 'Attack', 'Combat', 'Construction', 'Cooking', 'Crafting', 'Defence', 'Farming', 'Firemaking', 'Fishing', 'Fletching', 'Herblore', 'Hitpoints', 'Hunter', 'Magic', 'Mining', 'Prayer', 'Ranged', 'Runecrafting', 'Slayer', 'Smithing', 'Strength', 'Thieving', 'Woodcutting');

@@ -3,11 +3,11 @@
 require('backend.php');
 start_page();
 ?>
-<zybez>
+<osrs_help>
     <section>
         <name>Main Sections</name>
 		<nosub />
-        <guide><url><?php=SITE_URL?></url><name>Zybez Runescape Help</name></guide>
+        <guide><url><?php=SITE_URL?></url><name>OSRS RuneScape Help</name></guide>
         <guide><url><?php=SITE_URL?>community</url><name>Runescape Community</name></guide>
     </section>
     
@@ -19,9 +19,9 @@ start_page();
 	<guide><url><?php=SITE_URL?>clantoplist.php</url><name>Runescape Clan Toplist</name></guide>
 	<guide><url><?php=SITE_URL?>screenshots.php</url><name>Runescape Screenshots</name></guide>
 	<guide><url><?php=SITE_URL?>blog.php</url><name>Runescape Blogs</name></guide>
-	<guide><url><?php=SITE_URL?>irc.php</url><name>Zybez IRC</name></guide>
-	<guide><url><?php=SITE_URL?>runescapeventrilo.php</url><name>Zybez Ventrilo</name></guide>
-	<guide><url><?php=SITE_URL?>radio.php</url><name>Zybez Radio</name></guide>
+	<guide><url><?php=SITE_URL?>irc.php</url><name>OSRS RuneScape Help IRC</name></guide>
+	<guide><url><?php=SITE_URL?>runescapeventrilo.php</url><name>OSRS RuneScape Help Ventrilo</name></guide>
+	<guide><url><?php=SITE_URL?>radio.php</url><name>OSRS RuneScape Help Radio</name></guide>
 	<guide><url><?php=SITE_URL?>concepts.php</url><name>Fan Concepts</name></guide>
 	<guide><url><?php=SITE_URL?>links.php</url><name>Link to us</name></guide>
 	<guide><url><?php=SITE_URL?>contact.php</url><name>Contact Us</name></guide>
@@ -150,12 +150,12 @@ start_page();
 <section>
         <name>Sister Sites</name>
 		<nosub />
-        <guide><url><?php=SITE_URL?>mechscape</url><name>Zybez Mechscape Help</name></guide>
+        <guide><url><?php=SITE_URL?>mechscape</url><name>OSRS RuneScape Help Mechscape Help</name></guide>
         <guide><url>http://www.warcrafthelp.com</url><name>World of Warcraft Help</name></guide>
         <guide><url>http://www.guildwarshelp.com</url><name>Guild Wars Help</name></guide>
 </section>
 
-</zybez>
+</osrs_help>
 <?php
 die();
 end_page();

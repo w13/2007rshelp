@@ -4,7 +4,7 @@ require_once('../backend.php');
 
 //	Created by dTwizy
 //	Don't make any changes without consulting dTwizy
-//	http://forums.zybez.net/user/162695-dtwizy/
+//	http://forums.2007rshelp.com/user/162695-dtwizy/
 
 //	The base class for anything API related
 //	This handles the API on an abstract level,

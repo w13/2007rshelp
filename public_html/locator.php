@@ -49,7 +49,7 @@ Minutes: <input type="text" name="h_min" size="5" maxlength="2" value="00" /> -
 </table>
 </form>
 <br />
-Proper Steps to use the Zybez Locator:<ol>
+Proper Steps to use the OSRS RuneScape Help Locator:<ol>
 <li>Select the 'Read' option on your clue in the game.</li>
 <li>Copy the numbers into the appropriate boxes and select the directions of the co-ordinate clue.</li>
 <li>Press 'Locate my Clue'.</li>

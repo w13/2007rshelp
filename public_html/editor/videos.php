@@ -62,7 +62,7 @@ function hide(i)
 </div>
 <p><b>Music Videos: Title should be: Band - SongName [anything else the submitter wants to say, e.g. tribute to blah blah]</b><br /><br />
 <b>SOME OF YOU AREN'T READING THE INSTRUCTIONS -- fix grammar and spelling in the descriptions and remove RS/Runescape from titles!<br />
-Featured section is ONLY for movies hosted by Zybez or RSC Staff.</b></p>
+Featured section is ONLY for movies hosted by OSRS RuneScape Help or RSC Staff.</b></p>
 <?
 if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] ) ) {
 
@@ -86,7 +86,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( $ptitle, 'Edit', $name, $ip );
-		echo '<p style="text-align:center;">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p style="text-align:center;">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 	}
 	
 }
@@ -211,7 +211,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 			$db->query("DELETE FROM ".$ptable." WHERE id = " . $_POST['del_id'] );
 			$ses->record_act( $ptitle, 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] );
-			echo '<p style="text-align:center;">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p style="text-align:center;">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {
@@ -259,7 +259,7 @@ elseif (isset($_GET['deletereport'])) {
 	$ses->record_act( $ptitle, 'Process Report', 'Video #' . intval($_GET['id']), $ip );
 	echo '';
 	header("refresh:2;url=videos.php?area=vidreports");
-	echo '<p style="text-align:center;">Report successfully deleted from Zybez.</p>';
+	echo '<p style="text-align:center;">Report successfully deleted from OSRS RuneScape Help.</p>';
 }
 elseif ($_GET['area'] == 'commentreports') { ## COMMENT REPORTS!
 	$query = $db->query("SELECT * FROM `videoscomments` WHERE `reported` > 0");

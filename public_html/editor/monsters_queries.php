@@ -1,7 +1,7 @@
 <?php
 
 /* Security For Our Info */
-define( 'IN_ZYBEZ' , TRUE );
+define( 'IN_OSRS_HELP' , TRUE );
 
 /*** MONSTER DATABASE ***/
  require(dirname(__FILE__) . '/' . 'backend.php');

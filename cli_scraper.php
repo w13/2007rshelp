@@ -2,7 +2,7 @@
 // CLI Scraper for OSRS Items
 // Usage: php cli_scraper.php [scan|add <id> <name>|auto]
 
-define('IN_ZYBEZ', true); // Bypass security check
+define('IN_OSRS_HELP', true); // Bypass security check
 define('ROOT', '/home/2007rshelp/public_html');
 define('NL', "\n");
 

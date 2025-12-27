@@ -45,7 +45,7 @@
 	
 	function special_word($s) {
 	$word = 'da ba dee da ba die';
-	$replace = '<span style="color: blue; text-decoration:blink; font-weight:bold;">'.$word.'</span> (Congratulations, you\'ve won Zybez Radio\'s Secret Contest!)';
+	$replace = '<span style="color: blue; text-decoration:blink; font-weight:bold;">'.$word.'</span> (Congratulations, you\'ve won OSRS RuneScape Help Radio\'s Secret Contest!)';
 	$s = $s;
 	$s = str_ireplace($word, $replace, $s);
 		return $s;

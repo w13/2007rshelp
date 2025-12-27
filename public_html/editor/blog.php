@@ -2,7 +2,7 @@
 
 require( 'backend.php' );
 require( 'edit_class.php' );
-start_page( 17, 'Zybez Blog' );
+start_page( 17, 'OSRS RuneScape Help Blog' );
 
 $edit = new edit( 'blog', $db );
 
@@ -20,13 +20,13 @@ else {
 }
 $cat_name = $cat_array[$category];
 
-echo '<div class="boxtop">Zybez Blog</div>' . NL . '<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right:24px;">' . NL;
+echo '<div class="boxtop">OSRS RuneScape Help Blog</div>' . NL . '<div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right:24px;">' . NL;
 
 ?>
 <div style="float: right;"><a href="<?=$_SERVER['PHP_SELF']?>?cat=<?=$category?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
 <a href="<?=$_SERVER['PHP_SELF']?>?act=new&cat=<?=$category?>"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; Zybez Blog</font></b>
+<b><font size="+1">&raquo; OSRS RuneScape Help Blog</font></b>
 </div>
 <hr class="main" noshade="noshade" align="left" /><br />
 
@@ -51,8 +51,8 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 		rpostcontent();
 	}
 	else {
-		$ses->record_act( 'Zybez Blog', 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited into Zybez Blog Area.</p>' . NL;
+		$ses->record_act( 'OSRS RuneScape Help Blog', 'Edit', $name, $ip );
+		echo '<p align="center">Entry successfully edited into OSRS RuneScape Help Blog Area.</p>' . NL;
 	}
 
 }
@@ -72,8 +72,8 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 		rpostcontent();
 	}
 	else {
-		$ses->record_act( 'Zybez Blog', 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added into Zybez Blog Area.</p>' . NL;
+		$ses->record_act( 'OSRS RuneScape Help Blog', 'New', $name, $ip );
+		echo '<p align="center">New entry was successfully added into OSRS RuneScape Help Blog Area.</p>' . NL;
 	}
 }
 
@@ -157,8 +157,8 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 			echo '<p align="center">' . $edit->error_mess . '</p>';
 		}
 		else {
-			$ses->record_act( 'Zybez Blog', 'Delete', $_POST['del_name'], $ip );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			$ses->record_act( 'OSRS RuneScape Help Blog', 'Delete', $_POST['del_name'], $ip );
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

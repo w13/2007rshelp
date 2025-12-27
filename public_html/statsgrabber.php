@@ -162,7 +162,7 @@ if(isset($rscbox)) {
 
     case 1 :
     //echo '<link href="/css/sig.css" rel="stylesheet" type="text/css" />';
-    //echo '<script type="text/javascript" src="https://www.zybez.net/graphs/popup.js"></script>';
+    //echo '<script type="text/javascript" src="https://2007rshelp.com/graphs/popup.js"></script>';
     echo '<div style="position:absolute;top:1px;left:1px">'
         .'<input type="button" value="X" onclick=\'document.getElementById("faladorstats").style.display="none";\'></div>'
         .'<center><b style="font-family:calibri, verdana, arial, sans-serif;">'
@@ -219,7 +219,7 @@ else {
 <div style="float:right;padding:5px;"><?php stat_box('null'); ?></div><?php/*<iframe src="?player=<?php echo urlencode($username); ?>&rscbox=2" frameborder="0" scrolling="no" allowtransparency="true" style="width:380px;height:140px;overflow:hidden; float:right;background-color:transparent;margin-right:0;"></iframe>*/?>
 <div style="margin:1pt;font-size:large;font-weight:bold;">&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">Runescape Stat History</a></div>
 <hr noshade="noshade" />
-<p>Want to record your Runescape stat history? You've come to the right place! Everytime you use the Zybez <a href="calcs.php">Runescape Calculators</a>, we record your latest stat information.
+<p>Want to record your Runescape stat history? You've come to the right place! Everytime you use the OSRS RuneScape Help <a href="calcs.php">Runescape Calculators</a>, we record your latest stat information.
 <p>We currently have over 1 stat histories for over 1 different players, recorded in our database.</p>
 <?php
 $modes = array('r','l','x');	## RANK, LEVEL, XP
@@ -247,7 +247,7 @@ $modes = array('r','l','x');	## RANK, LEVEL, XP
 //  .'<br /><b>'.date("F j, Y",strtotime($from)). ' to ' .date("F j, Y",strtotime($to)).'</b>';
 //if(isset($_GET['Z-Scores'])) {
 //  $list = "ORDER BY `Time` DESC";
-//  $title = '<h3 style="text-align:center;">Zybez Runescape Help\'s Top 500 Ranked Users</h3>';
+//  $title = '<h3 style="text-align:center;">OSRS RuneScape Help\'s Top 500 Ranked Users</h3>';
 //  }
 //  else 
   $list = 'WHERE `User`= "'.$username_safe.'" ORDER BY `time` DESC';

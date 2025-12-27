@@ -173,7 +173,7 @@ class display
 			'items.php' => "Runescape item database containing all Runescape items including plenty of information on what to do and where to find them, helpful tips on quest items, item prices and more!",
 			'monsters.php' => "Runescape monster database containing all Runescape monsters with tactics on how to defeat them, in-page experience calculators, drops, locations, and more!",
 			'skills.php' => "Runescape skill guides containing tips, tricks, strategies and lots of other information for all Runescape skills.",
-			'tiko.php' => "Online Runescape Toolkit (Tiko), provides all the Runescape guides and tips of Zybez Runescape Help, as well as built-in Zybez Radio, timers, IRC chat client, hiscore lookup, calculators, notepad, and screen capture utility.",
+			'tiko.php' => "Online Runescape Toolkit (Tiko), provides all the Runescape guides and tips of OSRS RuneScape Help, as well as built-in OSRS RuneScape Help Radio, timers, IRC chat client, hiscore lookup, calculators, notepad, and screen capture utility.",
 			'swiftkit.php' => "SwiftKit (aka SwiftSwitch) is a 100% safe, legal and downloadable Runescape Toolkit containing Runescape guides, IRC chat client, stats lookup, Runescape server status, skill calculators, screen capture/upload utility and more!",
 			'misc.php?id=57' => "Runescape Treasure Trail help, including a treasure trail co-ordinate locator tool, lists of all the clues in Runescape, and rewards from Treasure Trails.",
 			'misc.php' => "Runescape general guides, tips, tricks, hints and strategies on many aspects of Runescape game-play.",

@@ -68,7 +68,7 @@ else
   echo '<tr><td colspan="2" style="border-bottom: 1px solid #000000;" align="center"><a href="/correction.php?area=tomes&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a><br /><br /></td></tr>';
   echo '<tr><td colspan="2" style="font-family:\'Trebuchet MS\'; color: black; font-size:12px;">' . $info['content'] . '</td></tr>';
   echo '<tr><td style="border-top: 1px solid #000000; color: black; font-family:\'Trebuchet MS\'; font-size:12px;">Item Name: <b>' . htmlspecialchars($info['item']) . '</b></td>';
-  echo '<td rowspan="2" style="border-top: 1px solid #000000; color: black; font-family:\'Trebuchet MS\'; font-size:12px;"><img src="/img/other/lib/' . htmlspecialchars($info['img']) . '" alt="Zybez RuneScape Help\'s Book Image" height="50" width="50" /></td></tr>';
+  echo '<td rowspan="2" style="border-top: 1px solid #000000; color: black; font-family:\'Trebuchet MS\'; font-size:12px;"><img src="/img/other/lib/' . htmlspecialchars($info['img']) . '" alt="OSRS RuneScape Help\'s Book Image" height="50" width="50" /></td></tr>';
   echo '<tr><td style="color:black; font-family:\'Trebuchet MS\'; font-size:12px;">Author: <b>' . htmlspecialchars($info['author']) . '</b></td>';
 ?>  
  </tr>

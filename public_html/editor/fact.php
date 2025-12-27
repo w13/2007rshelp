@@ -25,7 +25,7 @@ if(isset($_POST['act']) AND $_POST['act'] == 'edit' AND isset($_POST['id'])) {
     }
     else {
         $ses->record_act('Facts', 'Edit', substr(strip_tags($text), 0, 20).'...', $ip);
-        echo '<p align="center">Entry successfully edited on Zybez.</p>' . NL;
+        echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
     }
 }
 elseif(isset($_POST['act']) AND $_POST['act'] == 'new') {
@@ -39,7 +39,7 @@ elseif(isset($_POST['act']) AND $_POST['act'] == 'new') {
     }
     else {
         $ses->record_act('Facts', 'New', substr(strip_tags($text), 0, 20).'...', $ip);
-        echo '<p align="center">New entry was successfully added to Zybez.</p>' . NL;
+        echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
     }
 }
 elseif(isset($_GET['act']) AND (($_GET['act'] == 'edit' AND isset($_GET['id'])) OR $_GET['act'] == 'new')) {
@@ -92,7 +92,7 @@ elseif(isset($_GET['act']) AND $_GET['act'] == 'delete' AND $ses->permit(15)) {
         else {
             $ses->record_act('Facts', 'Delete', $_POST['del_txt'], $ip);
             header('refresh: 2; url=' . $_SERVER['PHP_SELF']);
-            echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+            echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
         }
     }
     else {

@@ -15,7 +15,7 @@ if(isset($_POST['inactive']))
             (`msg_date`, `msg_post`, `msg_sent_to_count`, `msg_deleted_count`, `msg_post_key`, `msg_author_id`, `msg_ip_address`)
             VALUES (".time().", '".$msg."', 1, 0, '".$msg_key."', ".$_COOKIE['member_id'].", '".$_SERVER['REMOTE_ADDR']."')");
   $db->query("INSERT INTO `ibfmessage_topics` (`mt_msg_id`, `mt_date`, `mt_title`, `mt_from_id`, `mt_to_id`, `mt_owner_id`, `mt_vid_folder`)
-            VALUES (".$db->insert_id().", ".time().", 'Re: Registering Inactivity on Zybez', ".$_COOKIE['member_id'].", ".$to_id.",".$to_id.", 'in')");
+            VALUES (".$db->insert_id().", ".time().", 'Re: Registering Inactivity on OSRS RuneScape Help', ".$_COOKIE['member_id'].", ".$to_id.",".$to_id.", 'in')");
 */
   header( 'Location: inactive.php' );
 }

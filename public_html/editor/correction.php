@@ -46,7 +46,7 @@ if( isset( $_POST['count'] ) ) {
 
 			$to = $name . '<' . $info['email'] . '>';
 			$subject = 'A Reply to Your Submission';
-			$headers = 'From: Zybez Corrections <no-reply@zybez.net>';
+			$headers = 'From: OSRS RuneScape Help Corrections <no-reply@2007rshelp.com>';
 
 			$stime = date( "l F jS, Y", $info['time'] ) . ' at ' . date( "g:i a", $info['time'] );
 			$correction = $info['text'];

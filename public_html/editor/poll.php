@@ -35,7 +35,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( 'Polls', 'Edit', substr( $question, 0, 25 ) );
-		echo '<p align="center">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 2; url=' . $PHP_SELF );
 	}
 	
@@ -52,7 +52,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( 'Polls', 'New', substr( $question, 0, 25 )  );
-		echo '<p align="center">New entry was successfully added to Zybez.</p>' . NL;
+		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 2; url=' . $PHP_SELF );
 	}
 	
@@ -71,7 +71,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'edopt' AND isset( $_POST['o
 	}
 	else {
 		$ses->record_act( 'Poll Options', 'Edit', substr( $option, 0, 25 ) );
-		echo '<p align="center">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 1; url=' . $PHP_SELF . '?act=edit&id=' . $pollid );
 	}
 	
@@ -88,7 +88,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'nwopt' ) {
 	}
 	else {
 		$ses->record_act( 'Poll Options', 'New', substr( $option, 0, 25 ) );
-		echo '<p align="center">New entry was successfully added to Zybez.</p>' . NL;
+		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 1; url=' . $PHP_SELF . '?act=edit&id=' . $pollid );
 	}
 	
@@ -254,7 +254,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 31 
 			$db->query("DELETE FROM poll_options WHERE pollid = " . $_POST['del_id'] );
 			$ses->record_act( 'Polls', 'Delete', $_POST['del_name'] );
 			header( 'refresh: 2; url=' . $PHP_SELF );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

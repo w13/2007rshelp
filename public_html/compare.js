@@ -169,13 +169,13 @@ function queueadd(id,image,name,member,trade,quest)
 		var row = document.getElementById(rowIdName);
 		var newcell =document.createElement('td');
 		newcell.className = 'tablebottom';
-		newcell.innerHTML = '<img src="/img/idbimg/'+image+'" alt="Zybez Runescape Help\'s picture of '+name+'" />';
+		newcell.innerHTML = '<img src="/img/idbimg/'+image+'" alt="OSRS RuneScape Help\'s picture of '+name+'" />';
 		row.appendChild(newcell);
 	
 		//ADDS NAME CELL
 		var newcell =document.createElement('td');
 		newcell.className = 'tablebottom';
-		newcell.innerHTML = '<a href="/items.php?id='+id+'" title="Zybez Runescape Help\'s '+name+' Item Database Entry">'+name+'</a>';
+		newcell.innerHTML = '<a href="/items.php?id='+id+'" title="OSRS RuneScape Help\'s '+name+' Item Database Entry">'+name+'</a>';
 		row.appendChild(newcell);
 		
 		//ADDS MEMBER CELL

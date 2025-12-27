@@ -76,7 +76,7 @@ $info['member'] = ($info['member'] ?? 0) == 1 ? 'Yes' : 'No';
 $info['equip'] = ($info['equip'] ?? 0) == 1 ? 'Yes' : 'No';
 $info['trade'] = ($info['trade'] ?? 0) == 1 ? 'Yes' : 'No';
     echo '<tr>';
-    echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . (int)$info['id'] . '"><img src="/img/idbimg/' . htmlspecialchars($info['image'] ?? '') . '" alt="Zybez Runescape Help\'s ' . htmlspecialchars($info['name'] ?? '') .' image" width="50" height="50" /></a></td>';
+    echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . (int)$info['id'] . '"><img src="/img/idbimg/' . htmlspecialchars($info['image'] ?? '') . '" alt="OSRS RuneScape Help\'s ' . htmlspecialchars($info['name'] ?? '') .' image" width="50" height="50" /></a></td>';
     echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . (int)$info['id'] . '">' . htmlspecialchars($info['name'] ?? '') . '</a></td>' . NL;
     echo '<td class="tablebottom">' . htmlspecialchars($info['member']) . '</td>';
     echo '<td class="tablebottom">' . htmlspecialchars($info['trade']) . '</td>';

@@ -74,7 +74,7 @@ header( 'Location: ');
 <li>Race: You can choose from: Animal, Beast, Demon, Dragon, Dwarf, Giant, Goblin, Human, Bug, Gnome, Elven, Undead (need more...)</li>
 <li>Members: Check the checkbox for Yes, otherwise it's not.</li>
 <li>Attackable: CHECK the checkbox for Yes - this is necessary if we decide to incorporate normal NPCs into it.</li>
-<li>Quest: Only if the NPC is part of a quest, ie: black knight titan (otherwise put: No). Put the EXACT name of the quest (as on Zybez quest guides) - no link required.</li>
+<li>Quest: Only if the NPC is part of a quest, ie: black knight titan (otherwise put: No). Put the EXACT name of the quest (as on OSRS RuneScape Help quest guides) - no link required.</li>
 <li>Nature: By default, it is set to "Not Aggressive." Delete the `Not` if it is aggressive.</li>
 <li>Image: Links will probably be given to you, or take pics and post them in images to upload.</li>
 <li>Attack style: Use ONLY the following exactly as they are (WITHOUT quotations): <b>"Melee", "Magic", "Range", "Mage and Range", "Magic and Melee", "Melee and Range", "Melee, Mage and Range". If it's N/A, uncheck the "Attackable" checkbox.</b></li>
@@ -124,7 +124,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( 'Monster Database', 'Edit', $name, $ip );
-		echo '<p style="text-align:center;">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p style="text-align:center;">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 		//header( 'refresh: 2; url=' . );
 	}
 	
@@ -163,7 +163,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( 'Monster Database', 'New', $name, $ip );
-		echo '<p style="text-align:center;">New entry was successfully added to Zybez.</p>' . NL;
+		echo '<p style="text-align:center;">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
 	}
 	
 }		
@@ -332,7 +332,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 			$db->query("DELETE FROM monsters WHERE id = " . $_POST['del_id'] );
 			$ses->record_act( 'Monster Database', 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=');
-			echo '<p style="text-align:center;">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p style="text-align:center;">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

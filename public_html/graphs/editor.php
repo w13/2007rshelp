@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Zybez Content Team</title>
+<title>OSRS RuneScape Help Content Team</title>
 <style>	body{	background-color: #F4F9FA	}</style>
 </head>
 <body>

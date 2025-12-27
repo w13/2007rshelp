@@ -4,7 +4,7 @@ require_once('api.base.inc.php');
 
 //	Created by dTwizy
 //	Don't make any changes without consulting dTwizy
-//	http://forums.zybez.net/user/162695-dtwizy/
+//	http://forums.2007rshelp.com/user/162695-dtwizy/
 
 //	The top-level class for handling API actions
 //	Add a new action by creating a protected function actionXXX() {}
@@ -174,7 +174,7 @@ class API extends APIBase
 	protected function actionItemImageUrls()
 	{
 		//	Used for getting image urls for every image,
-		//	the SwiftKit app has it's own background-less version of each image based on Zybez image ids
+		//	the SwiftKit app has it's own background-less version of each image based on OSRS RuneScape Help image ids
 		//	http://cdn.swiftkit.net/client/osrs_items/5600
 		if($this->sql_safe_query == 'dtwizy_item_image_key_2014')
 		{

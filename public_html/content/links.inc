@@ -18,7 +18,7 @@
 </ul>
 <h3>Databases</h3>
 <ul>
-<!--<li><a href="http://forums.zybez.net/runescape-2007-prices" title="Runescape Market Prices of items Database"><img alt="" src="/images/banner/coins.png" />Prices Database</a></li>
+<!--<li><a href="http://forums.2007rshelp.com/runescape-2007-prices" title="Runescape Market Prices of items Database"><img alt="" src="/images/banner/coins.png" />Prices Database</a></li>
 -->
 <li><a href="/items.php" title="Runescape Item Database"><img alt="" src="/images/banner/wand.png" />Items Database</a></li>
 <li><a href="/monsters.php" title="Runescape Monster Database"><img alt="" src="/images/banner/bug.png" />Monsters Database</a></li>
@@ -34,8 +34,8 @@
 <h3>Community</h3>
 <ul>
 <li><a href="https://runescapecommunity.com" title="Runescape Community forums"><img alt="" src="/images/banner/user_comment.png" />Runescape Community Forums</a></li>
-<!--<li><a href="https://discordapp.com/invite/j3ffhGk" title="Zybez Discord"><img alt="" src="/images/banner/discord.png" />Discord</a></li>-->
-<li><a href="/misc.php?id=75" title="Zybez Runescape Clan Chat"><img alt="" src="/images/banner/zchat.png" />Zchat Clan Chat</a></li>
+<!--<li><a href="https://discordapp.com/invite/j3ffhGk" title="OSRS RuneScape Help Discord"><img alt="" src="/images/banner/discord.png" />Discord</a></li>-->
+<li><a href="/misc.php?id=75" title="OSRS RuneScape Help Runescape Clan Chat"><img alt="" src="/images/banner/zchat.png" />Zchat Clan Chat</a></li>
 </ul>
 </div>
 

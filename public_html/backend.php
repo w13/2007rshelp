@@ -27,7 +27,7 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
 /* Security For Our Info */
-define( 'IN_ZYBEZ' , TRUE );
+define( 'IN_OSRS_HELP' , TRUE );
 
 /* New Line Identifier */
 define( 'NL' , "\n" );

@@ -16,7 +16,7 @@
   <label:Ruleset>
     <label:hasHostRestrictions>
       <label:Hosts>
-        <label:hostRestriction>zybez.net</label:hostRestriction>
+        <label:hostRestriction>2007rshelp.com</label:hostRestriction>
       </label:Hosts>
     </label:hasHostRestrictions>
     <label:hasDefaultLabel rdf:resource="#label_1" />

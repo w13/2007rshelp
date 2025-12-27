@@ -4,10 +4,10 @@
       <title>Runescape Item Prices</title>
       <title>Runescape Item Prices</title>
       <description>Search Runescape item prices</description>
-      <site>http://www.zybez.net/priceguide.php</site>
-      <search>http://www.zybez.net/priceguide.php?search_terms={query}&amp;search_area=1&amp;price_low=&amp;price_high=&amp;member=1</search>
-      <send>http://www.zybez.net/priceguide.php?search_terms={selection}&amp;search_area=1&amp;price_low=&amp;price_high=&amp;member=1</send>
+      <site>http://2007rshelp.com/priceguide.php</site>
+      <search>http://2007rshelp.com/priceguide.php?search_terms={query}&amp;search_area=1&amp;price_low=&amp;price_high=&amp;member=1</search>
+      <send>http://2007rshelp.com/priceguide.php?search_terms={selection}&amp;search_area=1&amp;price_low=&amp;price_high=&amp;member=1</send>
       <icon mode="base64" type="image/x-icon">R0lGODlhEAAQAOYAAAAAAP///xcYfhMTYBITXBERVhQUZB8n+R4m8hwj4x8m9h8n8x8n8hwj2xsi2Bsi0xsi0h8n8B8n7h8n7RshxSQs/CYt/igw+xUXdTA4/ysy5SkvzCovxxki1hggzh0m8Roi2xkh0hMZoh8o/h8o/B8o+R4o9h4n9Bwl4Rsj3hsj3Rsj2hkgzBkgyRgfwxcevSAp/B8o9x8o9h8o9B8o8x8o8h8o8R4n8B4n7x4m6h4m6R0m6B0l5h0l5Rwk4Bwk3xwk3hwk3Rwk2xsj1xohzBohyx4m6CYv/yYv+yEo0TE6/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEsALAAAAAAQABAAAAeCgEuCg4SFhoeIiYqLgxeEGoaOSUsXSkuTR5dLAoIXF0meGUlJRyMUSS8YnZ4KFxYcGzAzOEUnBp0NJiQlBxVIMzY0NwkDnQ8MMTElCB8yNQw7KgSdLj85EhELMxETOUIsBY1EQyg8Rjo9PistjoSeDw5BQA0QnogiISApHR6M/oyBAAA7</icon>
-      <update>http://www.zybez.net/runescapeprices.xml</update>
+      <update>http://2007rshelp.com/runescapeprices.xml</update>
   </button>
 </custombuttons>

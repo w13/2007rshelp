@@ -1,11 +1,11 @@
 <?php
 require('backend.php');
-start_page(1,'The Guide to Managing Zybez\'s Databases');
+start_page(1,'The Guide to Managing OSRS RuneScape Help\'s Databases');
 ?>
 
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <u>The Guide to Managing Zybez's Databases</u></div>
+&raquo; <u>The Guide to Managing OSRS RuneScape Help's Databases</u></div>
 <hr class="main" noshade="noshade" />
 <table style="border-left: 1px solid #000000; border-top: 1px solid #000000" width="100%" cellpadding="5" cellspacing="0">
 <tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">
@@ -38,12 +38,12 @@ start_page(1,'The Guide to Managing Zybez\'s Databases');
 <li><span style="color:red;">*</span><b>Tradable:</b> Check the box if the item is tradable.</li>
 <li><span style="color:red;">*</span><b>Equipable:</b> Check the box if you can wear the item.</li>
 <li><span style="color:red;">*</span><b>Stackable:</b> Check this box if the item stacks in your inventory when you have multiples.</li>
-<li><b>Weight:</b> Put in the weight in kilograms or a ? if you don't know it. A guide on finding weights can be found <a href="http://corporate.zybez.net/forums/index.php?showtopic=1648" title="">here</a>.</li>
+<li><b>Weight:</b> Put in the weight in kilograms or a ? if you don't know it. A guide on finding weights can be found <a href="http://corporate.2007rshelp.com/forums/index.php?showtopic=1648" title="">here</a>.</li>
 <li><b>High Alchemy:</b> The amount of gold you get when you high alch the item.</li>
 <li><b>Low Alchemy:</b> The amount of gold you get when you low alch the item.</li>
 <li><b>Sell to Gen:</b> The amount of gold you get when you sell to the general store.</li>
 <li><b>Buy from Gen:</b> The amount of gold it costs to buy from the general store.</li>
-<li><span style="color:red;">*</span><b>Quest:</b> Put the exact quest title from <a href="/quests.php" title="">Zybez</a> if it is used during a quest or can be used/obtained after a quest.  Put in "No" if there is no quest.</li>
+<li><span style="color:red;">*</span><b>Quest:</b> Put the exact quest title from <a href="/quests.php" title="">OSRS RuneScape Help</a> if it is used during a quest or can be used/obtained after a quest.  Put in "No" if there is no quest.</li>
 <li><span style="color:red;">*</span><b>Examine:</b> Fill in the sentence that appears in your chat box when you examine the item.</li>
 <li><span style="color:red;">*</span><b>Complete:</b> Check this box if the item has all fields marked with a <span style="color:red;">*</span> on this list.</li>
 <li><span style="color:red;">*</span><b>Obtained from:</b> Who/where you can get the item.  Separate with a semicolon.</li>
@@ -69,7 +69,7 @@ start_page(1,'The Guide to Managing Zybez\'s Databases');
 <li><span style="color:blue;">*</span><b>Hitpoints:</b> Kill a monster recording how many hitpoints it has.  If it takes a long time to kill, subtract 1 hitpoint every 5 seconds.</li>
 <li><b>Max hit:</b> The maximum hit a monster can hit.  Most easily found using the Monster Examine Lunar spell.</li>
 <li><span style="color:red;">*</span><b>Race:</b> The race of the monster.  Includes but is not limited to Animal, Beast, Demon, Dragon, Dwarf, Giant, Goblin, Human, Bug, Gnome, Elven, Undead, Ent, Human, or Mage.
-<li><span style="color:red;">*</span><b>Quest:</b> Put the exact quest title from <a href="/quests.php" title="">Zybez</a> if the NPC exists because of a quest. Black dragon is not a quest monster just because you have to kill it for RFD. If it's not part of a quest, put "No".</li>
+<li><span style="color:red;">*</span><b>Quest:</b> Put the exact quest title from <a href="/quests.php" title="">OSRS RuneScape Help</a> if the NPC exists because of a quest. Black dragon is not a quest monster just because you have to kill it for RFD. If it's not part of a quest, put "No".</li>
 <li><span style="color:blue;">*</span><b>Nature:</b> The only options here are "Aggressive" or "Not Aggressive".  If the monster attacks you without you attacking it first, use the latter.</li>
 <li><span style="color:blue;">*</span><b>Attack Style:</b> Say whether or not the monster attacks with Magic, Range, or Melee.  More than one can apply.</li>
 <li><span style="color:red;">*</span><b>Examine:</b> The Fill in the sentence that appears in your chat box when you examine the monster.</li>

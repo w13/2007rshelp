@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Zybez Skill Total Graph</title>
+<title>OSRS RuneScape Help Skill Total Graph</title>
 <style>body{	background-color: #F4F9FA	}</style>
 </head>
 <body>

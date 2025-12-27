@@ -1,4 +1,4 @@
-<link href="http://www.zybez.net/css/skill.css" rel="stylesheet" type="text/css" />
+<link href="http://2007rshelp.com/css/skill.css" rel="stylesheet" type="text/css" />
 <h1 style="text-align:center;font-size:24pt;">Runescape XP Table</h1>
 <table class="xp-table">
 <tr>

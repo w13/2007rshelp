@@ -5,7 +5,7 @@ start_page();
 
 <!--
 <div class="boxbottom">
-<p><center><strong>Help us improve, <a href="http://forums.zybez.net/topic/1634253-what-can-we-do-better/">What can we do better?</a></strong></center>
+<p><center><strong>Help us improve, <a href="http://forums.2007rshelp.com/topic/1634253-what-can-we-do-better/">What can we do better?</a></strong></center>
 </p>
 </div>
 -->

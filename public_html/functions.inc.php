@@ -55,7 +55,7 @@ function dynamify($input) {
 function city_key($name) {
 if($name != 'NA') {
   $bname = ucfirst(preg_replace("/_/", " ", $name));
-  $key_html = '<img src="/img/cimg/key/'.$name.'.gif" alt="Zybez Runescape Help\'s '.$bname.' Key" width="15" height="15" /> - '.$bname.'<br />';
+  $key_html = '<img src="/img/cimg/key/'.$name.'.gif" alt="OSRS RuneScape Help\'s '.$bname.' Key" width="15" height="15" /> - '.$bname.'<br />';
   return $key_html;
  }
 }

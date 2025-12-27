@@ -12,6 +12,6 @@
         </div>
     </div>
     <div style="margin: 0 15px;">
-        <div class="fb-like" data-href="https://www.facebook.com/zybezrunescape" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+        <div class="fb-like" data-href="https://www.facebook.com/osrs_helprunescape" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
     </div>
 </div>

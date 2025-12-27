@@ -1,6 +1,6 @@
 <?php
 require('backend.php');
-start_page(1,'The Guide to Zybez Images');
+start_page(1,'The Guide to OSRS RuneScape Help Images');
 ?>
 <script language="JavaScript">
 function hide(i)
@@ -18,7 +18,7 @@ function hide(i)
 </script>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <u>The Guide to Zybez Images</u></div>
+&raquo; <u>The Guide to OSRS RuneScape Help Images</u></div>
 <hr class="main" noshade="noshade" />
 <table style="border-left: 1px solid #000000; border-top: 1px solid #000000" width="100%" cellpadding="5" cellspacing="0">
 <tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">
@@ -33,7 +33,7 @@ function hide(i)
 
 <a name="1"></a>
 <div class="title1">Introduction/Paint.NET</div>
-<p>If you're reading this, you should already be knowledgeable to the four main goals of Zybez: quality, detail, enthusiasm and innovation.  The first two heavily pertain to properly taking images to be used on Zybez Runescape Help.  All images should be of good quality (saved as ".png" if they're not transparent and ".gif" if they are) and display what they're meant to effectively.  This includes getting a good angle on a monster picture, or zooming properly on an NPC for a quest image.  Always think about the quality and detail of images before you take them.</p>
+<p>If you're reading this, you should already be knowledgeable to the four main goals of OSRS RuneScape Help: quality, detail, enthusiasm and innovation.  The first two heavily pertain to properly taking images to be used on OSRS RuneScape Help.  All images should be of good quality (saved as ".png" if they're not transparent and ".gif" if they are) and display what they're meant to effectively.  This includes getting a good angle on a monster picture, or zooming properly on an NPC for a quest image.  Always think about the quality and detail of images before you take them.</p>
 <p>My recommended program for editing images, and the program this guide is written around, is Paint.NET.  Whilst one can do everything they need to in Paint.NET in either Photoshop or GIMP, I find Paint.NET to be the wisest choice.  This is because Photoshop costs a lot of cash and GIMP is much more complicated and harder to learn.  However, if you have these programs, you probably know how to use the efficiently enough to edit your images properly.  If not, don't worry; the tools in Paint.NET - and this guide - are very similar to those of all image editing programs.</p>
 <p>You can download Paint.NET by clicking <a href="http://www.download.com/Paint-NET/3000-2192_4-10338146.html?part=dl-PaintNET&subj=dl&tag=button&cdlPid=10837963" title="">here</a>.</p>
 <p class="info">When saving images as ".png", lowercase is preferred over uppercase.  However, this is only controlled by your program.  Microsoft Paint saves as ".PNG" whereas most others save as ".png".  The only time ".PNG" is preferred is when you're replacing an already existing image with that suffix.</p>
@@ -96,7 +96,7 @@ function hide(i)
 <li>Add the <a href="/staff/jeremy/imageguide/compass.gif" title="">compass</a> to a good place on the map (preferably top-right).</li>
 <li>Paste the <a href="/staff/jeremy/imageguide/CELTG___.TTF" title="">Celtic Garamond the 2nd</a> and <a href="/staff/jeremy/imageguide/Argonaut-Regular.ttf" title="">Argonaut</a> fonts into "C:/WINDOWS/Fonts/".</li>
 <li>Write "Mapped By: [NAME]" on the bottom of the map in Argonaut font.</li>
-<li>On a new layer, write "Zybez" in a size that's appropriate to the map (usually 36+).  Lower the opacity to 30-50 (12-20%) depending on how it looks.</li>
+<li>On a new layer, write "OSRS RuneScape Help" in a size that's appropriate to the map (usually 36+).  Lower the opacity to 30-50 (12-20%) depending on how it looks.</li>
 <li>Mark NPCs/locations with the <a href="/editor/mapwiz.php" title="">dots</a> on a new layer and lower the opacity to about 150 (60%) opacity.</li>
 <li>Save as a different filename than you previous did and upload both the marked and unmarked copies.</li></ol>
 
@@ -108,7 +108,7 @@ function hide(i)
 <li>For quest scroll images, crop the scroll as close to the edges as possible.  Then open <a href="/staff/jeremy/imageguide/scroll_crop.gif">this image</a>, copy it, add a new layer to the scroll canvas, paste the image over it, merge the layers, then crop away the whitespace.  You'll be left with a perfectly cropped scroll.  Save as ".gif" and upload!</li>
 <li>When uploading images that are meant to replace an already existing image, it helps us to save it as the exact file name it was previously saved as.  That way it'll overwrite the old image.</li>
 <li>When possible, note in the Upload Images notepad what folder the image is to go into.</li>
-<li>When uploading a map or any marked image, upload an unmarked copy as well.  This is so that we can make sure that the image looks its best before going onto Zybez.</li>
+<li>When uploading a map or any marked image, upload an unmarked copy as well.  This is so that we can make sure that the image looks its best before going onto OSRS RuneScape Help.</li>
 <li>If you see an image uploaded that's not complete, or not correct, go ahead and do it the right way.  For example, if an uncropped monster is uploaded, we'd greatly appreciate you cropping it and reuploading.</li>
 </ol>
 

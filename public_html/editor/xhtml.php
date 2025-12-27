@@ -6,11 +6,11 @@ start_page('How To Use xHTML');
 <font size="+3"><b>How To Use xHTML</b></font>
 <hr size="1" noshade="noshade" />
 <br />
-<p>Zybez is fully x-HTML Transitional Compliant. Due to this, there are a number of points you MUST observe when editing the HTML code in a guide. If you wish to learn more about xHTML, read through this <a href="http://w3schools.com/XHTML">tutorial by W3Schools</a>.</p>
+<p>OSRS RuneScape Help is fully x-HTML Transitional Compliant. Due to this, there are a number of points you MUST observe when editing the HTML code in a guide. If you wish to learn more about xHTML, read through this <a href="http://w3schools.com/XHTML">tutorial by W3Schools</a>.</p>
 
 <blockquote><p>In HTML there are <strong>elements</strong> (&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;, &lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;p&gt;&lt;/p&gt;) and <strong>attributes</strong> (align, style, width, height, etc). Some of these attributes and elements are deprecated. This means that as web browsers advance, they will not recognise these attributes. More people have up-to-date browsers, and if we have outdated code, they won't be able to view the website properly. Having proper standards for code also increases our search engine ranking a bit.</p>
 
-<p>As we redesign Zybez section by section, we will be phasing out deprecated HTML. A full list of deprecated HTML can be found <a href="http://webdesign.about.com/od/htmltags/a/bltags_deprctag.htm" style="color:red; font-weight:bold;">here</a>.</p></blockquote>
+<p>As we redesign OSRS RuneScape Help section by section, we will be phasing out deprecated HTML. A full list of deprecated HTML can be found <a href="http://webdesign.about.com/od/htmltags/a/bltags_deprctag.htm" style="color:red; font-weight:bold;">here</a>.</p></blockquote>
 
 <ol>
 <li>HTML guides: <a href="http://www.w3schools.com/html/default.asp" style="color:red; font-weight:bold;">w3schools</a>, <a href="http://htmlgoodies.com/primers/html/" style="color:red; font-weight:bold;">HTMLgoodies</a></li>
@@ -45,8 +45,8 @@ If you use FireFox (recommended), you can use the <a href="https://addons.mozill
 <td class="tablebottom">&lt;img src="/img/directory/folder/file.ext" alt="" /&gt; <a href="#1"></td>
 <td class="tablebottom">&lt;img src="/img/directory/folder/file.ext"&gt;</td></tr>
 <tr>
-<td class="tablebottom">&lt;a href="/page.php?id=" title="Zybez RuneScape Help's _______________"&gt;Text&lt;/a&gt;</td>
-<td class="tablebottom">&lt;ahref="http://www.zybez.net/page.php?id=" /&gt;Text&lt;/a&gt;</td></tr>
+<td class="tablebottom">&lt;a href="/page.php?id=" title="OSRS RuneScape Help's _______________"&gt;Text&lt;/a&gt;</td>
+<td class="tablebottom">&lt;ahref="http://2007rshelp.com/page.php?id=" /&gt;Text&lt;/a&gt;</td></tr>
 <tr>
 <td class="tablebottom">&lt;p&gt;&lt;/p&gt;</td>
 <td class="tablebottom">&lt;br /&gt;&lt;br /&gt; (can use &lt;br /&gt;&lt;br /&gt; if text is separated in same section)</td></tr>
@@ -60,7 +60,7 @@ If you use FireFox (recommended), you can use the <a href="https://addons.mozill
 <td class="tablebottom">&lt;span style="color:red;"&gt;text&lt;/span&gt;</td>
 <td class="tablebottom">&lt;font color="red"&gt;text&lt;/font&gt;</td></tr>
 <tr>
-<td class="tabletop" style="border-top: 0px;" colspan="2">Zybez CSS Classes</td></tr>
+<td class="tabletop" style="border-top: 0px;" colspan="2">OSRS RuneScape Help CSS Classes</td></tr>
 <tr>
 <td class="tablebottom">Image classes</td>
 <td class="tablebottom">Just add: class="<em>class</em>" to the &lt;img src tag... <em>class</em> = fright (align right), fleft (left), fmid (middle)</td></tr>

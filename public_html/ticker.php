@@ -12,10 +12,10 @@ $outfromdb = '';
 // Let's assume apc_* functions are available or we can use a polyfill if needed.
 // For now, let's keep the logic but use $db.
 
-if (function_exists('apcu_exists') && apcu_exists('zybezticker')) {
-    $outfromdb = apcu_fetch('zybezticker');
-} elseif (function_exists('apc_exists') && apc_exists('zybezticker')) {
-    $outfromdb = apc_fetch('zybezticker');
+if (function_exists('apcu_exists') && apcu_exists('osrshelpticker')) {
+    $outfromdb = apcu_fetch('osrshelpticker');
+} elseif (function_exists('apc_exists') && apc_exists('osrshelpticker')) {
+    $outfromdb = apc_fetch('osrshelpticker');
 } else {
     $query = $db->query("SELECT * FROM `ticker` WHERE NOW() BETWEEN starttime AND endtime ORDER BY priority DESC, starttime DESC LIMIT 15");
     $num=-1;
@@ -24,16 +24,16 @@ if (function_exists('apcu_exists') && apcu_exists('zybezticker')) {
         $outfromdb .= 'arrNewsItems[' . $num . '] = new Array("' . htmlentities($info['content']) . '","' . htmlentities($info['url']) . '"); ';
     }
     if (function_exists('apcu_store')) {
-        apcu_store('zybezticker', $outfromdb);
+        apcu_store('osrshelpticker', $outfromdb);
     } elseif (function_exists('apc_store')) {
-        apc_store('zybezticker', $outfromdb);
+        apc_store('osrshelpticker', $outfromdb);
     }
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Zybez Runescape Help Ticker</title>
+<title>OSRS RuneScape Help Ticker</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 <link href="/css/ticker.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">

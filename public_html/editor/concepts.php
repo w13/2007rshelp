@@ -51,7 +51,7 @@ function hide(iii)
 <ol>
 <li>Ensure that the image is good quality (.bmp or .png). Also make sure the author has sent you a description for it.</li>
 <li>Show Myst or Ben_Goten78 the picture prior to proceeding.</li>
-<li>Ask Dark_Tyger to add an invisible watermark, and the Zybez stamp.</li>
+<li>Ask Dark_Tyger to add an invisible watermark, and the OSRS RuneScape Help stamp.</li>
 <li>Make a 100x66px thumbnail of the image. If it's an animation, animate the thumbnail if possible.</li>
 <li>Insert it into the database.</li>
 </ol>
@@ -100,7 +100,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( $cat_name, 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 		//header( 'refresh: 2; url=' . $PHP_SELF . '?cat=' . $category );
 	}
 	
@@ -130,7 +130,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( $cat_name, 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added to Zybez.</p>' . NL;
+		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
 		//header( 'refresh: 2; url=' . $PHP_SELF . '?cat=' . $category );
 	}
 	
@@ -214,7 +214,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 		else {
 			$ses->record_act( $cat_name, 'Delete', $_POST['del_name'], $ip );
 			//header( 'refresh: 2; url=' . $PHP_SELF . '?cat=' . $category );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

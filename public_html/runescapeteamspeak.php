@@ -2,7 +2,7 @@
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('Runescape Teamspeak Clan Voice Chat');
 ?>
-<div class="boxtop">Zybez Runescape Teamspeak Voice Chat</div>
+<div class="boxtop">OSRS RuneScape Help Runescape Teamspeak Voice Chat</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <div style="margin:1pt; font-size:large; font-weight:bold;">
 &raquo; Runescape Teamspeak Server
@@ -13,7 +13,7 @@ start_page('Runescape Teamspeak Clan Voice Chat');
 
 
 </td><td style="vertical-align:top;">
-<p style="font-weight:bold; text-align:center">Hostname: zybez.typefrag.com:8625<br /></h1>
+<p style="font-weight:bold; text-align:center">Hostname: osrs_help.typefrag.com:8625<br /></h1>
 
 <p>Q: <b>What is TeamSpeak</b>? What is this?<br />
 <span style="display:block; margin-left:15px;">A: Teamspeak is a <b>voice-chat</b> program. It has various <b>chat-rooms</b> available to you once you get on our server.</span>
@@ -44,7 +44,7 @@ Q: We're having a clan war, will other people <b>disturb us?</b><br />
 </p>
 
 <p>
-<center><h3>By connecting to Teamspeak you agree to acknowledge and adbide by the <a href="http://forums.zybez.net/topic/1636329-teamspeak-rules-and-bans/">Teamspeak Rules</a></h3></center>
+<center><h3>By connecting to Teamspeak you agree to acknowledge and adbide by the <a href="http://forums.2007rshelp.com/topic/1636329-teamspeak-rules-and-bans/">Teamspeak Rules</a></h3></center>
 </p>
 </td></tr>
 <tr><td>

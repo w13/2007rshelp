@@ -153,16 +153,16 @@ class display
  // Check the CCS file to use
  function use_css()
   {
-   if(empty($_COOKIE['zybezskin']))
+   if(empty($_COOKIE['rshelpskin']))
     {
      if (!headers_sent()) {
-       setcookie('zybezskin' , $this->default , time() + 1200000, '/');
+       setcookie('rshelpskin' , $this->default , time() + 1200000, '/');
      }
      $css = $this->path.$this->default;
     }
     else
     {
-     $css = $this->path.$_COOKIE['zybezskin'];
+     $css = $this->path.$_COOKIE['rshelpskin'];
     }
    return $css;
   }
@@ -171,7 +171,7 @@ class display
 		if		( $start != '' AND $end != '' ) $title = $end . ' - ' . $start . ' - ' . $default;
 		elseif	( $start != '' AND $end == '' ) $title = $start . ' - ' . $default;
 		elseif	( $start == '' AND $end != '' ) $title = $end . ' - ' . $default;
-		else $title = $default . ' - Zybez Editor';
+		else $title = $default . ' - OSRS RuneScape Help Editor';
 
 		return $title;
 	}

@@ -112,7 +112,7 @@ else {
         for($i = 0; array_key_exists($i, $_POST[$areas[$x]]); $i++) {
             $arr = explode('<#>', $_POST[$areas[$x]][$i]);
             if($arr[0] != 0) {
-                echo '<a href="/'.$areas[$x].'.php?id='.$arr[0].'&amp;amp;runescape_'.strtolower(str_replace(' ', '_',$arr[1])).'.htm" title="Zybez RuneScape Help\'s '.$arr[1].' Guide">'.$arr[1].'</a>'.NL;
+                echo '<a href="/'.$areas[$x].'.php?id='.$arr[0].'&amp;amp;runescape_'.strtolower(str_replace(' ', '_',$arr[1])).'.htm" title="OSRS RuneScape Help\'s '.$arr[1].' Guide">'.$arr[1].'</a>'.NL;
             }
         }
     }

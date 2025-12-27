@@ -1,14 +1,14 @@
 Dear [#NAME#],
 
-You have received this message as you submitted the following correction to Zybez RuneScape Help on [#TIME#]:
+You have received this message as you submitted the following correction to OSRS RuneScape Help on [#TIME#]:
 
 "[#CORRECTION#]"
 
 We would like to inform you that the IP address that sent in the above correction has been suspended from using our corrections form for 7 days due to its unacceptable content. The suspension will automatically be removed exactly 7 days after this message was sent.
 
-If you feel you were suspended in error, please contact a Zybez RuneScape Help staff member, with your name, and a quote of this email.
+If you feel you were suspended in error, please contact a OSRS RuneScape Help staff member, with your name, and a quote of this email.
 
 
 Regards,
-Zybez RuneScape Help Staff
+OSRS RuneScape Help Staff
 http://2007rshelp.com

@@ -1,5 +1,5 @@
 <?php
-	if(IN_ZYBEZ !== true) exit;
+	if(IN_OSRS_HELP !== true) exit;
 ?>
 <style type="text/css">
 #skills, #xp {

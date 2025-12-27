@@ -12,7 +12,7 @@
 <div id="wrapper">
 <div class="topbar" style="border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-style: solid;"><img src="images/pixel.gif" width="1" height="1" alt="" /></div>
 <div class="bottombar" style="border-top-style: none; border-bottom-style: solid; border-left-style: solid; border-right-style: solid;"><img src="images/pixel.gif" width="1" height="1" alt="" /></div>
-<div id="mtop"><center><a href="/editor" title="Zybez Editor - Index"><img src="/editor/images/header.gif" border="0" alt="Zybez Editor" /></a></center></div>
+<div id="mtop"><center><a href="/editor" title="OSRS RuneScape Help Editor - Index"><img src="/editor/images/header.gif" border="0" alt="OSRS RuneScape Help Editor" /></a></center></div>
 <div class="bottombar" style="border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-style: solid;"><img src="images/pixel.gif" width="1" height="1" alt="" /></div>
 <div class="topbar" style="border-top-style: none; border-bottom-style: solid; border-left-style: solid; border-right-style: solid;"><img src="images/pixel.gif" width="1" height="1" alt="" /></div>
 <div id="body">

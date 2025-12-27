@@ -2,21 +2,21 @@
 <?php
 
 // get the JSON of each item
-$snapeGrass = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/97"));
-$redSpiderEggs = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/93"));
-$flax = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/959"));
-$bucketOfSand = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/961"));
-$potatoCactus = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/1535"));
-$seaweed = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/190"));
-$dragonScaleDust = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/102"));
-$compostPotion = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/2932"));
-$airRune = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/275"));
-$waterRune = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/274"));
-$earthRune = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/276"));
-$fireRune = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/273"));
-$runeEssence = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/762"));
-$pureEssence = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/3527"));
-$vialOfWater = json_decode(getHTML("http://forums.zybez.net/runescape-2007-prices/api/item/95"));
+$snapeGrass = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/97"));
+$redSpiderEggs = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/93"));
+$flax = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/959"));
+$bucketOfSand = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/961"));
+$potatoCactus = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/1535"));
+$seaweed = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/190"));
+$dragonScaleDust = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/102"));
+$compostPotion = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/2932"));
+$airRune = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/275"));
+$waterRune = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/274"));
+$earthRune = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/276"));
+$fireRune = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/273"));
+$runeEssence = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/762"));
+$pureEssence = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/3527"));
+$vialOfWater = json_decode(getHTML("http://forums.2007rshelp.com/runescape-2007-prices/api/item/95"));
 
 
 // get the JSON data from the OSRS price guide and save it as a string

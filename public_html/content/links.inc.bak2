@@ -1,8 +1,8 @@
 <div class="navigation">
 <h3>Runescape Help</h3>
 <ul>
-<li><a href="/" title="Home Zybez Runescape Help"><img alt="" src="/images/banner/house.png" />Zybez Runescape Help</a></li>
-<li><a href="/mechscape/" title="Home Zybez Mechscape Help"><img alt="" src="/images/banner/house.png" />Zybez Mechscape Help</a></li>
+<li><a href="/" title="Home OSRS RuneScape Help"><img alt="" src="/images/banner/house.png" />OSRS RuneScape Help</a></li>
+<li><a href="/mechscape/" title="Home OSRS RuneScape Help Mechscape Help"><img alt="" src="/images/banner/house.png" />OSRS RuneScape Help Mechscape Help</a></li>
 <li><a href="/community/" title="Runescape Community discussion forums"><img alt="" src="/images/banner/user_comment.png" />Runescape Community Forums</a></li>
 <li><a href="/tiko.php" title="Tiko Online Runescape Toolkit"><img alt="" src="/images/banner/tiko.png" />Tiko Online Runescape Toolkit</a></li>
 <li><a href="/swiftkit.php" title="SwiftKit Downloadable Runescape Toolkit"><img alt="" src="/images/banner/wrench.png" />SwiftKit Runescape Toolkit</a></li>
@@ -33,15 +33,15 @@
 <li><a href="/calcs.php" title="Runescape Skill Calculators"><img alt="" src="/images/banner/calculator.png" />Runescape Skill Calculators <b>*NEW*</b></a></li>
 <li><a href="/locator.php" title="Runescape Co-ordinate Locator"><img alt="" src="/images/banner/map.png" />Runescape Coordinate Locator</a></li>
 <li><a href="/statsgrabber.php" title="Runescape Hiscore Histories"><img alt="" src="/images/banner/chart_curve.png" />Runescape Hiscore History</a></li>
-<li><a href="http://runescapetop.com/upload/" title="Zybez Uploader"><img alt="" src="/images/banner/bullet_go.png" />Image Uploader</a></li>
+<li><a href="http://runescapetop.com/upload/" title="OSRS RuneScape Help Uploader"><img alt="" src="/images/banner/bullet_go.png" />Image Uploader</a></li>
 </ul>
 <h3>Community</h3>
 <ul>
 <li><a href="/runescapevideos.php" title="Runescape Videos &amp; Movies"><img alt="" src="/images/banner/film.png" />Runescape Videos</a></li>
 <li><a href="/screenshots.php" title="Screenshots"><img alt="" src="/images/banner/picture.png" />Runescape Screenshots</a></li>
 <li><a href="/concepts.php" title="Runescape Suggestions, Graphics, and Stories"><img alt="" src="/images/banner/palette.png" />Fan Creations</a></li>
-<li><a href="/blog.php" title="Zybez Blogs"><img alt="" src="/images/banner/page_white_edit.png" />Zybez Runescape Blogs</a></li>
-<li><a href="/irc.php" title="Zybez Runescape IRC"><img alt="" src="/images/banner/mirc.gif" />Zybez IRC Chat</a></li>
-<li><a href="/runescapeventrilo.php" title="Zybez Runescape Ventrilo Voice Chat"><img alt="" src="/images/banner/ventrilo.gif" />Zybez Runescape Ventrilo</a></li>
+<li><a href="/blog.php" title="OSRS RuneScape Help Blogs"><img alt="" src="/images/banner/page_white_edit.png" />OSRS RuneScape Help Runescape Blogs</a></li>
+<li><a href="/irc.php" title="OSRS RuneScape Help Runescape IRC"><img alt="" src="/images/banner/mirc.gif" />OSRS RuneScape Help IRC Chat</a></li>
+<li><a href="/runescapeventrilo.php" title="OSRS RuneScape Help Runescape Ventrilo Voice Chat"><img alt="" src="/images/banner/ventrilo.gif" />OSRS RuneScape Help Runescape Ventrilo</a></li>
 </ul>
 </div>

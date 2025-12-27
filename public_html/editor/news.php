@@ -1,6 +1,6 @@
 <?php
 require( 'backend.php' );
-start_page( 12, 'Zybez News Manager' );
+start_page( 12, 'OSRS RuneScape Help News Manager' );
 
 $category = 'news';
 require( 'edit_class.php' );
@@ -35,12 +35,12 @@ window.onbeforeunload = function() {
     }
 }
 </script>
-<div class="boxtop">Zybez News Manager</div>
+<div class="boxtop">OSRS RuneScape Help News Manager</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <div style="float: right;"><a href="<?=$_SERVER['SCRIPT_NAME']?>"><img src="images/browse.gif" title="Browse" border="0" /></a>
 <a href="<?=$_SERVER['SCRIPT_NAME']?>?act=new"><img src="images/new%20entry.gif" title="New Entry" border="0" /></a></div>
 <div align="left" style="margin:1">
-<b><font size="+1">&raquo; Zybez News Manager</font></b>
+<b><font size="+1">&raquo; OSRS RuneScape Help News Manager</font></b>
 </div>
 <hr class="main" noshade="noshade" align="left" />
 <p style="text-align:center;font-size:large;">Please have your news post checked by another staffer for errors before posting</p><br />
@@ -97,14 +97,14 @@ if( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['id'] 
 	}
 	elseif( $_GET['act'] == 'new' AND isset( $_POST['do'] ) ) {
 		$_GET['act'] == 'edit';
-		echo '<p align="center">New entry was successfully added to Zybez.</p>';
-		$ses->record_act( 'Zybez News', 'New', $title, $ip );
+		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>';
+		$ses->record_act( 'OSRS RuneScape Help News', 'New', $title, $ip );
 		header( 'refresh: 0; url=' . $_SERVER['SCRIPT_NAME']);
 		
 	}
 	elseif( $_GET['act'] == 'edit' AND isset( $_POST['do'] ) )  {
-		echo '<p align="center">Entry successfully edited on Zybez.</p>';
-		$ses->record_act( 'Zybez News', 'Edit', $title, $ip );
+		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>';
+		$ses->record_act( 'OSRS RuneScape Help News', 'Edit', $title, $ip );
 		header( 'refresh: 0; url=' . $_SERVER['SCRIPT_NAME']);
 	}
 	
@@ -155,7 +155,7 @@ else {
 			echo '<p align="center">' . $edit->error_mess . '</p>';
 		}
 		else {
-			$ses->record_act( 'Zybez News', 'Delete', $_POST['del_name'], $ip );
+			$ses->record_act( 'OSRS RuneScape Help News', 'Delete', $_POST['del_name'], $ip );
 		header( 'refresh: 0; url=' . $_SERVER['SCRIPT_NAME'] . '?cat=' . $category );
 		}
 	}
@@ -192,10 +192,10 @@ else {
 	}
 		
 /* Jer: I commented this out... put the function above in
-  $url = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2F';
-  $url2 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2F?';
-  $url3 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net%2Findex.php';
-  $url4 = '/getzybez.php?cachethis=http%3A%2F%2Fwww.zybez.net';
+  $url = '/getosrs_help.php?cachethis=http%3A%2F%2F2007rshelp.com%2F';
+  $url2 = '/getosrs_help.php?cachethis=http%3A%2F%2F2007rshelp.com%2F?';
+  $url3 = '/getosrs_help.php?cachethis=http%3A%2F%2F2007rshelp.com%2Findex.php';
+  $url4 = '/getosrs_help.php?cachethis=http%3A%2F%2F2007rshelp.com';
   echo '<p style="text-align:center;cursor:pointer;" onclick="window.open(\''.$url.'\'); window.open(\''.$url2.'\');window.open(\''.$url3.'\');window.open(\''.$url4.'\');">Re-Cache Category Indexes</p>';*/
   
 	?>

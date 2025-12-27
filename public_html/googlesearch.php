@@ -5,14 +5,14 @@ start_page('Search');
 <div class="boxtop">Search</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
 <!-- SiteSearch Google -->
-<form method="get" action="http://www.zybez.net/googlesearch.php" target="_top">
+<form method="get" action="http://2007rshelp.com/googlesearch.php" target="_top">
 <table border="0">
 <tr><td nowrap="nowrap" valign="top" align="left" height="32">
 <a href="http://www.google.com/">
 <img src="http://www.google.com/logos/Logo_25wht.gif" border="0" alt="Google" align="middle"></img></a>
 </td>
 <td nowrap="nowrap">
-<input type="hidden" name="domains" value="www.zybez.net"></input>
+<input type="hidden" name="domains" value="2007rshelp.com"></input>
 <label for="sbi" style="display: none">Enter your search terms</label>
 <input type="text" name="q" size="31" maxlength="255" value="" id="sbi"></input>
 <label for="sbb" style="display: none">Submit search form</label>
@@ -27,8 +27,8 @@ start_page('Search');
 <input type="radio" name="sitesearch" value="" id="ss0"></input>
 <label for="ss0" title="Search the Web"><font size="-1">Web</font></label></td>
 <td>
-<input type="radio" name="sitesearch" value="www.zybez.net" checked id="ss1"></input>
-<label for="ss1" title="Search www.zybez.net"><font size="-1">www.zybez.net</font></label></td>
+<input type="radio" name="sitesearch" value="2007rshelp.com" checked id="ss1"></input>
+<label for="ss1" title="Search 2007rshelp.com"><font size="-1">2007rshelp.com</font></label></td>
 </tr>
 </table>
 <input type="hidden" name="client" value="pub-0109004644664993"></input>

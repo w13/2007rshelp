@@ -1,5 +1,5 @@
 <?php
-	if(IN_ZYBEZ !== true) exit;
+	if(IN_OSRS_HELP !== true) exit;
 
 	if(!empty($user)) {
 		$combatstat = getStat($username ?? $user, 'Combat', 'level');
@@ -28,7 +28,7 @@
 /*
  *	Javascripted Runescape Calculator
  *	Created by Ryan Hoerr, December 2008
- *	(c) 2008 Zybez Corporation
+ *	(c) 2008 OSRS RuneScape Help Corporation
  */
 function reCalculate() {
 	combatLevel( document.getElementById('attack').value-0, document.getElementById('defence').value-0, document.getElementById('strength').value-0, document.getElementById('hitpoints').value-0, document.getElementById('prayer').value-0, document.getElementById('ranged').value-0, document.getElementById('magic').value-0);

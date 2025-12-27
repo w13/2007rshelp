@@ -1,10 +1,10 @@
 <!-- AddThis Bookmark Button BEGIN -->
 <br />
-<p style="text-align:center;"><a href="http://www.addthis.com/bookmark.php" onclick="addthis_url=location.href; addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s9.addthis.com/button0-bm.gif" width="83" height="16" border="0" alt="AddThis Social Bookmark Button" /></a> <script type="text/javascript">var addthis_pub = 'zybez';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10"></script></p>
+<p style="text-align:center;"><a href="http://www.addthis.com/bookmark.php" onclick="addthis_url=location.href; addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s9.addthis.com/button0-bm.gif" width="83" height="16" border="0" alt="AddThis Social Bookmark Button" /></a> <script type="text/javascript">var addthis_pub = 'osrs_help';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10"></script></p>
 <!-- AddThis Bookmark Button END -->
 
 
-<!-- ZYBEZ SKY 2 (disabled)
+<!-- OSRS RUNE SCAPE HELP SKY 2 (disabled)
  <br />
 <script type="text/javascript">
 google_ad_client = "pub-0109004644664993";
@@ -12,7 +12,7 @@ google_ad_width = 160;
 google_ad_height = 600;
 google_ad_format = "160x600_as";
 google_ad_type = "text_image";
-//2007-11-23: zybez-sky2
+//2007-11-23: osrs_help-sky2
 google_ad_channel = "0967778124";
 google_color_border = "B3B8BA";
 google_color_bg = "FFCCCB";
@@ -30,7 +30,7 @@ google_ui_features = "rc:10";
 
 <!-- NORIGHTCLICK -->
 <!--// No Right Click
-var message = "COPYRIGHT NOTICE:\n\nRuneScape Help © Zybez Corporation. 2001 - 2007; All rights reserved.\n\nAll content is for use on Zybez.net ONLY!\n\nRunescape is registered trademark of Jagex Ltd.";
+var message = "COPYRIGHT NOTICE:\n\nRuneScape Help © OSRS RuneScape Help Corporation. 2001 - 2007; All rights reserved.\n\nAll content is for use on OSRS RuneScape Help.net ONLY!\n\nRunescape is registered trademark of Jagex Ltd.";
 
 function clickIE4()
 {
@@ -75,7 +75,7 @@ else if (document.all && ! document.getElementById)
 	google_ad_height = 60;
 	google_ad_format = "468x60_as";
 	google_ad_type = "text_image";
-	//2007-06-06: zybez.net
+	//2007-06-06: 2007rshelp.com
 	google_ad_channel = "8083889722";
 	google_color_border = ["FFFFFF","336699","000000","6699CC"];
 	google_color_bg = ["FFFFFF","FFFFFF","F0F0F0","003366"];
@@ -97,7 +97,7 @@ else if (document.all && ! document.getElementById)
 	<!--
 	<font size="2" color="white">Advertisement</font><br />
 	<br />
-	<a href="http://www.runescapeguide.com/" target="_blank" rel="nofollow"><img src="http://www.zybez.net/images/rsg120x600.gif" border="0" alt="Advertisement" /></a>
+	<a href="http://www.runescapeguide.com/" target="_blank" rel="nofollow"><img src="http://2007rshelp.com/images/rsg120x600.gif" border="0" alt="Advertisement" /></a>
 	-->
 
 	<!--
@@ -108,7 +108,7 @@ else if (document.all && ! document.getElementById)
 	google_ad_height = 600;
 	google_ad_format = "120x600_as";
 	google_ad_type = "text_image";
-	//2007-07-03: zybez.net
+	//2007-07-03: 2007rshelp.com
 	google_ad_channel = "8083889722";
 	google_ui_features = "rc:6";
 	</script>
@@ -122,11 +122,11 @@ else if (document.all && ! document.getElementById)
 <!-- SIDE STUFF -->
 
 	<!--<form action="/search/index.php" method="post" class="boxbottom" style="padding: 1px; border-top-style: solid; margin-bottom: 12px;"><table style="width: 100%;"><tr> 
-	<td><input type="text" maxlength="255" name="s" style="width: 98%;" value="Search Zybez" onfocus="this.value='';" /></td> 
-	<td width="60"><input type="button" onclick="javascript:if(this.form.s.value=='Search Zybez'){location='/search/index.php';}else{this.form.submit();}" value="Search" /></td> 
+	<td><input type="text" maxlength="255" name="s" style="width: 98%;" value="Search OSRS RuneScape Help" onfocus="this.value='';" /></td> 
+	<td width="60"><input type="button" onclick="javascript:if(this.form.s.value=='Search OSRS RuneScape Help'){location='/search/index.php';}else{this.form.submit();}" value="Search" /></td> 
 	</tr></table></form>-->
 	
-	<!--<li>&nbsp;&nbsp;&nbsp;- <a href="/faq.php" title="Zybez Frequently Asked Questions">Zybez F.A.Q.</a></li>-->
+	<!--<li>&nbsp;&nbsp;&nbsp;- <a href="/faq.php" title="OSRS RuneScape Help Frequently Asked Questions">OSRS RuneScape Help F.A.Q.</a></li>-->
 
 <!-- END SIDE STUFF -->
 

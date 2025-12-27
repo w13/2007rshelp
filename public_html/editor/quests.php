@@ -74,7 +74,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( 'Quest Guides', 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited into Zybez Quest Guide Area.</p>' . NL;
+		echo '<p align="center">Entry successfully edited into OSRS RuneScape Help Quest Guide Area.</p>' . NL;
 		//header( 'refresh: 2; url=' . $_SERVER['PHP_SELF'] . '?cat=' . $category );
 	}
 
@@ -99,7 +99,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( 'Quest Guides', 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added into Zybez Quest Guide Area. No Cache has been performed.</p>' . NL;
+		echo '<p align="center">New entry was successfully added into OSRS RuneScape Help Quest Guide Area. No Cache has been performed.</p>' . NL;
 		header( 'refresh: 2; url=?cat=' . $category );
 	}
 }
@@ -188,7 +188,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		else {
 			$ses->record_act( 'Quest Guides', 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=?cat=' . $category );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

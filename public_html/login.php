@@ -8,12 +8,12 @@ require('login_functs.php');
 $cst = ''; // Cookie prefix
 $tst = $INFO['sql_tbl_prefix'];
 $sdb = $INFO['sql_database'];
-$local = '.www.zybez.net';
+$local = '.2007rshelp.com';
 $lcode = 0;
 
 $loginform = <<<BLK
 <form action="?a={$_GET['a']}" method="POST" title="Log in with your Runescape Community account details">
-<table><tr><th colspan="2"><div style="font-weight: normal; float: right;">[<a href="http://www.zybez.net/community/index.php?act=Login" title="Go to the Runescape Community login screen">RSC</a> Account Details]</div>Log In</th></tr>
+<table><tr><th colspan="2"><div style="font-weight: normal; float: right;">[<a href="http://2007rshelp.com/community/index.php?act=Login" title="Go to the Runescape Community login screen">RSC</a> Account Details]</div>Log In</th></tr>
 <tr><td>Username:</td><td><input type="text" name="UserName" maxlength="32" /></td></tr>
 <tr><td>Password:</td><td><input type="password" name="PassWord" maxlength="32" /></td></tr>
 <tr><td colspan="2" style="text-align: center;"><input type="submit" value="Log in" /></td></tr></table>

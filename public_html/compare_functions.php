@@ -1,7 +1,7 @@
 <?php
 
 	// Global functions file. Most of these are only used by compare.php,
-	// but they may prove useful for other parts of Zybez. In any case,
+	// but they may prove useful for other parts of OSRS RuneScape Help. In any case,
 	// here they are.
 
 	// Quick-find: qf_qf

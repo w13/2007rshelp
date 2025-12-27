@@ -40,7 +40,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( 'Shops', 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 2; url=' );
 	}
 	
@@ -65,7 +65,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( 'Shops', 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added to Zybez.</p>' . NL;
+		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 2; url=' );
 	}
 	
@@ -88,7 +88,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'editm' AND isset( $_POST['i
 	}
 	else {
 		$ses->record_act( 'Shop Items', 'Edit', $item_name, $ip );
-		echo '<p align="center">Entry successfully edited on Zybez.</p>' . NL;
+		echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 1; url=?act=edit&id=' . $shop_id );
 	}
 	
@@ -109,7 +109,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'nwitm' ) {
 	}
 	else {
 		$ses->record_act( 'Shop Items', 'New', $item_name, $ip );
-		echo '<p align="center">New entry was successfully added to Zybez.</p>' . NL;
+		echo '<p align="center">New entry was successfully added to OSRS RuneScape Help.</p>' . NL;
 		header( 'refresh: 1; url=?act=edit&id=' . $shop_id );
 	}
 	
@@ -352,7 +352,7 @@ elseif( isset( $_GET['act'] ) AND $_GET['act'] == 'delete' AND $ses->permit( 15 
 			$db->query("DELETE FROM shops_items WHERE shop_id = " . $_POST['del_id'] );
 			$ses->record_act( 'Shops', 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=' );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {

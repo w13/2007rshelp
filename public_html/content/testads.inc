@@ -12,7 +12,7 @@ google_ad_width = 160;
 google_ad_height = 600;
 google_ad_format = "160x600_as";
 google_ad_type = "text_image";
-//2007-11-18: zybez.net
+//2007-11-18: 2007rshelp.com
 google_ad_channel = "8083889722";
 google_color_border = "B3B8BA";
 google_color_bg = "CAF99B";
@@ -32,7 +32,7 @@ google_ad_width = 160;
 google_ad_height = 600;
 google_ad_format = "160x600_as";
 google_ad_type = "text_image";
-//2007-11-23: zybez-sky2
+//2007-11-23: osrs_help-sky2
 google_ad_channel = "0967778124";
 google_color_border = "B3B8BA";
 google_color_bg = "CAF99B";

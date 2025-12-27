@@ -131,10 +131,10 @@ class graph
 	}
 	
 	/**
-	* Set the base path for the zybez-runescape-help-graphs.swf
+	* Set the base path for the osrs_help-runescape-help-graphs.swf
 	*
 	* @param path a string argument.
-	*   The path to the zybez-runescape-help-graphs.swf file
+	*   The path to the osrs_help-runescape-help-graphs.swf file
 	*/
 	function set_swf_path($path)
 	{
@@ -1030,7 +1030,7 @@ class graph
 			$tmp[] = '<div id="my_chart' . $this->occurence . '"></div>';
 			$tmp[] = '<script type="text/javascript" src="' . $this->base . 'swfobject.js"></script>';
 			$tmp[] = '<script type="text/javascript">';
-			$tmp[] = 'var so = new SWFObject("zybez-runescape-help-graphs.swf", "ofc", "'. $this->width . '", "' . $this->height . '", "9", "#FFFFFF");';
+			$tmp[] = 'var so = new SWFObject("osrs_help-runescape-help-graphs.swf", "ofc", "'. $this->width . '", "' . $this->height . '", "9", "#FFFFFF");';
 			$tmp[] = 'so.addVariable("variables","true");';
 		}
 

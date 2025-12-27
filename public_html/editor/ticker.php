@@ -28,7 +28,7 @@ if(isset($_POST['act']) AND $_POST['act'] == 'edit' AND isset($_POST['id'])) {
     }
     else {
         $ses->record_act('Ticker', 'Edit', substr($content, 0, 20).'...', $ip);
-        echo '<p align="center">Entry successfully edited on Zybez.</p>' . NL;
+        echo '<p align="center">Entry successfully edited on OSRS RuneScape Help.</p>' . NL;
         header('refresh: 2; url=');
     }
 }
@@ -46,7 +46,7 @@ elseif(isset($_POST['act']) AND $_POST['act'] == 'new') {
     }
     else {
         $ses->record_act('Ticker', 'New', substr($content, 0, 20).'...', $ip);
-        echo '<p align="center">New ticker entry was successfully added to Zybez.</p>' . NL;
+        echo '<p align="center">New ticker entry was successfully added to OSRS RuneScape Help.</p>' . NL;
         header('refresh: 2; url=');
     }
 }
@@ -116,7 +116,7 @@ elseif(isset($_GET['act']) AND $_GET['act'] == 'delete' AND $ses->permit(15)) {
         else {
             $ses->record_act('Ticker', 'Delete', $_POST['del_txt'], $ip);
             header('refresh: 2; url=');
-            echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+            echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
         }
     }
     else {

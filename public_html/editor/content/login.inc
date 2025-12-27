@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Login - Zybez Editor</title>
+<title>Login - OSRS RuneScape Help Editor</title>
 <link href="[#CSS#].css" rel="stylesheet" type="text/css" id="ourstylesheet" />
 <link href="/css/global_new.css" rel="stylesheet" type="text/css" />
 <link href="/css/editor.css" rel="stylesheet" type="text/css" />
@@ -9,7 +9,7 @@
 <body>
 <div id="wrapper">
 <div class="topbar"></div>
-<div id="ebanner" style="border-bottom:1px solid #000;"><a href="#" title="Zybez Editor - Index"><span>Welcome</span></a></div>
+<div id="ebanner" style="border-bottom:1px solid #000;"><a href="#" title="OSRS RuneScape Help Editor - Index"><span>Welcome</span></a></div>
 <div class="bottombar"></div>
 <div id="body">
 

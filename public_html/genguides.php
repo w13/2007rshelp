@@ -17,7 +17,7 @@ if(empty($id))
 ?>
 <div style="margin:1px;font-size:large;font-weight:bold;">&raquo; Player Guides and Tips</div>
 <hr class="main" noshade="noshade" />
-<p style="text-align: center;">This area contains runescape guides and tips made by users of <a href="/community/">Runescape Community's</a>&nbsp;<a href="/community/index.php?showforum=317">General Guides</a> forum. This section is an extension of our <a href="/misc.php">Miscellaneous Runescape Guides</a> section, providing further tips and strategies on a variety of topics and from a variety of perspectives.<br /><br /><strong>These guides are presented as they are on Runescape Community and have not been edited or reviewed by Zybez Staff.</strong></p>
+<p style="text-align: center;">This area contains runescape guides and tips made by users of <a href="/community/">Runescape Community's</a>&nbsp;<a href="/community/index.php?showforum=317">General Guides</a> forum. This section is an extension of our <a href="/misc.php">Miscellaneous Runescape Guides</a> section, providing further tips and strategies on a variety of topics and from a variety of perspectives.<br /><br /><strong>These guides are presented as they are on Runescape Community and have not been edited or reviewed by OSRS RuneScape Help Staff.</strong></p>
 <table style="border-left: 1px solid #000000;" width="90%" cellpadding="1" cellspacing="0" align="center">
  <tr class="boxtop">
   <th class="tabletop">Name:</th>

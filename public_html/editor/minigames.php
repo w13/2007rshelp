@@ -37,7 +37,7 @@ if( isset( $_POST['act'] ) AND $_POST['act'] == 'edit' AND isset( $_POST['id'] )
 	}
 	else {
 		$ses->record_act( 'Mini Games', 'Edit', $name, $ip );
-		echo '<p align="center">Entry successfully edited into Zybez Mini Guide Area.</p>' . NL;
+		echo '<p align="center">Entry successfully edited into OSRS RuneScape Help Mini Guide Area.</p>' . NL;
 		header( 'refresh: 2; url=?cat=' . $category );
 	}
 
@@ -60,7 +60,7 @@ elseif( isset( $_POST['act'] ) AND $_POST['act'] == 'new' ) {
 	}
 	else {
 		$ses->record_act( 'Mini Games', 'New', $name, $ip );
-		echo '<p align="center">New entry was successfully added into Zybez Minigame Guides. No Cache has been performed.</p>' . NL;
+		echo '<p align="center">New entry was successfully added into OSRS RuneScape Help Minigame Guides. No Cache has been performed.</p>' . NL;
 		header( 'refresh: 2; url=?cat=' . $category );
 	}
 }
@@ -145,7 +145,7 @@ elseif( isset( $_GET['act'] ) AND ( ( $_GET['act'] == 'edit' AND isset( $_GET['i
 		else {
 			$ses->record_act( 'Mini Games', 'Delete', $_POST['del_name'], $ip );
 			header( 'refresh: 2; url=?cat=' . $category );
-			echo '<p align="center">Entry successfully deleted from Zybez.</p>' . NL;
+			echo '<p align="center">Entry successfully deleted from OSRS RuneScape Help.</p>' . NL;
 		}
 	}
 	else {
