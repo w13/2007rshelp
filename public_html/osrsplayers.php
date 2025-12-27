@@ -124,13 +124,14 @@ $mysqli = new mysqli('localhost', 'rsc_online', 'killher', 'rsc_online');
 	</div>
 </blockquote>
 	
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-239988-18"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z60SEVLSGL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-239988-18');
+  gtag('config', 'G-Z60SEVLSGL');
 </script>
 
 	</body>

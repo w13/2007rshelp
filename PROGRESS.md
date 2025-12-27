@@ -28,15 +28,16 @@
     - Modernized frontend layout using Flexbox and CSS variables in `global_new.css`.
     - Refactored theme management to use `localStorage` for better persistence and FOUC prevention.
     - Standardized legacy PHP tags and removed dangerous `document.writeln` calls.
+    - Updated Google Analytics to GA4 (`G-Z60SEVLSGL`) in `layout.inc` and `osrsplayers.php`.
 
 ### 4. Code Review Findings
 - **Database Patterns:** The codebase generally relies on "clean input" via `cleanVars`. This has been strengthened.
 - **Template System:** The placeholder replacement system in `backend.php` (e.g., `[#CONTENT#]`) is functional but relies on output buffering.
 - **Broken Features:** `equipmentprofile.php` is known to be broken (missing `equipment` table) but is considered unused.
+- **Outdated Analytics/Ads:**
+    - The current Google Analytics code uses Universal Analytics (`UA-` prefix), which was sunset by Google in July 2023. It needs to be updated to Google Analytics 4 (GA4).
+    - AdSense snippets are using old manual placement styles. Modern "Auto-Ads" or responsive ad units would work better with the new Flexbox layout.
 
 ## Next Steps
+- **Action Required:** Review and update AdSense snippets for better mobile performance.
 - Investigate remaining files in `public_html/` for similar XSS and SQLi patterns.
-- Review `public_html/compare.php` and related functions.
-- Look into `public_html/priceguide.php`.
-- Consider refactoring the guide display logic into a more centralized class/function to avoid repetition.
-- Check and fix remaining mixed content (HTTP links) in other include files.

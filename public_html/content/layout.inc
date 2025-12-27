@@ -162,14 +162,14 @@ $('a').hover(function(e){
 <script src="https://www.google.com/cse/api/partner-pub-0109004644664993/cse/3478413701/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-239988-18"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z60SEVLSGL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-239988-18');
+  gtag('config', 'G-Z60SEVLSGL');
 </script>
 
 <img class="popUpImage" style="display:none;" src="https://i.imgur.com/ulym44H.png" alt="RuneScape
