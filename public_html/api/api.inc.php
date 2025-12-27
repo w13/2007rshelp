@@ -8,7 +8,7 @@ require_once('api.base.inc.php');
 
 //	The top-level class for handling API actions
 //	Add a new action by creating a protected function actionXXX() {}
-//	where XXX is http://2007rshelp.com/api/XXX/search+term
+//	where XXX is https://2007rshelp.com/api/XXX/search+term
 
 class API extends APIBase
 {

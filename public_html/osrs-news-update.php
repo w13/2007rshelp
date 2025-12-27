@@ -8,7 +8,7 @@
  
  /* #### VARIABLES ### */
  
- $url_of_RSS = 'http://services.runescape.com/m=news/latest_news.rss?oldschool=true';
+ $url_of_RSS = 'https://services.runescape.com/m=news/latest_news.rss?oldschool=true';
  $url_of_default_pic = 'https://cdn.runescape.com/assets/img/external/oldschool/2017/newsposts/2017-06-12/thumbnail-logo.png';
  $name_of_bot = 'Newsy';
  $uid_of_bot = '164';

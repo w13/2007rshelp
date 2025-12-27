@@ -218,6 +218,7 @@ class display
 	
 	function cleanVars( $input ) {
 		$this->db->connect();
+		$dataArr = array();
 		foreach($input as $v) {
 
 			if((string)$v[1] === '') {
@@ -348,49 +349,73 @@ class timer
 /* Guides Class */
 class page
 {
- public $page;
- public $db;
- 
- function __construct( $page , $DB_OBJECT )
-  {
-   $this->db = $DB_OBJECT;
-   if( empty( $page ) ) die( 'Error -- Please enter a valid table name.' );
-   $this->page = $page;
-  }
-  
- function show_list()
-  {
-   require( ROOT . '/sys/templates/' . 'list_start.inc' );
-   $query = $this->db->query( 'SELECT * FROM `' . $this->page . '` ORDER BY `name`' );
-    while($info = $this->db->fetch_array($query))
-     {
-      echo ' <tr align="center">' . NL;
-      echo '  <td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['id'] . '">' . $info['name'] . '</a></td>' . NL;
-      echo '  <td class="tablebottom">' . $info['type'] . '</td>' . NL;
-      echo '  <td class="tablebottom">' . $info['author'] . '</td>' . NL;
-      echo ' </tr>' . NL;
-     } 
-     
-   require( ROOT . '/sys/templates/' . 'list_end.inc' );
-  }
-  
- function show_page( $id )
-  {
-   $id = intval( $id );
-   $info = $this->db->fetch_row( 'SELECT * FROM `' . $this->page . '` WHERE `id` = ' . $id );
-   
-   require( ROOT . '/sys/templates/' . 'page_start.inc' );
-   
-   echo $info['name'];
-   
-   require( ROOT . '/sys/templates/' . 'page_mid.inc' );
-   
-   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000"><u>Page</u>: ' . $info['name'] . '</td></tr>';
-   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">' . $info['text'] . '</td></tr>';
-   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . $info['author'] . '</b></td>';
-   
-   require( ROOT . '/sys/templates/' . 'page_end.inc' );
-  }
+	public $table;
+	public $db;
+	public $area;
+
+	function __construct($table, $DB_OBJECT, $area = '')
+	{
+		$this->db = $DB_OBJECT;
+		if (empty($table)) die('Error -- Please enter a valid table name.');
+		$this->table = $table;
+		$this->area = $area ?: $table;
+	}
+
+	function show_list($orderBy = 'name', $constraint = '1=1')
+	{
+		// Attempt to use area-specific template if it exists, otherwise fallback to generic
+		$template_start = '/content/guides/list_start_' . $this->area . '.inc';
+		if (!file_exists(ROOT . $template_start)) $template_start = '/content/guides/list_start.inc';
+		
+		require(ROOT . $template_start);
+		
+		$query = $this->db->query('SELECT * FROM `' . $this->table . '` WHERE ' . $constraint . ' ORDER BY `' . $orderBy . '`');
+		while ($info = $this->db->fetch_array($query)) {
+			$this->render_list_row($info);
+		}
+
+		$template_end = '/content/guides/list_end_' . $this->area . '.inc';
+		if (!file_exists(ROOT . $template_end)) $template_end = '/content/guides/list_end.inc';
+		require(ROOT . $template_end);
+	}
+
+	protected function render_list_row($info)
+	{
+		// This can be overridden or use a default layout
+		echo ' <tr align="center">' . NL;
+		echo '  <td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . (int)$info['id'] . '">' . htmlspecialchars($info['name']) . '</a></td>' . NL;
+		echo '  <td class="tablebottom">' . htmlspecialchars($info['type'] ?? '') . '</td>' . NL;
+		echo '  <td class="tablebottom">' . htmlspecialchars($info['author'] ?? '') . '</td>' . NL;
+		echo ' </tr>' . NL;
+	}
+
+	function show_page($id)
+	{
+		$id = (int)$id;
+		$info = $this->db->fetch_row('SELECT * FROM `' . $this->table . '` WHERE `id` = ' . $id);
+		if (!$info) {
+			echo 'Error: Invalid ID.';
+			return;
+		}
+
+		$template_start = '/content/guides/page_start_' . $this->area . '.inc';
+		if (!file_exists(ROOT . $template_start)) $template_start = '/content/guides/page_start.inc';
+		require(ROOT . $template_start);
+
+		echo htmlspecialchars($info['name']);
+
+		$template_mid = '/content/guides/page_mid_' . $this->area . '.inc';
+		if (!file_exists(ROOT . $template_mid)) $template_mid = '/content/guides/page_mid.inc';
+		require(ROOT . $template_mid);
+
+		echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000"><u>Page</u>: ' . htmlspecialchars($info['name']) . '</td></tr>';
+		echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">' . $info['text'] . '</td></tr>';
+		echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . htmlspecialchars($info['author']) . '</b></td>';
+
+		$template_end = '/content/guides/page_end_' . $this->area . '.inc';
+		if (!file_exists(ROOT . $template_end)) $template_end = '/content/guides/page_end.inc';
+		require(ROOT . $template_end);
+	}
 }
 
 ?>

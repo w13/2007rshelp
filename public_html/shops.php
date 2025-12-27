@@ -219,7 +219,7 @@ if( !isset( $id ) )
 	echo '</select> for ' . NL;
 
 	// Print Search Term Field
-	echo '<input type="text" name="search_term" value="' . stripslashes($search_term) . '" maxlength="40" />' . NL;
+	echo '<input type="text" name="search_term" value="' . htmlspecialchars(stripslashes($search_term)) . '" maxlength="40" />' . NL;
 
 	// Print The End of the form
 	echo ' <input type="submit" value="Go" />' . NL;
@@ -235,18 +235,18 @@ if( !isset( $id ) )
 	// Item Search Table
 	if( $search_area == 'itemsearch' ) {
 		echo '<tr>' . NL;
-		echo '<th width="20%" class="tabletop">Item: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=item_name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Item Name, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=item_name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Item Name, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-		echo '<th width="18%" class="tabletop">Price: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=item_price&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Item Price, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=item_price&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Item Price, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-		echo '<th width="15%" class="tabletop">Stock: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=item_stock&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Item Stock, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=item_stock&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Item Stock, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-		echo '<th width="20%" class="tabletop">Location: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=location&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Location, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=location&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Location, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-		echo '<th width="37%" class="tabletop">Found in Shop: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shop Name, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shop Name, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
+		echo '<th width="20%" class="tabletop">Item</th>' . NL;
+		echo '<th width="18%" class="tabletop">Price</th>' . NL;
+		echo '<th width="15%" class="tabletop">Stock</th>' . NL;
+		echo '<th width="20%" class="tabletop">Location</th>' . NL;
+		echo '<th width="37%" class="tabletop">Found in Shop</th>' . NL;
 		echo '</tr>' . NL;
         echo '</thead><tbody>';
 
 		while( $info = $db->fetch_array( $query ) ) {
 			echo '<tr>' . NL;
-			echo '<td class="tablebottom">' . $info['item_name'] . '</td>' . NL;
-			echo '<td class="tablebottom">' . number_format( $info['item_price'] ) . '' . $info['item_currency'] . '</td>' . NL;
+			echo '<td class="tablebottom">' . htmlspecialchars($info['item_name']) . '</td>' . NL;
+			echo '<td class="tablebottom">' . number_format( $info['item_price'] ) . '' . htmlspecialchars($info['item_currency']) . '</td>' . NL;
 
 			if ( $info['use_stock'] == 0 ) {
 				echo '<td class="tablebottom">-</td>' . NL;
@@ -255,8 +255,8 @@ if( !isset( $id ) )
 				$info['item_stock'] = $info['item_stock'] == -1 ? '&#8734;' : $info['item_stock'];
 				echo '<td class="tablebottom">' . $info['item_stock'] . '</td>' . NL;
 			}
-				echo '<td class="tablebottom">' . $info['location'] . '</td>' . NL;
-			echo '<td class="tablebottom"><a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $info['shop_id'] . '" title="View Shop">' . $info['name'] . '</a></td>' . NL;
+				echo '<td class="tablebottom">' . htmlspecialchars($info['location']) . '</td>' . NL;
+			echo '<td class="tablebottom"><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?id=' . (int)$info['shop_id'] . '" title="View Shop">' . htmlspecialchars($info['name']) . '</a></td>' . NL;
 			echo '</tr>' . NL;
 		}
 	}
@@ -264,21 +264,21 @@ if( !isset( $id ) )
 
 	else {
 		echo '<tr>' . NL;
-		echo '<th width="34%" class="tabletop">Name: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=name&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Name, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-		echo '<th width="28%" class="tabletop">Location: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=location&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '"  title="Sort by: Location, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=location&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Location, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-		echo '<th width="15%" class="tabletop">Members? <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Member, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=member&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Member, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-		echo '<th width="23%" class="tabletop">Shopkeeper: <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=ASC&amp;category=shopkeeper&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shopkeeper, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?order=DESC&amp;category=shopkeeper&amp;search_area=' . $search_area . '&amp;search_term=' . $search_term . '" title="Sort by: Shopkeeper, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
+		echo '<th width="34%" class="tabletop">Name</th>' . NL;
+		echo '<th width="28%" class="tabletop">Location</th>' . NL;
+		echo '<th width="15%" class="tabletop">Members?</th>' . NL;
+		echo '<th width="23%" class="tabletop">Shopkeeper</th>' . NL;
 		echo '</tr>' . NL;
         echo '</thead><tbody>';
 
 		while( $info = $db->fetch_array( $query ) ) {
 			echo '<tr>' . NL;
     
-    echo '<td class="tablebottom"><a href="?id=' . $info['id'] . '">' . $info['name'] . '</a></td>' . NL;
+    echo '<td class="tablebottom"><a href="?id=' . (int)$info['id'] . '">' . htmlspecialchars($info['name']) . '</a></td>' . NL;
 			
-			echo '<td class="tablebottom"><a href="?search_area=location&amp;search_term=' . $info['location'] . '" title="Search Location">' . $info['location'] . '</a></td>' . NL;
-			echo '<td class="tablebottom">' . $info['member'] . '</td>' . NL;
-			echo '<td class="tablebottom">' . $info['shopkeeper'] . '</td>' . NL;
+			echo '<td class="tablebottom"><a href="?search_area=location&amp;search_term=' . urlencode($info['location']) . '" title="Search Location">' . htmlspecialchars($info['location']) . '</a></td>' . NL;
+			echo '<td class="tablebottom">' . htmlspecialchars($info['member']) . '</td>' . NL;
+			echo '<td class="tablebottom">' . htmlspecialchars($info['shopkeeper']) . '</td>' . NL;
 			echo '</tr>' . NL;
 		} 
 	}
@@ -316,12 +316,12 @@ else {
 	}
 
 	/* MySQL Retrieve Information */
-	$info = $db->fetch_row( "SELECT * FROM `shops` WHERE `id` = " . $id );
-	$inventory = $db->query( "SELECT * FROM `shops_items` WHERE `shop_id` = " . $id . " ORDER BY `".$category."` ".$order.", `item_price` DESC, `item_name` ASC" );
+	$info = $db->fetch_row( "SELECT * FROM `shops` WHERE `id` = " . (int)$id );
+	$inventory = $db->query( "SELECT * FROM `shops_items` WHERE `shop_id` = " . (int)$id . " ORDER BY `".$category."` ".$order.", `item_price` DESC, `item_name` ASC" );
 
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS RuneScape Shops Database</a> &raquo; <u><?php echo $info['name']; ?></u></div>
+&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">OSRS RuneScape Shops Database</a> &raquo; <u><?php echo htmlspecialchars($info['name'] ?? ''); ?></u></div>
 <hr class="main" noshade="noshade" />
 <br />
 <?php
@@ -330,30 +330,30 @@ else {
 
 	// General Shop Information
 	echo '<table cellspacing="0" width="75%" style="border: 1px solid #000000; border-top: none" cellpadding="4" align="center">' . NL;
-	echo '<tr><td colspan="4" class="tabletop">' . $info['name'] . '&nbsp;</td></tr>' . NL;
-	echo '<tr><td width="10" rowspan="4" style="border: none; border-right: 1px solid #000000"><img src="/img/shopimg/' . $info['image'] . '" alt="Map of ' . $info['name'] . '" /></td>' . NL;
-	echo '<td width="20%">Location:</td><td><a href="' . $_SERVER['SCRIPT_NAME'] . '?search_area=location&amp;search_term=' . $info['location'] . '" title="Find other shops at this location.">' . $info['location'] . '</a></td></tr>' . NL;
-	echo '<tr><td>Members:</td><td>' . $info['member'] . '</td></tr>' . NL;
-	echo '<tr><td>Shopkeeper:</td><td>' . $info['shopkeeper'] . '</td></tr>' . NL;
-	echo '<tr><td>Extra Notes:</td><td>' . $info['notes'] . '</td></tr>' . NL;
+	echo '<tr><td colspan="4" class="tabletop">' . htmlspecialchars($info['name'] ?? '') . '&nbsp;</td></tr>' . NL;
+	echo '<tr><td width="10" rowspan="4" style="border: none; border-right: 1px solid #000000"><img src="/img/shopimg/' . htmlspecialchars($info['image'] ?? '') . '" alt="Map of ' . htmlspecialchars($info['name'] ?? '') . '" /></td>' . NL;
+	echo '<td width="20%">Location:</td><td><a href="' . htmlspecialchars($_SERVER['SCRIPT_NAME']) . '?search_area=location&amp;search_term=' . urlencode($info['location'] ?? '') . '" title="Find other shops at this location.">' . htmlspecialchars($info['location'] ?? '') . '</a></td></tr>' . NL;
+	echo '<tr><td>Members:</td><td>' . htmlspecialchars($info['member'] ?? '') . '</td></tr>' . NL;
+	echo '<tr><td>Shopkeeper:</td><td>' . htmlspecialchars($info['shopkeeper'] ?? '') . '</td></tr>' . NL;
+	echo '<tr><td>Extra Notes:</td><td>' . htmlspecialchars($info['notes'] ?? '') . '</td></tr>' . NL;
 	echo '</table><br />' . NL;
 
 	// Inventory Information
 	echo '<table cellspacing="0" width="75%" style="border: none; border-left: 1px solid #000000" cellpadding="4" align="center"><tr>' . NL;
-	echo '<th class="tabletop">Item <a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $id . '&amp;order=ASC&amp;category=item_name" title="Sort by: Item, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $id . '&amp;order=DESC&amp;category=item_name" title="Sort by: Item, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
-	echo '<th class="tabletop">Price <a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $id . '&amp;order=ASC&amp;category=item_price" title="Sort by: Price, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $id . '&amp;order=DESC&amp;category=item_price" title="Sort by: Price, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
+	echo '<th class="tabletop">Item</th>' . NL;
+	echo '<th class="tabletop">Price</th>' . NL;
 
-	if ( $info['use_stock'] == 1 ) {
-		echo '<th class="tabletop">Default Stock <a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $id . '&amp;order=ASC&amp;category=item_stock" title="Sort by: Default Stock, Ascending"><img src="/img/up.GIF" alt="ASC" border="0" /></a> <a href="' . $_SERVER['SCRIPT_NAME'] . '?id=' . $id . '&amp;order=DESC&amp;category=item_stock" title="Sort by: Default Stock, Descending"><img src="/img/down.GIF" alt="DESC" border="0" /></a></th>' . NL;
+	if ( ($info['use_stock'] ?? 0) == 1 ) {
+		echo '<th class="tabletop">Default Stock</th>' . NL;
 	}
 	echo '</tr>' . NL;
 	while( $item = $db->fetch_array( $inventory ) ) {
 	$item['item_stock'] = $item['item_stock'] == -1 ? '&#8734;' : $item['item_stock'];
 		echo '<tr align="center">' . NL;
-		echo '<td class="tablebottom"><a href="/items.php?search_area=name&amp;search_term=' . $item['item_name'] . '" title="Find in Item Database">' . $item['item_name'] . '</a></td>' . NL;
-		echo '<td width="30%" class="tablebottom">' . number_format( $item['item_price'] ) . '' . $item['item_currency'] . '</td>' . NL;
+		echo '<td class="tablebottom"><a href="/items.php?search_area=name&amp;search_term=' . urlencode($item['item_name']) . '" title="Find in Item Database">' . htmlspecialchars($item['item_name']) . '</a></td>' . NL;
+		echo '<td width="30%" class="tablebottom">' . number_format( $item['item_price'] ) . '' . htmlspecialchars($item['item_currency']) . '</td>' . NL;
 
-		if ( $info['use_stock'] == 1 ) {
+		if ( ($info['use_stock'] ?? 0) == 1 ) {
 			echo '<td width="30%" class="tablebottom">' . $item['item_stock'] . '</td>' . NL;
 		}
 		echo '</tr>' . NL;
@@ -362,7 +362,7 @@ else {
 
 	// The Credits
 	echo '<table width="75%" cellspacing="0" cellpadding="4" style="border: 1px solid #000000" align="center">' . NL;
-	echo '<tr><td>Credits: ' . $info['credits'] . '</td></tr>' . NL;
+	echo '<tr><td>Credits: ' . htmlspecialchars($info['credits'] ?? '') . '</td></tr>' . NL;
 	echo '</table>' . NL;
 
 	if ( $info['use_stock'] == 1 ) {

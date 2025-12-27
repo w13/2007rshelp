@@ -9,7 +9,7 @@ function get_stat($user, $skill, $type) {
 	if($skill == 'Runecrafting') $skill = 'Runecraft';
 	
 	$user = str_replace(array('_', '-', '@', '+'), ' ', $user);
-	$url = 'http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player='.$user;
+	$url = 'https://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player='.$user;
 
 	$row = $db->fetch_row('SELECT max(`Time`) AS `Time` FROM `stats` WHERE `User` = "' . $user . '" LIMIT 1');
 	if((intval($row['Time']) + 3600) < time()) {

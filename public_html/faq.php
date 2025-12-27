@@ -14,7 +14,7 @@ A: The best thing to do is ask your question in the SwiftKit forum at <a href="/
 <div class="title3">Q: Do you work for JaGeX?</div>
 A: No, we do not work for JaGeX and we must not be mistaken with JaGeX staff.<br /><br />
 <div class="title3">Q: I lost my Runescape password, my account got stolen, or I got scammed. What do I do?</div>
-A: We have absolutely no direct connection to Runescape. You must contact somebody through <a href="http://www.runescape.com" target="_blank">Runescape.com</a><br /><br />
+A: We have absolutely no direct connection to Runescape. You must contact somebody through <a href="https://www.runescape.com" target="_blank">Runescape.com</a><br /><br />
 <div class="title3">Q: Can I become Zybez Staff?</div>
 A: No, we are not looking to add to our staff at the moment. When we recruit more staff, it will be announced in the <a href="/community/index.php?showforum=2">Community News</a> forum at RuneScape Community.<br /><br />
 <div class="title3">Q: How can I contribute to Zybez?</div>

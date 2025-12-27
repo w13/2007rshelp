@@ -71,7 +71,7 @@ function stat_box($var) {
   echo '<link href="/css/sig.css" rel="stylesheet" type="text/css" />';
   echo '<script type="text/javascript" src="/graphs/popup.js"></script>';
   /*if($_COOKIE['update_time']) {
-  echo '<script type="text/javascript" src="http://www.runescapecommunity.com/graphs/statsig.js"></script>';
+  echo '<script type="text/javascript" src="/graphs/statsig.js"></script>';
   }*/
     $query = $db->query("SELECT * FROM `stats` WHERE `User`= '" . $username_safe . "' ORDER BY `time` DESC LIMIT 1");
   $info = $db->fetch_array($query);
@@ -148,7 +148,7 @@ if($rscbox) {
 
     case 1 :
     //echo '<link href="/css/sig.css" rel="stylesheet" type="text/css" />';
-    //echo '<script type="text/javascript" src="http://www.zybez.net/graphs/popup.js"></script>';
+    //echo '<script type="text/javascript" src="https://www.zybez.net/graphs/popup.js"></script>';
     echo '<div style="position:absolute;top:1;left:1">'
         .'<input type="button" value="X" onclick=\'document.getElementById("faladorstats").style.display="none";\'></div>'
         .'<center><b style="font-family:calibri, verdana, arial, sans-serif;">'

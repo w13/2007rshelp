@@ -91,7 +91,7 @@ start_page('Old School RuneScape Calculators');
 		$sortarr[$row['calc_type']] = $row['calc_type'];
 		$memb = $row['member'] == 1 ? ' memb' : '';
 		$row['xp'] = $skill == 'Hitpoints' ? round($row['xp'] / 3, 2) : $row['xp'];
-		$table .= '<tr class="'.$row['calc_type'].$memb.'" id="tr'.$i.'"><td><img src="/img/calcimg/a_red.PNG" id="image'.$i.'" class="rimg" /></td><td width="30" height="30"><img src="/img/'.$row['image'].'" class="iimg" /></td><td>'.$row['name'].'</td><td id="level'.$i.'">'.$row['level'].'</td><td id="xp'.$i.'">'.($row['xp'] + 0).'</td><td id="num'.$i.'"></td></tr>'.NL;
+		$table .= '<tr class="'.htmlspecialchars($row['calc_type'] ?? '').$memb.'" id="tr'.$i.'"><td><img src="/img/calcimg/a_red.PNG" id="image'.$i.'" class="rimg" /></td><td width="30" height="30"><img src="/img/'.htmlspecialchars($row['image'] ?? '').'" class="iimg" /></td><td>'.htmlspecialchars($row['name'] ?? '').'</td><td id="level'.$i.'">'.(int)$row['level'].'</td><td id="xp'.$i.'">'.($row['xp'] + 0).'</td><td id="num'.$i.'"></td></tr>'.NL;
 		$i++;
 	}
 
@@ -229,7 +229,7 @@ content: 'ˇ';
 }
 <?php echo $rimgcss; ?>
 </style>
-<div style="margin: 1pt; font-size: large; font-weight: bold;">	» <a href="calcs.php">2007 RuneScape Skill Calculators</a> » <?php echo $skill; ?>
+<div style="margin: 1pt; font-size: large; font-weight: bold;">	» <a href="calcs.php">2007 RuneScape Skill Calculators</a> » <?php echo htmlspecialchars($skill); ?>
 </div>
 <hr class="main" noshade="noshade" />
 

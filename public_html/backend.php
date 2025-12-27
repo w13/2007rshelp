@@ -5,7 +5,7 @@
 /* 
 if( $_SERVER['SERVER_NAME'] != '2007rshelp.com' ) {
 	@header( 'HTTP/1.1 301 Moved Permanently' );
-	@header( 'location: http://2007rshelp.com' . $_SERVER['REQUEST_URI'] );
+	@header( 'location: https://2007rshelp.com' . $_SERVER['REQUEST_URI'] );
 }
 */
 

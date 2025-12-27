@@ -1,5 +1,5 @@
 <?php
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,250')
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,250')
 				  );
 /*** CITY PAGE ***/
 require(dirname(__FILE__) . '/' . 'backend.php');
@@ -33,12 +33,9 @@ if($disp->errlevel > 0) {
 	{
         $info['type'] = $info['type'] == 1 ? 'P2P' : 'Free';
         echo '<tr align="center">' . NL;
-        /* $seotitle = strtolower(preg_replace("[^A-Za-z0-9]", "", $info['name']));
-        echo '<td class="tablebottom"><a href="?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['name'] . '</a></td>' . NL;
-		*/
-		echo '<td class="tablebottom"><a href="?id=' . $info['id'] . '">' . $info['name'] . '</a></td>' . NL;
-        echo '<td class="tablebottom">' . $info['type'] . '</td>' . NL;
-		echo '<td class="tablebottom">' . $info['author'] . '</td>' . NL;
+		echo '<td class="tablebottom"><a href="?id=' . $info['id'] . '">' . htmlspecialchars($info['name']) . '</a></td>' . NL;
+        echo '<td class="tablebottom">' . htmlspecialchars($info['type']) . '</td>' . NL;
+		echo '<td class="tablebottom">' . htmlspecialchars($info['author']) . '</td>' . NL;
 		echo '<td class="tablebottom">'.date('M j, Y', $info['time']).'</td>'.NL;
 		echo '</tr>' . NL;
 	}
@@ -50,6 +47,9 @@ if($disp->errlevel > 0) {
   else
   {
     $info = $db->fetch_row("SELECT * FROM `cities` WHERE `id` = " . $id);
+    if (!$info) {
+        echo 'Error: Invalid City ID.';
+    } else {
   ?>
 <script language="JavaScript" type="text/javascript">
 function scroll(i)
@@ -67,14 +67,14 @@ function scroll(i)
 </script>
 
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS RuneScape City Guides</a> &raquo; <u><?=$info['name']?></u></div>
+&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS RuneScape City Guides</a> &raquo; <u><?php echo htmlspecialchars($info['name']); ?></u></div>
 <hr class="main" noshade="noshade" /><br />
 <table style="border-left: 1px solid #000; border-top: 1px solid #000" width="100%" cellpadding="5" cellspacing="0">
     <?php
     echo '<tr><td class="tablebottom" style="text-align:center;"><a href="/correction.php?area=cities&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a></td></tr>' . NL;
     $text = explode('<!--s-->',$info['text']);
     $intro = $text[0];
-    $content = $text[1];
+    $content = $text[1] ?? '';
     echo '<tr><td style="border-bottom: 1px solid #000; border-right: 1px solid #000">'.NL
         .'<div style="float:left;width:70%; padding-top:5px;">';
       echo '<div style="width:55%;height:250px;float:left;line-height:1.4;text-align:justify;padding:0 5px 0 5px;">
@@ -83,7 +83,7 @@ function scroll(i)
       echo '<div style="margin-left:5px;margin-right:12px;width:36%;height:250px;padding:0 5px 0 5px;overflow:auto;">';
         $citykeys = explode(',',$info['city_key']);
         for($num=0; array_key_exists($num,$citykeys);$num++) {
-          echo call_user_func("city_key",$citykeys[$num]);
+          echo city_key($citykeys[$num]);
         }
       echo '</div>';
      }
@@ -95,7 +95,7 @@ function scroll(i)
     echo city_shops($id);
     echo city_npc($id);
     echo '</td></tr>';
-   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . $info['author'] . '</b></td></tr>' . NL;
+   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . htmlspecialchars($info['author']) . '</b></td></tr>' . NL;
     ?>
 </table>
 <br />
@@ -105,10 +105,11 @@ function scroll(i)
 <br />
 
   <?php
+    }
   }
   ?>
 [#COPYRIGHT#]
 </div>
 <?php
-end_page( $info['name'] );
+end_page( htmlspecialchars($info['name'] ?? '') );
 ?>

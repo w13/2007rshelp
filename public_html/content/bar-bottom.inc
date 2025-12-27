@@ -7,7 +7,7 @@
 </td>
 <td style="width: 20%; text-align: right;">
 
-	<form action="http://www.google.com" id="cse-search-box">
+	<form action="https://www.google.com" id="cse-search-box">
 	  <div>
 		<input type="hidden" name="cx" value="partner-pub-0109004644664993:3478413701" />
 		<input type="hidden" name="ie" value="UTF-8" />

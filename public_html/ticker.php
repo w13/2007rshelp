@@ -12,7 +12,9 @@ $outfromdb = '';
 // Let's assume apc_* functions are available or we can use a polyfill if needed.
 // For now, let's keep the logic but use $db.
 
-if (function_exists('apc_exists') && apc_exists('zybezticker')) {
+if (function_exists('apcu_exists') && apcu_exists('zybezticker')) {
+    $outfromdb = apcu_fetch('zybezticker');
+} elseif (function_exists('apc_exists') && apc_exists('zybezticker')) {
     $outfromdb = apc_fetch('zybezticker');
 } else {
     $query = $db->query("SELECT * FROM `ticker` WHERE NOW() BETWEEN starttime AND endtime ORDER BY priority DESC, starttime DESC LIMIT 15");
@@ -21,7 +23,9 @@ if (function_exists('apc_exists') && apc_exists('zybezticker')) {
         $num++;
         $outfromdb .= 'arrNewsItems[' . $num . '] = new Array("' . htmlentities($info['content']) . '","' . htmlentities($info['url']) . '"); ';
     }
-    if (function_exists('apc_store')) {
+    if (function_exists('apcu_store')) {
+        apcu_store('zybezticker', $outfromdb);
+    } elseif (function_exists('apc_store')) {
         apc_store('zybezticker', $outfromdb);
     }
 }

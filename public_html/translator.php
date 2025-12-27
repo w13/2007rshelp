@@ -27,7 +27,7 @@ $url = $_SERVER['HTTP_REFERER'];
       header( 'Location: https://www.google.com/translate?u=' . $url . '&langpair=en%7Cru&hl=en&ie=UTF8' );
   }
   if(isset($_GET['lang']) && $_GET['lang'] == 'jp') {
-      header( 'Location: http://www.googles.com/translate?u=' . $url . '&langpair=en%7Cja&hl=en&ie=UTF8' );
+      header( 'Location: https://translate.google.com/translate?u=' . $url . '&langpair=en%7Cja&hl=en&ie=UTF8' );
   }
   if(!isset($_GET['lang'])) {
   die();

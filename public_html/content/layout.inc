@@ -4,6 +4,12 @@
 <title>[#SITE_NAME#]</title>
 <link rel="shortcut icon" href="[#FAVICON#].ico" />
 <link href="/css/bluelight.css" rel="stylesheet" type="text/css" id="ourstylesheet" />
+<script>
+    (function() {
+        var theme = localStorage.getItem('rshelp_theme') || 'bluelight';
+        document.getElementById('ourstylesheet').setAttribute('href', '/css/' + theme + '.css');
+    })();
+</script>
 <link href="/css/global_new.css" rel="stylesheet" type="text/css" />
 [#EXTRACSS#]
 <!--
@@ -38,7 +44,7 @@ function initImage ( url ) {
 
 function killImage ( ) {
         img = $('.popUpImage');
-        img.attr('src', "http://i.imgur.com/ulym44H.png");
+        img.attr('src', "https://i.imgur.com/ulym44H.png");
         $('.popUpImage').hide();
 }
 
@@ -150,10 +156,10 @@ $('a').hover(function(e){
 <!-- Queries: [#QUERIES#] // Execution Time: [#TIME#]-->
 </div>
 
-<img class="popUpImage" style="display:none;" src="http://i.imgur.com/ulym44H.png" alt="RuneScape Help's Screenshot" />
+<img class="popUpImage" style="display:none;" src="https://i.imgur.com/ulym44H.png" alt="RuneScape Help's Screenshot" />
 <script type="text/javascript" src="/imageautotooltip.js"></script>
 
-<script src="http://www.google.com/cse/api/partner-pub-0109004644664993/cse/3478413701/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+<script src="https://www.google.com/cse/api/partner-pub-0109004644664993/cse/3478413701/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -166,7 +172,7 @@ $('a').hover(function(e){
   gtag('config', 'UA-239988-18');
 </script>
 
-<img class="popUpImage" style="display:none;" src="http://i.imgur.com/ulym44H.png" alt="RuneScape
+<img class="popUpImage" style="display:none;" src="https://i.imgur.com/ulym44H.png" alt="RuneScape
 Help's Screenshot" />
 </body>
 </html>

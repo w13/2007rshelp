@@ -1,5 +1,5 @@
 <?php
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,500')
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,500')
 				  );
 /*** LIBRARY ***/
 require(dirname(__FILE__) . '/' . 'backend.php');
@@ -36,10 +36,10 @@ if(!isset($id))
   while($info = $db->fetch_array($query))
    {
     echo '<tr>' . NL;
-    echo '<td><a href="?id=' . $info['id'] . '"><span style="color: black;">' . $info['name'] . '</span></a></td>' . NL;
-    echo '<td style="color: black;">' . $info['author'] . '</td>' . NL;
-    echo '<td style="color: black;">' . $info['item'] . '</td></tr>' . NL;
-   } 
+    echo '<td><a href="?id=' . $info['id'] . '"><span style="color: black;">' . htmlspecialchars($info['name']) . '</span></a></td>' . NL;
+    echo '<td style="color: black;">' . htmlspecialchars($info['author']) . '</td>' . NL;
+    echo '<td style="color: black;">' . htmlspecialchars($info['item']) . '</td></tr>' . NL;
+   }
 ?>
 </table>
 <br /><br />
@@ -52,9 +52,12 @@ height="50" />
 else
  {
   $info = $db->fetch_row("SELECT * FROM `tomes` WHERE `id` = " . $id);
+  if (!$info) {
+      echo 'Error: Invalid Tome ID.';
+  } else {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">
-&raquo; <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">OSRS Tome Archive</a> &raquo; <u><?php echo $info['name']; ?></u></div>
+&raquo; <a href="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>">OSRS Tome Archive</a> &raquo; <u><?php echo htmlspecialchars($info['name']); ?></u></div>
 <hr class="main" noshade="noshade" />
 <center><div style="width: 600px; margin: 0; background-repeat: repeat-y;">
 <img style="position: relative; top: 25px; padding:0; margin: 0; z-index: 100; display: block;" src="/img/other/lib/menut.gif" alt="" width="612" height="50" />
@@ -64,10 +67,10 @@ else
 <?php
   echo '<tr><td colspan="2" style="border-bottom: 1px solid #000000;" align="center"><a href="/correction.php?area=tomes&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a><br /><br /></td></tr>';
   echo '<tr><td colspan="2" style="font-family:\'Trebuchet MS\'; color: black; font-size:12px;">' . $info['content'] . '</td></tr>';
-  echo '<tr><td style="border-top: 1px solid #000000; color: black; font-family:\'Trebuchet MS\'; font-size:12px;">Item Name: <b>' . $info['item'] . '</b></td>';
-  echo '<td rowspan="2" style="border-top: 1px solid #000000; color: black; font-family:\'Trebuchet MS\'; font-size:12px;"><img src="/img/other/lib/' . $info['img'] . '" alt="Zybez RuneScape Help\'s Book Image" height="50" width="50" /></td></tr>';
-  echo '<tr><td style="color:black; font-family:\'Trebuchet MS\'; font-size:12px;">Author: <b>' . $info['author'] . '</b></td>';
-?>
+  echo '<tr><td style="border-top: 1px solid #000000; color: black; font-family:\'Trebuchet MS\'; font-size:12px;">Item Name: <b>' . htmlspecialchars($info['item']) . '</b></td>';
+  echo '<td rowspan="2" style="border-top: 1px solid #000000; color: black; font-family:\'Trebuchet MS\'; font-size:12px;"><img src="/img/other/lib/' . htmlspecialchars($info['img']) . '" alt="Zybez RuneScape Help\'s Book Image" height="50" width="50" /></td></tr>';
+  echo '<tr><td style="color:black; font-family:\'Trebuchet MS\'; font-size:12px;">Author: <b>' . htmlspecialchars($info['author']) . '</b></td>';
+?>  
  </tr>
 </table>
 <br /><br />
@@ -77,9 +80,10 @@ else
 <p style="text-align:center; font-weight:bold;"><a href="javascript:history.go(-1)">&lt;-- Go Back</a> | <a href="#top">Top -- ^</a></p>
 <br />
 <?php
+  }
  }
 ?>
 [#COPYRIGHT#]</div>
 <?php
-end_page( $info['name'] );
+end_page( htmlspecialchars($info['name'] ?? '') );
 ?>

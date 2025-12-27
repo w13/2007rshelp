@@ -5,6 +5,7 @@ function display_tree($root_id) {
 	
 	// Create the tree array
 	$tree = array();
+	$root_id = intval($root_id);
 	
 	// Retrieve the left and right value of the ROOT node
 	$query = $db->query("SELECT lft, rgt FROM price_groups WHERE id = " . $root_id);
@@ -14,7 +15,7 @@ function display_tree($root_id) {
 	$parents = array();
 
 	// Now, retrieve all descendants of the $root node
-	$result = $db->query("SELECT * FROM price_groups WHERE lft BETWEEN " . $root['lft'] . " AND " . $root['rgt'] . " ORDER BY lft ASC");
+	$result = $db->query("SELECT * FROM price_groups WHERE lft BETWEEN " . intval($root['lft']) . " AND " . intval($root['rgt']) . " ORDER BY lft ASC");
 
 	// Display Each Category Row
 	while($row = $db->fetch_array($result)) {
@@ -36,6 +37,8 @@ function display_tree($root_id) {
 function rebuild_tree($parent_id, $left) {
 	global $db;
    // The right value of this category is the left value + 1
+   $left = intval($left);
+   $parent_id = intval($parent_id);
    $right = $left + 1;
 
    // For each child of this category.
@@ -58,6 +61,7 @@ function rebuild_tree($parent_id, $left) {
 function delete_category($id, $left, $right) {
 	global $db;
 	
+	$id = intval($id);
 	$left = intval($left);
 	$right = intval($right);
 
@@ -70,6 +74,13 @@ function delete_category($id, $left, $right) {
 
 function edit_category($after, $oleft, $oright, $id, $title, $items, $text) {
 	global $db;
+
+	$after = intval($after);
+	$oleft = intval($oleft);
+	$oright = intval($oright);
+	$id = intval($id);
+	$title = $db->escape_string($title);
+	$text = $db->escape_string($text);
 
 	$change = $oright - $oleft + 1;
 	if($after >= $oleft) $after = $after - $change;
@@ -85,15 +96,15 @@ function edit_category($after, $oleft, $oright, $id, $title, $items, $text) {
 	rebuild_tree($id, $left);
 	
 	$info = $db->fetch_row("SELECT * FROM price_groups WHERE rgt = " . $after . " OR lft = " . $after);
-	if( $info['lft'] == $after ) {
-		$parent = $info['id'];
+	if( ($info['lft'] ?? 0) == $after ) {
+		$parent = $info['id'] ?? 0;
 	}
 	else {
-		$parent = $info['parent'];
+		$parent = $info['parent'] ?? 0;
 	}
 	
 	$items = intval( $items );
-	$db->query("UPDATE price_groups SET items = " . $items . ", parent = " . $parent . ", title='" . $title . "', text = '" . $text . "' WHERE id = " . $id);
+	$db->query("UPDATE price_groups SET items = " . $items . ", parent = " . intval($parent) . ", title='" . $title . "', text = '" . $text . "' WHERE id = " . $id);
 
 	return;
 }
@@ -101,12 +112,16 @@ function edit_category($after, $oleft, $oright, $id, $title, $items, $text) {
 function add_category($after, $title, $items, $text) {
 	global $db;
 
+	$after = intval($after);
+	$title = $db->escape_string($title);
+	$text = $db->escape_string($text);
+
 	$info = $db->fetch_row("SELECT * FROM price_groups WHERE rgt = " . $after . " OR lft = " . $after);
-	if( $info['lft'] == $after ) {
-		$parent = $info['id'];
+	if( ($info['lft'] ?? 0) == $after ) {
+		$parent = $info['id'] ?? 0;
 	}
 	else {
-		$parent = $info['parent'];
+		$parent = $info['parent'] ?? 0;
 	}
 	$left = $after + 1;
 	$right = $left + 1;
@@ -115,7 +130,7 @@ function add_category($after, $title, $items, $text) {
 	$db->query("UPDATE price_groups SET lft = lft+2 WHERE lft >= " . $left );
 
 	$items = intval( $items );
-	$db->query("INSERT INTO price_groups SET lft = " . $left . ", rgt = " . $right . ", items = " . $items . ", parent = " . $parent . ", title='" . $title . "', text = '" . $text . "'");
+	$db->query("INSERT INTO price_groups SET lft = " . $left . ", rgt = " . $right . ", items = " . $items . ", parent = " . intval($parent) . ", title='" . $title . "', text = '" . $text . "'");
 
 	return;
 }

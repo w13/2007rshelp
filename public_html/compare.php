@@ -85,7 +85,7 @@ if ($search_term != '' && $search_area != '') {
 if(!isset($id)) {
 
 while($info = $db->fetch_array($query))   {
-	$seotitle = strtolower(preg_replace("[^A-Za-z0-9]", "", $info['name']));
+	$seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name'] ?? ''));
 
 	$info['member'] = $info['member'] == 1 ? 'Yes' : 'No';
 	$info['equip'] = $info['equip'] == 1 ? 'Yes' : 'No';
@@ -107,19 +107,19 @@ while($info = $db->fetch_array($query))   {
 	} else $queueimage = $addSnippet;
 	
     echo '<tr>';
-    echo '<td class="tablebottom"><a href="/items.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm"><img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . $info['name'] .' image" width="50" height="50" /></a></td>';
-    echo '<td class="tablebottom"><a href="/items.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . $info['name'] . '</a></td>' . NL;
+    echo '<td class="tablebottom"><a href="/items.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm"><img src="/img/idbimg/' . $info['image'] . '" alt="Zybez Runescape Help\'s ' . htmlspecialchars($info['name'] ?? '') .' image" width="50" height="50" /></a></td>';
+    echo '<td class="tablebottom"><a href="/items.php?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm">' . htmlspecialchars($info['name'] ?? '') . '</a></td>' . NL;
 	echo '<td class="tablebottom">'.$queueimage.'</td>';
-    echo '<td class="tablebottom">' . $info['member'] . '</td>';
-    echo '<td class="tablebottom">' . $info['trade'] . '</td>';
-    echo '<td class="tablebottom">' . $quest . '</td>';
+    echo '<td class="tablebottom">' . htmlspecialchars($info['member'] ?? '') . '</td>';
+    echo '<td class="tablebottom">' . htmlspecialchars($info['trade'] ?? '') . '</td>';
+    echo '<td class="tablebottom">' . htmlspecialchars($quest) . '</td>';
     echo '</tr>';
   
 } 
 
   if($row_count == 0 or $page <= 0 or $page > $page_count)
    {
-	   $quayre = "SELECT name, id FROM `items` WHERE soundex(name) = soundex('".addslashes($search_term)."') LIMIT 0,1";
+	   $quayre = "SELECT name, id FROM `items` WHERE soundex(name) = soundex('".$search_term."') LIMIT 0,1";
    $result = $db->query($quayre);
 
     echo '<tr>';

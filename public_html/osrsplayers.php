@@ -109,7 +109,7 @@ $mysqli = new mysqli('localhost', 'rsc_online', 'killher', 'rsc_online');
 	<div class="contdiv">
 		<h1>Historic Data</h1>
 		<p><img src="img/historicplayersonline.png" style="width: 100%;height: auto;"></p>
-		<p>This is a screenshot from <a href="http://www.misplaceditems.com/rs_tools/graph/">MisplacedItems's website</a>, which also tracks player activity.</p>
+		<p>This is a screenshot from <a href="https://www.misplaceditems.com/rs_tools/graph/">MisplacedItems's website</a>, which also tracks player activity.</p>
 	</div>
 </blockquote>
 

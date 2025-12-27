@@ -11,7 +11,7 @@ img.show();
 
 function killImage ( ) {
 var img = $('.popUpImage');
-img.attr('src', "http://i.imgur.com/ulym44H.png");
+img.attr('src', "https://i.imgur.com/ulym44H.png");
 $('.popUpImage').hide();
 }
 

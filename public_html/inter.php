@@ -54,7 +54,7 @@ echo '<a href="https://2007rshelp.com/items.php?search_area=name&search_term='.$
 // header( 'Location: http://2007rshelp.com/items.php?search_area=name&search_term='.$item.'' );
 
 echo '<script>
-window.location.replace("http://2007rshelp.com/items.php?search_area=name&search_term='.$item.'");
+window.location.replace("https://2007rshelp.com/items.php?search_area=name&search_term='.$item.'");
 </script>';
 
 }

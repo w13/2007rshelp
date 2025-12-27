@@ -1,28 +1,28 @@
 <?php
 /*** MISC PAGE ***/
-$cleanArr = array(  array('id', $_GET['id'], 'int', 's' => '1,9999'),
-					array('order', $_GET['order'], 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
-					array('category', $_GET['category'], 'enum', 'e' => array('name'), 'd' => 'name' ),
-					array('search_area', $_GET['search_area'], 'enum', 'e' => array('name','text') ),
-					array('search_term', $_GET['search_term'], 'sql', 'l' => 40)
+$cleanArr = array(  array('id', $_GET['id'] ?? null, 'int', 's' => '1,9999'),
+					array('order', $_GET['order'] ?? null, 'enum', 'e' => array('DESC', 'ASC'), 'd' => 'ASC' ),
+					array('category', $_GET['category'] ?? null, 'enum', 'e' => array('name'), 'd' => 'name' ),
+					array('search_area', $_GET['search_area'] ?? null, 'enum', 'e' => array('name','text') ),
+					array('search_term', $_GET['search_term'] ?? null, 'sql', 'l' => 40)
 				  );
 				  
 require(dirname(__FILE__) . '/' . 'backend.php');
 start_page('Runescape Guides');
 $ptitle = '&raquo; Runescape Miscellaneous Guides';
-if($search_area && $search_term) $ptitle = '&raquo; <a href="'.$_SERVER['SCRIPT_NAME'].'" title="Runescape Help Guides Index">Runescape Miscellaneous Guides</a> &raquo; Search Results';
+if(isset($search_area) && isset($search_term)) $ptitle = '&raquo; <a href="'.$_SERVER['SCRIPT_NAME'].'" title="Runescape Help Guides Index">Runescape Miscellaneous Guides</a> &raquo; Search Results';
 ?>
 <div class="boxtop">Runescape Miscellaneous Guides</div>
 <div class="boxbottom" style="padding-left: 24px; padding-top: 6px; padding-right: 24px;">
-<?
-if(!isset($_GET['id']))
+<?php
+if(!isset($id))
  {
 ?>
 <a name="top"></a>
 <div style="margin:1pt; font-size:large; font-weight:bold;"><?=$ptitle?></div>
 <hr class="main" noshade="noshade" />
 <br />
-<?
+<?php
   echo '<table class="misc_list_table" style="float: left; text-align: center;"><tr><td style="padding: 5px 2px; width: 175px;">
 		<strong>Jump to:</strong>
 		<ul style="list-style-type: circle; padding-left: 20px;">
@@ -51,10 +51,11 @@ if(!isset($_GET['id']))
   echo '</div>'.NL.NL;
   for($i=0;$i<7;$i++) {
   $n=0;
-  if(!$search_area) $search = "WHERE `group` = '" . $i . "' ORDER BY `group`, name ASC";
-  else $search = "WHERE `group` = " . $i . " AND ".$search_area." LIKE '%".$search_term."%' ORDER BY `group`, name ASC";
+  if(!isset($search_area)) $search = "WHERE `group` = '" . $i . "' ORDER BY `group`, name ASC";
+  else $search = "WHERE `group` = " . $i . " AND ".$search_area." LIKE '%" . $search_term . "%' ORDER BY `group`, name ASC";
   $query = $db->query("SELECT * FROM misc " . $search);
   
+  $title = ''; $image = ''; $aname = '';
   switch($i) {
   case 1:   $title = 'Popular';
             $image = 'c1';
@@ -87,7 +88,7 @@ if(!isset($_GET['id']))
             break;
   }
 
-if(mysqli_num_rows($query) != 0) {
+if($title && mysqli_num_rows($query) != 0) {
     echo '<a name="'.$aname.'"></a><h2>' . $title . '</h2>' . NL
         .'<table width="100%" class="misc_list_table">' . NL
         .'<tr>' . NL
@@ -102,7 +103,7 @@ if(mysqli_num_rows($query) != 0) {
    $seotitle = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $info['name']));
    $img = '<img src="/img/f2p.gif" alt="F2P" /> ';
    if($info['type'] == 1) $img = '<img src="/img/member.gif" alt="P2P" /> ';
-echo '<li' . $alt . ' id="g'.$info['id'].'" style="cursor: pointer;" onmouseover="chBg(\'g'.$info['id'].'\');" onmouseout="chBg(\'g'.$info['id'].'\');" onclick="window.location=\''.$_SERVER['SCRIPT_NAME'].'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm\'">'.NL
+echo '<li' . $alt . ' id="g'.$info['id'].'" style="cursor: pointer;" onmouseover="chBg(\'g'.$info['id']. '\');" onmouseout="chBg(\'g'.$info['id']. '\');" onclick="window.location=\''.$_SERVER['SCRIPT_NAME'].'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm\'">'.NL
     .'<div class="guide_title"><span>'
     .$img . '<a href="'.$_SERVER['SCRIPT_NAME'].'?id=' . $info['id'] . '&amp;runescape_' . $seotitle . '.htm" title="Runescape Guide">' . $info['name'] . '</a>'
     .'</span></div>'.NL
@@ -116,36 +117,36 @@ echo '<li' . $alt . ' id="g'.$info['id'].'" style="cursor: pointer;" onmouseover
 }
 ?>
 <br />
-<h2 style="text-align:center; font-size: 1.7em;"><b>Didn't find what you were looking for?<br />We have a lot more Runescape guides on <a href="/community/index.php?showforum=317" title="Click here to see lots more Runescape Guides">Runescape Community</a></b></h2>
-<?
+<h2 style="text-align:center; font-size: 1.7em;"><b>Didn\'t find what you were looking for?<br />We have a lot more Runescape guides on <a href="https://runescapecommunity.com/forumdisplay.php?fid=317" title="Click here to see lots more Runescape Guides">Runescape Community</a></b></h2>
+<?php
  }
 else
  {
-
-  $id = $_GET['id'];
-  $id = intval( $id );
   $info = $db->fetch_row("SELECT * FROM `misc` WHERE `id` = " . $id);
-
+  if (!$info) {
+      echo 'Error: Invalid Guide ID.';
+  } else {
 ?>
 <div style="margin:1pt; font-size:large; font-weight:bold;">
 <a href="<?=$_SERVER['SCRIPT_NAME']?>"><?=$ptitle?></a> &raquo; <u><?=$info['name']?></u></div>
 <hr noshade="noshade" />
 <table style="border-left: 1px solid #000000; border-top: 1px solid #000000" width="100%" cellpadding="5" cellspacing="0">
-<?
+<?php
   echo '<tr><td class="tablebottom"><a href="/correction.php?area=misc&amp;id=' . $id . '" title="Submit a Correction"><img src="/img/correct.gif" alt="Submit Correction" border="0" /></a></td></tr>';
   echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">' . dynamify($info['text']) . '</td></tr>';
-  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . $info['author'] . '</b></td>'
+  echo '<tr><td style="border-bottom: 1px solid #000000; border-right: 1px solid #000000">Author: <b>' . $info['author'] . '</b></td>';
 ?>  
  </tr>
 </table>
 <br />
 <p style="text-align:center; font-weight:bold;"><a href="javascript:history.go(-1)">&lt;-- Go Back</a> | <a href="#top">Top -- ^</a></p>
 <br />
-<?
+<?php
+  }
  }
  ?>
 [#COPYRIGHT#]
 </div>
-<?
-end_page( $info['name'] );
+<?php
+end_page( $info['name'] ?? '' );
 ?>

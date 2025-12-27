@@ -18,30 +18,18 @@ $out_w = 400; // Pixel Width for Output Image
 /** VERTICAL CALCULATIONS **/
 
 // Get Degrees
-if( !empty($_POST['v_deg']) ) {
-    $v_deg = $_POST['v_deg'];
-}
-else {
-    $v_deg = 0;
-}
+$v_deg = (int)($_POST['v_deg'] ?? 0);
 
 // Get Minutes
-if( !empty($_POST['v_min'] ) ) {
-    $v_min = $_POST['v_min'];
-}
-else {
-    $v_min = 0;
-}
+$v_min = (int)($_POST['v_min'] ?? 0);
 
 // Calculate Total Minutes & Convert to Pixels
-$v_min = ( $v_deg * 60 ) + $v_min;
-$v_pix = $v_min * $convert1;
+$v_min_total = ( $v_deg * 60 ) + $v_min;
+$v_pix = $v_min_total * $convert1;
 
 // Get Direction
-if( !empty( $_POST['v_direction'] ) ) {
-    $v_direction = $_POST['v_direction'];
-}
-else {
+$v_direction = $_POST['v_direction'] ?? 'north';
+if (!in_array($v_direction, ['north', 'south'])) {
     $v_direction = 'north';
 }
 
@@ -58,30 +46,18 @@ else {
 /** HORIZONTAL CALCULATIONS **/
 
 // Get Degrees
-if( !empty( $_POST['h_deg'] ) ) {
-    $h_deg = $_POST['h_deg'];
-}
-else {
-    $h_deg = 0;
-}
+$h_deg = (int)($_POST['h_deg'] ?? 0);
 
 // Get Minutes
-if( !empty( $_POST['h_min'] ) ) {
-    $h_min = $_POST['h_min'];
-}
-else {
-    $h_min = 0;
-}
+$h_min = (int)($_POST['h_min'] ?? 0);
 
 // Calculate Total Minutes & Convert to Pixels
-$h_min = ( $h_deg * 60 ) + $h_min;
-$h_pix = $h_min * $convert2;
+$h_min_total = ( $h_deg * 60 ) + $h_min;
+$h_pix = $h_min_total * $convert2;
 
 // Get Direction
-if( !empty( $_POST['h_direction'] ) ) {
-    $h_direction = $_POST['h_direction'];
-}
-else {
+$h_direction = $_POST['h_direction'] ?? 'east';
+if (!in_array($h_direction, ['east', 'west'])) {
     $h_direction = 'east';
 }
 

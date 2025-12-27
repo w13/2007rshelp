@@ -56,8 +56,8 @@ if(stripos($_GET['url'],"youtube") != FALSE){
 	$videoprovider = 'youtube';
 	$videoname =  substr(TextBetween('<title>','</title>',$output),10);
 	$description = TextBetween('<meta name="description" content="','">',$output);
-	$part = substr($_GET['url'],strpos($_GET['url'],'?v=')+3); $url = 'http://www.youtube.com/v/' . $part; $embedurl=$url;
-	$thumb = 'http://img.youtube.com/vi/' . $part . '/default.jpg';
+	$part = substr($_GET['url'],strpos($_GET['url'],'?v=')+3); $url = 'https://www.youtube.com/v/' . $part; $embedurl=$url;
+	$thumb = 'https://img.youtube.com/vi/' . $part . '/default.jpg';
 }elseif(stripos($_GET['url'],"filefront") != FALSE){
 	$videoprovider = 'filefront';
 	$videoname =  substr(TextBetween('<title>','</title>',$output),0,-16);
